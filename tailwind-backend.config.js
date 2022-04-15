@@ -7,7 +7,7 @@ module.exports = {
         './resources/views/layouts/app.blade.php',
         './resources/views/livewire/backend/**/*.blade.php',
         './resources/views/livewire/datatables/**/*.blade.php',
-        './resources/views/page/backend/**/*.blade.php',
+        './resources/views/pages/backend/**/*.blade.php',
         './resources/views/vendor/form-components/tailwind-3/**/*.blade.php'
     ],
     darkMode: 'class',

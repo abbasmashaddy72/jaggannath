@@ -16,7 +16,7 @@ class ContactUsController extends Controller
      */
     public function index()
     {
-        return view('pages.backend.contact_us');
+        return view('pages.backend.contactUs.index');
     }
 
     /**
@@ -48,7 +48,9 @@ class ContactUsController extends Controller
      */
     public function show(ContactUs $contactUs)
     {
-        //
+        $contactUs = $contactUs->id;
+
+        return view('pages.backend.contactUs.cev', compact('contactUs'));
     }
 
     /**

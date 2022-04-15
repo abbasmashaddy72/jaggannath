@@ -17,15 +17,44 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// 'index', 'create', 'store', 'show', 'edit', 'update', 'destroy'
+
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth', 'namespace' => 'App\Http\Controllers\Backend'], function () {
     Route::get('dashboard', 'DashboardController@index')->name('dashboard');
+
     Route::get('homepage', 'HomePageController@index')->name('homepage');
-    Route::get('contact-us', 'ContactUsController@index')->name('contactUs');
+
+    Route::resource('contact-us', 'ContactUsController')->only([
+        'index', 'show'
+    ]);
+
     Route::get('about-us', 'AboutUsController@index')->name('aboutUs');
+
+    Route::resource('faq', 'FaqController')->only([
+        'index', 'create', 'store',  'edit'
+    ]);
+
+    Route::resource('review', 'ReviewController')->only([
+        'index', 'create', 'store',  'edit'
+    ]);
+
+    Route::resource('team', 'TeamController')->only([
+        'index', 'create', 'store',  'edit'
+    ]);
+
+    Route::post('image_upload', 'MiscellaneousController@image_upload')->name('ckeditor.upload');
+
+    Route::resource('blog', 'BlogController')->only([
+        'index', 'create', 'store',  'edit'
+    ]);
+
+    Route::resource('feature', 'FeatureController')->only([
+        'index', 'create', 'store',  'edit'
+    ]);
+
     Route::group(['prefix' => 'laravel-filemanager', 'middleware' => 'auth'], function () {
         \UniSharp\LaravelFilemanager\Lfm::routes();
     });
-    Route::resource('blog', 'BlogController');
 });
 
 require __DIR__ . '/auth.php';
