@@ -1613,6 +1613,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .flex-grow{
   flex-grow: 1;
 }
+.border-collapse{
+  border-collapse: collapse;
+}
 .translate-y-16{
   --tw-translate-y: 4rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));

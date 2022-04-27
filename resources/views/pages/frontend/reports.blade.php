@@ -1,4 +1,12 @@
 <x-guest-layout>
-    <x-slot name='home_top'>
-    </x-slot>
+    <x-frontend.container>
+        <x-slot name='banner_name'>
+            {{ __('Reports') }}
+        </x-slot>
+
+        <div class="flex flex-wrap -mx-4">
+            Working On It
+        </div>
+
+    </x-frontend.container>
 </x-guest-layout>

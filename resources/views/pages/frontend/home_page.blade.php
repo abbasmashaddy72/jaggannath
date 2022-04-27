@@ -1,11 +1,73 @@
 <x-guest-layout>
+    @push('styles')
+        <link href="https://unpkg.com/swiper@6.8.4/swiper-bundle.min.css" rel="stylesheet">
+    @endpush
+    @push('scripts')
+        <script src="https://unpkg.com/swiper@6.8.4/swiper-bundle.min.js"></script>
+    @endpush
+
+    <!-- Sliders Section Start -->
+    <x-slot name='slider_section'>
+        <section>
+            <div class="max-w-6xl px-4 mx-auto sm:px-6">
+                <div class="pt-32 md:pt-40">
+                    <div x-data="{ swiper: null }" x-init="swiper = new Swiper($refs.container, {
+                        loop: true,
+                        slidesPerView: 1,
+                        spaceBetween: 0,
+                    })" class="relative flex mx-auto flex-">
+                        <div class="absolute inset-y-0 left-0 z-10 flex items-center">
+                            <button @click="swiper.slidePrev()"
+                                class="flex items-center justify-center w-10 h-10 -ml-2 bg-white rounded-full shadow lg:-ml-4 focus:outline-none">
+                                <svg viewBox="0 0 20 20" fill="currentColor" class="w-6 h-6 chevron-left">
+                                    <path fill-rule="evenodd"
+                                        d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </button>
+                        </div>
+
+                        <div class="swiper-container" x-ref="container">
+                            <div class="swiper-wrapper">
+                                <!-- Slides -->
+                                @foreach ($slider_images as $item)
+                                    <div class="swiper-slide">
+                                        <div class="flex flex-col overflow-hidden rounded shadow">
+                                            <div class="flex-shrink-0">
+                                                <img class="object-cover w-auto h-96 md:h-4/5"
+                                                    src="{{ url('storage/' . $item->image) }}" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+
+                        <div class="absolute inset-y-0 right-0 z-10 flex items-center">
+                            <button @click="swiper.slideNext()"
+                                class="flex items-center justify-center w-10 h-10 -mr-2 bg-white rounded-full shadow lg:-mr-4 focus:outline-none">
+                                <svg viewBox="0 0 20 20" fill="currentColor" class="w-6 h-6 chevron-right">
+                                    <path fill-rule="evenodd"
+                                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </x-slot>
+    <!-- Sliders Section End -->
+
     <x-slot name='home_top'>
         <div class="flex flex-col lg:flex-row justify-between space-x-20">
             <div class="text-center lg:text-left mt-40">
                 <h1 class="font-semibold text-gray-900 text-3xl md:text-6xl leading-normal mb-6">Charity for the <br>
                     world better life</h1>
 
-                <p class="font-light text-gray-800 text-md md:text-lg leading-normal mb-12">We provide a trusted donation
+                <p class="font-light text-gray-800 text-md md:text-lg leading-normal mb-12">We provide a trusted
+                    donation
                     channel for peoples of <br> worldwide to support people and organizers</p>
 
                 <button
@@ -20,9 +82,9 @@
     </x-slot>
 
     <!-- feature section -->
-    <section class="bg-white py-16 md:mt-10">
+    <section class="bg-white md:mt-10">
 
-        <div class="container max-w-screen-xl mx-auto px-4">
+        <div class="container max-w-screen-2xl mx-auto px-4">
 
             <p class="font-light text-gray-900 text-lg md:text-xl text-center uppercase mb-6">Our features</p>
 
@@ -102,7 +164,7 @@
     <!-- donation section -->
     <section class="bg-white py-16">
 
-        <div class="container max-w-screen-xl mx-auto px-4">
+        <div class="container max-w-screen-2xl mx-auto px-4">
 
             <h1 class="font-semibold text-gray-900 text-xl md:text-4xl text-center mb-16">Latest to donate</h1>
 
@@ -314,7 +376,7 @@
     <!-- feature section -->
     <section class="bg-white py-16">
 
-        <div class="container max-w-screen-xl mx-auto px-4">
+        <div class="container max-w-screen-2xl mx-auto px-4">
 
             <div class="flex flex-col lg:flex-row justify-between space-x-16">
                 <div class="flex justify-center lg:justify-start">
@@ -383,7 +445,7 @@
     <!-- join volunters section -->
     <section class="bg-white py-16">
 
-        <div class="container max-w-screen-xl mx-auto px-4">
+        <div class="container max-w-screen-2xl mx-auto px-4">
 
             <div class="w-full h-full bg-blue-500 rounded-2xl md:rounded-3xl relative lg:flex items-center">
                 <div class="hidden lg:block">

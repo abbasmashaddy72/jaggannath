@@ -13,7 +13,9 @@ class FrontendController extends Controller
 
     public function index()
     {
-        return view('pages.frontend.home_page');
+        $slider_images = [];
+
+        return view('pages.frontend.home_page', compact('slider_images'));
     }
 
     public function blogs()
@@ -39,11 +41,6 @@ class FrontendController extends Controller
     public function teams()
     {
         return view('pages.frontend.teams');
-    }
-
-    public function team_single()
-    {
-        return view('pages.frontend.team_single');
     }
 
     public function reports()

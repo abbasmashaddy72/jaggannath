@@ -20,7 +20,6 @@ Route::group(['middleware' => 'guest', 'namespace' => 'App\Http\Controllers\Fron
     Route::get('services', 'FrontendController@services')->name('services');
     Route::get('service_single', 'FrontendController@service_single')->name('service_single');
     Route::get('teams', 'FrontendController@teams')->name('teams');
-    Route::get('team_single', 'FrontendController@team_single')->name('team_single');
     Route::get('reports', 'FrontendController@reports')->name('reports');
     Route::get('events', 'FrontendController@events')->name('events');
     Route::get('about_us', 'FrontendController@about_us')->name('about_us');
