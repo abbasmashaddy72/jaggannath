@@ -21,17 +21,8 @@
 </head>
 
 <body class="font-body">
-    <!-- home section -->
-    <section class="bg-white py-10 md:mb-10">
 
-        <div class="container max-w-screen-2xl mx-auto px-4">
-
-            @include('layouts.frontend.navbar')
-            @if (!empty($home_top))
-                {{ $home_top }}
-            @endif
-        </div> <!-- container.// -->
-    </section>
+    @include('layouts.frontend.navbar')
 
     {{ $slot }}
 

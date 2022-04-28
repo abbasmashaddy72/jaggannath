@@ -20,11 +20,14 @@ Route::group(['middleware' => 'guest', 'namespace' => 'App\Http\Controllers\Fron
     Route::get('services', 'FrontendController@services')->name('services');
     Route::get('service_single', 'FrontendController@service_single')->name('service_single');
     Route::get('teams', 'FrontendController@teams')->name('teams');
-    Route::get('reports', 'FrontendController@reports')->name('reports');
-    Route::get('events', 'FrontendController@events')->name('events');
+    Route::get('insurance', 'FrontendController@insurance')->name('insurance');
+    Route::get('reviews', 'FrontendController@reviews')->name('reviews');
+    Route::get('career', 'FrontendController@career')->name('career');
+    Route::get('gallery', 'FrontendController@gallery')->name('gallery');
     Route::get('about_us', 'FrontendController@about_us')->name('about_us');
     Route::get('contact_us', 'FrontendController@contact_us')->name('contact_us');
     Route::get('book_appointment', 'FrontendController@book_appointment')->name('book_appointment');
+    Route::get('feedback', 'FrontendController@feedback')->name('feedback');
 });
 
 // 'index', 'create', 'store', 'show', 'edit', 'update', 'destroy'

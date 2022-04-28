@@ -43,14 +43,24 @@ class FrontendController extends Controller
         return view('pages.frontend.teams');
     }
 
-    public function reports()
+    public function insurance()
     {
-        return view('pages.frontend.reports');
+        return view('pages.frontend.insurance');
     }
 
-    public function events()
+    public function reviews()
     {
-        return view('pages.frontend.events');
+        return view('pages.frontend.reviews');
+    }
+
+    public function career()
+    {
+        return view('pages.frontend.career');
+    }
+
+    public function gallery()
+    {
+        return view('pages.frontend.gallery');
     }
 
     public function about_us()
@@ -66,5 +76,10 @@ class FrontendController extends Controller
     public function book_appointment()
     {
         return view('pages.frontend.book_appointment');
+    }
+
+    public function feedback()
+    {
+        return view('pages.frontend.feedback');
     }
 }
