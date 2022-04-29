@@ -5,7 +5,7 @@
         </x-slot>
 
         <div class="flex flex-wrap -mx-4">
-            Working On It
+            Simply adding a RichText Editor
         </div>
 
     </x-frontend.container>
