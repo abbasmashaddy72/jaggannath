@@ -13,16 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('blogs', function (Blueprint $table) {
+        Schema::create('teams', function (Blueprint $table) {
             $table->id();
             $table->foreignId('department_id')->constrained('departments')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignId('team_id')->constrained('teams')->onUpdate('cascade')->onDelete('cascade');
-            $table->string('title');
-            $table->string('image')->nullable();
-            $table->text('tags')->nullable();
-            $table->text('excerpt')->nullable();
-            $table->longText('description')->nullable();
-            $table->bigInteger('clicks')->default(0);
+            $table->string('name');
+            $table->string('image');
+            $table->string('qualification');
+            $table->text('profile');
+            $table->date('experience');
             $table->timestamps();
         });
     }
@@ -34,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('blogs');
+        Schema::dropIfExists('teams');
     }
 };

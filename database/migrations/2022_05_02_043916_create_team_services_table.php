@@ -13,16 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('blogs', function (Blueprint $table) {
+        Schema::create('team_services', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('department_id')->constrained('departments')->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('team_id')->constrained('teams')->onUpdate('cascade')->onDelete('cascade');
-            $table->string('title');
-            $table->string('image')->nullable();
-            $table->text('tags')->nullable();
-            $table->text('excerpt')->nullable();
-            $table->longText('description')->nullable();
-            $table->bigInteger('clicks')->default(0);
+            $table->foreignId('service_id')->constrained('services')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -34,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('blogs');
+        Schema::dropIfExists('team_services');
     }
 };

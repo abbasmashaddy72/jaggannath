@@ -16,15 +16,17 @@ return new class extends Migration
         Schema::create('book_appointments', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email')->nullable();
-            $table->string('gender');
-            $table->string('phone');
-            $table->string('age');
-            $table->string('address')->nullable();
-            $table->string('previous_record');
-            $table->string('previous_record_description')->nullable();
             $table->date('appointment_date');
             $table->time('appointment_time');
+            $table->string('phone');
+            $table->string('email')->nullable();
+            $table->string('gender');
+            $table->string('age');
+            $table->string('address')->nullable();
+            $table->foreignId('team_id')->constrained('teams')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('team_id')->constrained('teams')->onUpdate('cascade')->onDelete('cascade');
+            $table->string('previous_record');
+            $table->string('previous_record_description')->nullable();
             $table->timestamps();
         });
     }
