@@ -22,10 +22,10 @@ return new class extends Migration
             $table->string('phone');
             $table->string('how');
             $table->string('initial_response');
-            $table->string('explaination_of_tretment');
-            $table->string('coost_treatment');
+            $table->string('explanation_of_treatment');
+            $table->string('cost_treatment');
             $table->string('reception_rating');
-            $table->string('DMO_rating');
+            $table->string('dmo_rating');
             $table->string('nurse_rating');
             $table->string('house_keeping');
             $table->string('treatment_rating');

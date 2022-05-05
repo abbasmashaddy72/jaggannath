@@ -11,14 +11,15 @@ class BookAppointment extends Model
 
     protected $fillable = [
         'name',
-        'email',
-        'gender',
-        'phone',
-        'age',
-        'address',
-        'previous_record',
-        'previous_record_description',
         'appointment_date',
         'appointment_time',
+        'phone',
+        'email',
+        'gender',
+        'age',
+        'address',
+        'team_id',
+        'previous_record',
+        'previous_record_description'
     ];
 }

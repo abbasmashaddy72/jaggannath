@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('name');
             $table->string('image')->nullable();
             $table->text('link')->nullable();
-            $table->bigInteger('clicks')->default(0);
             $table->timestamps();
         });
     }

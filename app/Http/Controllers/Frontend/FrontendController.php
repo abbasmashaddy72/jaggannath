@@ -18,6 +18,11 @@ class FrontendController extends Controller
         return view('pages.frontend.home_page', compact('slider_images'));
     }
 
+    public function departments()
+    {
+        return view('pages.frontend.departments');
+    }
+
     public function blogs()
     {
         return view('pages.frontend.blogs');

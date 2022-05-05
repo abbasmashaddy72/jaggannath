@@ -10,6 +10,8 @@ class Blog extends Model
     use HasFactory;
 
     protected $fillable = [
+        'department_id',
+        'team_id',
         'title',
         'image',
         'tags',
@@ -17,4 +19,14 @@ class Blog extends Model
         'description',
         'clicks'
     ];
+
+    public function department()
+    {
+        return $this->belongsTo(Department::class);
+    }
+
+    public function team()
+    {
+        return $this->belongsTo(Team::class);
+    }
 }

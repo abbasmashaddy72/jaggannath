@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware' => 'guest', 'namespace' => 'App\Http\Controllers\Frontend'], function () {
     Route::get('/', 'FrontendController@index')->name('homepage');
+    Route::get('departments', 'FrontendController@departments')->name('departments');
     Route::get('blogs', 'FrontendController@blogs')->name('blogs');
     Route::get('blog_single', 'FrontendController@blog_single')->name('blog_single');
     Route::get('services', 'FrontendController@services')->name('services');

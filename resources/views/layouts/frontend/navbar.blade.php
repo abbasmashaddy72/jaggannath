@@ -23,6 +23,10 @@
                 </li>
                 <li
                     class="font-semibold text-gray-900 transition ease-in-out duration-300 mb-5 lg:mb-0 hover:scale-125 hover:rotate-6">
+                    <a href="{{ route('departments') }}">Departments</a>
+                </li>
+                <li
+                    class="font-semibold text-gray-900 transition ease-in-out duration-300 mb-5 lg:mb-0 hover:scale-125 hover:rotate-6">
                     <a href="{{ route('blogs') }}">Blogs</a>
                 </li>
                 <li

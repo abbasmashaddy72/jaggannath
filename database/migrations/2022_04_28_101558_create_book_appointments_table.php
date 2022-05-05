@@ -24,7 +24,6 @@ return new class extends Migration
             $table->string('age');
             $table->string('address')->nullable();
             $table->foreignId('team_id')->constrained('teams')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignId('team_id')->constrained('teams')->onUpdate('cascade')->onDelete('cascade');
             $table->string('previous_record');
             $table->string('previous_record_description')->nullable();
             $table->timestamps();
