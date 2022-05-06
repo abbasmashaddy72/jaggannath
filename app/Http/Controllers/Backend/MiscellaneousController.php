@@ -19,4 +19,19 @@ class MiscellaneousController extends Controller
             'url' => $image->getUrl('thumb')
         ]);
     }
+
+    public function terms()
+    {
+        return view('pages.backend.terms');
+    }
+
+    public function privacy()
+    {
+        return view('pages.backend.privacy');
+    }
+
+    public function career()
+    {
+        return view('pages.backend.career');
+    }
 }

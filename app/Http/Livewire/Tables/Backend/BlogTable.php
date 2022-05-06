@@ -15,7 +15,7 @@ class BlogTable extends LivewireDatatable
 
     public function builder()
     {
-        return Blog::query();
+        return Blog::query()->with('department', 'team');
     }
 
     public function columns()
@@ -33,6 +33,14 @@ class BlogTable extends LivewireDatatable
                 ->searchable()
                 ->filterable()
                 ->label('Title'),
+
+            Column::name('department.name')
+                ->filterable()
+                ->label('Department Name'),
+
+            Column::name('team.name')
+                ->filterable()
+                ->label('Team Name'),
 
             NumberColumn::name('clicks')
                 ->label('Views')

@@ -10,15 +10,15 @@
     @csrf
 
     @wire('debounce.200ms')
-    <x-form-input name="name" label="Name" type="text" />
+    <x-form-select name="team_id" label="Team Name" :options="Helper::getKeyValues('Team', 'name', 'id')" placeholder="Please Select" />
 
-    <x-form-input name="extra" label="Extra(Dr. Name)" type="text" />
+    <x-form-input name="name" label="Name" type="text" />
 
     <x-form-textarea name="message" label="message" required />
 
     <x-form-input name="stars" label="Stars" type="number" />
 
-    <x-backend.single-upload name="image" label="Image" />
+    <x-form-input name="image" label="URL" type="text" />
     @endwire
 
     <div class="mt-3">

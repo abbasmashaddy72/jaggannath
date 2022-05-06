@@ -3,6 +3,10 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\About;
+use App\Models\Department;
+use App\Models\Insurance;
+use App\Services\Helper;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
@@ -20,7 +24,9 @@ class FrontendController extends Controller
 
     public function departments()
     {
-        return view('pages.frontend.departments');
+        $data = Department::get();
+
+        return view('pages.frontend.departments', compact('data'));
     }
 
     public function blogs()
@@ -50,7 +56,9 @@ class FrontendController extends Controller
 
     public function insurance()
     {
-        return view('pages.frontend.insurance');
+        $data = Insurance::get();
+
+        return view('pages.frontend.insurance', compact('data'));
     }
 
     public function reviews()
@@ -60,7 +68,23 @@ class FrontendController extends Controller
 
     public function career()
     {
-        return view('pages.frontend.career');
+        $data = Helper::get_static_option('career_description');
+
+        return view('pages.frontend.career', compact('data'));
+    }
+
+    public function privacy()
+    {
+        $data = Helper::get_static_option('privacy_description');
+
+        return view('pages.frontend.privacy', compact('data'));
+    }
+
+    public function terms()
+    {
+        $data = Helper::get_static_option('terms_description');
+
+        return view('pages.frontend.terms', compact('data'));
     }
 
     public function gallery()
@@ -70,7 +94,9 @@ class FrontendController extends Controller
 
     public function about_us()
     {
-        return view('pages.frontend.about_us');
+        $data = About::get();
+
+        return view('pages.frontend.about_us', compact('data'));
     }
 
     public function contact_us()

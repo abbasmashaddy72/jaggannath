@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Tables\Backend;
 
 use App\Models\Team;
+use Carbon\Carbon;
 use Mediconesystems\LivewireDatatables\Column;
 use Mediconesystems\LivewireDatatables\Http\Livewire\LivewireDatatable;
 use Mediconesystems\LivewireDatatables\NumberColumn;
@@ -48,9 +49,11 @@ class TeamTable extends LivewireDatatable
                 ->truncate(20)
                 ->label('Profile'),
 
-            NumberColumn::name('experience')
-                ->label('Experience')
-                ->filterable(),
+            NumberColumn::callback(['experience'], function ($experience) {
+                $now  = Carbon::now();
+                return $now->diffInYears($experience);
+            })
+                ->label('Experience'),
 
             Column::callback(['id'], function ($id) {
                 return view('pages.backend.teams.actions', ['id' => $id]);

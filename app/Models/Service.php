@@ -23,4 +23,9 @@ class Service extends Model
     {
         return $this->belongsTo(Department::class);
     }
+
+    public function teams()
+    {
+        return $this->belongsToMany(Team::class, 'team_services');
+    }
 }

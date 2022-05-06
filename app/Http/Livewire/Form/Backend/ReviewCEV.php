@@ -9,10 +9,8 @@ use Livewire\WithFileUploads;
 
 class ReviewCEV extends Component
 {
-    use WithFileUploads;
-
     // Model Values
-    public $name, $image, $extra, $message, $stars;
+    public $name, $image, $team_id, $message, $stars;
 
     // Custom Values
     public $action, $isUploaded = false, $review;
@@ -20,7 +18,7 @@ class ReviewCEV extends Component
     protected $rules = [
         'name' => '',
         'image' => '',
-        'extra' => '',
+        'team_id' => '',
         'message' => '',
         'stars' => ''
     ];
@@ -28,19 +26,11 @@ class ReviewCEV extends Component
     public function updated($propertyName)
     {
         $this->validateOnly($propertyName);
-
-        if (gettype($this->image) != 'string') {
-            $this->isUploaded = true;
-        }
     }
 
     public function store()
     {
         $validatedData = $this->validate();
-
-        if (gettype($this->image) != 'string') {
-            $validatedData['image'] = $this->image->store('review_images');
-        }
 
         Review::create($validatedData);
 
@@ -52,10 +42,6 @@ class ReviewCEV extends Component
     public function update()
     {
         $validatedData = $this->validate();
-
-        if (gettype($this->image) != 'string') {
-            $validatedData['image'] = $this->image->store('review_images');
-        }
 
         Review::where('id', $this->review)->update($validatedData);
 
@@ -70,7 +56,7 @@ class ReviewCEV extends Component
             $data = Review::findOrFail($review);
             $this->name = $data->name;
             $this->image = $data->image;
-            $this->extra = $data->extra;
+            $this->team_id = $data->team_id;
             $this->message = $data->message;
             $this->stars = $data->stars;
         }

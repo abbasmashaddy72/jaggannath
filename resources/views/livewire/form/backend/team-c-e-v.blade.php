@@ -14,9 +14,9 @@
 
     <x-form-input name="qualification" label="Qualification" type="text" />
 
-    <x-form-input name="department" label="Department" type="text" />
+    <x-form-select name="department_id" label="Department Name" :options="Helper::getKeyValues('Department', 'name', 'id')" placeholder="Please Select" />
 
-    <x-form-textarea name="about" label="About" required />
+    <x-form-textarea name="profile" label="Profile" required />
 
     <x-form-input name="experience" label="Experience(Started At)" type="date" />
 

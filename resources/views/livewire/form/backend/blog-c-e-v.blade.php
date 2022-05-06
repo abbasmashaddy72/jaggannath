@@ -10,6 +10,8 @@
     @csrf
 
     @wire('debounce.200ms')
+    <x-form-select name="team_id" label="Team Name" :options="Helper::getKeyValues('Team', 'name', 'id')" placeholder="Please Select" />
+
     <x-form-input name="title" label="Title" type="text" />
 
     <x-form-input name="tags" label="Tags" type="text" />

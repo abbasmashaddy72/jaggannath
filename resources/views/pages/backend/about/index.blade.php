@@ -5,7 +5,7 @@
         </x-slot>
 
         <x-slot name="addbutton">
-            <x-backend.a-button href="{{ route('admin.blog.create') }}">Add</x-backend.a-button>
+            <x-backend.a-button href="{{ route('admin.about.create') }}">Add</x-backend.a-button>
         </x-slot>
 
         @livewire('tables.backend.about-table')

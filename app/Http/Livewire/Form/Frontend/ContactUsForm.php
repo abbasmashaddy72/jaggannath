@@ -16,12 +16,17 @@ class ContactUsForm extends Component
     public $success;
 
     protected $rules = [
-        'name' => '',
+        'name' => 'required',
         'email' => '',
         'contact_number' => '',
         'address' => '',
         'questions' => ''
     ];
+
+    public function updated($propertyName)
+    {
+        $this->validateOnly($propertyName);
+    }
 
     public function submit()
     {

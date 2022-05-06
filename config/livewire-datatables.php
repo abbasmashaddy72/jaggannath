@@ -78,8 +78,8 @@ return [
 
     'default_classes' => [
         'row' => [
-            'even' => 'divide-x divide-gray-100 text-sm text-gray-900 bg-gray-100',
-            'odd' => 'divide-x divide-gray-100 text-sm text-gray-900 bg-gray-50',
+            'even' => 'divide-x divide-gray-300 text-sm text-gray-900 bg-gray-300',
+            'odd' => 'divide-x divide-gray-100 text-sm text-gray-900 bg-gray-100',
             'selected' => 'divide-x divide-gray-100 text-sm text-gray-900 bg-yellow-100',
         ],
         'cell' => 'whitespace-no-wrap text-sm text-gray-900 px-6 py-2',

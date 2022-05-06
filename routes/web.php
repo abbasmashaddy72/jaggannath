@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group(['middleware' => 'guest', 'namespace' => 'App\Http\Controllers\Frontend'], function () {
+Route::group(['namespace' => 'App\Http\Controllers\Frontend'], function () {
     Route::get('/', 'FrontendController@index')->name('homepage');
     Route::get('departments', 'FrontendController@departments')->name('departments');
     Route::get('blogs', 'FrontendController@blogs')->name('blogs');
@@ -37,9 +37,17 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth', 'na
 
     Route::get('homepage', 'HomePageController@index')->name('homepage');
 
+    Route::get('terms', 'MiscellaneousController@terms')->name('terms');
+
+    Route::get('privacy', 'MiscellaneousController@privacy')->name('privacy');
+
+    Route::get('career', 'MiscellaneousController@career')->name('career');
+
     Route::resource('contact-us', 'ContactUsController')->only([
         'index', 'show'
     ]);
+
+    Route::get('book-appointment', 'BookAppointmentController@index')->name('book.appointment');
 
     Route::resource('about', 'AboutController')->only([
         'index', 'create', 'store',  'edit', 'show'

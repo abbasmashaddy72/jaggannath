@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreBookAppointmentRequest;
-use App\Http\Requests\UpdateBookAppointmentRequest;
-use App\Models\BookAppointment;
+use App\Http\Requests\StorePackageRequest;
+use App\Http\Requests\UpdatePackageRequest;
+use App\Models\Package;
 
-class BookAppointmentController extends Controller
+class PackageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,10 +31,10 @@ class BookAppointmentController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreBookAppointmentRequest  $request
+     * @param  \App\Http\Requests\StorePackageRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreBookAppointmentRequest $request)
+    public function store(StorePackageRequest $request)
     {
         //
     }
@@ -42,10 +42,10 @@ class BookAppointmentController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\BookAppointment  $bookAppointment
+     * @param  \App\Models\Package  $package
      * @return \Illuminate\Http\Response
      */
-    public function show(BookAppointment $bookAppointment)
+    public function show(Package $package)
     {
         //
     }
@@ -53,10 +53,10 @@ class BookAppointmentController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\BookAppointment  $bookAppointment
+     * @param  \App\Models\Package  $package
      * @return \Illuminate\Http\Response
      */
-    public function edit(BookAppointment $bookAppointment)
+    public function edit(Package $package)
     {
         //
     }
@@ -64,11 +64,11 @@ class BookAppointmentController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateBookAppointmentRequest  $request
-     * @param  \App\Models\BookAppointment  $bookAppointment
+     * @param  \App\Http\Requests\UpdatePackageRequest  $request
+     * @param  \App\Models\Package  $package
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateBookAppointmentRequest $request, BookAppointment $bookAppointment)
+    public function update(UpdatePackageRequest $request, Package $package)
     {
         //
     }
@@ -76,10 +76,10 @@ class BookAppointmentController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\BookAppointment  $bookAppointment
+     * @param  \App\Models\Package  $package
      * @return \Illuminate\Http\Response
      */
-    public function destroy(BookAppointment $bookAppointment)
+    public function destroy(Package $package)
     {
         //
     }
