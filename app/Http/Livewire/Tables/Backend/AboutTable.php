@@ -2,19 +2,20 @@
 
 namespace App\Http\Livewire\Tables\Backend;
 
-use App\Models\Team;
+use App\Models\About;
 use Mediconesystems\LivewireDatatables\Column;
+use Mediconesystems\LivewireDatatables\DateColumn;
 use Mediconesystems\LivewireDatatables\Http\Livewire\LivewireDatatable;
 use Mediconesystems\LivewireDatatables\NumberColumn;
 
-class TeamTable extends LivewireDatatable
+class AboutTable extends LivewireDatatable
 {
-    public $model = Team::class;
+    public $model = About::class;
     public $exportable = true;
 
     public function builder()
     {
-        return Team::query()->with('department');
+        return About::query();
     }
 
     public function columns()
@@ -28,32 +29,21 @@ class TeamTable extends LivewireDatatable
                 ->defaultSort('desc')
                 ->filterable(),
 
-            Column::name('name')
+            Column::name('title')
                 ->searchable()
                 ->filterable()
-                ->label('Name'),
+                ->label('Title'),
 
-            Column::name('qualification')
-                ->searchable()
-                ->filterable()
-                ->label('Qualification'),
-
-            Column::name('department.name')
-                ->searchable()
-                ->filterable()
-                ->label('Department'),
-
-            Column::name('profile')
+            Column::name('excerpt')
                 ->searchable()
                 ->truncate(20)
-                ->label('Profile'),
+                ->label('Excerpt'),
 
-            NumberColumn::name('experience')
-                ->label('Experience')
+            DateColumn::name('created_at')
                 ->filterable(),
 
             Column::callback(['id'], function ($id) {
-                return view('pages.backend.teams.actions', ['id' => $id]);
+                return view('pages.backend.about.actions', ['id' => $id]);
             })->excludeFromExport()->unsortable()->label('Action'),
         ];
     }

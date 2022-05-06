@@ -60,7 +60,7 @@
                 </svg>
             </x-backend.side-link>
 
-            <x-backend.side-link :href="route('admin.aboutUs')" :active="request()->routeIs('admin.aboutUs*')">
+            <x-backend.side-link :href="route('admin.about.index')" :active="request()->routeIs('admin.about.index*')">
                 <x-slot name="nav_title">{{ __('About Us') }}</x-slot>
                 <svg width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path opacity="0.4"

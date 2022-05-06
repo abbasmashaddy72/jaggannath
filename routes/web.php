@@ -41,28 +41,29 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth', 'na
         'index', 'show'
     ]);
 
-    Route::get('about-us', 'AboutUsController@index')->name('aboutUs');
-
+    Route::resource('about', 'AboutController')->only([
+        'index', 'create', 'store',  'edit', 'show'
+    ]);
     Route::resource('faq', 'FaqController')->only([
-        'index', 'create', 'store',  'edit'
+        'index', 'create', 'store',  'edit', 'show'
     ]);
 
     Route::resource('review', 'ReviewController')->only([
-        'index', 'create', 'store',  'edit'
+        'index', 'create', 'store',  'edit', 'show'
     ]);
 
     Route::resource('team', 'TeamController')->only([
-        'index', 'create', 'store',  'edit'
+        'index', 'create', 'store',  'edit', 'show'
     ]);
 
     Route::post('image_upload', 'MiscellaneousController@image_upload')->name('ckeditor.upload');
 
     Route::resource('blog', 'BlogController')->only([
-        'index', 'create', 'store',  'edit'
+        'index', 'create', 'store',  'edit', 'show'
     ]);
 
     Route::resource('feature', 'FeatureController')->only([
-        'index', 'create', 'store',  'edit'
+        'index', 'create', 'store',  'edit', 'show'
     ]);
 
     Route::group(['prefix' => 'laravel-filemanager', 'middleware' => 'auth'], function () {
