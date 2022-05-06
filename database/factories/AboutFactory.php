@@ -17,7 +17,9 @@ class AboutFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'title' => $this->faker->realText(30),
+            'image' => 'one.jpg',
+            'excerpt' => $this->faker->paragraph(rand(2, 4))
         ];
     }
 }

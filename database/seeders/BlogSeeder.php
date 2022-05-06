@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Blog;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -14,6 +15,6 @@ class BlogSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Blog::factory()->count(rand(200, 500))->create();
     }
 }

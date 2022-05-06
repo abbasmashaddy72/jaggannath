@@ -17,7 +17,9 @@ class InsuranceFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => $this->faker->name(),
+            'image' => 'one.jpg',
+            'link' => $this->faker->imageUrl()
         ];
     }
 }

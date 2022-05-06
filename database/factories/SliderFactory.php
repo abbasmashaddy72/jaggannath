@@ -17,7 +17,8 @@ class SliderFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'image' => 'one.jpg',
+            'on' => 'homepage'
         ];
     }
 }

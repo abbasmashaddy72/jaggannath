@@ -17,7 +17,9 @@ class DepartmentFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => $this->faker->name(),
+            'image' => 'one.jpg',
+            'excerpt' => $this->faker->paragraph(rand(2, 3))
         ];
     }
 }

@@ -30,7 +30,7 @@ class BookAppointmentForm extends Component
         'previous_record' => '',
         'previous_record_description' => '',
         'appointment_date' => '',
-        'appointment_time' => '',
+        'appointment_time' => ''
     ];
 
     public function submit()

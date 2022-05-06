@@ -17,7 +17,8 @@ class FaqFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'question' => $this->faker->paragraph(rand(1, 2)) . '?',
+            'answer' => $this->faker->paragraph(rand(1, 2)) . '.'
         ];
     }
 }

@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Insurance;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -14,6 +15,6 @@ class InsuranceSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Insurance::factory()->count(rand(5, 15))->create();
     }
 }

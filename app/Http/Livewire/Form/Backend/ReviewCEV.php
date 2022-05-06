@@ -22,7 +22,7 @@ class ReviewCEV extends Component
         'image' => '',
         'extra' => '',
         'message' => '',
-        'stars' => '',
+        'stars' => ''
     ];
 
     public function updated($propertyName)

@@ -23,7 +23,7 @@ class TeamCEV extends Component
         'qualification' => '',
         'department' => '',
         'about' => '',
-        'experience' => '',
+        'experience' => ''
     ];
 
     public function updated($propertyName)

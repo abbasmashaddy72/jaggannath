@@ -10,15 +10,20 @@ class Team extends Model
     use HasFactory;
 
     protected $fillable = [
+        'department_id',
         'name',
         'image',
         'qualification',
-        'department',
-        'about',
-        'experience',
+        'profile',
+        'experience'
     ];
 
     protected $casts = [
-        'experience' => 'date:Y-m-d',
+        'experience' => 'date:Y-m-d'
     ];
+
+    public function department()
+    {
+        return $this->belongsTo(Department::class);
+    }
 }

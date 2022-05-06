@@ -10,6 +10,7 @@ class BookAppointment extends Model
     use HasFactory;
 
     protected $fillable = [
+        'team_id',
         'name',
         'appointment_date',
         'appointment_time',
@@ -18,8 +19,12 @@ class BookAppointment extends Model
         'gender',
         'age',
         'address',
-        'team_id',
         'previous_record',
         'previous_record_description'
     ];
+
+    public function team()
+    {
+        return $this->belongsTo(Team::class);
+    }
 }

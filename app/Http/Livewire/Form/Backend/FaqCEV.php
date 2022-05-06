@@ -16,7 +16,7 @@ class FaqCEV extends Component
 
     protected $rules = [
         'question' => '',
-        'answer' => '',
+        'answer' => ''
     ];
 
     public function updated($propertyName)

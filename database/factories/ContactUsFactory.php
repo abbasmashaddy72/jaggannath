@@ -17,7 +17,11 @@ class ContactUsFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => $this->faker->name(),
+            'email' => $this->faker->safeEmail(),
+            'contact_number' => rand(7000000000, 9000000000),
+            'address' => $this->faker->address(),
+            'questions' => $this->faker->paragraph(rand(1, 2)) . '?'
         ];
     }
 }

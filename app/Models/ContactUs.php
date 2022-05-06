@@ -14,6 +14,6 @@ class ContactUs extends Model
         'email',
         'contact_number',
         'address',
-        'questions',
+        'questions'
     ];
 }

@@ -17,7 +17,10 @@ class FeatureFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'logo' => 'one.jpg',
+            'title' => $this->faker->realText(50),
+            'excerpt' => $this->faker->paragraph(rand(2, 4)),
+            'link' => $this->faker->imageUrl()
         ];
     }
 }

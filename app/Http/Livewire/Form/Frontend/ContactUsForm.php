@@ -20,7 +20,7 @@ class ContactUsForm extends Component
         'email' => '',
         'contact_number' => '',
         'address' => '',
-        'questions' => '',
+        'questions' => ''
     ];
 
     public function submit()

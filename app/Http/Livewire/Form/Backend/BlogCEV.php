@@ -22,7 +22,7 @@ class BlogCEV extends Component
         'image' => '',
         'tags' => '',
         'excerpt' => '',
-        'description' => '',
+        'description' => ''
     ];
 
     public function updated($propertyName)
