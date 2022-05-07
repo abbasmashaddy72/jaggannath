@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\ContactUs;
+use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        User::factory(1)->create();
         $this->call(ContactUsSeeder::class);
         $this->call(FeedbackSeeder::class);
         $this->call(AboutSeeder::class);
@@ -29,5 +30,7 @@ class DatabaseSeeder extends Seeder
         $this->call(ServiceSeeder::class);
         $this->call(SliderSeeder::class);
         $this->call(TeamServiceSeeder::class);
+        $this->call(PackageSeeder::class);
+        $this->call(PackageListSeeder::class);
     }
 }

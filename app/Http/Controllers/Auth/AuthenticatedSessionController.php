@@ -17,6 +17,11 @@ class AuthenticatedSessionController extends Controller
      */
     public function create()
     {
+       /**
+        * @get('/login')
+        * @name('login')
+        * @middlewares('web', guest')
+        */
         return view('auth.login');
     }
 
@@ -28,6 +33,10 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request)
     {
+       /**
+        * @post('/login')
+        * @middlewares('web', guest')
+        */
         $request->authenticate();
 
         $request->session()->regenerate();
@@ -43,6 +52,11 @@ class AuthenticatedSessionController extends Controller
      */
     public function destroy(Request $request)
     {
+       /**
+        * @post('/logout')
+        * @name('logout')
+        * @middlewares('web', auth')
+        */
         Auth::guard('web')->logout();
 
         $request->session()->invalidate();

@@ -16,6 +16,11 @@ class FaqController extends Controller
      */
     public function index()
     {
+       /**
+        * @get('/admin/faq')
+        * @name('admin.faq.index')
+        * @middlewares('web', auth')
+        */
         return view('pages.backend.faqs.index');
     }
 
@@ -26,6 +31,11 @@ class FaqController extends Controller
      */
     public function create()
     {
+       /**
+        * @get('/admin/faq/create')
+        * @name('admin.faq.create')
+        * @middlewares('web', auth')
+        */
         $faq = null;
 
         return view('pages.backend.faqs.cev', compact('faq'));
@@ -39,6 +49,11 @@ class FaqController extends Controller
      */
     public function store(StoreFaqRequest $request)
     {
+       /**
+        * @post('/admin/faq')
+        * @name('admin.faq.store')
+        * @middlewares('web', auth')
+        */
         //
     }
 
@@ -50,6 +65,11 @@ class FaqController extends Controller
      */
     public function show(Faq $faq)
     {
+       /**
+        * @get('/admin/faq/{faq}')
+        * @name('admin.faq.show')
+        * @middlewares('web', auth')
+        */
         $faq = $faq->id;
 
         return view('pages.backend.faqs.cev', compact('faq'));
@@ -63,6 +83,11 @@ class FaqController extends Controller
      */
     public function edit(Faq $faq)
     {
+       /**
+        * @get('/admin/faq/{faq}/edit')
+        * @name('admin.faq.edit')
+        * @middlewares('web', auth')
+        */
         $faq = $faq->id;
 
         return view('pages.backend.faqs.cev', compact('faq'));

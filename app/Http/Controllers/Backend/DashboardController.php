@@ -11,6 +11,11 @@ class DashboardController extends Controller
 {
     public function index()
     {
+       /**
+        * @get('/admin/dashboard')
+        * @name('admin.dashboard')
+        * @middlewares('web', auth')
+        */
         $contactedUs = ContactUs::count();
         $blogsCount = Blog::count();
         $blogsViewSum = Blog::sum('clicks');

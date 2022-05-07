@@ -15,6 +15,11 @@ class PasswordResetLinkController extends Controller
      */
     public function create()
     {
+       /**
+        * @get('/forgot-password')
+        * @name('password.request')
+        * @middlewares('web', guest')
+        */
         return view('auth.forgot-password');
     }
 
@@ -28,6 +33,11 @@ class PasswordResetLinkController extends Controller
      */
     public function store(Request $request)
     {
+       /**
+        * @post('/forgot-password')
+        * @name('password.email')
+        * @middlewares('web', guest')
+        */
         $request->validate([
             'email' => ['required', 'email'],
         ]);

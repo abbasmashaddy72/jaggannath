@@ -16,6 +16,11 @@ class TeamController extends Controller
      */
     public function index()
     {
+       /**
+        * @get('/admin/team')
+        * @name('admin.team.index')
+        * @middlewares('web', auth')
+        */
         return view('pages.backend.teams.index');
     }
 
@@ -26,6 +31,11 @@ class TeamController extends Controller
      */
     public function create()
     {
+       /**
+        * @get('/admin/team/create')
+        * @name('admin.team.create')
+        * @middlewares('web', auth')
+        */
         $team = null;
 
         return view('pages.backend.teams.cev', compact('team'));
@@ -39,6 +49,11 @@ class TeamController extends Controller
      */
     public function store(StoreTeamRequest $request)
     {
+       /**
+        * @post('/admin/team')
+        * @name('admin.team.store')
+        * @middlewares('web', auth')
+        */
         //
     }
 
@@ -50,6 +65,11 @@ class TeamController extends Controller
      */
     public function show(Team $team)
     {
+       /**
+        * @get('/admin/team/{team}')
+        * @name('admin.team.show')
+        * @middlewares('web', auth')
+        */
         $team = $team->id;
 
         return view('pages.backend.teams.cev', compact('team'));
@@ -63,6 +83,11 @@ class TeamController extends Controller
      */
     public function edit(Team $team)
     {
+       /**
+        * @get('/admin/team/{team}/edit')
+        * @name('admin.team.edit')
+        * @middlewares('web', auth')
+        */
         $team = $team->id;
 
         return view('pages.backend.teams.cev', compact('team'));

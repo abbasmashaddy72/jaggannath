@@ -22,6 +22,7 @@ Route::group(['namespace' => 'App\Http\Controllers\Frontend'], function () {
     Route::get('service_single', 'FrontendController@service_single')->name('service_single');
     Route::get('teams', 'FrontendController@teams')->name('teams');
     Route::get('insurance', 'FrontendController@insurance')->name('insurance');
+    Route::get('packages', 'FrontendController@packages')->name('packages');
     Route::get('reviews', 'FrontendController@reviews')->name('reviews');
     Route::get('career', 'FrontendController@career')->name('career');
     Route::get('gallery', 'FrontendController@gallery')->name('gallery');
@@ -42,6 +43,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth', 'na
     Route::get('privacy', 'MiscellaneousController@privacy')->name('privacy');
 
     Route::get('career', 'MiscellaneousController@career')->name('career');
+
+    Route::get('feedback', 'MiscellaneousController@feedback')->name('feedback');
 
     Route::resource('contact-us', 'ContactUsController')->only([
         'index', 'show'
@@ -67,6 +70,14 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth', 'na
     Route::post('image_upload', 'MiscellaneousController@image_upload')->name('ckeditor.upload');
 
     Route::resource('blog', 'BlogController')->only([
+        'index', 'create', 'store',  'edit', 'show'
+    ]);
+
+    Route::resource('package', 'PackageController')->only([
+        'index', 'create', 'store',  'edit', 'show'
+    ]);
+
+    Route::resource('package-list', 'PackageListController')->only([
         'index', 'create', 'store',  'edit', 'show'
     ]);
 

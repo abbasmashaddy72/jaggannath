@@ -16,6 +16,11 @@ class AboutController extends Controller
      */
     public function index()
     {
+       /**
+        * @get('/admin/about')
+        * @name('admin.about.index')
+        * @middlewares('web', auth')
+        */
         return view('pages.backend.about.index');
     }
 
@@ -26,6 +31,11 @@ class AboutController extends Controller
      */
     public function create()
     {
+       /**
+        * @get('/admin/about/create')
+        * @name('admin.about.create')
+        * @middlewares('web', auth')
+        */
         $about = null;
 
         return view('pages.backend.about.cev', compact('about'));
@@ -39,6 +49,11 @@ class AboutController extends Controller
      */
     public function store(StoreAboutRequest $request)
     {
+       /**
+        * @post('/admin/about')
+        * @name('admin.about.store')
+        * @middlewares('web', auth')
+        */
         //
     }
 
@@ -50,6 +65,11 @@ class AboutController extends Controller
      */
     public function show(About $about)
     {
+       /**
+        * @get('/admin/about/{about}')
+        * @name('admin.about.show')
+        * @middlewares('web', auth')
+        */
         $about = $about->id;
 
         return view('pages.backend.about.cev', compact('about'));
@@ -63,6 +83,11 @@ class AboutController extends Controller
      */
     public function edit(About $about)
     {
+       /**
+        * @get('/admin/about/{about}/edit')
+        * @name('admin.about.edit')
+        * @middlewares('web', auth')
+        */
         $about = $about->id;
 
         return view('pages.backend.about.cev', compact('about'));

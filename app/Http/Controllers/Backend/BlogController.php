@@ -16,6 +16,11 @@ class BlogController extends Controller
      */
     public function index()
     {
+       /**
+        * @get('/admin/blog')
+        * @name('admin.blog.index')
+        * @middlewares('web', auth')
+        */
         return view('pages.backend.blogs.index');
     }
 
@@ -26,6 +31,11 @@ class BlogController extends Controller
      */
     public function create()
     {
+       /**
+        * @get('/admin/blog/create')
+        * @name('admin.blog.create')
+        * @middlewares('web', auth')
+        */
         $blog = null;
 
         return view('pages.backend.blogs.cev', compact('blog'));
@@ -39,6 +49,11 @@ class BlogController extends Controller
      */
     public function store(StoreBlogRequest $request)
     {
+       /**
+        * @post('/admin/blog')
+        * @name('admin.blog.store')
+        * @middlewares('web', auth')
+        */
         //
     }
 
@@ -50,6 +65,11 @@ class BlogController extends Controller
      */
     public function show(Blog $blog)
     {
+       /**
+        * @get('/admin/blog/{blog}')
+        * @name('admin.blog.show')
+        * @middlewares('web', auth')
+        */
         $blog = $blog->id;
 
         return view('pages.backend.blogs.cev', compact('blog'));
@@ -63,6 +83,11 @@ class BlogController extends Controller
      */
     public function edit(Blog $blog)
     {
+       /**
+        * @get('/admin/blog/{blog}/edit')
+        * @name('admin.blog.edit')
+        * @middlewares('web', auth')
+        */
         $blog = $blog->id;
 
         return view('pages.backend.blogs.cev', compact('blog'));

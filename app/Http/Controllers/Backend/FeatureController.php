@@ -16,6 +16,11 @@ class FeatureController extends Controller
      */
     public function index()
     {
+       /**
+        * @get('/admin/feature')
+        * @name('admin.feature.index')
+        * @middlewares('web', auth')
+        */
         return view('pages.backend.features.index');
     }
 
@@ -26,6 +31,11 @@ class FeatureController extends Controller
      */
     public function create()
     {
+       /**
+        * @get('/admin/feature/create')
+        * @name('admin.feature.create')
+        * @middlewares('web', auth')
+        */
         $feature = null;
 
         return view('pages.backend.features.cev', compact('feature'));
@@ -39,6 +49,11 @@ class FeatureController extends Controller
      */
     public function store(StoreFeatureRequest $request)
     {
+       /**
+        * @post('/admin/feature')
+        * @name('admin.feature.store')
+        * @middlewares('web', auth')
+        */
         //
     }
 
@@ -50,6 +65,11 @@ class FeatureController extends Controller
      */
     public function show(Feature $feature)
     {
+       /**
+        * @get('/admin/feature/{feature}')
+        * @name('admin.feature.show')
+        * @middlewares('web', auth')
+        */
         $feature = $feature->id;
 
         return view('pages.backend.features.cev', compact('feature'));
@@ -63,6 +83,11 @@ class FeatureController extends Controller
      */
     public function edit(Feature $feature)
     {
+       /**
+        * @get('/admin/feature/{feature}/edit')
+        * @name('admin.feature.edit')
+        * @middlewares('web', auth')
+        */
         $feature = $feature->id;
 
         return view('pages.backend.features.cev', compact('feature'));

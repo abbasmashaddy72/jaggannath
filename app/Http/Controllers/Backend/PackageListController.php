@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Backend;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StorePackageListRequest;
 use App\Http\Requests\UpdatePackageListRequest;
 use App\Models\PackageList;
@@ -15,7 +16,12 @@ class PackageListController extends Controller
      */
     public function index()
     {
-        //
+        /**
+         * @get('/admin/package-list')
+         * @name('admin.package-list.index')
+         * @middlewares('web', auth')
+         */
+        return view('pages.backend.packageLists.index');
     }
 
     /**
@@ -25,7 +31,14 @@ class PackageListController extends Controller
      */
     public function create()
     {
-        //
+        /**
+         * @get('/admin/package-list/create')
+         * @name('admin.package-list.create')
+         * @middlewares('web', auth')
+         */
+        $packageList = null;
+
+        return view('pages.backend.packageLists.cev', compact('packageList'));
     }
 
     /**
@@ -36,6 +49,11 @@ class PackageListController extends Controller
      */
     public function store(StorePackageListRequest $request)
     {
+        /**
+         * @post('/admin/package-list')
+         * @name('admin.package-list.store')
+         * @middlewares('web', auth')
+         */
         //
     }
 
@@ -47,7 +65,14 @@ class PackageListController extends Controller
      */
     public function show(PackageList $packageList)
     {
-        //
+        /**
+         * @get('/admin/package-list/{package_list}')
+         * @name('admin.package-list.show')
+         * @middlewares('web', auth')
+         */
+        $packageList = $packageList->id;
+
+        return view('pages.backend.packageLists.cev', compact('packageList'));
     }
 
     /**
@@ -58,7 +83,14 @@ class PackageListController extends Controller
      */
     public function edit(PackageList $packageList)
     {
-        //
+        /**
+         * @get('/admin/package-list/{package_list}/edit')
+         * @name('admin.package-list.edit')
+         * @middlewares('web', auth')
+         */
+        $packageList = $packageList->id;
+
+        return view('pages.backend.packageLists.cev', compact('packageList'));
     }
 
     /**

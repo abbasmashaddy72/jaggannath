@@ -1,5 +1,5 @@
 <div class="flex justify-around space-x-1">
-    <a href="{{ route('admin.contact-us.show', [$id]) }}"
+    <a href="{{ route('admin.package-list.show', [$id]) }}"
         class="p-1 text-teal-600 rounded hover:bg-teal-600 hover:text-white">
         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
             <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
@@ -9,7 +9,7 @@
         </svg>
     </a>
 
-    <a href="{{ route('admin.contact-us.edit', [$id]) }}"
+    <a href="{{ route('admin.package-list.edit', [$id]) }}"
         class="p-1 text-blue-600 rounded hover:bg-blue-600 hover:text-white">
         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
             <path

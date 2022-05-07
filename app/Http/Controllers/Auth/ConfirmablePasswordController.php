@@ -17,6 +17,11 @@ class ConfirmablePasswordController extends Controller
      */
     public function show()
     {
+       /**
+        * @get('/confirm-password')
+        * @name('password.confirm')
+        * @middlewares('web', auth')
+        */
         return view('auth.confirm-password');
     }
 
@@ -28,6 +33,10 @@ class ConfirmablePasswordController extends Controller
      */
     public function store(Request $request)
     {
+       /**
+        * @post('/confirm-password')
+        * @middlewares('web', auth')
+        */
         if (! Auth::guard('web')->validate([
             'email' => $request->user()->email,
             'password' => $request->password,

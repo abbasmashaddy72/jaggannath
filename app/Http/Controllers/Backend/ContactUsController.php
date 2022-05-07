@@ -16,6 +16,11 @@ class ContactUsController extends Controller
      */
     public function index()
     {
+       /**
+        * @get('/admin/contact-us')
+        * @name('admin.contact-us.index')
+        * @middlewares('web', auth')
+        */
         return view('pages.backend.contactUs.index');
     }
 
@@ -48,9 +53,12 @@ class ContactUsController extends Controller
      */
     public function show(ContactUs $contactUs)
     {
-        $contactUs = $contactUs->id;
-
-        return view('pages.backend.contactUs.cev', compact('contactUs'));
+       /**
+        * @get('/admin/contact-us/{contact_u}')
+        * @name('admin.contact-us.show')
+        * @middlewares('web', auth')
+        */
+        //
     }
 
     /**

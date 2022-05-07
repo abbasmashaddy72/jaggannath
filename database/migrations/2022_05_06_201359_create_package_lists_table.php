@@ -15,6 +15,10 @@ return new class extends Migration
     {
         Schema::create('package_lists', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('package_id')->constrained('packages')->onUpdate('cascade')->onDelete('cascade');
+            $table->string('name');
+            $table->string('image');
+            $table->longText('list');
             $table->timestamps();
         });
     }

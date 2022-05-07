@@ -14,6 +14,11 @@ class BookAppointmentController extends Controller
      */
     public function index()
     {
+       /**
+        * @get('/admin/book-appointment')
+        * @name('admin.book.appointment')
+        * @middlewares('web', auth')
+        */
         return view('pages.backend.book_appointment');
     }
 }

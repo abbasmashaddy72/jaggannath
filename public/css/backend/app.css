@@ -1711,6 +1711,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-right-width: calc(1px * var(--tw-divide-x-reverse));
   border-left-width: calc(1px * calc(1 - var(--tw-divide-x-reverse)));
 }
+.divide-gray-300 > :not([hidden]) ~ :not([hidden]){
+  --tw-divide-opacity: 1;
+  border-color: rgb(222 226 230 / var(--tw-divide-opacity));
+}
 .divide-gray-100 > :not([hidden]) ~ :not([hidden]){
   --tw-divide-opacity: 1;
   border-color: rgb(248 249 250 / var(--tw-divide-opacity));
@@ -1722,10 +1726,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .divide-blue-200 > :not([hidden]) ~ :not([hidden]){
   --tw-divide-opacity: 1;
   border-color: rgb(176 188 246 / var(--tw-divide-opacity));
-}
-.divide-gray-300 > :not([hidden]) ~ :not([hidden]){
-  --tw-divide-opacity: 1;
-  border-color: rgb(222 226 230 / var(--tw-divide-opacity));
 }
 .overflow-hidden{
   overflow: hidden;
@@ -1849,13 +1849,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-border-opacity: 1;
   border-color: rgb(52 58 64 / var(--tw-border-opacity));
 }
+.bg-gray-300{
+  --tw-bg-opacity: 1;
+  background-color: rgb(222 226 230 / var(--tw-bg-opacity));
+}
 .bg-gray-100{
   --tw-bg-opacity: 1;
   background-color: rgb(248 249 250 / var(--tw-bg-opacity));
-}
-.bg-gray-50{
-  --tw-bg-opacity: 1;
-  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }
 .bg-yellow-100{
   --tw-bg-opacity: 1;
@@ -1885,6 +1885,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(216 221 250 / var(--tw-bg-opacity));
 }
+.bg-gray-50{
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
+}
 .bg-orange-400{
   --tw-bg-opacity: 1;
   background-color: rgb(244 136 73 / var(--tw-bg-opacity));
@@ -1904,10 +1908,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-gray-700{
   --tw-bg-opacity: 1;
   background-color: rgb(73 80 87 / var(--tw-bg-opacity));
-}
-.bg-gray-300{
-  --tw-bg-opacity: 1;
-  background-color: rgb(222 226 230 / var(--tw-bg-opacity));
 }
 .bg-opacity-20{
   --tw-bg-opacity: 0.2;

@@ -9,7 +9,7 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Validation\Rules;
+use Illuminate\Validation\Rules\Password;
 
 class RegisteredUserController extends Controller
 {
@@ -20,6 +20,11 @@ class RegisteredUserController extends Controller
      */
     public function create()
     {
+       /**
+        * @get('/register')
+        * @name('register')
+        * @middlewares('web', guest')
+        */
         return view('auth.register');
     }
 
@@ -33,10 +38,14 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request)
     {
+       /**
+        * @post('/register')
+        * @middlewares('web', guest')
+        */
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'password' => ['required', 'confirmed', Password::defaults()],
         ]);
 
         $user = User::create([

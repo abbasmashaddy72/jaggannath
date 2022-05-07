@@ -16,6 +16,11 @@ class EmailVerificationNotificationController extends Controller
      */
     public function store(Request $request)
     {
+       /**
+        * @post('/email/verification-notification')
+        * @name('verification.send')
+        * @middlewares('web', auth', throttle:6,1')
+        */
         if ($request->user()->hasVerifiedEmail()) {
             return redirect()->intended(RouteServiceProvider::HOME);
         }
