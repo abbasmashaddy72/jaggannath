@@ -3,10 +3,12 @@
 namespace App\Http\Livewire\Form\Frontend;
 
 use App\Models\BookAppointment;
+use App\Services\Helper;
 use Livewire\Component;
 
 class BookAppointmentForm extends Component
 {
+    public $team_id;
     public $name;
     public $email;
     public $gender;
@@ -20,7 +22,15 @@ class BookAppointmentForm extends Component
 
     public $success;
 
+    public $team;
+
+    public function mount()
+    {
+        $this->team = Helper::getKeyValues('Team', 'name', 'id');
+    }
+
     protected $rules = [
+        'team_id' => '',
         'name' => '',
         'email' => '',
         'gender' => '',
@@ -46,6 +56,7 @@ class BookAppointmentForm extends Component
 
     private function clearFields()
     {
+        $this->team_id = '';
         $this->name = '';
         $this->email = '';
         $this->gender = '';

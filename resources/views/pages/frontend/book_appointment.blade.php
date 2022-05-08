@@ -9,7 +9,8 @@
             <div class="px-4 w-full lg:w-5/12 xl:w-4/12">
                 <div class="shadow-testimonial rounded-lg border-gray-200 border-2 py-10 px-8 md:p-[60px] lg:p-10 2xl:p-[60px] sm:py-12 sm:px-10 lg:py-12 lg:px-10 wow fadeInUp"
                     data-wow-delay=".2s">
-                    <form>
+                    @livewire('form.frontend.book-appointment-form')
+                    {{-- <form>
                         <div class="mb-6">
                             <label for="fullName" class="block text-xs text-dark">Full Name<span
                                     class="text-red-600 ml-2">*</span></label>
@@ -40,7 +41,7 @@
                                 Send Message
                             </button>
                         </div>
-                    </form>
+                    </form> --}}
                 </div>
             </div>
         </div>
