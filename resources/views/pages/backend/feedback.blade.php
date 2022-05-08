@@ -1,5 +1,5 @@
 <x-app-layout>
-    <x-backend.card back='true' title='Career'>
+    <x-backend.card back='true' title='Feedback'>
 
         @livewire('tables.backend.feedback-table')
 

@@ -38,7 +38,7 @@ class FeedbackTable extends LivewireDatatable
                 ->filterable()
                 ->label('Name'),
 
-            NumberColumn::name('number')
+            NumberColumn::name('admission_number')
                 ->label('OP / IP Number')
                 ->filterable(),
 
@@ -56,45 +56,82 @@ class FeedbackTable extends LivewireDatatable
                 ->truncate(20)
                 ->label('How'),
 
-            Column::name('initial_response')
-                ->searchable()
-                ->truncate(20)
-                ->label('Initial Response'),
+            NumberColumn::name('initial_response_rating')
+                ->label('initial_response_rating')
+                ->filterable(),
 
-            Column::name('explanation_of_treatment')
+            Column::name('initial_response_text')
                 ->searchable()
                 ->truncate(20)
-                ->label('explanation_of_treatment'),
+                ->label('initial_response_text'),
 
-            Column::name('cost_treatment')
+            NumberColumn::name('explanation_of_treatment_rating')
+                ->label('explanation_of_treatment_rating')
+                ->filterable(),
+
+            Column::name('explanation_of_treatment_text')
                 ->searchable()
                 ->truncate(20)
-                ->label('cost_treatment'),
+                ->label('explanation_of_treatment_text'),
+
+            NumberColumn::name('cost_of_treatment_rating')
+                ->label('cost_of_treatment_rating')
+                ->filterable(),
+
+            Column::name('cost_of_treatment_text')
+                ->searchable()
+                ->truncate(20)
+                ->label('cost_of_treatment_text'),
 
             NumberColumn::name('reception_rating')
                 ->label('reception_rating')
                 ->filterable(),
 
+            Column::name('reception_text')
+                ->searchable()
+                ->truncate(20)
+                ->label('reception_text'),
+
             NumberColumn::name('dmo_rating')
                 ->label('dmo_rating')
                 ->filterable(),
+
+            Column::name('dmo_text')
+                ->searchable()
+                ->truncate(20)
+                ->label('dmo_text'),
 
             NumberColumn::name('nurse_rating')
                 ->label('nurse_rating')
                 ->filterable(),
 
-            NumberColumn::name('house_keeping')
-                ->label('house_keeping')
-                ->filterable(),
-
-            NumberColumn::name('treatment_rating')
-                ->label('treatment_rating')
-                ->filterable(),
-
-            Column::name('any_other')
+            Column::name('nurse_text')
                 ->searchable()
                 ->truncate(20)
-                ->label('any_other'),
+                ->label('nurse_text'),
+
+            NumberColumn::name('house_keeping_rating')
+                ->label('house_keeping_rating')
+                ->filterable(),
+
+            Column::name('house_keeping_text')
+                ->searchable()
+                ->truncate(20)
+                ->label('house_keeping_text'),
+
+            NumberColumn::name('satisfaction_of_treatment_rating')
+                ->label('satisfaction_of_treatment_rating')
+                ->filterable(),
+
+            Column::name('satisfaction_of_treatment_text')
+                ->searchable()
+                ->truncate(20)
+                ->label('satisfaction_of_treatment_text'),
+
+            Column::name('any_other_feedback')
+                ->searchable()
+                ->truncate(20)
+                ->label('any_other_feedback'),
 
             DateColumn::name('created_at')
                 ->filterable(),

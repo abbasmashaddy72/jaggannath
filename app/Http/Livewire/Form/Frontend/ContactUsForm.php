@@ -7,13 +7,7 @@ use Livewire\Component;
 
 class ContactUsForm extends Component
 {
-    public $name;
-    public $email;
-    public $contact_number;
-    public $address;
-    public $questions;
-
-    public $success;
+    public $name, $email, $contact_number, $address, $questions, $success;
 
     protected $rules = [
         'name' => 'required',
@@ -28,6 +22,15 @@ class ContactUsForm extends Component
         $this->validateOnly($propertyName);
     }
 
+    private function clearFields()
+    {
+        $this->name = '';
+        $this->email = '';
+        $this->contact_number = '';
+        $this->address = '';
+        $this->questions = '';
+    }
+
     public function submit()
     {
         $validatedData = $this->validate();
@@ -37,15 +40,6 @@ class ContactUsForm extends Component
         $this->success = 'Thanks for Contacting Us. We will Contact you ASAP!';
 
         $this->clearFields();
-    }
-
-    private function clearFields()
-    {
-        $this->name = '';
-        $this->email = '';
-        $this->contact_number = '';
-        $this->address = '';
-        $this->questions = '';
     }
 
     public function render()

@@ -11,22 +11,26 @@
                     data-wow-delay=".2s">
                     <form>
                         <div class="mb-6">
-                            <label for="fullName" class="block text-xs text-dark">Full Name*</label>
+                            <label for="fullName" class="block text-xs text-dark">Full Name<span
+                                    class="text-red-600 ml-2">*</span></label>
                             <input type="text" name="fullName" placeholder="Adam Gelius"
                                 class="w-full border-0 border-b border-[#f1f1f1] focus:border-primary focus:outline-none py-4" />
                         </div>
                         <div class="mb-6">
-                            <label for="email" class="block text-xs text-dark">Email*</label>
+                            <label for="email" class="block text-xs text-dark">Email<span
+                                    class="text-red-600 ml-2">*</span></label>
                             <input type="email" name="email" placeholder="example@yourmail.com"
                                 class="w-full border-0 border-b border-[#f1f1f1] focus:border-primary focus:outline-none py-4" />
                         </div>
                         <div class="mb-6">
-                            <label for="phone" class="block text-xs text-dark">Phone*</label>
+                            <label for="phone" class="block text-xs text-dark">Phone<span
+                                    class="text-red-600 ml-2">*</span></label>
                             <input type="text" name="phone" placeholder="+885 1254 5211 552"
                                 class="w-full border-0 border-b border-[#f1f1f1] focus:border-primary focus:outline-none py-4" />
                         </div>
                         <div class="mb-6">
-                            <label for="message" class="block text-xs text-dark">Message*</label>
+                            <label for="message" class="block text-xs text-dark">Message<span
+                                    class="text-red-600 ml-2">*</span></label>
                             <textarea name="message" rows="1" placeholder="type your message here"
                                 class="w-full border-0 border-b border-[#f1f1f1] focus:border-primary focus:outline-none py-4  resize-none"></textarea>
                         </div>

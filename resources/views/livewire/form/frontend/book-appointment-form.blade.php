@@ -4,7 +4,7 @@
         <div class="flex flex-wrap mb-5 -mx-3">
             <div class="w-full px-3">
                 <label class="block mb-1 text-sm font-medium text-gray-800 dark:text-gray-300">Patient Name
-                    <span class="text-red-600">*</span>
+                    <span class="text-red-600 ml-2"><span class="text-red-600 ml-2">*</span></span>
                     <input type="text" class="w-full form-input" placeholder="Enter Patient name" required
                         wire:model="name" />
                 </label>
@@ -16,7 +16,7 @@
         <div class="flex flex-wrap mb-5 -mx-3">
             <div class="w-full px-3">
                 <label class="block mb-1 text-sm font-medium text-gray-800 dark:text-gray-300">Phone Number
-                    <span class="text-red-600">*</span>
+                    <span class="text-red-600 ml-2"><span class="text-red-600 ml-2">*</span></span>
                     <input type="tel" class="w-full form-input" placeholder="Enter your phone number" required
                         wire:model="phone" />
                 </label>
@@ -39,7 +39,7 @@
         <div class="flex flex-wrap mb-5 -mx-3">
             <div class="w-full px-3 mb-4 md:w-1/2 md:mb-0">
                 <label class="block mb-1 text-sm font-medium text-gray-800 dark:text-gray-300">Gender
-                    <span class="text-red-600">*</span>
+                    <span class="text-red-600 ml-2"><span class="text-red-600 ml-2">*</span></span>
                     <select class="w-full form-select" required wire:model='gender'>
                         <option>Male</option>
                         <option>FeMale</option>
@@ -52,7 +52,7 @@
             </div>
             <div class="w-full px-3 mb-4 md:w-1/2 md:mb-0">
                 <label class="block mb-1 text-sm font-medium text-gray-800 dark:text-gray-300">Patient Age
-                    <span class="text-red-600">*</span>
+                    <span class="text-red-600 ml-2"><span class="text-red-600 ml-2">*</span></span>
                     <input type="number" class="w-full form-input" placeholder="Enter Patient Age" required
                         wire:model="age" />
                 </label>
@@ -84,7 +84,8 @@
                 <div class="w-full px-3">
                     <label class="block mb-1 text-sm font-medium text-gray-800 dark:text-gray-300">If Yes, state on
                         which
-                        condition and when? <span class="text-red-600">*</span>
+                        condition and when? <span class="text-red-600 ml-2"><span
+                                class="text-red-600 ml-2">*</span></span>
                         <textarea type="text" class="w-full form-input" placeholder="Enter your Address" required
                             wire:model="previous_record_description"></textarea>
                     </label>
@@ -97,7 +98,7 @@
         <div class="flex flex-wrap mb-5 -mx-3">
             <div class="w-full px-3 mb-4 md:w-1/2 md:mb-0">
                 <label class="block mb-1 text-sm font-medium text-gray-800 dark:text-gray-300">Appointment Date
-                    <span class="text-red-600">*</span>
+                    <span class="text-red-600 ml-2"><span class="text-red-600 ml-2">*</span></span>
                     <input type="date" class="w-full form-input" placeholder="Enter your Age" required
                         wire:model="appointment_date" />
                 </label>
@@ -107,7 +108,7 @@
             </div>
             <div class="w-full px-3 mb-4 md:w-1/2 md:mb-0">
                 <label class="block mb-1 text-sm font-medium text-gray-800 dark:text-gray-300">Appointment Time
-                    <span class="text-red-600">*</span>
+                    <span class="text-red-600 ml-2"><span class="text-red-600 ml-2">*</span></span>
                     <input type="time" class="w-full form-input" placeholder="Enter your phone number" required
                         wire:model="appointment_time" />
                 </label>

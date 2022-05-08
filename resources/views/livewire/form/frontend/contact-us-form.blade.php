@@ -6,7 +6,8 @@
         </h3>
         <form wire:submit.prevent="submit">
             <div class="mb-6">
-                <label for="name" class="block text-xs text-dark">Full Name*</label>
+                <label for="name" class="block text-xs text-dark">Full Name<span
+                        class="text-red-600 mr-2">*</span></label>
                 <input type="text" id="name" placeholder="Adam Gelius" wire:model="name"
                     class="w-full border-0 border-b border-[#f1f1f1] focus:border-primary focus:outline-none py-4" />
                 @error('name')
@@ -22,7 +23,7 @@
                 @enderror
             </div>
             <div class="mb-6">
-                <label for="phone" class="block text-xs text-dark">Phone*</label>
+                <label for="phone" class="block text-xs text-dark">Phone<span class="text-red-600 ml-2">*</span></label>
                 <input type="text" id="phone" placeholder="+885 1254 5211 552" wire:model="contact_number"
                     class="w-full border-0 border-b border-[#f1f1f1] focus:border-primary focus:outline-none py-4" />
                 @error('contact_number')
@@ -38,7 +39,8 @@
                 @enderror
             </div>
             <div class="mb-6">
-                <label for="questions" class="block text-xs text-dark">Questions*</label>
+                <label for="questions" class="block text-xs text-dark">Questions<span
+                        class="text-red-600 ml-2">*</span></label>
                 <textarea id="questions" rows="1" placeholder="type your questions here" wire:model="questions"
                     class="w-full border-0 border-b border-[#f1f1f1] focus:border-primary focus:outline-none py-4  resize-none"></textarea>
                 @error('questions')
