@@ -25,8 +25,6 @@ class Teams extends Component
             $data = Team::with('department')->where('department_id', $this->department_id)->get();
         }
 
-        // dd($data);
-        // exit;
         return view('livewire.pagination.frontend.teams', compact('data'));
     }
 }

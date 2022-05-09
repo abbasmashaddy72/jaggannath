@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Backend;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreDepartmentRequest;
 use App\Http\Requests\UpdateDepartmentRequest;
 use App\Models\Department;
@@ -15,7 +16,7 @@ class DepartmentController extends Controller
      */
     public function index()
     {
-        //
+        return view('pages.backend.departments.index');
     }
 
     /**
@@ -25,7 +26,9 @@ class DepartmentController extends Controller
      */
     public function create()
     {
-        //
+        $department = null;
+
+        return view('pages.backend.departments.cev', compact('department'));
     }
 
     /**
@@ -47,7 +50,9 @@ class DepartmentController extends Controller
      */
     public function show(Department $department)
     {
-        //
+        $department = $department->id;
+
+        return view('pages.backend.departments.cev', compact('department'));
     }
 
     /**
@@ -58,7 +63,9 @@ class DepartmentController extends Controller
      */
     public function edit(Department $department)
     {
-        //
+        $department = $department->id;
+
+        return view('pages.backend.departments.cev', compact('department'));
     }
 
     /**

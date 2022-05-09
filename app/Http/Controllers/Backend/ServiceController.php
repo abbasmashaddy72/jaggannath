@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Backend;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreServiceRequest;
 use App\Http\Requests\UpdateServiceRequest;
 use App\Models\Service;
@@ -15,7 +16,7 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        //
+        return view('pages.backend.services.index');
     }
 
     /**
@@ -25,7 +26,9 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        //
+        $service = null;
+
+        return view('pages.backend.services.cev', compact('service'));
     }
 
     /**
@@ -47,7 +50,9 @@ class ServiceController extends Controller
      */
     public function show(Service $service)
     {
-        //
+        $service = $service->id;
+
+        return view('pages.backend.services.cev', compact('service'));
     }
 
     /**
@@ -58,7 +63,9 @@ class ServiceController extends Controller
      */
     public function edit(Service $service)
     {
-        //
+        $service = $service->id;
+
+        return view('pages.backend.services.cev', compact('service'));
     }
 
     /**

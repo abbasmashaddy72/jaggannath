@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Backend;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreInsuranceRequest;
 use App\Http\Requests\UpdateInsuranceRequest;
 use App\Models\Insurance;
@@ -15,7 +16,7 @@ class InsuranceController extends Controller
      */
     public function index()
     {
-        //
+        return view('pages.backend.insurances.index');
     }
 
     /**
@@ -25,7 +26,9 @@ class InsuranceController extends Controller
      */
     public function create()
     {
-        //
+        $insurance = null;
+
+        return view('pages.backend.insurances.cev', compact('insurance'));
     }
 
     /**
@@ -47,7 +50,9 @@ class InsuranceController extends Controller
      */
     public function show(Insurance $insurance)
     {
-        //
+        $insurance = $insurance->id;
+
+        return view('pages.backend.insurances.cev', compact('insurance'));
     }
 
     /**
@@ -58,7 +63,9 @@ class InsuranceController extends Controller
      */
     public function edit(Insurance $insurance)
     {
-        //
+        $insurance = $insurance->id;
+
+        return view('pages.backend.insurances.cev', compact('insurance'));
     }
 
     /**

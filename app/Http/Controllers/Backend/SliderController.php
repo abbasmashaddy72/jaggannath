@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Backend;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreSliderRequest;
 use App\Http\Requests\UpdateSliderRequest;
 use App\Models\Slider;
@@ -15,7 +16,7 @@ class SliderController extends Controller
      */
     public function index()
     {
-        //
+        return view('pages.backend.sliders.index');
     }
 
     /**
@@ -25,7 +26,9 @@ class SliderController extends Controller
      */
     public function create()
     {
-        //
+        $slider = null;
+
+        return view('pages.backend.sliders.cev', compact('slider'));
     }
 
     /**
@@ -47,7 +50,9 @@ class SliderController extends Controller
      */
     public function show(Slider $slider)
     {
-        //
+        $slider = $slider->id;
+
+        return view('pages.backend.sliders.cev', compact('slider'));
     }
 
     /**
@@ -58,7 +63,9 @@ class SliderController extends Controller
      */
     public function edit(Slider $slider)
     {
-        //
+        $slider = $slider->id;
+
+        return view('pages.backend.sliders.cev', compact('slider'));
     }
 
     /**

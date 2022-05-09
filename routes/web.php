@@ -59,6 +59,22 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth', 'na
         'index', 'create', 'store',  'edit', 'show'
     ]);
 
+    Route::resource('department', 'DepartmentController')->only([
+        'index', 'create', 'store',  'edit', 'show'
+    ]);
+
+    Route::resource('insurance', 'InsuranceController')->only([
+        'index', 'create', 'store',  'edit', 'show'
+    ]);
+
+    Route::resource('service', 'ServiceController')->only([
+        'index', 'create', 'store',  'edit', 'show'
+    ]);
+
+    Route::resource('slider', 'SliderController')->only([
+        'index', 'create', 'store',  'edit', 'show'
+    ]);
+
     Route::resource('review', 'ReviewController')->only([
         'index', 'create', 'store',  'edit', 'show'
     ]);

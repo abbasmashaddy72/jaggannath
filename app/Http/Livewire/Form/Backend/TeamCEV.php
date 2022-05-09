@@ -3,6 +3,8 @@
 namespace App\Http\Livewire\Form\Backend;
 
 use App\Models\Team;
+use App\Models\TeamService;
+use App\Services\Helper;
 use Illuminate\Support\Facades\Route;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -13,6 +15,7 @@ class TeamCEV extends Component
 
     // Model Values
     public $department_id, $name, $image, $qualification, $profile, $experience;
+    public $services = [];
 
     // Custom Values
     public $action, $isUploaded = false, $team;
@@ -23,7 +26,8 @@ class TeamCEV extends Component
         'qualification' => '',
         'department_id' => '',
         'profile' => '',
-        'experience' => ''
+        'experience' => '',
+        'services' => ''
     ];
 
     public function updated($propertyName)
@@ -53,10 +57,18 @@ class TeamCEV extends Component
     public function update()
     {
         $validatedData = $this->validate();
-
         if (gettype($this->image) != 'string') {
             $validatedData['image'] = $this->image->store('team_images');
         }
+
+        $team_services = new TeamService;
+
+        // Pending
+        foreach (array_filter($validatedData['services']) as $key => $item) {
+            $team_services->create(['team_id' => $this->team, 'services_id' => $key]);
+        }
+
+        unset($validatedData['services']);
 
         Team::where('id', $this->team)->update($validatedData);
 
@@ -76,6 +88,7 @@ class TeamCEV extends Component
             $this->profile = $data->profile;
             $this->experience = $data->experience->format('Y-m-d');
         }
+        $this->services = Helper::getKeyValues('Service', 'title', 'id');
         $this->action = substr(strstr(Route::currentRouteAction(), '@'), 1);
     }
 
