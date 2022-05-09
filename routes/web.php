@@ -30,6 +30,8 @@ Route::group(['namespace' => 'App\Http\Controllers\Frontend'], function () {
     Route::get('contact_us', 'FrontendController@contact_us')->name('contact_us');
     Route::get('book_appointment', 'FrontendController@book_appointment')->name('book_appointment');
     Route::get('feedback', 'FrontendController@feedback')->name('feedback');
+    Route::get('terms', 'FrontendController@terms')->name('terms');
+    Route::get('privacy', 'FrontendController@privacy')->name('privacy');
 });
 
 // 'index', 'create', 'store', 'show', 'edit', 'update', 'destroy'

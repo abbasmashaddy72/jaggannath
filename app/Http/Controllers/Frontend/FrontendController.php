@@ -4,8 +4,11 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\About;
+use App\Models\Count;
 use App\Models\Department;
 use App\Models\Insurance;
+use App\Models\Service;
+use App\Models\Slider;
 use App\Services\Helper;
 use Illuminate\Http\Request;
 
@@ -13,6 +16,15 @@ class FrontendController extends Controller
 {
     public function __construct()
     {
+        view()->share('logo', Helper::get_static_option('logo'));
+        view()->share('about', Helper::get_static_option('about'));
+        view()->share('twitter', Helper::get_static_option('twitter'));
+        view()->share('facebook', Helper::get_static_option('facebook'));
+        view()->share('instagram', Helper::get_static_option('instagram'));
+        view()->share('linkedin', Helper::get_static_option('linkedin'));
+        view()->share('youtube', Helper::get_static_option('youtube'));
+        view()->share('google_business', Helper::get_static_option('google_business'));
+        view()->share('embed_map_link', Helper::get_static_option('embed_map_link'));
     }
 
     public function index()
@@ -22,9 +34,25 @@ class FrontendController extends Controller
          * @name('homepage')
          * @middlewares('web')
          */
-        $slider_images = [];
+        $slider_images = Slider::where('on', 'homepage')->get();
+        $services = Service::with('department')->orderBy('clicks', 'DESC')->limit(3)->get();
+        $services_excerpt = Helper::get_static_option('services_excerpt');
+        $count_excerpt = Helper::get_static_option('count_excerpt');
+        $counts_first2 = Count::where('on', 'homepage')->orderBy('id', 'ASC')->limit(2)->get();
+        $counts_last2 = Count::where('on', 'homepage')->orderBy('id', 'DESC')->limit(2)->get();
+        $gr_api = Helper::get_static_option('gr_api');
+        $gr_count_api = Helper::get_static_option('gr_count_api');
 
-        return view('pages.frontend.home_page', compact('slider_images'));
+        return view('pages.frontend.home_page', compact([
+            'slider_images',
+            'services',
+            'services_excerpt',
+            'count_excerpt',
+            'counts_first2',
+            'counts_last2',
+            'gr_api',
+            'gr_count_api'
+        ]));
     }
 
     public function departments()

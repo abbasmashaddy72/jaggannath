@@ -64,76 +64,56 @@
 
         <div class="container max-w-screen-2xl mx-auto px-4">
 
-            <p class="font-light text-gray-900 text-lg md:text-xl text-center uppercase mb-6">Our features</p>
+            <p class="font-light text-gray-900 text-lg md:text-xl text-center uppercase mb-6">Our Services</p>
 
-            <h1 class="font-semibold text-gray-900 text-xl md:text-4xl text-center leading-normal mb-10">We believe we
-                can save <br> more life with you</h1>
+            <h1 class="font-semibold text-gray-900 text-xl md:text-4xl text-center leading-normal mb-10">
+                {{ $services_excerpt }}</h1>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20">
-                <div class="text-center">
-                    <div class="flex justify-center mb-6">
-                        <div class="w-20 py-6 flex justify-center bg-blue-200 bg-opacity-30 text-blue-700 rounded-xl">
-                            <i data-feather="globe"></i>
+                @forelse ($services as $item)
+                    <div class="w-full px-2">
+                        <div class="mb-10 group wow fadeInUp border-gray-200 border-2 p-4 rounded-lg"
+                            data-wow-delay=".1s">
+                            <div class="rounded overflow-hidden mb-8">
+                                <a href="{{ route('service_single') }}" class="block">
+                                    <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->title }}"
+                                        class="w-full transition group-hover:scale-125 group-hover:rotate-6" />
+                                </a>
+                            </div>
+                            <div>
+                                <div class="flex justify-between">
+                                    <span
+                                        class="bg-primary rounded inline-block text-center py-1 px-4 text-xs leading-loose font-semibold text-white mb-5">
+                                        {{ $item->created_at->diffForHumans() }}
+                                    </span>
+                                    <span
+                                        class="bg-primary rounded inline-block text-center py-1 px-4 text-xs leading-loose font-semibold text-white mb-5">
+                                        {{ $item->department->name }}
+                                    </span>
+                                </div>
+                                <h3>
+                                    <a href="{{ route('service_single') }}"
+                                        class="font-semibold teloginxt-xl sm:text-2xl lg:text-xl xl:text-2xl mb-4 inline-block text-dark hover:text-primary">
+                                        {{ $item->title }}
+                                    </a>
+                                </h3>
+                                <p class="text-base text-body-color">
+                                    {{ $item->excerpt }}
+                                </p>
+                            </div>
                         </div>
                     </div>
-
-                    <h4 class="font-semibold text-lg md:text-2xl text-gray-900 mb-6">Transparent</h4>
-
-                    <p class="font-light text-gray-900 text-md md:text-xl mb-6">Donations and distributions can be seen
-                        transparently</p>
-
-                    <div class="flex justify-center">
-                        <a href="#"
-                            class="flex items-center gap-5 px-6 py-4 font-semibold text-info text-lg rounded-xl hover:bg-blue-500 hover:text-white transition ease-linear duration-500">
-                            Learn more
-                            <i data-feather="chevron-right"></i>
-                        </a>
+                @empty
+                    <div class="w-full px-4">
+                        <div class="text-center font-bold text-gray-800 text-lg">No Data Available</div>
                     </div>
-                </div>
-
-                <div class="text-center">
-                    <div class="flex justify-center mb-6">
-                        <div class="w-20 py-6 flex justify-center bg-blue-200 bg-opacity-30 text-blue-700 rounded-xl">
-                            <i data-feather="arrow-up-right"></i>
-                        </div>
-                    </div>
-
-                    <h4 class="font-semibold text-lg md:text-2xl text-gray-900 mb-6">Quick Fundraise</h4>
-
-                    <p class="font-light text-gray-900 text-md md:text-xl mb-6">The simple and quickest way to make a
-                        donation</p>
-
-                    <div class="flex justify-center">
-                        <a href="#"
-                            class="flex items-center gap-5 px-6 py-4 font-semibold text-info text-lg rounded-xl hover:bg-blue-500 hover:text-white transition ease-linear duration-500">
-                            Learn more
-                            <i data-feather="chevron-right"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="text-center">
-                    <div class="flex justify-center mb-6">
-                        <div class="w-20 py-6 flex justify-center bg-blue-200 bg-opacity-30 text-blue-700 rounded-xl">
-                            <i data-feather="clock"></i>
-                        </div>
-                    </div>
-
-                    <h4 class="font-semibold text-lg md:text-2xl text-gray-900 mb-6">Real Time</h4>
-
-                    <p class="font-light text-gray-900 text-md md:text-xl mb-6">Reports related to donations and
-                        distribution are updated directly</p>
-
-                    <div class="flex justify-center">
-                        <a href="#"
-                            class="flex items-center gap-5 px-6 py-4 font-semibold text-info text-lg rounded-xl hover:bg-blue-500 hover:text-white transition ease-linear duration-500">
-                            Learn more
-                            <i data-feather="chevron-right"></i>
-                        </a>
-                    </div>
-                </div>
+                @endforelse
             </div>
-
+            <div class="flex items-center justify-center">
+                <a href="{{ route('services') }}"
+                    class="px-7 py-5 bg-blue-500 font-semibold text-white text-lg rounded-xl hover:bg-blue-800 transition ease-in-out duration-500">More
+                    Services</a>
+            </div>
         </div> <!-- container.// -->
 
     </section>
@@ -150,56 +130,38 @@
                 </div>
 
                 <div class="mt-16">
-                    <h1 class="font-semibold text-gray-900 text-xl md:text-4xl mb-20">You can help lots of people by
-                        <br> donating
-                    </h1>
+                    <h1 class="font-semibold text-gray-900 text-xl md:text-4xl mb-20">{{ $count_excerpt }}</h1>
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 md:space-x-20 mb-16">
-                        <div class="mb-5 md:mb-0">
-                            <div class="w-20 py-6 flex justify-center bg-blue-500 bg-opacity-5 rounded-xl mb-4">
-                                <i data-feather="sun" class="text-info"></i>
+                    @foreach ($counts_first2 as $item)
+                        <div class="grid grid-cols-1 md:grid-cols-2 md:space-x-20 mb-16">
+                            <div class="mb-5 md:mb-0">
+                                <div class="w-20 py-6 flex justify-center bg-blue-500 bg-opacity-5 rounded-xl mb-4">
+                                    {!! $item->icon !!}
+                                </div>
+
+                                <h3 class="font-semibold text-gray-900 text-xl md:text-3xl mb-4">{{ $item->count }}
+                                </h3>
+
+                                <p class="font-light text-gray-800 text-md md:text-lg">{{ $item->title }}</p>
                             </div>
-
-                            <h3 class="font-semibold text-gray-900 text-xl md:text-3xl mb-4">10000+</h3>
-
-                            <p class="font-light text-gray-800 text-md md:text-lg">Fundraising campaign in <br> all
-                                time</p>
                         </div>
+                    @endforeach
 
-                        <div>
-                            <div class="w-20 py-6 flex justify-center bg-red-500 bg-opacity-5 rounded-xl mb-4">
-                                <i data-feather="award" class="text-red-500"></i>
+                    @foreach ($counts_last2 as $item)
+                        <div class="grid grid-cols-1 md:grid-cols-2 md:space-x-20 mb-16">
+                            <div class="mb-5 md:mb-0">
+                                <div class="w-20 py-6 flex justify-center bg-blue-500 bg-opacity-5 rounded-xl mb-4">
+                                    {!! $item->icon !!}
+                                </div>
+
+                                <h3 class="font-semibold text-gray-900 text-xl md:text-3xl mb-4">{{ $item->count }}
+                                </h3>
+
+                                <p class="font-light text-gray-800 text-md md:text-lg">{{ $item->title }}</p>
                             </div>
-
-                            <h3 class="font-semibold text-gray-900 text-xl md:text-3xl mb-4">$120M+</h3>
-
-                            <p class="font-light text-gray-800 text-md md:text-lg">Raised and counting <br> donations
-                                in all time</p>
                         </div>
-                    </div>
+                    @endforeach
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 md:space-x-20">
-                        <div class="mb-5 md:mb-0">
-                            <div class="w-20 py-6 flex justify-center bg-yellow-500 bg-opacity-5 rounded-xl mb-4">
-                                <i data-feather="users" class="text-yellow-500"></i>
-                            </div>
-
-                            <h3 class="font-semibold text-gray-900 text-xl md:text-3xl mb-4">1200+</h3>
-
-                            <p class="font-light text-gray-800 text-md md:text-lg">Our volunteer around the <br> world
-                            </p>
-                        </div>
-
-                        <div>
-                            <div class="w-20 py-6 flex justify-center bg-green-500 bg-opacity-5 rounded-xl mb-4">
-                                <i data-feather="trending-up" class="text-green-500"></i>
-                            </div>
-
-                            <h3 class="font-semibold text-gray-900 text-xl md:text-3xl mb-4">98%</h3>
-
-                            <p class="font-light text-gray-800 text-md md:text-lg">Positive review from <br> public</p>
-                        </div>
-                    </div>
                 </div>
             </div>
 
@@ -207,6 +169,9 @@
 
     </section>
     <!-- feature section //end -->
+
+    <!-- Google Reviews -->
+    @include('components.frontend.g-reviews')
 
     <!-- join volunters section -->
     <section class="bg-white py-16">
@@ -222,19 +187,7 @@
                     <img src="assets/image/pattern.png" alt="Image" class="absolute top-0 z-0">
                 </div>
 
-                <div class="lg:relative py-4 lg:py-0">
-                    <h1
-                        class="font-semibold text-white text-xl md:text-4xl text-center lg:text-left leading-normal md:mb-5 lg:mb-10">
-                        Interested in volunteering? Join <br> with us now</h1>
-
-                    <div class="hidden md:block flex items-center text-center lg:text-left space-x-5">
-                        <input type="text" placeholder="Email"
-                            class="px-4 py-4 w-96 bg-gray-50 placeholder-gray-800 rounded-xl outline-none">
-
-                        <button
-                            class="px-6 py-4 font-semibold bg-gray-50 text-info text-lg rounded-xl hover:bg-blue-500 hover:text-white transition ease-in-out duration-500">Join</button>
-                    </div>
-                </div>
+                @livewire('form.frontend.newsletter')
             </div>
 
         </div> <!-- container.// -->

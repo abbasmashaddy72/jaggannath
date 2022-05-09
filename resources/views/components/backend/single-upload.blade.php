@@ -1,9 +1,33 @@
-@if ($this->image)
+@if (!empty($this->image) && $name == 'image')
     <div class="my-4">
         <div class="mb-2">
             <label class="block">
                 <x-form-label label="Uploaded Image Preview" />
                 <img src="{{ $this->isUploaded ? $this->image->temporaryUrl() : url('storage/' . $this->image) }}"
+                    class="mt-2" width="250" height="300">
+            </label>
+        </div>
+    </div>
+@endif
+
+@if (!empty($this->logo) && $name == 'logo')
+    <div class="my-4">
+        <div class="mb-2">
+            <label class="block">
+                <x-form-label label="Uploaded Image Preview" />
+                <img src="{{ $this->isUploaded1 ? $this->logo->temporaryUrl() : url('storage/' . $this->logo) }}"
+                    class="mt-2" width="250" height="300">
+            </label>
+        </div>
+    </div>
+@endif
+
+@if (!empty($this->count_image) && $name == 'count_image')
+    <div class="my-4">
+        <div class="mb-2">
+            <label class="block">
+                <x-form-label label="Uploaded Image Preview" />
+                <img src="{{ $this->isUploaded2 ? $this->count_image->temporaryUrl() : url('storage/' . $this->count_image) }}"
                     class="mt-2" width="250" height="300">
             </label>
         </div>

@@ -9,11 +9,11 @@ class HomePageController extends Controller
 {
     public function index()
     {
-       /**
-        * @get('/admin/homepage')
-        * @name('admin.homepage')
-        * @middlewares('web', auth')
-        */
+        /**
+         * @get('/admin/homepage')
+         * @name('admin.homepage')
+         * @middlewares('web', auth')
+         */
         return view('pages.backend.home_page');
     }
 }

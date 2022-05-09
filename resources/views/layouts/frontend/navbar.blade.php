@@ -5,7 +5,7 @@
 
             <div class="flex items-center mb-10 lg:mb-0 py-5">
                 <a href="{{ route('homepage') }}">
-                    <img src="assets/image/navbar-logo.png" alt="Logo">
+                    <img src="{{ asset('storage/' . $logo) }}" class="w-52 h-auto" alt="Logo">
                 </a>
 
                 <button
