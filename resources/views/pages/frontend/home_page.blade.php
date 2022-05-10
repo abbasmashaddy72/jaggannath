@@ -126,7 +126,7 @@
 
             <div class="flex flex-col lg:flex-row justify-between space-x-16">
                 <div class="flex justify-center lg:justify-start">
-                    <img src="assets/image/feature-img.png" alt="Image">
+                    <img src="{{ url('storage/' . $count_image) }}" alt="Image">
                 </div>
 
                 <div class="mt-16">
@@ -136,10 +136,10 @@
                         <div class="grid grid-cols-1 md:grid-cols-2 md:space-x-20 mb-16">
                             <div class="mb-5 md:mb-0">
                                 <div class="w-20 py-6 flex justify-center bg-blue-500 bg-opacity-5 rounded-xl mb-4">
-                                    {!! $item->icon !!}
+                                    <i data-feather="{{ $item->icon }}"></i>
                                 </div>
 
-                                <h3 class="font-semibold text-gray-900 text-xl md:text-3xl mb-4">{{ $item->count }}
+                                <h3 class="font-semibold text-gray-900 text-xl md:text-3xl mb-4">{{ $item->value }}
                                 </h3>
 
                                 <p class="font-light text-gray-800 text-md md:text-lg">{{ $item->title }}</p>
@@ -151,10 +151,10 @@
                         <div class="grid grid-cols-1 md:grid-cols-2 md:space-x-20 mb-16">
                             <div class="mb-5 md:mb-0">
                                 <div class="w-20 py-6 flex justify-center bg-blue-500 bg-opacity-5 rounded-xl mb-4">
-                                    {!! $item->icon !!}
+                                    <i data-feather="{{ $item->icon }}"></i>
                                 </div>
 
-                                <h3 class="font-semibold text-gray-900 text-xl md:text-3xl mb-4">{{ $item->count }}
+                                <h3 class="font-semibold text-gray-900 text-xl md:text-3xl mb-4">{{ $item->value }}
                                 </h3>
 
                                 <p class="font-light text-gray-800 text-md md:text-lg">{{ $item->title }}</p>

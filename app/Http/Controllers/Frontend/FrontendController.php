@@ -37,6 +37,7 @@ class FrontendController extends Controller
         $slider_images = Slider::where('on', 'homepage')->get();
         $services = Service::with('department')->orderBy('clicks', 'DESC')->limit(3)->get();
         $services_excerpt = Helper::get_static_option('services_excerpt');
+        $count_image = Helper::get_static_option('count_image');
         $count_excerpt = Helper::get_static_option('count_excerpt');
         $counts_first2 = Count::where('on', 'homepage')->orderBy('id', 'ASC')->limit(2)->get();
         $counts_last2 = Count::where('on', 'homepage')->orderBy('id', 'DESC')->limit(2)->get();
@@ -47,6 +48,7 @@ class FrontendController extends Controller
             'slider_images',
             'services',
             'services_excerpt',
+            'count_image',
             'count_excerpt',
             'counts_first2',
             'counts_last2',

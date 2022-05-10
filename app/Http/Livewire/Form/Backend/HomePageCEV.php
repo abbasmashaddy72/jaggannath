@@ -26,9 +26,8 @@ class HomePageCEV extends Component
     public $gr_api;
     public $gr_count_api;
 
-    public $isUploaded = false;
-    public $isUploaded1 = false;
-    public $isUploaded2 = false;
+    public $logoIsUploaded = false;
+    public $CountImageIsUploaded = false;
 
     public function mount()
     {
@@ -70,10 +69,10 @@ class HomePageCEV extends Component
         $this->validateOnly($propertyName);
 
         if (gettype($this->logo) != 'string') {
-            $this->isUploaded1 = true;
+            $this->logoIsUploaded = true;
         }
         if (gettype($this->count_image) != 'string') {
-            $this->isUploaded2 = true;
+            $this->CountImageIsUploaded = true;
         }
     }
 

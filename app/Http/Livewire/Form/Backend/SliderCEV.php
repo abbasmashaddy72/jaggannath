@@ -45,7 +45,7 @@ class SliderCEV extends Component
 
         notify()->success('Slider Saved Successfully!');
 
-        return $this->redirectRoute('admin.slider.index');
+        return $this->redirectRoute('admin.homepage');
     }
 
     public function update()
@@ -61,7 +61,7 @@ class SliderCEV extends Component
 
         notify()->success('Slider Updated Successfully!');
 
-        return $this->redirectRoute('admin.slider.index');
+        return $this->redirectRoute('admin.homepage');
     }
 
     public function mount($slider)

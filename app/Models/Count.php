@@ -10,7 +10,7 @@ class Count extends Model
     use HasFactory;
 
     protected $fillable = [
-        'count',
+        'value',
         'title',
         'on',
         'icon'

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->text('title');
             $table->string('on');
-            $table->text('count');
+            $table->text('value');
             $table->text('icon')->nullable();
             $table->timestamps();
         });

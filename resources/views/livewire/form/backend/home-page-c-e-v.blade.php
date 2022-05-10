@@ -2,9 +2,55 @@
     <form wire:submit.prevent="submit">
         @csrf
         @wire('debounce.200ms')
-        <x-backend.single-upload name="logo" label="Logo" />
+        {{-- Logo Start --}}
+        @if ($this->logo)
+            <div class="my-4">
+                <div class="mb-2">
+                    <label class="block">
+                        <x-form-label label="Uploaded Logo Preview" />
+                        <img src="{{ $this->logoIsUploaded ? $this->logo->temporaryUrl() : url('storage/' . $this->logo) }}"
+                            class="mt-2" width="250" height="300">
+                    </label>
+                </div>
+            </div>
+        @endif
 
-        <x-backend.single-upload name="count_image" label="Count Image" />
+        <div class="my-4">
+            <div class="mb-2">
+                <label class="block">
+                    <x-form-label label="Logo" />
+                    <input type="file" accept="image/*" wire:model="logo"
+                        class="block w-full mt-2 text-xl font-normal text-gray-500 border rounded outline-none focus:border-blue-400 focus:shadow">
+                </label>
+            </div>
+            <x-form-errors name="logo" />
+        </div>
+        {{-- Logo End --}}
+
+        {{-- Count Image Start --}}
+        @if ($this->count_image)
+            <div class="my-4">
+                <div class="mb-2">
+                    <label class="block">
+                        <x-form-label label="Uploaded Count Image Preview" />
+                        <img src="{{ $this->CountImageIsUploaded ? $this->count_image->temporaryUrl() : url('storage/' . $this->count_image) }}"
+                            class="mt-2" width="250" height="300">
+                    </label>
+                </div>
+            </div>
+        @endif
+
+        <div class="my-4">
+            <div class="mb-2">
+                <label class="block">
+                    <x-form-label label="Count Image" />
+                    <input type="file" accept="image/*" wire:model="count_image"
+                        class="block w-full mt-2 text-xl font-normal text-gray-500 border rounded outline-none focus:border-blue-400 focus:shadow">
+                </label>
+            </div>
+            <x-form-errors name="count_image" />
+        </div>
+        {{-- Count Image end --}}
 
         <h4 class="my-4 text-2xl font-medium card-title" wire:ignore>
             {{ __('Descriptions') }}

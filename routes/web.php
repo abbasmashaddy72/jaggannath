@@ -77,6 +77,10 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth', 'na
         'index', 'create', 'store',  'edit', 'show'
     ]);
 
+    Route::resource('count', 'CountController')->only([
+        'index', 'create', 'store',  'edit', 'show'
+    ]);
+
     Route::resource('review', 'ReviewController')->only([
         'index', 'create', 'store',  'edit', 'show'
     ]);

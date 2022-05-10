@@ -15,7 +15,7 @@ class InsuranceCEV extends Component
     public $name, $image, $link;
 
     // Custom Values
-    public $action, $isUploaded = false, $department;
+    public $action, $isUploaded = false, $insurance;
 
     protected $rules = [
         'name' => '',
@@ -55,17 +55,17 @@ class InsuranceCEV extends Component
             $validatedData['image'] = $this->image->store('insurance_images');
         }
 
-        Insurance::where('id', $this->department)->update($validatedData);
+        Insurance::where('id', $this->insurance)->update($validatedData);
 
         notify()->success('Insurance Updated Successfully!');
 
         return $this->redirectRoute('admin.insurance.index');
     }
 
-    public function mount($department)
+    public function mount($insurance)
     {
         if (substr(strstr(Route::currentRouteAction(), '@'), 1) != 'create') {
-            $data = Insurance::findOrFail($department);
+            $data = Insurance::findOrFail($insurance);
             $this->name = $data->name;
             $this->image = $data->image;
             $this->link = $data->link;
