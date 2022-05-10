@@ -12,27 +12,27 @@
 
                 <div class="flex items-center justify-center lg:justify-start space-x-5">
                     <a href="{{ $facebook }}"
-                        class="px-3 py-3 bg-gray-200 text-gray-700 rounded-full hover:bg-blue-500 hover:text-white transition ease-in-out duration-500">
+                        class="px-3 py-3 bg-gray-200 text-gray-700 rounded-full hover:bg-primary hover:text-white transition ease-in-out duration-500">
                         <i data-feather="facebook"></i>
                     </a>
                     <a href="{{ $instagram }}"
-                        class="px-3 py-3 bg-gray-200 text-gray-700 rounded-full hover:bg-blue-500 hover:text-white transition ease-in-out duration-500">
+                        class="px-3 py-3 bg-gray-200 text-gray-700 rounded-full hover:bg-primary hover:text-white transition ease-in-out duration-500">
                         <i data-feather="instagram"></i>
                     </a>
                     <a href="{{ $linkedin }}"
-                        class="px-3 py-3 bg-gray-200 text-gray-700 rounded-full hover:bg-blue-500 hover:text-white transition ease-in-out duration-500">
+                        class="px-3 py-3 bg-gray-200 text-gray-700 rounded-full hover:bg-primary hover:text-white transition ease-in-out duration-500">
                         <i data-feather="linkedin"></i>
                     </a>
                     <a href="{{ $twitter }}"
-                        class="px-3 py-3 bg-gray-200 text-gray-700 rounded-full hover:bg-blue-500 hover:text-white transition ease-in-out duration-500">
+                        class="px-3 py-3 bg-gray-200 text-gray-700 rounded-full hover:bg-primary hover:text-white transition ease-in-out duration-500">
                         <i data-feather="twitter"></i>
                     </a>
                     <a href="{{ $youtube }}"
-                        class="px-3 py-3 bg-gray-200 text-gray-700 rounded-full hover:bg-blue-500 hover:text-white transition ease-in-out duration-500">
+                        class="px-3 py-3 bg-gray-200 text-gray-700 rounded-full hover:bg-primary hover:text-white transition ease-in-out duration-500">
                         <i data-feather="youtube"></i>
                     </a>
                     {{-- <a href="{{ $google_business }}"
-                        class="px-3 py-3 bg-gray-200 text-gray-700 rounded-full hover:bg-blue-500 hover:text-white transition ease-in-out duration-500">
+                        class="px-3 py-3 bg-gray-200 text-gray-700 rounded-full hover:bg-primary hover:text-white transition ease-in-out duration-500">
                         <i data-feather="chrome"></i>
                     </a> --}}
                 </div>

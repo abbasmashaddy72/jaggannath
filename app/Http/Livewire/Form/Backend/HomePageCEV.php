@@ -81,7 +81,6 @@ class HomePageCEV extends Component
         $validatedData = $this->validate();
 
         foreach ($validatedData as $key => $value) {
-            dd($validatedData);
             if ($key == 'logo' && gettype($this->logo) != 'string') {
                 Helper::set_static_option($key, $this->logo->store('homepage'));
             }

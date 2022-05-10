@@ -15,6 +15,12 @@
                     loop: true,
                     slidesPerView: 1,
                     spaceBetween: 0,
+                    parallax: true,
+                    autoplay: {
+                        delay: 2500,
+                        disableOnInteraction: false,
+                    },
+                    speed: 800,
                 })" class="relative flex mx-auto flex-">
                     <div class="absolute inset-y-0 left-0 z-10 flex items-center">
                         <button @click="swiper.slidePrev()"
@@ -111,7 +117,7 @@
             </div>
             <div class="flex items-center justify-center">
                 <a href="{{ route('services') }}"
-                    class="px-7 py-5 bg-blue-500 font-semibold text-white text-lg rounded-xl hover:bg-blue-800 transition ease-in-out duration-500">More
+                    class="px-7 py-5 bg-primary font-semibold text-white text-lg rounded-xl hover:bg-secondary transition ease-in-out duration-500">More
                     Services</a>
             </div>
         </div> <!-- container.// -->
@@ -135,7 +141,7 @@
                     @foreach ($counts_first2 as $item)
                         <div class="grid grid-cols-1 md:grid-cols-2 md:space-x-20 mb-16">
                             <div class="mb-5 md:mb-0">
-                                <div class="w-20 py-6 flex justify-center bg-blue-500 bg-opacity-5 rounded-xl mb-4">
+                                <div class="w-20 py-6 flex justify-center bg-primary bg-opacity-5 rounded-xl mb-4">
                                     <i data-feather="{{ $item->icon }}"></i>
                                 </div>
 
@@ -150,7 +156,7 @@
                     @foreach ($counts_last2 as $item)
                         <div class="grid grid-cols-1 md:grid-cols-2 md:space-x-20 mb-16">
                             <div class="mb-5 md:mb-0">
-                                <div class="w-20 py-6 flex justify-center bg-blue-500 bg-opacity-5 rounded-xl mb-4">
+                                <div class="w-20 py-6 flex justify-center bg-primary bg-opacity-5 rounded-xl mb-4">
                                     <i data-feather="{{ $item->icon }}"></i>
                                 </div>
 
@@ -178,7 +184,7 @@
 
         <div class="container max-w-screen-2xl mx-auto px-4">
 
-            <div class="w-full h-full bg-blue-500 rounded-2xl md:rounded-3xl relative lg:flex items-center">
+            <div class="w-full h-full bg-primary rounded-2xl md:rounded-3xl relative lg:flex items-center">
                 <div class="hidden lg:block">
                     <img src="assets/image/humans.png" alt="Image" class="relative z-10">
 

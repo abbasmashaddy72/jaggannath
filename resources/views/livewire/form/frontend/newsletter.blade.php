@@ -10,7 +10,7 @@
                 <p class="mt-1 text-xs italic text-red-500">{{ $message }}</p>
             @enderror
             <button type="submit"
-                class="px-6 py-3 font-semibold bg-gray-50 text-info text-lg rounded-xl hover:bg-blue-500 hover:text-white transition ease-in-out duration-500">Join</button>
+                class="px-6 py-3 font-semibold bg-gray-50 text-info text-lg rounded-xl hover:bg-primary hover:text-white transition ease-in-out duration-500">Join</button>
             <!-- Success message -->
             @if ($success)
                 <div class="px-4 py-3 text-teal-900 bg-teal-100 border-t-4 border-teal-500 rounded-b shadow-md mt-4"
