@@ -25,9 +25,15 @@ class HomePageCEV extends Component
     public $embed_map_link;
     public $gr_api;
     public $gr_count_api;
+    public $tag_line;
+    public $tag_action_button_link;
+    public $tag_action_button_text;
+    public $hero_image;
+    public $hero_video;
 
     public $logoIsUploaded = false;
     public $CountImageIsUploaded = false;
+    public $HeroImageIsUploaded = false;
 
     public function mount()
     {
@@ -45,6 +51,11 @@ class HomePageCEV extends Component
         $this->embed_map_link = Helper::get_static_option('embed_map_link');
         $this->gr_api = Helper::get_static_option('gr_api');
         $this->gr_count_api = Helper::get_static_option('gr_count_api');
+        $this->tag_line = Helper::get_static_option('tag_line');
+        $this->tag_action_button_link = Helper::get_static_option('tag_action_button_link');
+        $this->tag_action_button_text = Helper::get_static_option('tag_action_button_text');
+        $this->hero_image = Helper::get_static_option('hero_image');
+        $this->hero_video = Helper::get_static_option('hero_video');
     }
 
     protected $rules = [
@@ -62,6 +73,11 @@ class HomePageCEV extends Component
         'embed_map_link' => '',
         'gr_api' => '',
         'gr_count_api' => '',
+        'tag_line' => '',
+        'tag_action_button_link' => '',
+        'tag_action_button_text' => '',
+        'hero_image' => '',
+        'hero_video' => '',
     ];
 
     public function updated($propertyName)
@@ -74,6 +90,9 @@ class HomePageCEV extends Component
         if (gettype($this->count_image) != 'string') {
             $this->CountImageIsUploaded = true;
         }
+        if (gettype($this->hero_image) != 'string') {
+            $this->HeroImageIsUploaded = true;
+        }
     }
 
     public function submit()
@@ -81,11 +100,20 @@ class HomePageCEV extends Component
         $validatedData = $this->validate();
 
         foreach ($validatedData as $key => $value) {
-            if ($key == 'logo' && gettype($this->logo) != 'string') {
-                Helper::set_static_option($key, $this->logo->store('homepage'));
+            if ($this->logo == null) {
+            } elseif (gettype($this->logo) != 'string') {
+                $image = $this->logo->store('homepage');
+                Helper::set_static_option($key, $image);
             }
-            if ($key == 'count_image' && gettype($this->count_image) != 'string') {
-                Helper::set_static_option($key, $this->count_image->store('homepage'));
+            if ($this->count_image == null) {
+            } elseif (gettype($this->count_image) != 'string') {
+                $image = $this->count_image->store('homepage');
+                Helper::set_static_option($key, $image);
+            }
+            if ($this->hero_image == null) {
+            } elseif (gettype($this->hero_image) != 'string') {
+                $image = $this->hero_image->store('homepage');
+                Helper::set_static_option($key, $image);
             }
             Helper::set_static_option($key, $value);
         }

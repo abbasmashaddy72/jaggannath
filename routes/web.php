@@ -16,10 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::group(['namespace' => 'App\Http\Controllers\Frontend'], function () {
     Route::get('/', 'FrontendController@index')->name('homepage');
     Route::get('departments', 'FrontendController@departments')->name('departments');
+    Route::get('department/{id}', 'FrontendController@department_single')->name('department_single');
     Route::get('blogs', 'FrontendController@blogs')->name('blogs');
-    Route::get('blog_single', 'FrontendController@blog_single')->name('blog_single');
+    Route::get('blog/{id}', 'FrontendController@blog_single')->name('blog_single');
     Route::get('services', 'FrontendController@services')->name('services');
-    Route::get('service_single', 'FrontendController@service_single')->name('service_single');
+    Route::get('service/{id}', 'FrontendController@service_single')->name('service_single');
     Route::get('teams', 'FrontendController@teams')->name('teams');
     Route::get('insurance', 'FrontendController@insurance')->name('insurance');
     Route::get('packages', 'FrontendController@packages')->name('packages');

@@ -80,8 +80,7 @@
         </div>
         <div class="mb-6">
             <label for="explanation_of_treatment_text" class="block text-xs text-dark">How well are you explained about
-                your disease and treatment?<span
-                    class="text-red-600 ml-2">*{{ $explanation_of_treatment_rating }}</span></label>
+                your disease and treatment?<span class="text-red-600 ml-2">*</span></label>
 
             <x-frontend.rating>
                 <x-slot name="rating">

@@ -10,13 +10,11 @@
     @csrf
 
     @wire('debounce.200ms')
-    <x-form-textarea name="logo" label="Logo" type="text" />
+    <x-backend.single-upload name="image" label="Image" />
 
     <x-form-input name="title" label="Title" type="text" />
 
     <x-form-textarea name="excerpt" label="Excerpt" required />
-
-    <x-form-input name="link" label="Link(If NA copy & paste javascript:void(0))" type="text" />
     @endwire
 
     <div class="mt-3">

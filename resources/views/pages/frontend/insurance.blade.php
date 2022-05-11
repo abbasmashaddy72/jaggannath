@@ -17,7 +17,7 @@
                         </div>
                         <div>
                             <h3>
-                                <a href="#"
+                                <a href="{{ $item->link }}"
                                     class="font-semibold teloginxt-xl sm:text-2xl lg:text-xl xl:text-2xl mb-4 inline-block text-dark hover:text-primary">
                                     {{ $item->name }}
                                 </a>

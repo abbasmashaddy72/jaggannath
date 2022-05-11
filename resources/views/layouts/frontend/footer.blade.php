@@ -11,27 +11,27 @@
                 </div>
 
                 <div class="flex items-center justify-center lg:justify-start space-x-5">
-                    <a href="{{ $facebook }}"
+                    <a href="{{ $facebook }}" target="_blank"
                         class="px-3 py-3 bg-gray-200 text-gray-700 rounded-full hover:bg-primary hover:text-white transition ease-in-out duration-500">
                         <i data-feather="facebook"></i>
                     </a>
-                    <a href="{{ $instagram }}"
+                    <a href="{{ $instagram }}" target="_blank"
                         class="px-3 py-3 bg-gray-200 text-gray-700 rounded-full hover:bg-primary hover:text-white transition ease-in-out duration-500">
                         <i data-feather="instagram"></i>
                     </a>
-                    <a href="{{ $linkedin }}"
+                    <a href="{{ $linkedin }}" target="_blank"
                         class="px-3 py-3 bg-gray-200 text-gray-700 rounded-full hover:bg-primary hover:text-white transition ease-in-out duration-500">
                         <i data-feather="linkedin"></i>
                     </a>
-                    <a href="{{ $twitter }}"
+                    <a href="{{ $twitter }}" target="_blank"
                         class="px-3 py-3 bg-gray-200 text-gray-700 rounded-full hover:bg-primary hover:text-white transition ease-in-out duration-500">
                         <i data-feather="twitter"></i>
                     </a>
-                    <a href="{{ $youtube }}"
+                    <a href="{{ $youtube }}" target="_blank"
                         class="px-3 py-3 bg-gray-200 text-gray-700 rounded-full hover:bg-primary hover:text-white transition ease-in-out duration-500">
                         <i data-feather="youtube"></i>
                     </a>
-                    {{-- <a href="{{ $google_business }}"
+                    {{-- <a href="{{ $google_business }}" target="_blank"
                         class="px-3 py-3 bg-gray-200 text-gray-700 rounded-full hover:bg-primary hover:text-white transition ease-in-out duration-500">
                         <i data-feather="chrome"></i>
                     </a> --}}

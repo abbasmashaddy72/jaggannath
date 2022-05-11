@@ -31,7 +31,7 @@
                                 class="lg:max-w-[565px] xl:max-w-[640px] w-full py-12 px-7 sm:px-12 md:p-16 lg:py-9 lg:px-16 xl:p-[70px]">
                                 <div
                                     class="font-bold text-3xl sm:text-4xl 2xl:text-[40px] sm:leading-snug text-dark mb-3">
-                                    {{ $item->name }}
+                                    {{ ucwords(strtolower($item->name)) }}
                                 </div>
                                 <div
                                     class="font-bold text-xl sm:text-2xl 2xl:text-[30px] sm:leading-snug text-dark mb-3">
@@ -83,7 +83,7 @@
                                 class="lg:max-w-[565px] xl:max-w-[640px] w-full py-12 px-7 sm:px-12 md:p-16 lg:py-9 lg:px-16 xl:p-[70px]">
                                 <div
                                     class="font-bold text-3xl sm:text-4xl 2xl:text-[40px] sm:leading-snug text-dark mb-3">
-                                    {{ $item->name }}
+                                    {{ ucwords(strtolower($item->name)) }}
                                 </div>
                                 <div
                                     class="font-bold text-xl sm:text-2xl 2xl:text-[30px] sm:leading-snug text-dark mb-3">

@@ -4,11 +4,14 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\About;
+use App\Models\Blog;
 use App\Models\Count;
 use App\Models\Department;
+use App\Models\Feature;
 use App\Models\Insurance;
 use App\Models\Service;
 use App\Models\Slider;
+use App\Models\Team;
 use App\Services\Helper;
 use Illuminate\Http\Request;
 
@@ -39,10 +42,16 @@ class FrontendController extends Controller
         $services_excerpt = Helper::get_static_option('services_excerpt');
         $count_image = Helper::get_static_option('count_image');
         $count_excerpt = Helper::get_static_option('count_excerpt');
-        $counts_first2 = Count::where('on', 'homepage')->orderBy('id', 'ASC')->limit(2)->get();
-        $counts_last2 = Count::where('on', 'homepage')->orderBy('id', 'DESC')->limit(2)->get();
+        $counts = Count::where('on', 'homepage')->get();
         $gr_api = Helper::get_static_option('gr_api');
         $gr_count_api = Helper::get_static_option('gr_count_api');
+        $tag_line = Helper::get_static_option('tag_line');
+        $tag_action_button_link = Helper::get_static_option('tag_action_button_link');
+        $tag_action_button_text = Helper::get_static_option('tag_action_button_text');
+        $hero_image = Helper::get_static_option('hero_image');
+        $hero_video = Helper::get_static_option('hero_video');
+        $features = Feature::get();
+
 
         return view('pages.frontend.home_page', compact([
             'slider_images',
@@ -50,10 +59,15 @@ class FrontendController extends Controller
             'services_excerpt',
             'count_image',
             'count_excerpt',
-            'counts_first2',
-            'counts_last2',
+            'counts',
             'gr_api',
-            'gr_count_api'
+            'gr_count_api',
+            'tag_line',
+            'tag_action_button_link',
+            'tag_action_button_text',
+            'hero_image',
+            'hero_video',
+            'features'
         ]));
     }
 
@@ -69,6 +83,15 @@ class FrontendController extends Controller
         return view('pages.frontend.departments', compact('data'));
     }
 
+    public function department_single($id)
+    {
+        $data = Department::findOrFail($id);
+        $services = Service::where('department_id', $id)->with('department')->get();
+        $teams = Team::where('department_id', $id)->with('services', 'department')->get();
+
+        return view('pages.frontend.department_single', compact('data', 'services', 'teams'));
+    }
+
     public function blogs()
     {
         /**
@@ -79,14 +102,18 @@ class FrontendController extends Controller
         return view('pages.frontend.blogs');
     }
 
-    public function blog_single()
+    public function blog_single($id)
     {
         /**
          * @get('/blog_single')
          * @name('blog_single')
          * @middlewares('web')
          */
-        return view('pages.frontend.blog_single');
+        $data = Blog::findOrFail($id);
+        $related = Blog::where('department_id', $data->department_id)->with('department', 'team')->orderBy('clicks', 'DESC')->limit(3)->get();
+        Blog::where('id', $id)->increment('clicks');
+
+        return view('pages.frontend.blog_single', compact('data', 'related'));
     }
 
     public function services()
@@ -99,14 +126,18 @@ class FrontendController extends Controller
         return view('pages.frontend.services');
     }
 
-    public function service_single()
+    public function service_single($id)
     {
         /**
          * @get('/service_single')
          * @name('service_single')
          * @middlewares('web')
          */
-        return view('pages.frontend.service_single');
+        $data = Service::findOrFail($id);
+        $related = Service::where('department_id', $data->department_id)->with('department')->orderBy('clicks', 'DESC')->limit(3)->get();
+        Service::where('id', $id)->increment('clicks');
+
+        return view('pages.frontend.service_single', compact('data', 'related'));
     }
 
     public function teams()

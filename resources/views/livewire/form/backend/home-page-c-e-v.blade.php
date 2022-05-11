@@ -2,6 +2,9 @@
     <form wire:submit.prevent="submit">
         @csrf
         @wire('debounce.200ms')
+        <h4 class="my-4 text-2xl font-medium card-title" wire:ignore>
+            {{ __('Images') }}
+        </h4>
         {{-- Logo Start --}}
         @if ($this->logo)
             <div class="my-4">
@@ -27,7 +30,32 @@
         </div>
         {{-- Logo End --}}
 
-        {{-- Count Image Start --}}
+        {{-- Hero Image Start --}}
+        @if ($this->hero_image)
+            <div class="my-4">
+                <div class="mb-2">
+                    <label class="block">
+                        <x-form-label label="Uploaded Hero Image Preview" />
+                        <img src="{{ $this->HeroImageIsUploaded ? $this->hero_image->temporaryUrl() : url('storage/' . $this->hero_image) }}"
+                            class="mt-2" width="250" height="300">
+                    </label>
+                </div>
+            </div>
+        @endif
+
+        <div class="my-4">
+            <div class="mb-2">
+                <label class="block">
+                    <x-form-label label="Hero Image" />
+                    <input type="file" accept="image/*" wire:model="hero_image"
+                        class="block w-full mt-2 text-xl font-normal text-gray-500 border rounded outline-none focus:border-blue-400 focus:shadow">
+                </label>
+            </div>
+            <x-form-errors name="hero_image" />
+        </div>
+        {{-- Hero Image end --}}
+
+        {{-- Hero Image Start --}}
         @if ($this->count_image)
             <div class="my-4">
                 <div class="mb-2">
@@ -53,8 +81,24 @@
         {{-- Count Image end --}}
 
         <h4 class="my-4 text-2xl font-medium card-title" wire:ignore>
+            {{ __('Video') }}
+        </h4>
+
+        <x-form-input name="hero_video" label="Hero Video" type="text" />
+
+        <h4 class="my-4 text-2xl font-medium card-title" wire:ignore>
+            {{ __('Buttons') }}
+        </h4>
+
+        <x-form-input name="tag_action_button_text" label="Tag Button Text" type="text" />
+
+        <x-form-input name="tag_action_button_link" label="Tag Button Link" type="text" />
+
+        <h4 class="my-4 text-2xl font-medium card-title" wire:ignore>
             {{ __('Descriptions') }}
         </h4>
+
+        <x-form-textarea name="tag_line" label="Tag Line" type="text" />
 
         <x-form-textarea name="services_excerpt" label="Services Excerpt" type="text" />
 

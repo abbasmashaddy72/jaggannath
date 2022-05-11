@@ -78,7 +78,6 @@
             </div>
         @endforelse
 
-        {{ $data->links() }}
-
     </div>
+    {{ $data->links() }}
 </div>

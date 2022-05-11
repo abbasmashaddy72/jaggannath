@@ -10,9 +10,8 @@ class Feature extends Model
     use HasFactory;
 
     protected $fillable = [
-        'logo',
+        'image',
         'title',
         'excerpt',
-        'link'
     ];
 }

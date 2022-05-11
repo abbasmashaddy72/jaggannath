@@ -29,9 +29,6 @@ class FeatureTable extends LivewireDatatable
                 ->defaultSort('desc')
                 ->filterable(),
 
-            Column::name('logo')
-                ->label('Logo'),
-
             Column::name('title')
                 ->searchable()
                 ->filterable()
@@ -41,10 +38,6 @@ class FeatureTable extends LivewireDatatable
                 ->searchable()
                 ->truncate(20)
                 ->label('Excerpt'),
-
-            Column::name('link')
-                ->searchable()
-                ->label('Link'),
 
             Column::callback(['id'], function ($id) {
                 return view('pages.backend.features.actions', ['id' => $id]);

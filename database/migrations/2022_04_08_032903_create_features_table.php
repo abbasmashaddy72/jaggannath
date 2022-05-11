@@ -15,10 +15,9 @@ return new class extends Migration
     {
         Schema::create('features', function (Blueprint $table) {
             $table->id();
-            $table->longText('logo')->nullable();
+            $table->longText('image')->nullable();
             $table->string('title');
             $table->text('excerpt')->nullable();
-            $table->string('link')->default('#');
             $table->timestamps();
         });
     }
