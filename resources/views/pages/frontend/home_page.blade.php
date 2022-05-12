@@ -74,11 +74,11 @@
                 <div class="items-center md:grid md:grid-cols-12 md:gap-12 lg:gap-20">
 
                     <!-- Content -->
-                    <div class="mb-8 text-left md:col-span-7 lg:col-span-7 md:mb-0">
+                    <div class="mb-8 text-center md:col-span-7 lg:col-span-7 md:mb-0">
                         <h2 class="mb-4 font-extrabold h4 text-3xl font-red-hat-display" data-aos="fade-down">
                             {{ $tag_line }}</h2>
-                        <div class="flex flex-col justify-center max-w-sm mx-auto mt-8 sm:flex-row sm:max-w-md md:mx-0"
-                            data-aos="fade-down" data-aos-delay="300">
+                        <div class="flex flex-col justify-center mx-auto mt-8 sm:flex-row md:mx-0" data-aos="fade-down"
+                            data-aos-delay="300">
                             <a href="{{ $tag_action_button_link }}"
                                 class="px-3 py-2 bg-primary font-semibold text-white text-lg rounded-xl hover:bg-secondary transition ease-in-out duration-500">{{ $tag_action_button_text }}</a>
                         </div>
@@ -190,9 +190,9 @@
 
         <div class="container max-w-screen-2xl mx-auto px-4">
 
-            <p class="font-bold text-gray-900 text-lg md:text-2xl text-center uppercase mb-6">Our Services</p>
+            <p class="font-bold text-gray-900 text-xl md:text-2xl text-center uppercase mb-6">Our Services</p>
 
-            <h1 class="font-semibold text-gray-900 text-xl md:text-4xl text-center leading-normal mb-10">
+            <h1 class="font-light text-gray-900 text-lg md:text-xl text-center leading-normal mb-10">
                 {{ $services_excerpt }}</h1>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 mx-auto">
@@ -246,9 +246,9 @@
 
         <div class="container max-w-screen-2xl mx-auto px-4">
 
-            <p class="font-bold text-gray-900 text-lg md:text-2xl text-center uppercase mb-6">Our Progress</p>
+            <p class="font-bold text-gray-900 text-xl md:text-2xl text-center uppercase mb-6">Our Progress</p>
 
-            <h1 class="font-semibold text-gray-900 text-xl md:text-4xl text-center leading-normal mb-10">
+            <h1 class="font-light text-gray-900 text-lg md:text-xl text-center leading-normal mb-10">
                 {{ $count_excerpt }}</h1>
 
             <div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-10">
