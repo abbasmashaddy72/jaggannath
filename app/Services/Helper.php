@@ -22,10 +22,14 @@ class Helper
     }
 
     // Gets array of custom key & values from Model
-    public static function getKeyValues($model, $value, $key)
+    public static function getKeyValues($model, $value, $key, $where_column = null, $where_id = null)
     {
         $model = "\\App\\Models\\" . $model;
-        $data = $model::all()->pluck($value, $key);
+        if ($where_column != null && $where_id != null) {
+            $data = $model::where($where_column, $where_id)->pluck($value, $key);
+        } else {
+            $data = $model::all()->pluck($value, $key);
+        }
 
         return $data;
     }

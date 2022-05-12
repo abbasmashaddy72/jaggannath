@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Form\Backend;
 
+use App\Models\Service;
 use App\Models\Team;
 use App\Models\TeamService;
 use App\Services\Helper;
@@ -39,6 +40,13 @@ class TeamCEV extends Component
         }
     }
 
+    public function updatedDepartmentId($department_id)
+    {
+        if (!is_null($department_id)) {
+            $this->services = Helper::getKeyValues('Service', 'title', 'id', 'department_id', $department_id);
+        }
+    }
+
     public function store()
     {
         $validatedData = $this->validate();
@@ -47,7 +55,11 @@ class TeamCEV extends Component
             $validatedData['image'] = $this->image->store('team_images');
         }
 
-        Team::create($validatedData);
+        $new_team  = Team::create($validatedData);
+
+        foreach (array_keys(array_filter($validatedData['services'])) as $key => $value) {
+            TeamService::create(['team_id' => $new_team->id, 'service_id' => $value]);
+        }
 
         notify()->success('Team Saved Successfully!');
 
@@ -57,15 +69,13 @@ class TeamCEV extends Component
     public function update()
     {
         $validatedData = $this->validate();
+
         if (gettype($this->image) != 'string') {
             $validatedData['image'] = $this->image->store('team_images');
         }
 
-        $team_services = new TeamService;
-
-        // Pending
-        foreach (array_filter($validatedData['services']) as $key => $item) {
-            $team_services->create(['team_id' => $this->team, 'services_id' => $key]);
+        foreach (array_keys(array_filter($validatedData['services'])) as $key => $value) {
+            TeamService::create(['team_id' => $this->team, 'service_id' => $value]);
         }
 
         unset($validatedData['services']);
@@ -88,7 +98,13 @@ class TeamCEV extends Component
             $this->profile = $data->profile;
             $this->experience = $data->experience->format('Y-m-d');
         }
-        $this->services = Helper::getKeyValues('Service', 'title', 'id');
+
+        if (!is_null($this->department_id)) {
+            $this->services = Helper::getKeyValues('Service', 'title', 'id', 'department_id', $this->department_id);
+        } else {
+            $this->services = collect();
+        }
+
         $this->action = substr(strstr(Route::currentRouteAction(), '@'), 1);
     }
 

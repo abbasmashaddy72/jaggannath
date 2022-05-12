@@ -22,22 +22,25 @@
 
     <x-backend.single-upload name="image" label="Image" />
 
-    <x-form-label>
-        <x-slot name="label">Services List</x-slot>
-    </x-form-label>
-    <div class="mx-8 mt-2">
-        @foreach ($services as $key => $item)
-            <div class="flex flex-col">
-                <label class="flex items-center">
-                    <input class='float-left w-4 h-4 mt-1 -ml-6 bg-center bg-no-repeat border border-blue-500 rounded'
-                        type="checkbox" value="{{ $key }}" wire:model="services.{{ $key }}"
-                        name="services" />
-                    <span class="ml-2" wire:ignore>{{ $item }}</span>
-                </label>
-                <x-form-errors :name="$services" />
-            </div>
-        @endforeach
-    </div>
+    @if (!is_null($department_id))
+        <x-form-label>
+            <x-slot name="label">Services List</x-slot>
+        </x-form-label>
+        <div class="mx-8 mt-2">
+            @foreach ($services as $key => $item)
+                <div class="flex flex-col">
+                    <label class="flex items-center">
+                        <input
+                            class='float-left w-4 h-4 mt-1 -ml-6 bg-center bg-no-repeat border border-blue-500 rounded'
+                            type="checkbox" value="{{ $key }}" wire:model="services.{{ $key }}"
+                            name='services[]' />
+                        <span class="ml-2">{{ $item }}</span>
+                    </label>
+                    <x-form-errors :name="$services" />
+                </div>
+            @endforeach
+        </div>
+    @endif
     @endwire
 
     <div class="mt-3">
