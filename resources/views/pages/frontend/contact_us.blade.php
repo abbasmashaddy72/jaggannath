@@ -29,7 +29,7 @@
                             <div>
                                 <h5 class="text-lg font-semibold mb-6">Our Location</h5>
                                 <p class="text-base text-body-color">
-                                    401 Broadway, 24th Floor, Orchard Cloud View, London
+                                    {{ $address }}
                                 </p>
                             </div>
                         </div>
@@ -42,10 +42,12 @@
                             </div>
                             <div>
                                 <h5 class="text-lg font-semibold mb-6">How Can We Help?</h5>
-                                <p class="text-base text-body-color">info@yourdomain.com</p>
-                                <p class="text-base text-body-color">
-                                    contact@yourdomain.com
-                                </p>
+                                <a href="mail:{{ $email }}">
+                                    <p class="text-base text-body-color">{{ $email }}</p>
+                                </a>
+                                <a href="tel:{{ $contact_no }}">
+                                    <p class="text-base text-body-color">{{ $contact_no }}</p>
+                                </a>
                             </div>
                         </div>
                     </div>

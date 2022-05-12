@@ -232,7 +232,11 @@ class FrontendController extends Controller
          * @name('contact_us')
          * @middlewares('web')
          */
-        return view('pages.frontend.contact_us');
+        $address = Helper::get_static_option('address');
+        $email = Helper::get_static_option('email');
+        $contact_no = Helper::get_static_option('contact_no');
+
+        return view('pages.frontend.contact_us', compact('address', 'email', 'contact_no'));
     }
 
     public function book_appointment()

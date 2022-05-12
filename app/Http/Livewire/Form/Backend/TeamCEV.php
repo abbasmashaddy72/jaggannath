@@ -74,6 +74,8 @@ class TeamCEV extends Component
             $validatedData['image'] = $this->image->store('team_images');
         }
 
+        TeamService::where('team_id', '=', $this->team)->delete();
+
         foreach (array_keys(array_filter($validatedData['services'])) as $key => $value) {
             TeamService::create(['team_id' => $this->team, 'service_id' => $value]);
         }

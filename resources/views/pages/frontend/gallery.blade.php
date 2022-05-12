@@ -11,7 +11,7 @@
                 <div class="mb-10 group wow fadeInUp border-gray-200 border-2 p-4 rounded-lg" data-wow-delay=".1s">
                     <div class="rounded overflow-hidden mb-8">
                         <img src="assets/images/blog/blog-01.jpg" alt="image"
-                            class="w-full transition group-hover:scale-125 group-hover:rotate-6" />
+                            class="w-full transition group-hover:scale-125 group-hover:rotate-6 h-56 object-cover" />
                     </div>
                     <div>
                         <h3

@@ -3,6 +3,16 @@
         @csrf
         @wire('debounce.200ms')
         <h4 class="my-4 text-2xl font-medium card-title" wire:ignore>
+            {{ __('Descriptions') }}
+        </h4>
+
+        <x-form-textarea name="address" label="Address" />
+
+        <x-form-input name="email" label="Email" type="email" />
+
+        <x-form-input name="contact_no" label="Contact No." type="number" />
+
+        <h4 class="my-4 text-2xl font-medium card-title" wire:ignore>
             {{ __('Images') }}
         </h4>
         {{-- Logo Start --}}

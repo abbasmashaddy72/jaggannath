@@ -29,7 +29,7 @@
                     <div class="rounded overflow-hidden mb-8">
                         <a href="{{ route('service_single', ['id' => $item->id]) }}" class="block">
                             <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->title }}"
-                                class="w-full transition group-hover:scale-125 group-hover:rotate-6" />
+                                class="w-full transition group-hover:scale-125 group-hover:rotate-6 h-56 object-cover" />
                         </a>
                     </div>
                     <div>

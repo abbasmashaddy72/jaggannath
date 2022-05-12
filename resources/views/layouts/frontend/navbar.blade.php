@@ -7,15 +7,15 @@
             <ul class="lg:flex flex-col lg:flex-row lg:items-center lg:mx-auto lg:space-x-4 xl:space-x-7"
                 :class="{ 'hidden': !navbarOpen, 'flex': navbarOpen }">
                 <li
-                    class="font-semibold text-gray-900 transition ease-in-out duration-300 mb-5 lg:mb-0 hover:scale-125 hover:rotate-6">
+                    class="font-semibold text-gray-900 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6">
                     <a href="{{ route('book_appointment') }}">Book Appointment</a>
                 </li>
                 <li
-                    class="font-semibold text-gray-900 transition ease-in-out duration-300 mb-5 lg:mb-0 hover:scale-125 hover:rotate-6">
+                    class="font-semibold text-gray-900 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6">
                     <a href="{{ route('feedback') }}">Feedback</a>
                 </li>
                 <li
-                    class="font-semibold text-gray-900 transition ease-in-out duration-300 mb-5 lg:mb-0 hover:scale-125 hover:rotate-6">
+                    class="font-semibold text-gray-900 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6">
                     <a href="{{ 'http://124.123.32.48:9999/shivam/onlinereporting/index.jsp' }}"
                         target="blank">Reports <i data-feather="external-link" width='20' height='20'
                             class="inline"></i></a>
@@ -39,63 +39,63 @@
             <ul class="lg:flex flex-col lg:flex-row lg:items-center lg:mx-auto lg:space-x-4 xl:space-x-7"
                 :class="{ 'hidden': !navbarOpen, 'flex': navbarOpen }">
                 <li
-                    class="font-semibold text-gray-900 transition ease-in-out duration-300 mb-5 lg:mb-0 hover:scale-125 hover:rotate-6">
+                    class="font-semibold text-gray-900 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6">
                     <a href="{{ route('homepage') }}">Home</a>
                 </li>
                 <li
-                    class="font-semibold text-gray-900 transition ease-in-out duration-300 mb-5 lg:mb-0 hover:scale-125 hover:rotate-6">
+                    class="font-semibold text-gray-900 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6">
                     <a href="{{ route('departments') }}">Departments</a>
                 </li>
                 <li
-                    class="font-semibold text-gray-900 transition ease-in-out duration-300 mb-5 lg:mb-0 hover:scale-125 hover:rotate-6">
+                    class="font-semibold text-gray-900 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6">
                     <a href="{{ route('services') }}">Services</a>
                 </li>
                 <li
-                    class="font-semibold text-gray-900 transition ease-in-out duration-300 mb-5 lg:mb-0 hover:scale-125 hover:rotate-6">
-                    <a href="{{ route('teams') }}">Teams</a>
+                    class="font-semibold text-gray-900 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6">
+                    <a href="{{ route('teams') }}">Doctors</a>
                 </li>
                 <li
-                    class="font-semibold text-gray-900 transition ease-in-out duration-300 mb-5 lg:mb-0 hover:scale-125 hover:rotate-6">
+                    class="font-semibold text-gray-900 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6">
                     <a href="{{ route('packages') }}">Packages</a>
                 </li>
                 <li
-                    class="font-semibold text-gray-900 transition ease-in-out duration-300 mb-5 lg:mb-0 hover:scale-125 hover:rotate-6">
+                    class="font-semibold text-gray-900 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6">
                     <a href="{{ route('insurance') }}">Insurance</a>
                 </li>
                 <li
-                    class="font-semibold text-gray-900 transition ease-in-out duration-300 mb-5 lg:mb-0 hover:scale-125 hover:rotate-6">
+                    class="font-semibold text-gray-900 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6">
                     <a href="{{ route('reviews') }}">Reviews</a>
                 </li>
                 <li
-                    class="font-semibold text-gray-900 transition ease-in-out duration-300 mb-5 lg:mb-0 hover:scale-125 hover:rotate-6">
+                    class="font-semibold text-gray-900 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6">
                     <a href="{{ route('blogs') }}">Blogs</a>
                 </li>
                 <li
-                    class="font-semibold text-gray-900 transition ease-in-out duration-300 mb-5 lg:mb-0 hover:scale-125 hover:rotate-6">
+                    class="font-semibold text-gray-900 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6">
                     <a href="{{ route('career') }}">Career</a>
                 </li>
                 <li
-                    class="font-semibold text-gray-900 transition ease-in-out duration-300 mb-5 lg:mb-0 hover:scale-125 hover:rotate-6">
+                    class="font-semibold text-gray-900 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6">
                     <a href="{{ route('gallery') }}">Gallery</a>
                 </li>
                 <li
-                    class="font-semibold text-gray-900 transition ease-in-out duration-300 mb-5 lg:mb-0 hover:scale-125 hover:rotate-6">
+                    class="font-semibold text-gray-900 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6">
                     <a href="{{ route('about_us') }}">About Us</a>
                 </li>
                 <li
-                    class="font-semibold text-gray-900 transition ease-in-out duration-300 mb-5 lg:mb-0 hover:scale-125 hover:rotate-6">
+                    class="font-semibold text-gray-900 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6">
                     <a href="{{ route('contact_us') }}">Contact Us</a>
                 </li>
                 <li
-                    class="sm:hidden font-semibold text-gray-900 transition ease-in-out duration-300 mb-5 lg:mb-0 hover:scale-125 hover:rotate-6">
+                    class="sm:hidden font-semibold text-gray-900 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6">
                     <a href="{{ route('book_appointment') }}">Book Appointment</a>
                 </li>
                 <li
-                    class="sm:hidden font-semibold text-gray-900 transition ease-in-out duration-300 mb-5 lg:mb-0 hover:scale-125 hover:rotate-6">
+                    class="sm:hidden font-semibold text-gray-900 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6">
                     <a href="{{ route('feedback') }}">Feedback</a>
                 </li>
                 <li
-                    class="sm:hidden font-semibold text-gray-900 transition ease-in-out duration-300 mb-5 lg:mb-0 hover:scale-125 hover:rotate-6">
+                    class="sm:hidden font-semibold text-gray-900 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6">
                     <a href="{{ 'http://124.123.32.48:9999/shivam/onlinereporting/index.jsp' }}"
                         target="blank">Reports <i data-feather="external-link" width='20' height='20'
                             class="inline"></i></a>

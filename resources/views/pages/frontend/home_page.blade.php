@@ -68,14 +68,14 @@
     <!-- Tag Line Section Start -->
     <section>
         <div class="max-w-6xl px-4 mx-auto sm:px-6">
-            <div class="pt-32 pb-10 md:pt-40 md:pb-16">
+            <div class="pt-8 pb-10 md:pt-40 md:pb-16">
 
                 <!-- Hero content -->
                 <div class="items-center md:grid md:grid-cols-12 md:gap-12 lg:gap-20">
 
                     <!-- Content -->
                     <div class="mb-8 text-left md:col-span-7 lg:col-span-7 md:mb-0">
-                        <h2 class="mb-4 font-extrabold h4 lg:text-3xl font-red-hat-display" data-aos="fade-down">
+                        <h2 class="mb-4 font-extrabold h4 text-3xl font-red-hat-display" data-aos="fade-down">
                             {{ $tag_line }}</h2>
                         <div class="flex flex-col justify-center max-w-sm mx-auto mt-8 sm:flex-row sm:max-w-md md:mx-0"
                             data-aos="fade-down" data-aos-delay="300">
@@ -113,8 +113,8 @@
                             </svg>
                             <!-- Image inside mockup size: 290x624px (or 580x1248px for >Retina devices) -->
                             <img class="relative h-auto max-w-full mx-auto pointer-events-none rounded-xl md:mr-0 md:max-w-none"
-                                src="{{ asset('storage/' . $hero_image) }}" width="344" height="674"
-                                alt="{{ $tag_line }}" aria-hidden="true" />
+                                src="{{ asset('storage/' . $hero_image) }}" width="650" alt="{{ $tag_line }}"
+                                aria-hidden="true" />
                             <!-- Play button -->
                             <a class="absolute transition duration-150 ease-in-out cursor-pointer hover:opacity-75"
                                 @click.prevent="modalExpanded = true" aria-controls="modal">
@@ -190,12 +190,12 @@
 
         <div class="container max-w-screen-2xl mx-auto px-4">
 
-            <p class="font-light text-gray-900 text-lg md:text-xl text-center uppercase mb-6">Our Services</p>
+            <p class="font-bold text-gray-900 text-lg md:text-2xl text-center uppercase mb-6">Our Services</p>
 
             <h1 class="font-semibold text-gray-900 text-xl md:text-4xl text-center leading-normal mb-10">
                 {{ $services_excerpt }}</h1>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 mx-auto">
                 @forelse ($services as $item)
                     <div class="w-full px-2">
                         <div class="mb-10 group wow fadeInUp border-gray-200 border-2 p-4 rounded-lg"
@@ -203,7 +203,7 @@
                             <div class="rounded overflow-hidden mb-8">
                                 <a href="{{ route('service_single', ['id' => $item->id]) }}" class="block">
                                     <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->title }}"
-                                        class="w-full transition group-hover:scale-125 group-hover:rotate-6" />
+                                        class="w-full transition group-hover:scale-125 group-hover:rotate-6 h-56 object-cover h-56 object-cover" />
                                 </a>
                             </div>
                             <div>
@@ -242,11 +242,11 @@
     <!-- feature section //end -->
 
     <!-- count section -->
-    <section class="bg-white md:mt-10">
+    <section class="bg-white mt-6 md:mt-10">
 
         <div class="container max-w-screen-2xl mx-auto px-4">
 
-            <p class="font-light text-gray-900 text-lg md:text-xl text-center uppercase mb-6">Our Progress</p>
+            <p class="font-bold text-gray-900 text-lg md:text-2xl text-center uppercase mb-6">Our Progress</p>
 
             <h1 class="font-semibold text-gray-900 text-xl md:text-4xl text-center leading-normal mb-10">
                 {{ $count_excerpt }}</h1>
@@ -284,21 +284,36 @@
 
         <div class="container max-w-screen-2xl mx-auto px-4">
 
-            <div class="w-full h-full bg-primary rounded-2xl md:rounded-3xl relative lg:flex items-center">
-                <div class="hidden lg:block">
-                    <img src="assets/image/humans.png" alt="Image" class="relative z-10">
-
-                    <img src="assets/image/pattern-2.png" alt="Image" class="absolute top-14 left-40">
-
-                    <img src="assets/image/pattern.png" alt="Image" class="absolute top-0 z-0">
+            <div class="w-full h-full rounded-2xl md:rounded-3xl relative lg:flex justify-center">
+                <div class="mb-8 text-left md:col-span-7 lg:col-span-7 md:mb-0">
+                    <h2 class="mb-4 font-extrabold h4 text-3xl font-red-hat-display" data-aos="fade-down">
+                        {{ $tag_line }}</h2>
+                    <div class="flex flex-col justify-center max-w-sm mx-auto mt-8 sm:flex-row sm:max-w-md md:mx-0"
+                        data-aos="fade-down" data-aos-delay="300">
+                        <a href="{{ $tag_action_button_link }}"
+                            class="px-3 py-2 bg-primary font-semibold text-white text-lg rounded-xl hover:bg-secondary transition ease-in-out duration-500">{{ $tag_action_button_text }}</a>
+                    </div>
                 </div>
-
-                @livewire('form.frontend.newsletter')
             </div>
 
         </div> <!-- container.// -->
 
     </section>
     <!-- join volunters section //end -->
+
+    <section class="bg-white md:mt-10">
+
+        <div class="container max-w-screen-2xl mx-auto px-4">
+
+            <p class="font-bold text-gray-900 text-lg md:text-2xl text-center uppercase mb-6">Patient Reviews</p>
+
+            <section class="pt-20 lg:pt-[120px] pb-20 lg:pb-[120px]">
+                <div class="container">
+                    @livewire('pagination.frontend.reviews', ['where' => 'homepage'])
+                </div>
+            </section>
+        </div>
+
+    </section>
 
 </x-guest-layout>

@@ -30,6 +30,9 @@ class HomePageCEV extends Component
     public $tag_action_button_text;
     public $hero_image;
     public $hero_video;
+    public $address;
+    public $email;
+    public $contact_no;
 
     public $logoIsUploaded = false;
     public $CountImageIsUploaded = false;
@@ -56,6 +59,9 @@ class HomePageCEV extends Component
         $this->tag_action_button_text = Helper::get_static_option('tag_action_button_text');
         $this->hero_image = Helper::get_static_option('hero_image');
         $this->hero_video = Helper::get_static_option('hero_video');
+        $this->address = Helper::get_static_option('address');
+        $this->email = Helper::get_static_option('email');
+        $this->contact_no = Helper::get_static_option('contact_no');
     }
 
     protected $rules = [
@@ -78,6 +84,9 @@ class HomePageCEV extends Component
         'tag_action_button_text' => '',
         'hero_image' => '',
         'hero_video' => '',
+        'address' => '',
+        'email' => '',
+        'contact_no' => '',
     ];
 
     public function updated($propertyName)
