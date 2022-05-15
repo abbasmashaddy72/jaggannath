@@ -45,9 +45,11 @@
                                 <a href="mail:{{ $email }}">
                                     <p class="text-base text-body-color">{{ $email }}</p>
                                 </a>
-                                <a href="tel:{{ $contact_no }}">
-                                    <p class="text-base text-body-color">{{ $contact_no }}</p>
-                                </a>
+                                @foreach ($contact_no as $item)
+                                    <a href="tel:{{ $item }}">
+                                        <p class="text-base text-body-color">{{ $item }}</p>
+                                    </a>
+                                @endforeach
                             </div>
                         </div>
                     </div>

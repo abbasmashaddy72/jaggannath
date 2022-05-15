@@ -22,6 +22,7 @@ Route::group(['namespace' => 'App\Http\Controllers\Frontend'], function () {
     Route::get('services', 'FrontendController@services')->name('services');
     Route::get('service/{id}', 'FrontendController@service_single')->name('service_single');
     Route::get('teams', 'FrontendController@teams')->name('teams');
+    Route::get('team/{id}', 'FrontendController@team_single')->name('team_single');
     Route::get('insurance', 'FrontendController@insurance')->name('insurance');
     Route::get('packages', 'FrontendController@packages')->name('packages');
     Route::get('reviews', 'FrontendController@reviews')->name('reviews');
@@ -29,7 +30,7 @@ Route::group(['namespace' => 'App\Http\Controllers\Frontend'], function () {
     Route::get('gallery', 'FrontendController@gallery')->name('gallery');
     Route::get('about_us', 'FrontendController@about_us')->name('about_us');
     Route::get('contact_us', 'FrontendController@contact_us')->name('contact_us');
-    Route::get('book_appointment', 'FrontendController@book_appointment')->name('book_appointment');
+    Route::get('book_appointment/{team_id?}', 'FrontendController@book_appointment')->name('book_appointment');
     Route::get('feedback', 'FrontendController@feedback')->name('feedback');
     Route::get('terms', 'FrontendController@terms')->name('terms');
     Route::get('privacy', 'FrontendController@privacy')->name('privacy');

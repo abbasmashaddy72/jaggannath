@@ -24,8 +24,9 @@
     <div class="flex flex-wrap -mx-4">
         <!-- First Repeater -->
         @forelse ($data as $item)
-            <div class="w-full md:w-1/2 lg:w-1/3 px-4">
-                <div class="mb-10 group wow fadeInUp border-gray-200 border-2 p-4 rounded-lg" data-wow-delay=".1s">
+            <div class="w-full md:w-1/2 lg:w-1/3 px-4 flex flex-col">
+                <div class="mb-10 group wow fadeInUp border-gray-200 border-2 p-4 rounded-lg shadow-testimonial flex-1"
+                    data-wow-delay=".1s">
                     <div class="rounded overflow-hidden mb-8">
                         <a href="{{ route('blog_single', ['id' => $item->id]) }}" class="block">
                             <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->title }}"

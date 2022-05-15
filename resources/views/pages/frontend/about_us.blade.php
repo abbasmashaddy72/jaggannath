@@ -9,7 +9,8 @@
                 <!-- First Repeater -->
                 @foreach ($data as $item)
                     <div class="w-full p-4">
-                        <div class="lg:flex items-center justify-between border overflow-hidden">
+                        <div
+                            class="lg:flex items-center justify-between border-gray-200 border-2 overflow-hidden shadow-testimonial rounded-lg">
                             @if ($loop->iteration % 2 == 0)
                                 <div
                                     class="lg:max-w-[565px] xl:max-w-[640px] w-full py-12 px-7 sm:px-12 md:p-16 lg:py-9 lg:px-16 xl:p-[70px]">

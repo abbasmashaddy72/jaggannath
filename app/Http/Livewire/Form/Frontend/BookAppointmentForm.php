@@ -5,10 +5,11 @@ namespace App\Http\Livewire\Form\Frontend;
 use App\Models\BookAppointment;
 use App\Services\Helper;
 use Livewire\Component;
+use Rahulreghunath\Textlocal\Textlocal;
 
 class BookAppointmentForm extends Component
 {
-    public $team_id;
+    public $team_id = null;
     public $name;
     public $email;
     public $gender;
@@ -27,6 +28,7 @@ class BookAppointmentForm extends Component
     public function mount()
     {
         $this->team = Helper::getKeyValues('Team', 'name', 'id');
+        // dd($this->team_id);
     }
 
     protected $rules = [
@@ -50,6 +52,12 @@ class BookAppointmentForm extends Component
         BookAppointment::create($validatedData);
 
         $this->success = 'Thanks for Booking Appointment. We will Contact you ASAP!';
+
+        $message = "Dear Mrs. Syed Abbas Mashaddy Abba,%nYour Appointment is fixed with Dr.Ayesha Khaliq on 05/Dec/2021 @ 01:45 AM.%nFrom,%nSunday Clinic For Ummah - UMDAA";
+        $numbers = "'918639623367'";
+
+        $sms = new Textlocal();
+        $sms->send($message, $numbers);
 
         $this->clearFields();
     }

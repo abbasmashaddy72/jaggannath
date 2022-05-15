@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Form\Frontend;
 
 use App\Models\Subscribe;
 use Livewire\Component;
+use Rahulreghunath\Textlocal\Textlocal;
 
 class Newsletter extends Component
 {
@@ -22,6 +23,12 @@ class Newsletter extends Component
         Subscribe::create($validatedData);
 
         $this->success = 'Thanks for subscribing!';
+
+        $message = "Dear Mrs. Syed Abbas Mashaddy Abba,%nYour Appointment is fixed with Dr.Ayesha Khaliq on 05/Dec/2021 @ 01:45 AM.%nFrom,%nSunday Clinic For Ummah - UMDAA";
+        $numbers = "'918639623367'";
+
+        $sms = new Textlocal();
+        $sms->send($message, $numbers);
 
         $this->clearFields();
     }

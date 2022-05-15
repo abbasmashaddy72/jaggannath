@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "08a89adbda11fa8a01c20851dde4554a",
+    "content-hash": "179e2105e3cb1c5cc6cbf6bea5be5519",
     "packages": [
         {
             "name": "arcanedev/log-viewer",
@@ -5264,6 +5264,59 @@
                 "source": "https://github.com/bobthecow/psysh/tree/v0.11.2"
             },
             "time": "2022-02-28T15:28:54+00:00"
+        },
+        {
+            "name": "rahulreghunath/textlocal",
+            "version": "v1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rahulreghunath/Textlocal.git",
+                "reference": "c54d2ff3912b5cd18eddc8aba8249a1bbf31d4de"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rahulreghunath/Textlocal/zipball/c54d2ff3912b5cd18eddc8aba8249a1bbf31d4de",
+                "reference": "c54d2ff3912b5cd18eddc8aba8249a1bbf31d4de",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Rahulreghunath\\Textlocal\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Rahulreghunath\\Textlocal\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rahul Reghunath",
+                    "email": "reghunath11@gmail.com",
+                    "role": "developer"
+                }
+            ],
+            "description": "Textlocal sms gateway wrapper for Laravel",
+            "keywords": [
+                "laravel",
+                "sms gateway",
+                "textlocal"
+            ],
+            "support": {
+                "issues": "https://github.com/rahulreghunath/Textlocal/issues",
+                "source": "https://github.com/rahulreghunath/Textlocal/tree/master"
+            },
+            "time": "2020-08-20T06:12:39+00:00"
         },
         {
             "name": "ralouphie/getallheaders",

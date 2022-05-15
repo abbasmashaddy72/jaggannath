@@ -15,6 +15,8 @@ class HomePageCEV extends Component
     public $about;
     public $services_excerpt;
     public $count_excerpt;
+    public $review_excerpt;
+    public $team_excerpt;
     public $counts;
     public $twitter;
     public $facebook;
@@ -45,6 +47,8 @@ class HomePageCEV extends Component
         $this->about = Helper::get_static_option('about');
         $this->services_excerpt = Helper::get_static_option('services_excerpt');
         $this->count_excerpt = Helper::get_static_option('count_excerpt');
+        $this->review_excerpt = Helper::get_static_option('review_excerpt');
+        $this->team_excerpt = Helper::get_static_option('team_excerpt');
         $this->twitter = Helper::get_static_option('twitter');
         $this->facebook = Helper::get_static_option('facebook');
         $this->instagram = Helper::get_static_option('instagram');
@@ -70,6 +74,8 @@ class HomePageCEV extends Component
         'about' => '',
         'services_excerpt' => '',
         'count_excerpt' => '',
+        'review_excerpt' => '',
+        'team_excerpt' => '',
         'twitter' => '',
         'facebook' => '',
         'instagram' => '',

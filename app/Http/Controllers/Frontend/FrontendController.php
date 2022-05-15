@@ -28,6 +28,9 @@ class FrontendController extends Controller
         view()->share('youtube', Helper::get_static_option('youtube'));
         view()->share('google_business', Helper::get_static_option('google_business'));
         view()->share('embed_map_link', Helper::get_static_option('embed_map_link'));
+        view()->share('email', Helper::get_static_option('email'));
+        view()->share('contact_no', explode(')', Helper::get_static_option('contact_no')));
+        view()->share('address', Helper::get_static_option('address'));
     }
 
     public function index()
@@ -42,6 +45,8 @@ class FrontendController extends Controller
         $services_excerpt = Helper::get_static_option('services_excerpt');
         $count_image = Helper::get_static_option('count_image');
         $count_excerpt = Helper::get_static_option('count_excerpt');
+        $review_excerpt = Helper::get_static_option('review_excerpt');
+        $team_excerpt = Helper::get_static_option('team_excerpt');
         $counts = Count::where('on', 'homepage')->get();
         $gr_api = Helper::get_static_option('gr_api');
         $gr_count_api = Helper::get_static_option('gr_count_api');
@@ -59,6 +64,8 @@ class FrontendController extends Controller
             'services_excerpt',
             'count_image',
             'count_excerpt',
+            'review_excerpt',
+            'team_excerpt',
             'counts',
             'gr_api',
             'gr_count_api',
@@ -150,6 +157,14 @@ class FrontendController extends Controller
         return view('pages.frontend.teams');
     }
 
+    public function team_single($id)
+    {
+        $data = Team::with('services')->findOrFail($id);
+        $related = Team::where('department_id', $data->department_id)->with('department')->whereNotIn('id', [$data->id])->limit(3)->get();
+
+        return view('pages.frontend.team_single', compact('data', 'related'));
+    }
+
     public function insurance()
     {
         /**
@@ -232,21 +247,19 @@ class FrontendController extends Controller
          * @name('contact_us')
          * @middlewares('web')
          */
-        $address = Helper::get_static_option('address');
-        $email = Helper::get_static_option('email');
-        $contact_no = Helper::get_static_option('contact_no');
-
-        return view('pages.frontend.contact_us', compact('address', 'email', 'contact_no'));
+        return view('pages.frontend.contact_us');
     }
 
-    public function book_appointment()
+    public function book_appointment($tem_id = null)
     {
         /**
          * @get('/book_appointment')
          * @name('book_appointment')
          * @middlewares('web')
          */
-        return view('pages.frontend.book_appointment');
+        $team_id = $tem_id;
+
+        return view('pages.frontend.book_appointment', compact('team_id'));
     }
 
     public function feedback()

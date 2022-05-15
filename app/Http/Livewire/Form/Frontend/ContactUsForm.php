@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Form\Frontend;
 
 use App\Models\ContactUs;
 use Livewire\Component;
+use Rahulreghunath\Textlocal\Textlocal;
 
 class ContactUsForm extends Component
 {
@@ -38,6 +39,12 @@ class ContactUsForm extends Component
         ContactUs::create($validatedData);
 
         $this->success = 'Thanks for Contacting Us. We will Contact you ASAP!';
+
+        $message = "Dear Mrs. Syed Abbas Mashaddy Abba,%nYour Appointment is fixed with Dr.Ayesha Khaliq on 05/Dec/2021 @ 01:45 AM.%nFrom,%nSunday Clinic For Ummah - UMDAA";
+        $numbers = "'918639623367'";
+
+        $sms = new Textlocal();
+        $sms->send($message, $numbers);
 
         $this->clearFields();
     }

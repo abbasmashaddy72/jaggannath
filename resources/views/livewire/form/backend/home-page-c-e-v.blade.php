@@ -10,7 +10,8 @@
 
         <x-form-input name="email" label="Email" type="email" />
 
-        <x-form-input name="contact_no" label="Contact No." type="number" />
+        <x-form-input name="contact_no"
+            label="Contact No. (If you have multiple numbers please add ; between each number)" type="text" />
 
         <h4 class="my-4 text-2xl font-medium card-title" wire:ignore>
             {{ __('Images') }}
@@ -113,6 +114,10 @@
         <x-form-textarea name="services_excerpt" label="Services Excerpt" type="text" />
 
         <x-form-textarea name="count_excerpt" label="Count Excerpt" type="text" />
+
+        <x-form-textarea name="review_excerpt" label="Review Excerpt" type="text" />
+
+        <x-form-textarea name="team_excerpt" label="Doctor Excerpt" type="text" />
 
         <h4 class="my-4 text-2xl font-medium card-title" wire:ignore>
             {{ __('Social Media Links') }}

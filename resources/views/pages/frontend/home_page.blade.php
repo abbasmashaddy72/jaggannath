@@ -40,7 +40,7 @@
                                 <div class="swiper-slide">
                                     <div class="flex flex-col overflow-hidden rounded shadow">
                                         <div class="flex-shrink-0">
-                                            <img class="object-cover w-screen h-96 md:h-4/5"
+                                            <img class="object-cover w-screen h-96 md:h-4/5 rounded-lg"
                                                 src="{{ url('storage/' . $item->image) }}" alt="">
                                         </div>
                                     </div>
@@ -67,14 +67,14 @@
 
     <!-- Tag Line Section Start -->
     <section>
-        <div class="max-w-6xl px-4 mx-auto sm:px-6">
-            <div class="pt-8 pb-10 md:pt-40 md:pb-16">
+        <div class="max-w-7xl px-4 mx-auto sm:px-6">
+            <div class="pt-8 pb-10 md:pt-8 md:pb-16">
 
                 <!-- Hero content -->
                 <div class="items-center md:grid md:grid-cols-12 md:gap-12 lg:gap-20">
 
                     <!-- Content -->
-                    <div class="mb-8 text-center md:col-span-7 lg:col-span-7 md:mb-0">
+                    <div class="mb-8 text-center md:col-span-6 lg:col-span-5 md:mb-0">
                         <h2 class="mb-4 font-extrabold h4 text-3xl font-red-hat-display" data-aos="fade-down">
                             {{ $tag_line }}</h2>
                         <div class="flex flex-col justify-center mx-auto mt-8 sm:flex-row md:mx-0" data-aos="fade-down"
@@ -112,7 +112,7 @@
                                 </defs>
                             </svg>
                             <!-- Image inside mockup size: 290x624px (or 580x1248px for >Retina devices) -->
-                            <img class="relative h-auto max-w-full mx-auto pointer-events-none rounded-xl md:mr-0 md:max-w-none"
+                            <img class="relative h-auto max-w-full mx-auto pointer-events-none rounded-lg md:mr-0 md:max-w-none"
                                 src="{{ asset('storage/' . $hero_image) }}" width="650" alt="{{ $tag_line }}"
                                 aria-hidden="true" />
                             <!-- Play button -->
@@ -158,7 +158,7 @@
     <!-- Tag Line Section End -->
 
     <!-- feature section -->
-    <section class="bg-white py-16 md:mt-10">
+    <section class="bg-white md:mt-10">
 
         <div class="container max-w-screen-xl mx-auto px-4">
 
@@ -168,8 +168,8 @@
                     <div class="text-center">
                         <div class="flex justify-center mb-6">
                             <div class="w-52 py-4 flex justify-center">
-                                <img class="rounded-xl object-cover" src="{{ asset('storage/' . $item->image) }}"
-                                    alt="{{ $item->title }}" />
+                                <img class="rounded-full object-cover shadow-testimonial"
+                                    src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->title }}" />
                             </div>
                         </div>
 
@@ -185,6 +185,43 @@
     </section>
     <!-- feature section //end -->
 
+    <!-- count section -->
+    <section class="bg-white mt-6 md:mt-16">
+
+        <div class="container max-w-screen-2xl mx-auto px-4">
+
+            <p class="font-bold text-gray-900 text-xl md:text-2xl text-center uppercase mb-6">Our Progress</p>
+
+            <h1 class="font-normal text-gray-900 text-lg md:text-xl text-center leading-normal mb-10">
+                {{ $count_excerpt }}</h1>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-10">
+                @forelse ($counts as $item)
+                    <div class="grid grid-cols-1 md:space-x-20 mb-16 text-center">
+                        <div class="mb-5 md:mb-0">
+                            <div class="flex justify-center">
+                                <div class="w-20 py-6 flex justify-center bg-primary bg-opacity-20 rounded-xl mb-4">
+                                    <i data-feather="{{ $item->icon }}"></i>
+                                </div>
+                            </div>
+
+                            <h3 class="font-semibold text-gray-900 text-xl md:text-3xl mb-4">{{ $item->value }}
+                            </h3>
+
+                            <p class="font-light text-gray-800 text-md md:text-lg">{{ $item->title }}</p>
+                        </div>
+                    </div>
+                @empty
+                    <div class="w-full px-4">
+                        <div class="text-center font-bold text-gray-800 text-lg">No Data Available</div>
+                    </div>
+                @endforelse
+            </div>
+        </div> <!-- container.// -->
+
+    </section>
+    <!-- count section //end -->
+
     <!-- feature section -->
     <section class="bg-white md:mt-10">
 
@@ -192,13 +229,13 @@
 
             <p class="font-bold text-gray-900 text-xl md:text-2xl text-center uppercase mb-6">Our Services</p>
 
-            <h1 class="font-light text-gray-900 text-lg md:text-xl text-center leading-normal mb-10">
+            <h1 class="font-normal text-gray-900 text-lg md:text-xl text-center leading-normal mb-10">
                 {{ $services_excerpt }}</h1>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 mx-auto">
                 @forelse ($services as $item)
                     <div class="w-full px-2">
-                        <div class="mb-10 group wow fadeInUp border-gray-200 border-2 p-4 rounded-lg"
+                        <div class="mb-10 group wow fadeInUp border-gray-200 border-2 p-4 rounded-lg shadow-testimonial flex-1"
                             data-wow-delay=".1s">
                             <div class="rounded overflow-hidden mb-8">
                                 <a href="{{ route('service_single', ['id' => $item->id]) }}" class="block">
@@ -241,43 +278,48 @@
     </section>
     <!-- feature section //end -->
 
-    <!-- count section -->
-    <section class="bg-white mt-6 md:mt-10">
+    <!-- Google Reviews -->
+    <section class="bg-white md:mt-10">
 
         <div class="container max-w-screen-2xl mx-auto px-4">
 
-            <p class="font-bold text-gray-900 text-xl md:text-2xl text-center uppercase mb-6">Our Progress</p>
+            <p class="font-bold text-gray-900 text-lg md:text-2xl text-center uppercase mb-6">Patient Reviews</p>
 
-            <h1 class="font-light text-gray-900 text-lg md:text-xl text-center leading-normal mb-10">
-                {{ $count_excerpt }}</h1>
+            <h1 class="font-normal text-gray-900 text-lg md:text-xl text-center leading-normal mb-10">
+                {{ $review_excerpt }}</h1>
+        </div>
+    </section>
 
-            <div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-10">
-                @forelse ($counts as $item)
-                    <div class="grid grid-cols-1 md:grid-cols-2 md:space-x-20 mb-16">
-                        <div class="mb-5 md:mb-0">
-                            <div class="w-20 py-6 flex justify-center bg-primary bg-opacity-20 rounded-xl mb-4">
-                                <i data-feather="{{ $item->icon }}"></i>
-                            </div>
+    @include('components.frontend.g-reviews')
 
-                            <h3 class="font-semibold text-gray-900 text-xl md:text-3xl mb-4">{{ $item->value }}
-                            </h3>
+    <section class="bg-white md:mt-10">
 
-                            <p class="font-light text-gray-800 text-md md:text-lg">{{ $item->title }}</p>
-                        </div>
-                    </div>
-                @empty
-                    <div class="w-full px-4">
-                        <div class="text-center font-bold text-gray-800 text-lg">No Data Available</div>
-                    </div>
-                @endforelse
-            </div>
-        </div> <!-- container.// -->
+        <div class="container max-w-screen-2xl mx-auto px-4">
+
+            <section class="pt-20 lg:pt-[40px] pb-20 lg:pb-[40px]">
+                <div class="container">
+                    @livewire('pagination.frontend.reviews', ['where' => 'homepage'])
+                </div>
+            </section>
+        </div>
 
     </section>
-    <!-- count section //end -->
 
-    <!-- Google Reviews -->
-    @include('components.frontend.g-reviews')
+    <section class="bg-white md:mt-10">
+
+        <div class="container max-w-screen-2xl mx-auto px-4">
+            <p class="font-bold text-gray-900 text-lg md:text-2xl text-center uppercase mb-6">Our Doctors</p>
+
+            <h1 class="font-normal text-gray-900 text-lg md:text-xl text-center leading-normal mb-10">
+                {{ $team_excerpt }}</h1>
+            <section class="pt-20 lg:pt-[40px] pb-20 lg:pb-[40px]">
+                <div class="container">
+                    @livewire('pagination.frontend.teams', ['where' => 'homepage'])
+                </div>
+            </section>
+        </div>
+
+    </section>
 
     <!-- join volunters section -->
     <section class="bg-white py-16">
@@ -286,8 +328,6 @@
 
             <div class="w-full h-full rounded-2xl md:rounded-3xl relative lg:flex justify-center">
                 <div class="mb-8 text-left md:col-span-7 lg:col-span-7 md:mb-0">
-                    <h2 class="mb-4 font-extrabold h4 text-3xl font-red-hat-display" data-aos="fade-down">
-                        {{ $tag_line }}</h2>
                     <div class="flex flex-col justify-center max-w-sm mx-auto mt-8 sm:flex-row sm:max-w-md md:mx-0"
                         data-aos="fade-down" data-aos-delay="300">
                         <a href="{{ $tag_action_button_link }}"
@@ -300,20 +340,5 @@
 
     </section>
     <!-- join volunters section //end -->
-
-    <section class="bg-white md:mt-10">
-
-        <div class="container max-w-screen-2xl mx-auto px-4">
-
-            <p class="font-bold text-gray-900 text-lg md:text-2xl text-center uppercase mb-6">Patient Reviews</p>
-
-            <section class="pt-20 lg:pt-[120px] pb-20 lg:pb-[120px]">
-                <div class="container">
-                    @livewire('pagination.frontend.reviews', ['where' => 'homepage'])
-                </div>
-            </section>
-        </div>
-
-    </section>
 
 </x-guest-layout>

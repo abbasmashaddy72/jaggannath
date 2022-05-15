@@ -10,7 +10,23 @@
                     </a>
                 </div>
 
-                <div class="flex items-center justify-center lg:justify-start space-x-5">
+                <div class="flex justify-start max-w-xs">
+                    <p>{{ $address }}</p>
+                </div>
+                <div class="flex justify-start max-w-xs">
+                    <a href="mail:{{ $email }}">
+                        <p class="text-base text-body-color">{{ $email }}</p>
+                    </a>
+                </div>
+                @foreach ($contact_no as $item)
+                    <div class="flex justify-start max-w-xs">
+                        <a href="tel:{{ $item }}">
+                            <p class="text-base text-body-color">{{ $item }}</p>
+                        </a>
+                    </div>
+                @endforeach
+
+                <div class="flex items-center justify-center lg:justify-start space-x-3">
                     <a href="{{ $facebook }}" target="_blank"
                         class="px-3 py-3 bg-gray-200 text-gray-700 rounded-full hover:bg-primary hover:text-white transition ease-in-out duration-500">
                         <i data-feather="facebook"></i>
@@ -31,14 +47,14 @@
                         class="px-3 py-3 bg-gray-200 text-gray-700 rounded-full hover:bg-primary hover:text-white transition ease-in-out duration-500">
                         <i data-feather="youtube"></i>
                     </a>
-                    {{-- <a href="{{ $google_business }}" target="_blank"
+                    <a href="{{ $google_business }}" target="_blank"
                         class="px-3 py-3 bg-gray-200 text-gray-700 rounded-full hover:bg-primary hover:text-white transition ease-in-out duration-500">
-                        <i data-feather="chrome"></i>
-                    </a> --}}
+                        <img src="{{ asset('svg/google-my-business.svg') }}" width="28" height="28" alt="Play" />
+                    </a>
                 </div>
             </div>
 
-            <div class="text-center lg:text-left space-y-7 mb-10 lg:mb-0">
+            <div class="text-center lg:text-left space-y-5 mb-10 lg:mb-0">
                 <h4 class="font-semibold text-gray-900 text-lg md:text-2xl">Quick links</h4>
 
                 <a href="{{ route('terms') }}"
@@ -49,11 +65,24 @@
 
                 <a href="{{ route('career') }}"
                     class="block font-light text-gray-800 text-sm md:text-lg hover:text-gray-800 transition ease-in-out duration-300">Career</a>
+
+                <a href="{{ route('about_us') }}"
+                    class="block font-light text-gray-800 text-sm md:text-lg hover:text-gray-800 transition ease-in-out duration-300">About
+                    Us</a>
+
+                <a href="{{ route('blogs') }}"
+                    class="block font-light text-gray-800 text-sm md:text-lg hover:text-gray-800 transition ease-in-out duration-300">Blogs</a>
+
+                <a href="{{ route('packages') }}"
+                    class="block font-light text-gray-800 text-sm md:text-lg hover:text-gray-800 transition ease-in-out duration-300">Packages</a>
+
+                <a href="{{ route('feedback') }}"
+                    class="block font-light text-gray-800 text-sm md:text-lg hover:text-gray-800 transition ease-in-out duration-300">Feedback</a>
             </div>
 
             @if (!Jenssegers\Agent\Facades\Agent::isMobile() || Jenssegers\Agent\Facades\Agent::isTablet())
                 <div>
-                    <iframe src="{{ $embed_map_link }}" width="600" height="200" style="border:0;" allowfullscreen=""
+                    <iframe src="{{ $embed_map_link }}" width="600" height="360" style="border:0;" allowfullscreen=""
                         loading="lazy">
                     </iframe>
                 </div>
