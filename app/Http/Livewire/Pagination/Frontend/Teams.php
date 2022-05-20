@@ -36,12 +36,6 @@ class Teams extends Component
             $data = Team::with('department')->where('department_id', $this->department_id)->paginate(6);
         }
 
-        // if ($this->department_id == null) {
-        //     $data = Team::with('department', 'services')->get();
-        // } else {
-        //     $data = Team::with('department')->where('department_id', $this->department_id)->get();
-        // }
-
         return view('livewire.pagination.frontend.teams', compact('data'));
     }
 }

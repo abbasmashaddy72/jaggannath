@@ -1,25 +1,4 @@
 <div>
-    <!-- Select Category -->
-    <div class="flex flex-no-wrap overflow-x-auto scrolling-touch items-start mb-12">
-        <!-- First Repeater -->
-        @foreach ($team as $item)
-            <div class="flex-none mr-8 border rounded-3xl">
-                <div class="space-y-4 cursor-pointer">
-                    <div class="px-4 py-2">
-                        <div class="text-lg leading-6 font-medium space-y-1">
-                            <label for={{ $item->id }}>
-                                <input type='radio' id="{{ $item->id }}" hidden value="{{ $item->id }}"
-                                    wire:model='team_id' />
-                                <span class="font-bold text-gray-800 text-lg cursor-pointer">{{ $item->name }}</span>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        @endforeach
-
-    </div>
-
     <div class="flex flex-wrap -mx-4">
         <!-- First Repeater -->
         @forelse ($data as $item)
@@ -54,10 +33,6 @@
                         <span
                             class="bg-primary rounded inline-block text-center py-1 px-4 text-xs leading-loose font-semibold text-white mb-5">
                             {{ $item->created_at->diffForHumans() }}
-                        </span>
-                        <span
-                            class="bg-primary rounded inline-block text-center py-1 px-4 text-xs leading-loose font-semibold text-white mb-5">
-                            {{ ucwords(strtolower($item->team->name)) }}
                         </span>
                     </div>
                     <h3>

@@ -1,30 +1,48 @@
 <!-- ====== Navbar Section Start -->
-<div class="sticky top-0 left-0 z-40 flex items-center w-full bg-white">
+<div class="sticky top-0 left-0 z-40 flex items-center w-full bg-gradient-to-r from-secondary to-primary">
     <div class="container max-w-screen-2xl mx-auto px-4 py-4">
 
-        <nav class="flex-wrap lg:flex items-center" x-data="{ navbarOpen: false }">
-
-            <ul class="lg:flex flex-col lg:flex-row lg:items-center lg:mx-auto lg:space-x-4 xl:space-x-7"
+        <nav class="flex-wrap lg:flex items-center justify-between" x-data="{ navbarOpen: false }">
+            <div class="flex items-center justify-center lg:justify-start space-x-3">
+                <a href="{{ $facebook }}" target="_blank"
+                    class="px-3 py-3 bg-gray-200 text-gray-700 rounded-full hover:bg-blue-500 hover:text-white transition ease-in-out duration-500">
+                    <i data-feather="facebook"></i>
+                </a>
+                <a href="{{ $instagram }}" target="_blank"
+                    class="px-3 py-3 bg-gray-200 text-gray-700 rounded-full hover:bg-pink-500 hover:text-white transition ease-in-out duration-500">
+                    <i data-feather="instagram"></i>
+                </a>
+                <a href="{{ $linkedin }}" target="_blank"
+                    class="px-3 py-3 bg-gray-200 text-gray-700 rounded-full hover:bg-indigo-700 hover:text-white transition ease-in-out duration-500">
+                    <i data-feather="linkedin"></i>
+                </a>
+                <a href="{{ $twitter }}" target="_blank"
+                    class="px-3 py-3 bg-gray-200 text-gray-700 rounded-full hover:bg-blue-400 hover:text-white transition ease-in-out duration-500">
+                    <i data-feather="twitter"></i>
+                </a>
+                <a href="{{ $youtube }}" target="_blank"
+                    class="px-3 py-3 bg-gray-200 text-gray-700 rounded-full hover:bg-red-500 hover:text-white transition ease-in-out duration-500">
+                    <i data-feather="youtube"></i>
+                </a>
+                <a href="{{ $google_business }}" target="_blank"
+                    class="px-3 py-3 bg-gray-200 text-gray-700 rounded-full hover:bg-blue-400 hover:text-white transition ease-in-out duration-500">
+                    <img src="{{ asset('svg/google-my-business.svg') }}" width="24" height="24" alt="Play" />
+                </a>
+            </div>
+            <ul class="lg:flex flex-col lg:flex-row lg:items-center lg:space-x-4 xl:space-x-7"
                 :class="{ 'hidden': !navbarOpen, 'flex': navbarOpen }">
-                <li
-                    class="font-semibold text-gray-900 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6 {{ Request::is('book_appointment*') ? 'underline decoration-primary decoration-4' : '' }}">
-                    <a href="{{ route('book_appointment') }}">Book Appointment</a>
-                </li>
-                <li
-                    class="font-semibold text-gray-900 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6 {{ Request::is('feedback*') ? 'underline decoration-primary decoration-4' : '' }}">
-                    <a href="{{ route('feedback') }}">Feedback</a>
-                </li>
-                <li
-                    class="font-semibold text-gray-900 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6">
-                    <a href="{{ 'http://124.123.32.48:9999/shivam/onlinereporting/index.jsp' }}"
-                        target="blank">Reports <i data-feather="external-link" width='20' height='20'
-                            class="inline"></i></a>
-                </li>
+                <a href="{{ route('book_appointment') }}"
+                    class="px-3 py-2 bg-white font-semibold text-lg rounded-xl hover:bg-secondary hover:text-gray-50 transition ease-in-out duration-500 {{ Request::is('book_appointment*') ? 'bg-secondary text-gray-50' : '' }}">{{ 'Book Appointment' }}</a>
+                <a href="{{ route('feedback') }}"
+                    class="px-3 py-2 bg-white font-semibold text-lg rounded-xl hover:bg-secondary hover:text-gray-50 transition ease-in-out duration-500 {{ Request::is('feedback*') ? 'bg-secondary text-gray-50' : '' }}">{{ 'Feedback' }}</a>
+                <a href="{{ 'http://124.123.32.48:9999/shivam/onlinereporting/index.jsp' }}"
+                    class="px-3 py-2 bg-white font-semibold text-lg rounded-xl hover:bg-secondary hover:text-gray-50 transition ease-in-out duration-500">{{ 'Online Reports' }}<i
+                        data-feather="external-link" width='20' height='20' class="inline"></i></a>
             </ul>
         </nav>
-        <nav class="flex-wrap lg:flex items-center" x-data="{ navbarOpen: false }">
+        <nav class="flex-wrap lg:flex items-center justify-between" x-data="{ navbarOpen: false }">
 
-            <div class="flex items-center mb-10 lg:mb-0 py-5">
+            <div class="flex items-center py-5">
                 <a href="{{ route('homepage') }}">
                     <img src="{{ asset('storage/' . $logo) }}" class="w-52 h-auto" alt="Logo">
                 </a>
@@ -36,66 +54,66 @@
                 </button>
             </div>
 
-            <ul class="lg:flex flex-col lg:flex-row lg:items-center lg:mx-auto lg:space-x-4 xl:space-x-7"
+            <ul class="lg:flex flex-col lg:flex-row lg:items-center lg:space-x-4 xl:space-x-7"
                 :class="{ 'hidden': !navbarOpen, 'flex': navbarOpen }">
                 <li
-                    class="font-semibold text-gray-900 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6 {{ Request::is('/*') ? 'underline decoration-primary decoration-4' : '' }}">
+                    class="font-semibold text-gray-50 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6 {{ Request::is('/*') ? 'underline underline-offset-2 decoration-gray-50 decoration-4' : '' }}">
                     <a href="{{ route('homepage') }}">Home</a>
                 </li>
                 <li
-                    class="font-semibold text-gray-900 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6 {{ Request::is('department*') ? 'underline decoration-primary decoration-4' : '' }}">
+                    class="font-semibold text-gray-50 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6 {{ Request::is('department*') ? 'underline underline-offset-2 decoration-gray-50 decoration-4' : '' }}">
                     <a href="{{ route('departments') }}">Departments</a>
                 </li>
                 <li
-                    class="font-semibold text-gray-900 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6 {{ Request::is('service*') ? 'underline decoration-primary decoration-4' : '' }}">
-                    <a href="{{ route('services') }}">Services</a>
-                </li>
-                <li
-                    class="font-semibold text-gray-900 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6 {{ Request::is('team*') ? 'underline decoration-primary decoration-4' : '' }}">
+                    class="font-semibold text-gray-50 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6 {{ Request::is('team*') ? 'underline underline-offset-2 decoration-gray-50 decoration-4' : '' }}">
                     <a href="{{ route('teams') }}">Doctors</a>
                 </li>
                 <li
-                    class="font-semibold text-gray-900 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6 {{ Request::is('package*') ? 'underline decoration-primary decoration-4' : '' }}">
+                    class="font-semibold text-gray-50 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6 {{ Request::is('service*') ? 'underline underline-offset-2 decoration-gray-50 decoration-4' : '' }}">
+                    <a href="{{ route('services') }}">Services</a>
+                </li>
+                <li
+                    class="font-semibold text-gray-50 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6 {{ Request::is('package*') ? 'underline underline-offset-2 decoration-gray-50 decoration-4' : '' }}">
                     <a href="{{ route('packages') }}">Packages</a>
                 </li>
                 <li
-                    class="font-semibold text-gray-900 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6 {{ Request::is('insurance*') ? 'underline decoration-primary decoration-4' : '' }}">
+                    class="font-semibold text-gray-50 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6 {{ Request::is('insurance*') ? 'underline underline-offset-2 decoration-gray-50 decoration-4' : '' }}">
                     <a href="{{ route('insurance') }}">Insurance</a>
                 </li>
                 <li
-                    class="font-semibold text-gray-900 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6 {{ Request::is('review*') ? 'underline decoration-primary decoration-4' : '' }}">
+                    class="font-semibold text-gray-50 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6 {{ Request::is('review*') ? 'underline underline-offset-2 decoration-gray-50 decoration-4' : '' }}">
                     <a href="{{ route('reviews') }}">Reviews</a>
                 </li>
                 <li
-                    class="font-semibold text-gray-900 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6 {{ Request::is('blog*') ? 'underline decoration-primary decoration-4' : '' }}">
+                    class="font-semibold text-gray-50 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6 {{ Request::is('blog*') ? 'underline underline-offset-2 decoration-gray-50 decoration-4' : '' }}">
                     <a href="{{ route('blogs') }}">Blogs</a>
                 </li>
                 <li
-                    class="font-semibold text-gray-900 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6 {{ Request::is('career*') ? 'underline decoration-primary decoration-4' : '' }}">
+                    class="font-semibold text-gray-50 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6 {{ Request::is('career*') ? 'underline underline-offset-2 decoration-gray-50 decoration-4' : '' }}">
                     <a href="{{ route('career') }}">Career</a>
                 </li>
                 <li
-                    class="font-semibold text-gray-900 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6 {{ Request::is('gallery*') ? 'underline decoration-primary decoration-4' : '' }}">
+                    class="font-semibold text-gray-50 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6 {{ Request::is('gallery*') ? 'underline underline-offset-2 decoration-gray-50 decoration-4' : '' }}">
                     <a href="{{ route('gallery') }}">Gallery</a>
                 </li>
                 <li
-                    class="font-semibold text-gray-900 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6 {{ Request::is('about_us*') ? 'underline decoration-primary decoration-4' : '' }}">
+                    class="font-semibold text-gray-50 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6 {{ Request::is('about_us*') ? 'underline underline-offset-2 decoration-gray-50 decoration-4' : '' }}">
                     <a href="{{ route('about_us') }}">About Us</a>
                 </li>
                 <li
-                    class="font-semibold text-gray-900 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6 {{ Request::is('contact_us*') ? 'underline decoration-primary decoration-4' : '' }}">
+                    class="font-semibold text-gray-50 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6 {{ Request::is('contact_us*') ? 'underline underline-offset-2 decoration-gray-50 decoration-4' : '' }}">
                     <a href="{{ route('contact_us') }}">Contact Us</a>
                 </li>
                 <li
-                    class="sm:hidden font-semibold text-gray-900 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6 {{ Request::is('book_appointment*') ? 'underline decoration-primary decoration-4' : '' }}">
+                    class="sm:hidden font-semibold text-gray-50 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6 {{ Request::is('book_appointment*') ? 'underline underline-offset-2 decoration-gray-50 decoration-4' : '' }}">
                     <a href="{{ route('book_appointment') }}">Book Appointment</a>
                 </li>
                 <li
-                    class="sm:hidden font-semibold text-gray-900 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6 {{ Request::is('feedback*') ? 'underline decoration-primary decoration-4' : '' }}">
+                    class="sm:hidden font-semibold text-gray-50 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6 {{ Request::is('feedback*') ? 'underline underline-offset-2 decoration-gray-50 decoration-4' : '' }}">
                     <a href="{{ route('feedback') }}">Feedback</a>
                 </li>
                 <li
-                    class="sm:hidden font-semibold text-gray-900 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6">
+                    class="sm:hidden font-semibold text-gray-50 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6">
                     <a href="{{ 'http://124.123.32.48:9999/shivam/onlinereporting/index.jsp' }}"
                         target="blank">Reports <i data-feather="external-link" width='20' height='20'
                             class="inline"></i></a>

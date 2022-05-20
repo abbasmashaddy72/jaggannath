@@ -17,7 +17,7 @@
                     spaceBetween: 0,
                     parallax: true,
                     autoplay: {
-                        delay: 2500,
+                        delay: 3500,
                         disableOnInteraction: false,
                     },
                     speed: 800,
@@ -65,7 +65,26 @@
     </section>
     <!-- Sliders Section End -->
 
-    <!-- Tag Line Section Start -->
+    <div class="mb-8 text-center md:col-span-6 lg:col-span-5 md:mb-0">
+        <h2 class="mb-4 font-extrabold h4 text-3xl font-red-hat-display" data-aos="fade-down">
+            {{ $tag_line }}</h2>
+    </div>
+
+    @if (\Jenssegers\Agent\Facades\Agent::isMobile())
+        <div class="flex">
+            <div class="mb-8 text-center space-x-2 space-y-2">
+                <a href="{{ route('book_appointment') }}"
+                    class="inline-block px-3 py-2 bg-primary font-semibold text-lg rounded-xl hover:bg-secondary text-gray-50 transition ease-in-out duration-500 {{ Request::is('book_appointment*') ? 'bg-secondary text-gray-50' : '' }}">{{ 'Book Appointment' }}</a>
+                <a href="{{ route('feedback') }}"
+                    class="inline-block px-3 py-2 bg-primary font-semibold text-lg rounded-xl hover:bg-secondary text-gray-50 transition ease-in-out duration-500 {{ Request::is('feedback*') ? 'bg-secondary text-gray-50' : '' }}">{{ 'Feedback' }}</a>
+                <a href="{{ 'http://124.123.32.48:9999/shivam/onlinereporting/index.jsp' }}"
+                    class="inline-block px-3 py-2 bg-primary font-semibold text-lg rounded-xl hover:bg-secondary text-gray-50 transition ease-in-out duration-500">{{ 'Online Reports' }}<i
+                        data-feather="external-link" width='20' height='20' class="inline"></i></a>
+            </div>
+        </div>
+    @endif
+
+    <!-- Welcome Section Start -->
     <section>
         <div class="max-w-7xl px-4 mx-auto sm:px-6">
             <div class="pt-8 pb-10 md:pt-8 md:pb-16">
@@ -76,7 +95,10 @@
                     <!-- Content -->
                     <div class="mb-8 text-center md:col-span-6 lg:col-span-5 md:mb-0">
                         <h2 class="mb-4 font-extrabold h4 text-3xl font-red-hat-display" data-aos="fade-down">
-                            {{ $tag_line }}</h2>
+                            {{ 'Welcome to ' }}{{ config('app.name', 'Laravel') }}</h2>
+                        <p>
+                            {{ $welcome_message }}
+                        </p>
                         <div class="flex flex-col justify-center mx-auto mt-8 sm:flex-row md:mx-0" data-aos="fade-down"
                             data-aos-delay="300">
                             <a href="{{ $tag_action_button_link }}"
@@ -155,7 +177,7 @@
             </div>
         </div>
     </section>
-    <!-- Tag Line Section End -->
+    <!-- Welcome Section End -->
 
     <!-- feature section -->
     <section class="bg-white md:mt-10">
@@ -301,6 +323,12 @@
                     @livewire('pagination.frontend.reviews', ['where' => 'homepage'])
                 </div>
             </section>
+        </div>
+
+        <div class="flex items-center justify-center">
+            <a href="{{ route('reviews') }}"
+                class="px-7 py-5 bg-primary font-semibold text-white text-lg rounded-xl hover:bg-secondary transition ease-in-out duration-500">More
+                Reviews</a>
         </div>
 
     </section>

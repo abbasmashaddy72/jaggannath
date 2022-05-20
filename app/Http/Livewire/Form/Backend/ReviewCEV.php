@@ -10,7 +10,7 @@ use Livewire\WithFileUploads;
 class ReviewCEV extends Component
 {
     // Model Values
-    public $name, $image, $team_id, $message, $stars;
+    public $name, $image, $message, $stars;
 
     // Custom Values
     public $action, $isUploaded = false, $review;
@@ -18,7 +18,6 @@ class ReviewCEV extends Component
     protected $rules = [
         'name' => '',
         'image' => '',
-        'team_id' => '',
         'message' => '',
         'stars' => ''
     ];
@@ -56,7 +55,6 @@ class ReviewCEV extends Component
             $data = Review::findOrFail($review);
             $this->name = $data->name;
             $this->image = $data->image;
-            $this->team_id = $data->team_id;
             $this->message = $data->message;
             $this->stars = $data->stars;
         }

@@ -35,6 +35,7 @@ class HomePageCEV extends Component
     public $address;
     public $email;
     public $contact_no;
+    public $welcome_message;
 
     public $logoIsUploaded = false;
     public $CountImageIsUploaded = false;
@@ -66,6 +67,7 @@ class HomePageCEV extends Component
         $this->address = Helper::get_static_option('address');
         $this->email = Helper::get_static_option('email');
         $this->contact_no = Helper::get_static_option('contact_no');
+        $this->welcome_message = Helper::get_static_option('welcome_message');
     }
 
     protected $rules = [
@@ -93,6 +95,7 @@ class HomePageCEV extends Component
         'address' => '',
         'email' => '',
         'contact_no' => '',
+        'welcome_message' => '',
     ];
 
     public function updated($propertyName)

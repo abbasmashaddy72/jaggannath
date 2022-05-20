@@ -14,7 +14,7 @@ class ReviewTable extends LivewireDatatable
 
     public function builder()
     {
-        return Review::query()->with('team');
+        return Review::query();
     }
 
     public function columns()
@@ -32,11 +32,6 @@ class ReviewTable extends LivewireDatatable
                 ->searchable()
                 ->filterable()
                 ->label('Name'),
-
-            Column::name('team.name')
-                ->searchable()
-                ->filterable()
-                ->label('Team'),
 
             Column::name('message')
                 ->searchable()

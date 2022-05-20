@@ -1,0 +1,5 @@
+/* CSS only for scroll button purpose*/
+#btn-back-to-top {
+    position: fixed;
+    display: none;
+}

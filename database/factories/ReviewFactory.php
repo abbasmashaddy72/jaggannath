@@ -18,7 +18,6 @@ class ReviewFactory extends Factory
     public function definition()
     {
         return [
-            'team_id' => Team::pluck('id')[$this->faker->numberBetween(1, Team::count() - 1)],
             'name' => $this->faker->name(),
             'image' => 'one.jpg',
             'message' => $this->faker->paragraph(rand(1, 2)),

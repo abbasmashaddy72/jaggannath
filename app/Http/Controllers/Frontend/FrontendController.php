@@ -56,7 +56,7 @@ class FrontendController extends Controller
         $hero_image = Helper::get_static_option('hero_image');
         $hero_video = Helper::get_static_option('hero_video');
         $features = Feature::get();
-
+        $welcome_message = Helper::get_static_option('welcome_message');
 
         return view('pages.frontend.home_page', compact([
             'slider_images',
@@ -74,7 +74,8 @@ class FrontendController extends Controller
             'tag_action_button_text',
             'hero_image',
             'hero_video',
-            'features'
+            'features',
+            'welcome_message'
         ]));
     }
 
