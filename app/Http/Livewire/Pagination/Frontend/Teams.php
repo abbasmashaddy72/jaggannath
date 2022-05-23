@@ -28,12 +28,12 @@ class Teams extends Component
             if (\Jenssegers\Agent\Facades\Agent::isMobile()) {
                 $data = Team::with('department')->paginate(1);
             } else {
-                $data = Team::with('department')->paginate(3);
+                $data = Team::with('department')->paginate(4);
             }
         } elseif ($this->department_id == null & $this->where == null) {
-            $data = Team::with('department')->paginate(6);
+            $data = Team::with('department')->paginate(8);
         } else {
-            $data = Team::with('department')->where('department_id', $this->department_id)->paginate(6);
+            $data = Team::with('department')->where('department_id', $this->department_id)->paginate(8);
         }
 
         return view('livewire.pagination.frontend.teams', compact('data'));

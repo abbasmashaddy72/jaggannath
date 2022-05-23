@@ -35,7 +35,7 @@
                     class="px-3 py-2 bg-white font-semibold text-lg rounded-xl hover:bg-secondary hover:text-gray-50 transition ease-in-out duration-500 {{ Request::is('book_appointment*') ? 'bg-secondary text-gray-50' : '' }}">{{ 'Book Appointment' }}</a>
                 <a href="{{ route('feedback') }}"
                     class="px-3 py-2 bg-white font-semibold text-lg rounded-xl hover:bg-secondary hover:text-gray-50 transition ease-in-out duration-500 {{ Request::is('feedback*') ? 'bg-secondary text-gray-50' : '' }}">{{ 'Feedback' }}</a>
-                <a href="{{ 'http://124.123.32.48:9999/shivam/onlinereporting/index.jsp' }}"
+                <a href="{{ 'http://124.123.32.48:9999/shivam/onlinereporting/index.jsp' }}" target="_blank"
                     class="px-3 py-2 bg-white font-semibold text-lg rounded-xl hover:bg-secondary hover:text-gray-50 transition ease-in-out duration-500">{{ 'Online Reports' }}<i
                         data-feather="external-link" width='20' height='20' class="inline"></i></a>
             </ul>
@@ -48,7 +48,7 @@
                 </a>
 
                 <button
-                    class="lg:hidden w-10 h-10 ml-auto flex items-center justify-center border border-blue-500 text-blue-500 rounded-md"
+                    class="lg:hidden w-10 h-10 ml-auto flex items-center justify-center border border-white text-white rounded-md"
                     @click="navbarOpen = !navbarOpen">
                     <i data-feather="menu"></i>
                 </button>

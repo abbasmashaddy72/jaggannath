@@ -1,13 +1,13 @@
 <x-guest-layout>
     <x-frontend.container>
         <x-slot name='banner_name'>
-            Packages
+            {{ $data->name }}
         </x-slot>
 
         <!-- Blog Grip -->
         <div class="flex flex-wrap -mx-4 mt-3">
             <!-- First Repeater -->
-            @forelse ($data as $item)
+            @forelse ($data->packages as $item)
                 <div class="w-full md:w-1/2 lg:w-1/4 px-4 flex flex-col">
                     <div class="mb-10 group wow fadeInUp border-gray-200 border-2 p-4 rounded-lg shadow-testimonial flex-1"
                         data-wow-delay=".1s">
@@ -20,6 +20,14 @@
                                 class="font-semibold teloginxt-xl sm:text-2xl lg:text-xl xl:text-2xl mb-4 inline-block text-dark">
                                 {{ $item->name }}
                             </h3>
+                            @php
+                                $list = explode(';', $item->list);
+                            @endphp
+                            @foreach ($list as $item)
+                                <li class="text-base text-gray-800">
+                                    {{ $item }}
+                                </li>
+                            @endforeach
                         </div>
                     </div>
                 </div>

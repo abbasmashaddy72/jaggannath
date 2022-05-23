@@ -10,6 +10,12 @@ class Package extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name'
+        'name',
+        'image'
     ];
+
+    public function packages()
+    {
+        return $this->hasMany(PackageList::class);
+    }
 }

@@ -10,7 +10,9 @@
     @csrf
 
     @wire('debounce.200ms')
-    <x-form-input name="name" label="Name" type="text" />
+        <x-form-input name="name" label="Name" type="text" />
+
+        <x-backend.single-upload name="image" label="Image" />
     @endwire
 
     <div class="mt-3">

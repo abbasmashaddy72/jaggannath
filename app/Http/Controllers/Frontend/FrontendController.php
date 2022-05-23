@@ -9,11 +9,11 @@ use App\Models\Count;
 use App\Models\Department;
 use App\Models\Feature;
 use App\Models\Insurance;
+use App\Models\Package;
 use App\Models\Service;
 use App\Models\Slider;
 use App\Models\Team;
 use App\Services\Helper;
-use Illuminate\Http\Request;
 
 class FrontendController extends Controller
 {
@@ -180,7 +180,16 @@ class FrontendController extends Controller
 
     public function packages()
     {
-        return view('pages.frontend.packages');
+        $data = Package::get();
+
+        return view('pages.frontend.packages', compact('data'));
+    }
+
+    public function package_single($id)
+    {
+        $data = Package::with('packages')->findOrFail($id);
+
+        return view('pages.frontend.package_single', compact('data'));
     }
 
     public function reviews()

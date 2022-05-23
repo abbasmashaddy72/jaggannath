@@ -37,102 +37,100 @@
         </x-slot>
 
         <!-- Blog Details -->
-        <section class="pt-20 lg:pt-[120px] pb-10 lg:pb-20">
-            <div class="container">
-                <div class="flex flex-wrap justify-center -mx-4">
-                    <div class="w-full px-4">
-                        <div class="relative rounded overflow-hidden z-20 mb-[60px] h-[300px] md:h-[400px] lg:h-[500px] wow fadeInUp"
-                            data-wow-delay=".1s">
-                            <img src="{{ asset('storage/' . $data->image) }}" alt="{{ $data->title }}"
-                                class="object-cover object-center w-full h-full" />
-                            <div
-                                class="absolute top-0 left-0 z-10 flex items-end w-full h-full  bg-gradient-to-t from-dark-700 to-transparent">
-                                <div class="flex flex-wrap items-center p-4 pb-4 sm:p-8">
-                                    <div class="flex items-center mb-4 mr-5 md:mr-10">
-                                        <p class="text-base font-medium text-white">
-                                            {{ $data->department->name }}
-                                        </p>
-                                    </div>
-                                    <div class="flex items-center mb-4">
-                                        <p class="flex items-center text-sm font-medium text-white">
-                                            <span class="mr-3">
-                                                <svg width="20" height="12" viewBox="0 0 20 12" class="fill-current">
-                                                    <path
-                                                        d="M10.2559 3.8125C9.03711 3.8125 8.06836 4.8125 8.06836 6C8.06836 7.1875 9.06836 8.1875 10.2559 8.1875C11.4434 8.1875 12.4434 7.1875 12.4434 6C12.4434 4.8125 11.4746 3.8125 10.2559 3.8125ZM10.2559 7.09375C9.66211 7.09375 9.16211 6.59375 9.16211 6C9.16211 5.40625 9.66211 4.90625 10.2559 4.90625C10.8496 4.90625 11.3496 5.40625 11.3496 6C11.3496 6.59375 10.8496 7.09375 10.2559 7.09375Z" />
-                                                    <path
-                                                        d="M19.7559 5.625C17.6934 2.375 14.1309 0.4375 10.2559 0.4375C6.38086 0.4375 2.81836 2.375 0.755859 5.625C0.630859 5.84375 0.630859 6.125 0.755859 6.34375C2.81836 9.59375 6.38086 11.5312 10.2559 11.5312C14.1309 11.5312 17.6934 9.59375 19.7559 6.34375C19.9121 6.125 19.9121 5.84375 19.7559 5.625ZM10.2559 10.4375C6.84961 10.4375 3.69336 8.78125 1.81836 5.96875C3.69336 3.1875 6.84961 1.53125 10.2559 1.53125C13.6621 1.53125 16.8184 3.1875 18.6934 5.96875C16.8184 8.78125 13.6621 10.4375 10.2559 10.4375Z" />
-                                                </svg>
-                                            </span>
-                                            {{ $data->clicks }}
-                                        </p>
-                                    </div>
-                                </div>
+        <div class="flex flex-wrap justify-center -mx-4">
+            <div class="w-full px-4">
+                <div class="relative rounded overflow-hidden z-20 mb-[60px] h-[300px] md:h-[400px] lg:h-[500px] wow fadeInUp"
+                    data-wow-delay=".1s">
+                    <img src="{{ asset('storage/' . $data->image) }}" alt="{{ $data->title }}"
+                        class="object-cover object-center w-full h-full" />
+                    <div
+                        class="absolute top-0 left-0 z-10 flex items-end w-full h-full  bg-gradient-to-t from-dark-700 to-transparent">
+                        <div class="flex flex-wrap items-center p-4 pb-4 sm:p-8">
+                            <div class="flex items-center mb-4 mr-5 md:mr-10">
+                                <p class="text-base font-medium text-white">
+                                    {{ $data->department->name }}
+                                </p>
                             </div>
-                        </div>
-                        <div class="flex flex-col justify-center items-center -mx-4">
-                            <div class="w-full px-4 lg:w-8/12">
-                                <div>
-                                    <h2 class="font-bold text-dark text-[26px] sm:text-3xl md:text-4xl leading-snug sm:leading-snug md:leading-snug mb-6 wow fadeInUp"
-                                        data-wow-delay=".1s">
-                                        {{ $data->title }}
-                                    </h2>
-
-                                    <div class="mb-8">
-                                        {!! $data->description !!}
-                                    </div>
-
-                                </div>
+                            <div class="flex items-center mb-4">
+                                <p class="flex items-center text-sm font-medium text-white">
+                                    <span class="mr-3">
+                                        <svg width="20" height="12" viewBox="0 0 20 12" class="fill-current">
+                                            <path
+                                                d="M10.2559 3.8125C9.03711 3.8125 8.06836 4.8125 8.06836 6C8.06836 7.1875 9.06836 8.1875 10.2559 8.1875C11.4434 8.1875 12.4434 7.1875 12.4434 6C12.4434 4.8125 11.4746 3.8125 10.2559 3.8125ZM10.2559 7.09375C9.66211 7.09375 9.16211 6.59375 9.16211 6C9.16211 5.40625 9.66211 4.90625 10.2559 4.90625C10.8496 4.90625 11.3496 5.40625 11.3496 6C11.3496 6.59375 10.8496 7.09375 10.2559 7.09375Z" />
+                                            <path
+                                                d="M19.7559 5.625C17.6934 2.375 14.1309 0.4375 10.2559 0.4375C6.38086 0.4375 2.81836 2.375 0.755859 5.625C0.630859 5.84375 0.630859 6.125 0.755859 6.34375C2.81836 9.59375 6.38086 11.5312 10.2559 11.5312C14.1309 11.5312 17.6934 9.59375 19.7559 6.34375C19.9121 6.125 19.9121 5.84375 19.7559 5.625ZM10.2559 10.4375C6.84961 10.4375 3.69336 8.78125 1.81836 5.96875C3.69336 3.1875 6.84961 1.53125 10.2559 1.53125C13.6621 1.53125 16.8184 3.1875 18.6934 5.96875C16.8184 8.78125 13.6621 10.4375 10.2559 10.4375Z" />
+                                        </svg>
+                                    </span>
+                                    {{ $data->clicks }}
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="flex flex-wrap -mx-4">
-                    <div class="w-full px-4 mt-14 wow fadeInUp" data-wow-delay=".2s">
-                        <h2 class="font-semibold text-dark text-2xl sm:text-[28px] pb-5 relative">
-                            Related Services
-                        </h2>
-                        <span class="h-[2px] bg-primary w-20 mb-10 inline-block"></span>
-                    </div>
-                    <!-- First Repeater -->
-                    @foreach ($related as $item)
-                        <div class="w-full md:w-1/2 lg:w-1/3 px-4 flex flex-col">
-                            <div class="mb-10 group wow fadeInUp border-gray-200 border-2 p-4 rounded-lg shadow-testimonial flex-1"
+                <div class="flex flex-col justify-center items-center -mx-4">
+                    <div class="w-full px-4">
+                        <div>
+                            <h2 class="font-bold text-dark text-[26px] sm:text-3xl md:text-4xl leading-snug sm:leading-snug md:leading-snug mb-6 wow fadeInUp"
                                 data-wow-delay=".1s">
-                                <div class="rounded overflow-hidden mb-8">
-                                    <a href="{{ route('service_single', ['id' => $item->id]) }}"
-                                        class="block">
-                                        <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->title }}"
-                                            class="w-full transition group-hover:scale-125 group-hover:rotate-6 h-56 object-cover" />
-                                    </a>
-                                </div>
-                                <div>
-                                    <div class="flex justify-between">
-                                        <span
-                                            class="bg-primary rounded inline-block text-center py-1 px-4 text-xs leading-loose font-semibold text-white mb-5">
-                                            {{ $item->created_at->diffForHumans() }}
-                                        </span>
-                                        <span
-                                            class="bg-primary rounded inline-block text-center py-1 px-4 text-xs leading-loose font-semibold text-white mb-5">
-                                            {{ $item->department->name }}
-                                        </span>
-                                    </div>
-                                    <h3>
-                                        <a href="{{ route('service_single', ['id' => $item->id]) }}"
-                                            class="font-semibold teloginxt-xl sm:text-2xl lg:text-xl xl:text-2xl mb-4 inline-block text-dark hover:text-primary">
-                                            {{ $item->title }}
-                                        </a>
-                                    </h3>
-                                    <p class="text-base text-body-color">
-                                        {{ $item->excerpt }}
-                                    </p>
-                                </div>
+                                {{ $data->title }}
+                            </h2>
+
+                            <p class="mb-8 text-base leading-relaxed  text-body-color wow fadeInUp"
+                                data-wow-delay=".1s">{{ $data->excerpt }}</p>
+
+                            <div class="mb-8">
+                                {!! $data->description !!}
                             </div>
+
                         </div>
-                    @endforeach
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
+
+        <div class="flex flex-wrap -mx-4">
+            <div class="w-full px-4 mt-14 wow fadeInUp" data-wow-delay=".2s">
+                <h2 class="font-semibold text-dark text-2xl sm:text-[28px] pb-5 relative">
+                    Related Services
+                </h2>
+                <span class="h-[2px] bg-primary w-20 mb-10 inline-block"></span>
+            </div>
+            <!-- First Repeater -->
+            @foreach ($related as $item)
+                <div class="w-full md:w-1/2 lg:w-1/3 px-4 flex flex-col">
+                    <div class="mb-10 group wow fadeInUp border-gray-200 border-2 p-4 rounded-lg shadow-testimonial flex-1"
+                        data-wow-delay=".1s">
+                        <div class="rounded overflow-hidden mb-8">
+                            <a href="{{ route('service_single', ['id' => $item->id]) }}" class="block">
+                                <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->title }}"
+                                    class="w-full transition group-hover:scale-125 group-hover:rotate-6 h-56 object-cover" />
+                            </a>
+                        </div>
+                        <div>
+                            <div class="flex justify-between">
+                                <span
+                                    class="bg-primary rounded inline-block text-center py-1 px-4 text-xs leading-loose font-semibold text-white mb-5">
+                                    {{ $item->created_at->diffForHumans() }}
+                                </span>
+                                <span
+                                    class="bg-primary rounded inline-block text-center py-1 px-4 text-xs leading-loose font-semibold text-white mb-5">
+                                    {{ $item->department->name }}
+                                </span>
+                            </div>
+                            <h3>
+                                <a href="{{ route('service_single', ['id' => $item->id]) }}"
+                                    class="font-semibold teloginxt-xl sm:text-2xl lg:text-xl xl:text-2xl mb-4 inline-block text-dark hover:text-primary">
+                                    {{ $item->title }}
+                                </a>
+                            </h3>
+                            <p class="text-base text-body-color">
+                                {{ $item->excerpt }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
 
     </x-frontend.container>
 </x-guest-layout>
