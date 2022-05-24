@@ -102,7 +102,7 @@
                         <div class="flex flex-col justify-center mx-auto mt-8 sm:flex-row md:mx-0" data-aos="fade-down"
                             data-aos-delay="300">
                             <a href="{{ $tag_action_button_link }}"
-                                class="px-3 py-2 bg-primary font-semibold text-white text-lg rounded-xl hover:bg-secondary transition ease-in-out duration-500">{{ $tag_action_button_text }}</a>
+                                class="px-3 py-2 bg-gradient-to-r from-primary via-[#D4497A] to-primary font-semibold text-white text-lg rounded-xl hover:from-secondary hover:to-secondary transition ease-in-out duration-500">{{ $tag_action_button_text }}</a>
                         </div>
                     </div>
 
@@ -292,7 +292,7 @@
             </div>
             <div class="flex items-center justify-center">
                 <a href="{{ route('services') }}"
-                    class="px-7 py-5 bg-primary font-semibold text-white text-lg rounded-xl hover:bg-secondary transition ease-in-out duration-500">More
+                    class="bg-gradient-to-r from-primary via-[#D4497A] to-primary hover:from-secondary hover:to-secondary px-7 py-5 font-semibold text-white text-lg rounded-xl transition ease-in-out duration-500">More
                     Services</a>
             </div>
         </div> <!-- container.// -->
@@ -327,7 +327,7 @@
 
         <div class="flex items-center justify-center">
             <a href="{{ route('reviews') }}"
-                class="px-7 py-5 bg-primary font-semibold text-white text-lg rounded-xl hover:bg-secondary transition ease-in-out duration-500">More
+                class="bg-gradient-to-r from-primary via-[#D4497A] to-primary hover:from-secondary hover:to-secondary px-7 py-5 font-semibold text-white text-lg rounded-xl transition ease-in-out duration-500">More
                 Reviews</a>
         </div>
 
@@ -359,7 +359,7 @@
                     <div class="flex flex-col justify-center max-w-sm mx-auto mt-8 sm:flex-row sm:max-w-md md:mx-0"
                         data-aos="fade-down" data-aos-delay="300">
                         <a href="{{ $tag_action_button_link }}"
-                            class="px-3 py-2 bg-primary font-semibold text-white text-lg rounded-xl hover:bg-secondary transition ease-in-out duration-500">{{ $tag_action_button_text }}</a>
+                            class="px-3 py-2 bg-gradient-to-r from-primary via-[#D4497A] to-primary font-semibold text-white text-lg rounded-xl hover:from-secondary hover:to-secondary transition ease-in-out duration-500">{{ $tag_action_button_text }}</a>
                     </div>
                 </div>
             </div>

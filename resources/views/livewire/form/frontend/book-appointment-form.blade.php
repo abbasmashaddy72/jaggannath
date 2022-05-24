@@ -167,10 +167,9 @@
         @endif
         <div class="mb-0 mt-4 text-center">
             <button type="submit"
-                class="inline-flex items-center justify-center py-4 px-6 rounded text-white bg-primary text-base font-medium hover:bg-dark transition duration-300 ease-in-out">
+                class="bg-gradient-to-r from-primary via-[#D4497A] to-primary hover:from-secondary hover:to-secondary inline-flex items-center justify-center py-4 px-6 rounded text-white text-base font-medium transition duration-300 ease-in-out">
                 Submit
             </button>
         </div>
-</div>
-</form>
+    </form>
 </div>

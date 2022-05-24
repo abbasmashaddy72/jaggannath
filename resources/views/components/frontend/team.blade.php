@@ -24,10 +24,10 @@
             </div>
             <div class="flex justify-between">
                 <a href="{{ route('book_appointment', ['team_id' => $item->id]) }}"
-                    class="px-3 py-2 bg-primary font-semibold text-white text-sm rounded-xl hover:bg-secondary transition ease-in-out duration-500">Book
+                    class="bg-gradient-to-r from-primary via-[#D4497A] to-primary hover:from-secondary hover:to-secondary px-3 py-2 font-semibold text-white text-sm rounded-xl transition ease-in-out duration-500">Book
                     Appointment</a>
                 <a href="{{ route('team_single', ['id' => $item->id]) }}"
-                    class="px-3 py-2 bg-primary font-semibold text-white text-sm rounded-xl hover:bg-secondary transition ease-in-out duration-500">Learn
+                    class="bg-gradient-to-r from-primary via-[#D4497A] to-primary hover:from-secondary hover:to-secondary px-3 py-2 font-semibold text-white text-sm rounded-xl transition ease-in-out duration-500">Learn
                     More</a>
             </div>
         </div>
