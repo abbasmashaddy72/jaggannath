@@ -37,7 +37,7 @@ return new class extends Migration
             $table->text('house_keeping_text')->nullable();
             $table->integer('satisfaction_of_treatment_rating');
             $table->text('satisfaction_of_treatment_text')->nullable();
-            $table->string('any_other_feedback');
+            $table->string('any_other_feedback')->nullable();
             $table->timestamps();
         });
     }

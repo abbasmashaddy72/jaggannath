@@ -18,7 +18,7 @@
                                         class="font-bold text-3xl sm:text-4xl 2xl:text-[40px] sm:leading-snug text-dark mb-6">
                                         {{ $item->title }}
                                     </h2>
-                                    <p class="text-base text-body-color mb-9 leading-relaxed">
+                                    <p class="text-base text-body-color mb-9 leading-relaxed text-justify">
                                         {{ $item->excerpt }}
                                     </p>
                                 </div>
@@ -41,7 +41,7 @@
                                         class="font-bold text-3xl sm:text-4xl 2xl:text-[40px] sm:leading-snug text-dark mb-6">
                                         {{ $item->title }}
                                     </h2>
-                                    <p class="text-base text-body-color mb-9 leading-relaxed">
+                                    <p class="text-base text-body-color mb-9 leading-relaxed text-justify">
                                         {{ $item->excerpt }}
                                     </p>
                                 </div>

@@ -74,11 +74,11 @@
         <div class="flex">
             <div class="mb-8 text-center space-x-2 space-y-2">
                 <a href="{{ route('book_appointment') }}"
-                    class="inline-block px-3 py-2 bg-primary font-semibold text-lg rounded-xl hover:bg-secondary text-gray-50 transition ease-in-out duration-500 {{ Request::is('book_appointment*') ? 'bg-secondary text-gray-50' : '' }}">{{ 'Book Appointment' }}</a>
+                    class="inline-block px-3 py-2 bg-gradient-to-r from-primary via-[#D4497A] to-primary font-semibold text-lg rounded-xl hover:from-secondary hover:to-secondary text-gray-50 transition ease-in-out duration-500">{{ 'Book Appointment' }}</a>
                 <a href="{{ route('feedback') }}"
-                    class="inline-block px-3 py-2 bg-primary font-semibold text-lg rounded-xl hover:bg-secondary text-gray-50 transition ease-in-out duration-500 {{ Request::is('feedback*') ? 'bg-secondary text-gray-50' : '' }}">{{ 'Feedback' }}</a>
+                    class="inline-block px-3 py-2 bg-gradient-to-r from-primary via-[#D4497A] to-primary font-semibold text-lg rounded-xl hover:from-secondary hover:to-secondary text-gray-50 transition ease-in-out duration-500">{{ 'Feedback' }}</a>
                 <a href="{{ 'http://124.123.32.48:9999/shivam/onlinereporting/index.jsp' }}"
-                    class="inline-block px-3 py-2 bg-primary font-semibold text-lg rounded-xl hover:bg-secondary text-gray-50 transition ease-in-out duration-500">{{ 'Online Reports' }}<i
+                    class="inline-block px-3 py-2 bg-gradient-to-r from-primary via-[#D4497A] to-primary font-semibold text-lg rounded-xl hover:from-secondary hover:to-secondary text-gray-50 transition ease-in-out duration-500">{{ 'Online Reports' }}<i
                         data-feather="external-link" width='20' height='20' class="inline"></i></a>
             </div>
         </div>
@@ -217,7 +217,7 @@
             <h1 class="font-normal text-gray-900 text-lg md:text-xl text-center leading-normal mb-10">
                 {{ $count_excerpt }}</h1>
 
-            <div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-10">
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-10">
                 @forelse ($counts as $item)
                     <div class="grid grid-cols-1 md:space-x-20 mb-16 text-center">
                         <div class="mb-5 md:mb-0">
@@ -254,36 +254,9 @@
             <h1 class="font-normal text-gray-900 text-lg md:text-xl text-center leading-normal mb-10">
                 {{ $services_excerpt }}</h1>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 mx-auto">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-1 md:gap-5 lg:gap-10 mx-auto">
                 @forelse ($services as $item)
-                    <div class="w-full px-2">
-                        <div class="mb-10 group wow fadeInUp border-gray-200 border-2 p-4 rounded-lg shadow-testimonial flex-1"
-                            data-wow-delay=".1s">
-                            <div class="rounded overflow-hidden mb-8">
-                                <a href="{{ route('service_single', ['id' => $item->id]) }}" class="block">
-                                    <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->title }}"
-                                        class="w-full transition group-hover:scale-125 group-hover:rotate-6 h-56 object-cover h-56 object-cover" />
-                                </a>
-                            </div>
-                            <div>
-                                <div class="flex justify-end">
-                                    <span
-                                        class="bg-primary rounded inline-block text-center py-1 px-4 text-xs leading-loose font-semibold text-white mb-5">
-                                        {{ $item->department->name }}
-                                    </span>
-                                </div>
-                                <h3>
-                                    <a href="{{ route('service_single', ['id' => $item->id]) }}"
-                                        class="font-semibold teloginxt-xl sm:text-2xl lg:text-xl xl:text-2xl mb-4 inline-block text-dark hover:text-primary">
-                                        {{ $item->title }}
-                                    </a>
-                                </h3>
-                                <p class="text-base text-body-color">
-                                    {{ $item->excerpt }}
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                    @include('components.frontend.service')
                 @empty
                     <div class="w-full px-4">
                         <div class="text-center font-bold text-gray-800 text-lg">No Data Available</div>

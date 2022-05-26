@@ -42,7 +42,11 @@ class FrontendController extends Controller
          * @middlewares('web')
          */
         $slider_images = Slider::where('on', 'homepage')->get();
-        $services = Service::with('department')->orderBy('clicks', 'DESC')->limit(3)->get();
+        if (\Jenssegers\Agent\Facades\Agent::isMobile() && !\Jenssegers\Agent\Facades\Agent::isTablet()) {
+            $services = Service::with('department')->orderBy('clicks', 'DESC')->limit(2)->get();
+        } else {
+            $services = Service::with('department')->orderBy('clicks', 'DESC')->limit(3)->get();
+        }
         $services_excerpt = Helper::get_static_option('services_excerpt');
         $count_image = Helper::get_static_option('count_image');
         $count_excerpt = Helper::get_static_option('count_excerpt');
@@ -142,7 +146,7 @@ class FrontendController extends Controller
          * @name('service_single')
          * @middlewares('web')
          */
-        $data = Service::findOrFail($id);
+        $data = Service::with('department')->findOrFail($id);
         $related = Service::where('department_id', $data->department_id)->with('department')->orderBy('clicks', 'DESC')->limit(3)->get();
         Service::where('id', $id)->increment('clicks');
 
@@ -161,7 +165,9 @@ class FrontendController extends Controller
 
     public function team_single($id)
     {
-        $data = Team::with('services')->findOrFail($id);
+        $data = Team::with(['services' => function ($query) {
+            $query->with('department');
+        }])->findOrFail($id);
         $related = Team::where('department_id', $data->department_id)->with('department')->whereNotIn('id', [$data->id])->limit(3)->get();
 
         return view('pages.frontend.team_single', compact('data', 'related'));
