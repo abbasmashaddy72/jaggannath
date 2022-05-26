@@ -16,7 +16,7 @@
             </div>
             <h3>
                 <a href="{{ route('service_single', ['id' => $item->id]) }}"
-                    class="font-semibold teloginxt-xl sm:text-2xl lg:text-xl xl:text-2xl mb-4 inline-block text-dark hover:text-primary">
+                    class="font-semibold teloginxt-xl sm:text-2xl md:text-lg lg:text-xl xl:text-2xl mb-4 inline-block text-dark hover:text-primary">
                     {{ $item->title }}
                 </a>
             </h3>

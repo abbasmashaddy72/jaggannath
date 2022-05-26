@@ -57,66 +57,52 @@
             <ul class="lg:flex flex-col lg:flex-row lg:items-center lg:space-x-4 xl:space-x-7"
                 :class="{ 'hidden': !navbarOpen, 'flex': navbarOpen }">
                 <li
-                    class="font-semibold text-gray-50 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6 {{ Request::is('/*') ? 'underline underline-offset-2 decoration-gray-50 decoration-4' : '' }}">
+                    class="font-semibold text-gray-50 transition ease-in-out duration-300 mb-5 lg:mb-0 lg:hover:scale-125 lg:hover:rotate-6 {{ Request::is('/*') ? 'underline underline-offset-2 decoration-gray-50 decoration-4' : '' }}">
                     <a href="{{ route('homepage') }}">Home</a>
                 </li>
                 <li
-                    class="font-semibold text-gray-50 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6 {{ Request::is('department*') ? 'underline underline-offset-2 decoration-gray-50 decoration-4' : '' }}">
+                    class="font-semibold text-gray-50 transition ease-in-out duration-300 mb-5 lg:mb-0 lg:hover:scale-125 lg:hover:rotate-6 {{ Request::is('department*') ? 'underline underline-offset-2 decoration-gray-50 decoration-4' : '' }}">
                     <a href="{{ route('departments') }}">Departments</a>
                 </li>
                 <li
-                    class="font-semibold text-gray-50 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6 {{ Request::is('team*') ? 'underline underline-offset-2 decoration-gray-50 decoration-4' : '' }}">
+                    class="font-semibold text-gray-50 transition ease-in-out duration-300 mb-5 lg:mb-0 lg:hover:scale-125 lg:hover:rotate-6 {{ Request::is('team*') ? 'underline underline-offset-2 decoration-gray-50 decoration-4' : '' }}">
                     <a href="{{ route('teams') }}">Doctors</a>
                 </li>
                 <li
-                    class="font-semibold text-gray-50 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6 {{ Request::is('service*') ? 'underline underline-offset-2 decoration-gray-50 decoration-4' : '' }}">
+                    class="font-semibold text-gray-50 transition ease-in-out duration-300 mb-5 lg:mb-0 lg:hover:scale-125 lg:hover:rotate-6 {{ Request::is('service*') ? 'underline underline-offset-2 decoration-gray-50 decoration-4' : '' }}">
                     <a href="{{ route('services') }}">Services</a>
                 </li>
                 <li
-                    class="font-semibold text-gray-50 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6 {{ Request::is('package*') ? 'underline underline-offset-2 decoration-gray-50 decoration-4' : '' }}">
+                    class="font-semibold text-gray-50 transition ease-in-out duration-300 mb-5 lg:mb-0 lg:hover:scale-125 lg:hover:rotate-6 {{ Request::is('package*') ? 'underline underline-offset-2 decoration-gray-50 decoration-4' : '' }}">
                     <a href="{{ route('packages') }}">Packages</a>
                 </li>
                 <li
-                    class="font-semibold text-gray-50 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6 {{ Request::is('insurance*') ? 'underline underline-offset-2 decoration-gray-50 decoration-4' : '' }}">
+                    class="font-semibold text-gray-50 transition ease-in-out duration-300 mb-5 lg:mb-0 lg:hover:scale-125 lg:hover:rotate-6 {{ Request::is('insurance*') ? 'underline underline-offset-2 decoration-gray-50 decoration-4' : '' }}">
                     <a href="{{ route('insurance') }}">Insurance</a>
                 </li>
                 <li
-                    class="font-semibold text-gray-50 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6 {{ Request::is('review*') ? 'underline underline-offset-2 decoration-gray-50 decoration-4' : '' }}">
+                    class="font-semibold text-gray-50 transition ease-in-out duration-300 mb-5 lg:mb-0 lg:hover:scale-125 lg:hover:rotate-6 {{ Request::is('review*') ? 'underline underline-offset-2 decoration-gray-50 decoration-4' : '' }}">
                     <a href="{{ route('reviews') }}">Reviews</a>
                 </li>
                 <li
-                    class="font-semibold text-gray-50 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6 {{ Request::is('blog*') ? 'underline underline-offset-2 decoration-gray-50 decoration-4' : '' }}">
+                    class="font-semibold text-gray-50 transition ease-in-out duration-300 mb-5 lg:mb-0 lg:hover:scale-125 lg:hover:rotate-6 {{ Request::is('blog*') ? 'underline underline-offset-2 decoration-gray-50 decoration-4' : '' }}">
                     <a href="{{ route('blogs') }}">Blogs</a>
                 </li>
                 <li
-                    class="font-semibold text-gray-50 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6 {{ Request::is('career*') ? 'underline underline-offset-2 decoration-gray-50 decoration-4' : '' }}">
+                    class="font-semibold text-gray-50 transition ease-in-out duration-300 mb-5 lg:mb-0 lg:hover:scale-125 lg:hover:rotate-6 {{ Request::is('career*') ? 'underline underline-offset-2 decoration-gray-50 decoration-4' : '' }}">
                     <a href="{{ route('career') }}">Career</a>
                 </li>
                 <li
-                    class="font-semibold text-gray-50 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6 {{ Request::is('gallery*') ? 'underline underline-offset-2 decoration-gray-50 decoration-4' : '' }}">
+                    class="font-semibold text-gray-50 transition ease-in-out duration-300 mb-5 lg:mb-0 lg:hover:scale-125 lg:hover:rotate-6 {{ Request::is('gallery*') ? 'underline underline-offset-2 decoration-gray-50 decoration-4' : '' }}">
                     <a href="{{ route('gallery') }}">Gallery</a>
                 </li>
                 <li
-                    class="font-semibold text-gray-50 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6 {{ Request::is('about_us*') ? 'underline underline-offset-2 decoration-gray-50 decoration-4' : '' }}">
+                    class="font-semibold text-gray-50 transition ease-in-out duration-300 mb-5 lg:mb-0 lg:hover:scale-125 lg:hover:rotate-6 {{ Request::is('about_us*') ? 'underline underline-offset-2 decoration-gray-50 decoration-4' : '' }}">
                     <a href="{{ route('about_us') }}">About Us</a>
                 </li>
                 <li
-                    class="font-semibold text-gray-50 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6 {{ Request::is('contact_us*') ? 'underline underline-offset-2 decoration-gray-50 decoration-4' : '' }}">
+                    class="font-semibold text-gray-50 transition ease-in-out duration-300 mb-5 lg:mb-0 lg:hover:scale-125 lg:hover:rotate-6 {{ Request::is('contact_us*') ? 'underline underline-offset-2 decoration-gray-50 decoration-4' : '' }}">
                     <a href="{{ route('contact_us') }}">Contact Us</a>
-                </li>
-                <li
-                    class="sm:hidden font-semibold text-gray-50 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6 {{ Request::is('book_appointment*') ? 'underline underline-offset-2 decoration-gray-50 decoration-4' : '' }}">
-                    <a href="{{ route('book_appointment') }}">Book Appointment</a>
-                </li>
-                <li
-                    class="sm:hidden font-semibold text-gray-50 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6 {{ Request::is('feedback*') ? 'underline underline-offset-2 decoration-gray-50 decoration-4' : '' }}">
-                    <a href="{{ route('feedback') }}">Feedback</a>
-                </li>
-                <li
-                    class="sm:hidden font-semibold text-gray-50 transition ease-in-out duration-300 mb-5 lg:mb-0 md:hover:scale-125 md:hover:rotate-6">
-                    <a href="{{ 'http://124.123.32.48:9999/shivam/onlinereporting/index.jsp' }}"
-                        target="blank">Reports <i data-feather="external-link" width='20' height='20'
-                            class="inline"></i></a>
                 </li>
             </ul>
         </nav>

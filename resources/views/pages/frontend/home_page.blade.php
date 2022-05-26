@@ -70,8 +70,8 @@
             {{ $tag_line }}</h2>
     </div>
 
-    @if (\Jenssegers\Agent\Facades\Agent::isMobile())
-        <div class="flex">
+    @if (\Jenssegers\Agent\Facades\Agent::isMobile() || \Jenssegers\Agent\Facades\Agent::isTablet())
+        <div class="flex justify-center">
             <div class="mb-8 text-center space-x-2 space-y-2">
                 <a href="{{ route('book_appointment') }}"
                     class="inline-block px-3 py-2 bg-gradient-to-r from-primary via-[#D4497A] to-primary font-semibold text-lg rounded-xl hover:from-secondary hover:to-secondary text-gray-50 transition ease-in-out duration-500">{{ 'Book Appointment' }}</a>
@@ -90,16 +90,16 @@
             <div class="pt-8 pb-10 md:pt-8 md:pb-16">
 
                 <!-- Hero content -->
-                <div class="items-center md:grid md:grid-cols-12 md:gap-12 lg:gap-20">
+                <div class="item-center md:grid md:grid-cols-12 md:gap-12 lg:gap-20">
 
                     <!-- Content -->
-                    <div class="mb-8 text-center md:col-span-6 lg:col-span-5 md:mb-0">
+                    <div class="text-center md:col-span-12 lg:col-span-5 m-auto">
                         <h2 class="mb-4 font-extrabold h4 text-3xl font-red-hat-display" data-aos="fade-down">
                             {{ 'Welcome to ' }}{{ config('app.name', 'Laravel') }}</h2>
                         <p>
                             {{ $welcome_message }}
                         </p>
-                        <div class="flex flex-col justify-center mx-auto mt-8 sm:flex-row md:mx-0" data-aos="fade-down"
+                        <div class="flex flex-col justify-center mx-auto m-8 sm:flex-row md:mx-0" data-aos="fade-down"
                             data-aos-delay="300">
                             <a href="{{ $tag_action_button_link }}"
                                 class="px-3 py-2 bg-gradient-to-r from-primary via-[#D4497A] to-primary font-semibold text-white text-lg rounded-xl hover:from-secondary hover:to-secondary transition ease-in-out duration-500">{{ $tag_action_button_text }}</a>
@@ -107,8 +107,8 @@
                     </div>
 
                     <!-- Mobile mockup -->
-                    <div class="text-center md:col-span-5 lg:col-span-5 md:text-right" x-data="{ modalExpanded: false }"
-                        data-aos="fade-up" data-aos-delay="450">
+                    <div class="text-center md:col-span-12 lg:col-span-5" x-data="{ modalExpanded: false }" data-aos="fade-up"
+                        data-aos-delay="450">
                         <div class="relative inline-flex items-center justify-center">
                             <!-- Glow illustration -->
                             <svg class="absolute mt-32 mr-12 pointer-events-none -z-1 dark:opacity-40"
@@ -184,7 +184,7 @@
 
         <div class="container max-w-screen-xl mx-auto px-4">
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-20">
                 <!-- first Repeater -->
                 @foreach ($features as $item)
                     <div class="text-center">
@@ -249,12 +249,13 @@
 
         <div class="container max-w-screen-2xl mx-auto px-4">
 
+
             <p class="font-bold text-gray-900 text-xl md:text-2xl text-center uppercase mb-6">Our Services</p>
 
             <h1 class="font-normal text-gray-900 text-lg md:text-xl text-center leading-normal mb-10">
                 {{ $services_excerpt }}</h1>
 
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-1 md:gap-5 lg:gap-10 mx-auto">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-1 md:gap-5 mx-auto">
                 @forelse ($services as $item)
                     @include('components.frontend.service')
                 @empty
@@ -313,7 +314,7 @@
 
             <h1 class="font-normal text-gray-900 text-lg md:text-xl text-center leading-normal mb-10">
                 {{ $team_excerpt }}</h1>
-            <section class="pt-20 lg:pt-[40px] pb-20 lg:pb-[40px]">
+            <section class="pt-20 lg:pt-[40px]lg:pb-[40px]">
                 <div class="container">
                     @livewire('pagination.frontend.teams', ['where' => 'homepage'])
                 </div>
@@ -323,16 +324,16 @@
     </section>
 
     <!-- join volunters section -->
-    <section class="bg-white py-16">
+    <section class="bg-white py-8">
 
         <div class="container max-w-screen-2xl mx-auto px-4">
 
-            <div class="w-full h-full rounded-2xl md:rounded-3xl relative lg:flex justify-center">
+            <div class="w-full h-full rounded-2xl md:rounded-3xl relative flex justify-center">
                 <div class="mb-8 text-left md:col-span-7 lg:col-span-7 md:mb-0">
                     <div class="flex flex-col justify-center max-w-sm mx-auto mt-8 sm:flex-row sm:max-w-md md:mx-0"
                         data-aos="fade-down" data-aos-delay="300">
                         <a href="{{ $tag_action_button_link }}"
-                            class="px-3 py-2 bg-gradient-to-r from-primary via-[#D4497A] to-primary font-semibold text-white text-lg rounded-xl hover:from-secondary hover:to-secondary transition ease-in-out duration-500">{{ $tag_action_button_text }}</a>
+                            class="px-3 py-2 bg-gradient-to-r from-primary via-[#D4497A] to-primary font-semibold text-white text-center text-lg rounded-xl hover:from-secondary hover:to-secondary transition ease-in-out duration-500">{{ $tag_action_button_text }}</a>
                     </div>
                 </div>
             </div>

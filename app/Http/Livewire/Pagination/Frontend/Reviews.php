@@ -15,8 +15,10 @@ class Reviews extends Component
     public function render()
     {
         if ($this->where == 'homepage') {
-            if (\Jenssegers\Agent\Facades\Agent::isMobile()) {
+            if (!\Jenssegers\Agent\Facades\Agent::isTablet() && \Jenssegers\Agent\Facades\Agent::isMobile()) {
                 $data = Review::paginate(1);
+            } elseif (\Jenssegers\Agent\Facades\Agent::isTablet()) {
+                $data = Review::paginate(2);
             } else {
                 $data = Review::paginate(3);
             }

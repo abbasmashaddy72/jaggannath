@@ -10,7 +10,7 @@
         @endif
 
         <section class="pt-20 lg:pt-[60px] pb-20 lg:pb-[60px]">
-            <div class="container">
+            <div class="container m-auto">
                 {{ $slot }}
             </div>
         </section>

@@ -25,8 +25,10 @@ class Teams extends Component
     public function render()
     {
         if ($this->department_id == null && $this->where == 'homepage') {
-            if (\Jenssegers\Agent\Facades\Agent::isMobile()) {
+            if (!\Jenssegers\Agent\Facades\Agent::isTablet() && \Jenssegers\Agent\Facades\Agent::isMobile()) {
                 $data = Team::with('department')->paginate(1);
+            } elseif (\Jenssegers\Agent\Facades\Agent::isTablet()) {
+                $data = Team::with('department')->paginate(2);
             } else {
                 $data = Team::with('department')->paginate(4);
             }

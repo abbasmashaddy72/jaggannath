@@ -51,7 +51,7 @@
                     <!-- Blog Grip -->
                     <div class="flex flex-wrap -mx-4 mt-6">
                         <!-- First Repeater -->
-                        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-1 md:gap-5 lg:gap-10 mx-auto">
+                        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-1 md:gap-5 mx-auto">
                             @forelse ($data->services as $item)
                                 @include('components.frontend.service')
                             @empty
