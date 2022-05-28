@@ -50,6 +50,12 @@
 
                     <!-- Blog Grip -->
                     <div class="flex flex-wrap -mx-4 mt-6">
+                        <div class="w-full px-4 mt-14 wow fadeInUp" data-wow-delay=".2s">
+                            <h2 class="font-semibold text-dark text-2xl sm:text-[28px] pb-5 relative">
+                                Services Performed by Doctor {{ ucwords(strtolower($data->name)) }}
+                            </h2>
+                            <span class="h-[2px] bg-primary w-96 mb-10 inline-block"></span>
+                        </div>
                         <!-- First Repeater -->
                         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-1 md:gap-5 mx-auto">
                             @forelse ($data->services as $item)

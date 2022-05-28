@@ -4,30 +4,7 @@
 
         <nav class="flex-wrap lg:flex items-center justify-between" x-data="{ navbarOpen: false }">
             <div class="flex items-center justify-center lg:justify-start space-x-3">
-                <a href="{{ $facebook }}" target="_blank"
-                    class="px-3 py-3 bg-gray-200 text-gray-700 rounded-full hover:bg-blue-500 hover:text-white transition ease-in-out duration-500">
-                    <i data-feather="facebook"></i>
-                </a>
-                <a href="{{ $instagram }}" target="_blank"
-                    class="px-3 py-3 bg-gray-200 text-gray-700 rounded-full hover:bg-pink-500 hover:text-white transition ease-in-out duration-500">
-                    <i data-feather="instagram"></i>
-                </a>
-                <a href="{{ $linkedin }}" target="_blank"
-                    class="px-3 py-3 bg-gray-200 text-gray-700 rounded-full hover:bg-indigo-700 hover:text-white transition ease-in-out duration-500">
-                    <i data-feather="linkedin"></i>
-                </a>
-                <a href="{{ $twitter }}" target="_blank"
-                    class="px-3 py-3 bg-gray-200 text-gray-700 rounded-full hover:bg-blue-400 hover:text-white transition ease-in-out duration-500">
-                    <i data-feather="twitter"></i>
-                </a>
-                <a href="{{ $youtube }}" target="_blank"
-                    class="px-3 py-3 bg-gray-200 text-gray-700 rounded-full hover:bg-red-500 hover:text-white transition ease-in-out duration-500">
-                    <i data-feather="youtube"></i>
-                </a>
-                <a href="{{ $google_business }}" target="_blank"
-                    class="px-3 py-3 bg-gray-200 text-gray-700 rounded-full hover:bg-blue-400 hover:text-white transition ease-in-out duration-500">
-                    <img src="{{ asset('svg/google-my-business.svg') }}" width="24" height="24" alt="Play" />
-                </a>
+                @include('components.frontend.social-media-icons')
             </div>
             <ul class="lg:flex flex-col lg:flex-row lg:items-center lg:space-x-4 xl:space-x-7"
                 :class="{ 'hidden': !navbarOpen, 'flex': navbarOpen }">
@@ -42,7 +19,7 @@
         </nav>
         <nav class="flex-wrap lg:flex items-center justify-between" x-data="{ navbarOpen: false }">
 
-            <div class="flex items-center py-5">
+            <div class="flex items-center">
                 <a href="{{ route('homepage') }}">
                     <img src="{{ asset('storage/' . $logo) }}" class="w-52 h-auto" alt="Logo">
                 </a>
