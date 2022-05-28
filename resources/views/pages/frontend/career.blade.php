@@ -36,11 +36,8 @@
             {{ __('Career') }}
         </x-slot>
 
-        <div class="flex flex-wrap -mx-4">
-            <div class="text-lg text-gray-600 dark:text-gray-400 ck-content mx-2 md:mx-8 ck-content" data-aos="fade-up"
-                data-aos-delay="450">
-                {!! $data !!}
-            </div>
+        <div class="mb-8 ck-content">
+            {!! $data !!}
         </div>
 
     </x-frontend.container>
