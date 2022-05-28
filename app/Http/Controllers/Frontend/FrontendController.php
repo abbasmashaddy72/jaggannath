@@ -62,6 +62,8 @@ class FrontendController extends Controller
         $hero_video = Helper::get_static_option('hero_video');
         $features = Feature::get();
         $welcome_message = Helper::get_static_option('welcome_message');
+        $mission_message = Helper::get_static_option('mission_message');
+        $vision_message = Helper::get_static_option('vision_message');
 
         return view('pages.frontend.home_page', compact([
             'slider_images',
@@ -80,7 +82,9 @@ class FrontendController extends Controller
             'hero_image',
             'hero_video',
             'features',
-            'welcome_message'
+            'welcome_message',
+            'mission_message',
+            'vision_message'
         ]));
     }
 
@@ -254,9 +258,21 @@ class FrontendController extends Controller
          * @name('about_us')
          * @middlewares('web')
          */
-        $data = About::get();
+        $welcome_message = Helper::get_static_option('welcome_message');
+        $mission_message = Helper::get_static_option('mission_message');
+        $vision_message = Helper::get_static_option('vision_message');
+        $tag_line = Helper::get_static_option('tag_line');
+        $hero_image = Helper::get_static_option('hero_image');
+        $hero_video = Helper::get_static_option('hero_video');
 
-        return view('pages.frontend.about_us', compact('data'));
+        return view('pages.frontend.about_us', compact(
+            'tag_line',
+            'welcome_message',
+            'mission_message',
+            'vision_message',
+            'hero_image',
+            'hero_video'
+        ));
     }
 
     public function contact_us()

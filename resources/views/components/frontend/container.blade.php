@@ -1,4 +1,4 @@
-<section class="bg-white md:mt-10">
+<section class="bg-white pb-10 mt-52">
 
     <div class="container max-w-screen-2xl mx-auto px-4">
         @if (!empty($banner_name))

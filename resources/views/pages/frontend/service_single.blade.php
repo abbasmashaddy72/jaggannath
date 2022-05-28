@@ -78,7 +78,7 @@
                             <p class="mb-8 text-base leading-relaxed  text-body-color wow fadeInUp"
                                 data-wow-delay=".1s">{{ $data->excerpt }}</p>
 
-                            <div class="mb-8">
+                            <div class="mb-8 ck-content">
                                 {!! $data->description !!}
                             </div>
 

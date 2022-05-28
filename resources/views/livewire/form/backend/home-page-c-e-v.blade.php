@@ -111,6 +111,10 @@
 
             <x-form-textarea name="welcome_message" label="Welcome Message" />
 
+            <x-form-textarea name="mission_message" label="Mission Message" />
+
+            <x-form-textarea name="vision_message" label="Vision Message" />
+
             <x-form-textarea name="tag_line" label="Tag Line" />
 
             <x-form-textarea name="services_excerpt" label="Services Excerpt" />

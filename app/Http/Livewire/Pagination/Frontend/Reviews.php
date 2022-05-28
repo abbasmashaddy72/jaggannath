@@ -20,10 +20,10 @@ class Reviews extends Component
             } elseif (\Jenssegers\Agent\Facades\Agent::isTablet()) {
                 $data = Review::paginate(2);
             } else {
-                $data = Review::paginate(3);
+                $data = Review::paginate(4);
             }
         } else {
-            $data = Review::paginate(6);
+            $data = Review::paginate(8);
         }
 
         return view('livewire.pagination.frontend.reviews', compact('data'));

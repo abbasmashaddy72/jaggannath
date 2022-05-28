@@ -1,5 +1,5 @@
 <!-- ====== Navbar Section Start -->
-<div class="sticky top-0 left-0 z-40 flex items-center w-full bg-gradient-to-r from-secondary to-primary">
+<div class="fixed top-0 left-0 z-40 flex items-center w-full bg-gradient-to-r from-secondary to-primary">
     <div class="container max-w-screen-2xl mx-auto px-4 py-4">
 
         <nav class="flex-wrap lg:flex items-center justify-between" x-data="{ navbarOpen: false }">

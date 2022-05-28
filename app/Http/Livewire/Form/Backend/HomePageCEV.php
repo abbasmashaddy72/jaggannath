@@ -36,6 +36,8 @@ class HomePageCEV extends Component
     public $email;
     public $contact_no;
     public $welcome_message;
+    public $mission_message;
+    public $vision_message;
 
     public $logoIsUploaded = false;
     public $CountImageIsUploaded = false;
@@ -68,6 +70,8 @@ class HomePageCEV extends Component
         $this->email = Helper::get_static_option('email');
         $this->contact_no = Helper::get_static_option('contact_no');
         $this->welcome_message = Helper::get_static_option('welcome_message');
+        $this->mission_message = Helper::get_static_option('mission_message');
+        $this->vision_message = Helper::get_static_option('vision_message');
     }
 
     protected $rules = [
@@ -96,6 +100,8 @@ class HomePageCEV extends Component
         'email' => '',
         'contact_no' => '',
         'welcome_message' => '',
+        'mission_message' => '',
+        'vision_message' => '',
     ];
 
     public function updated($propertyName)
