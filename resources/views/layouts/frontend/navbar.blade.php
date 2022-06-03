@@ -3,6 +3,7 @@
     <div class="container max-w-screen-2xl mx-auto px-4 py-4">
 
         <nav class="flex-wrap lg:flex items-center justify-between" x-data="{ navbarOpen: false }">
+            <div class="hidden lg:block"></div>
             <div class="flex items-center justify-center lg:justify-start space-x-3">
                 @include('components.frontend.social-media-icons')
             </div>

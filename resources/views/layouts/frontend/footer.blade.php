@@ -10,16 +10,17 @@
                     </a>
                 </div>
 
-                <div class="flex justify-start max-w-xs text-gray-50">
+                <div
+                    class="flex justify-center lg:justify-start lg:max-w-xs text-gray-50 md:ml-24 lg:mr-0 md:mr-24 lg:ml-0">
                     <p>{{ $address }}</p>
                 </div>
-                <div class="flex justify-start max-w-xs">
+                <div class="flex justify-center lg:justify-start lg:max-w-xs">
                     <a href="mail:{{ $email }}">
                         <p class="text-base text-gray-100">{{ $email }}</p>
                     </a>
                 </div>
                 @foreach ($contact_no as $item)
-                    <div class="flex justify-start max-w-xs">
+                    <div class="flex justify-center lg:justify-start lg:max-w-xs">
                         <a href="tel:{{ $item }}">
                             <p class="text-base text-gray-100">{{ $item }}</p>
                         </a>
@@ -57,9 +58,15 @@
                     class="block font-light text-gray-50 text-sm md:text-lg hover:text-gray-50 transition ease-in-out duration-300">Feedback</a>
             </div>
 
-            @if (!Jenssegers\Agent\Facades\Agent::isMobile() || Jenssegers\Agent\Facades\Agent::isTablet())
-                <div>
+            @if (!Jenssegers\Agent\Facades\Agent::isMobile())
+                <div class="flex justify-center">
                     <iframe src="{{ $embed_map_link }}" width="600" height="360" style="border:0;" allowfullscreen=""
+                        loading="lazy">
+                    </iframe>
+                </div>
+            @elseif (Jenssegers\Agent\Facades\Agent::isTablet())
+                <div class="flex justify-center">
+                    <iframe src="{{ $embed_map_link }}" width="700" height="360" style="border:0;" allowfullscreen=""
                         loading="lazy">
                     </iframe>
                 </div>

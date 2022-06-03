@@ -26,19 +26,27 @@ class Services extends Component
     {
         if ($this->department_id == null && $this->where == 'homepage') {
             if (!\Jenssegers\Agent\Facades\Agent::isTablet() && \Jenssegers\Agent\Facades\Agent::isMobile()) {
-                $data = Service::with('department')->paginate(2);
+                $data = Service::with('department')->paginate(8);
+            } elseif (\Jenssegers\Agent\Facades\Agent::isTablet()) {
+                $data = Service::with('department')->paginate(9);
             } else {
-                $data = Service::with('department')->paginate(3);
+                $data = Service::with('department')->paginate(18);
             }
         } elseif ($this->department_id == null && $this->where == null) {
-            $data = Service::with('department')->paginate(6);
+            if (!\Jenssegers\Agent\Facades\Agent::isTablet() && \Jenssegers\Agent\Facades\Agent::isMobile()) {
+                $data = Service::with('department')->paginate(8);
+            } elseif (\Jenssegers\Agent\Facades\Agent::isTablet()) {
+                $data = Service::with('department')->paginate(9);
+            } else {
+                $data = Service::with('department')->paginate(18);
+            }
         } else {
             if (!\Jenssegers\Agent\Facades\Agent::isTablet() && \Jenssegers\Agent\Facades\Agent::isMobile()) {
-                $data = Service::with('department')->where('department_id', $this->department_id)->paginate(2);
+                $data = Service::with('department')->where('department_id', $this->department_id)->paginate(8);
             } elseif (\Jenssegers\Agent\Facades\Agent::isTablet()) {
-                $data = Service::with('department')->where('department_id', $this->department_id)->paginate(3);
+                $data = Service::with('department')->where('department_id', $this->department_id)->paginate(9);
             } else {
-                $data = Service::with('department')->where('department_id', $this->department_id)->paginate(6);
+                $data = Service::with('department')->where('department_id', $this->department_id)->paginate(18);
             }
         }
 

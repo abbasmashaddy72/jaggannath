@@ -246,7 +246,13 @@ class FrontendController extends Controller
          * @name('gallery')
          * @middlewares('web')
          */
-        $directories = Storage::disk('public')->directories('files/1');
+        $dir = Storage::disk('public')->directories('files');
+
+        for ($i = 0; $i < count($dir); $i++) {
+            $directories[$i] = Storage::disk('public')->directories($dir[$i]);
+        }
+
+        $directories = array_filter($directories);
 
         return view('pages.frontend.gallery', compact('directories'));
     }
