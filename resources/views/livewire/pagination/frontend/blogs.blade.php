@@ -35,6 +35,14 @@
         </div>
     @endif
 
+    <div wire:loading>
+        <div class="w-full">
+            <div class="flex justify-center">
+                <x-frontend.loading />
+            </div>
+        </div>
+    </div>
+
     <!-- Blog Grip -->
     <div class="flex flex-wrap -mx-4">
         <!-- First Repeater -->
@@ -66,7 +74,7 @@
                                     {{ $item->title }}
                                 </a>
                             </h3>
-                            <p class="text-base text-body-color">
+                            <p class="text-base text-body-color whitespace-pre-line">
                                 {{ $item->excerpt }}
                             </p>
                         </div>

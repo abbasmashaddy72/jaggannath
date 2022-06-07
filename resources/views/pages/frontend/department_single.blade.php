@@ -22,7 +22,8 @@
                                 data-wow-delay=".1s">
                                 {{ $data->name }}
                             </h2>
-                            <p class="mb-8 text-base leading-relaxed  text-body-color wow fadeInUp" data-wow-delay=".1s">
+                            <p class="mb-8 text-base leading-relaxed text-body-color wow fadeInUp whitespace-pre-line"
+                                data-wow-delay=".1s">
                                 {{ $data->excerpt }}</p>
                         </div>
                     </div>

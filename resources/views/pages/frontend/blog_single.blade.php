@@ -149,7 +149,7 @@
                                     {{ $item->title }}
                                 </a>
                             </h3>
-                            <p class="text-base text-body-color">
+                            <p class="text-base text-body-color whitespace-pre-line">
                                 {{ $item->excerpt }}
                             </p>
                         </div>

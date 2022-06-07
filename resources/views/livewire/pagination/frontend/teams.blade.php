@@ -35,6 +35,14 @@
         </div>
     @endif
 
+    <div wire:loading>
+        <div class="w-full">
+            <div class="flex justify-center">
+                <x-frontend.loading />
+            </div>
+        </div>
+    </div>
+
     <div class="bg-white wow fadeInUp" data-wow-delay=".2s">
         <div class="flex flex-wrap -mx-4">
             <!-- First Repeater -->

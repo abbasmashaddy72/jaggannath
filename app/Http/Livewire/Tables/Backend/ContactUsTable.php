@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Tables\Backend;
 
 use App\Models\ContactUs;
 use Mediconesystems\LivewireDatatables\Column;
+use Mediconesystems\LivewireDatatables\DateColumn;
 use Mediconesystems\LivewireDatatables\Http\Livewire\LivewireDatatable;
 use Mediconesystems\LivewireDatatables\NumberColumn;
 
@@ -14,7 +15,7 @@ class ContactUsTable extends LivewireDatatable
 
     public function builder()
     {
-        return ContactUs::query();
+        return ContactUs::query()->latest();
     }
 
     public function columns()
@@ -51,6 +52,9 @@ class ContactUsTable extends LivewireDatatable
                 ->searchable()
                 ->truncate(20)
                 ->label('Questions'),
+
+            DateColumn::name('created_at')
+                ->filterable(),
         ];
     }
 }

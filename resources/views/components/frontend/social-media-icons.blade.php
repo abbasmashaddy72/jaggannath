@@ -1,5 +1,5 @@
 <a href="{{ $facebook }}" target="_blank" class="shadow-switch-1">
-    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48" viewBox="0 0 48 48"
+    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="35" height="35" viewBox="0 0 48 48"
         style=" fill:#000000;">
         <path fill="#3F51B5"
             d="M42,37c0,2.762-2.238,5-5,5H11c-2.761,0-5-2.238-5-5V11c0-2.762,2.239-5,5-5h26c2.762,0,5,2.238,5,5V37z">
@@ -10,7 +10,7 @@
     </svg>
 </a>
 <a href="{{ $instagram }}" target="_blank" class="shadow-switch-1">
-    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48" viewBox="0 0 48 48"
+    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="35" height="35" viewBox="0 0 48 48"
         style=" fill:#000000;">
         <path fill="#304ffe"
             d="M41.67,13.48c-0.4,0.26-0.97,0.5-1.21,0.77c-0.09,0.09-0.14,0.19-0.12,0.29v1.03l-0.3,1.01l-0.3,1l-0.33,1.1 l-0.68,2.25l-0.66,2.22l-0.5,1.67c0,0.26-0.01,0.52-0.03,0.77c-0.07,0.96-0.27,1.88-0.59,2.74c-0.19,0.53-0.42,1.04-0.7,1.52 c-0.1,0.19-0.22,0.38-0.34,0.56c-0.4,0.63-0.88,1.21-1.41,1.72c-0.41,0.41-0.86,0.79-1.35,1.11c0,0,0,0-0.01,0 c-0.08,0.07-0.17,0.13-0.27,0.18c-0.31,0.21-0.64,0.39-0.98,0.55c-0.23,0.12-0.46,0.22-0.7,0.31c-0.05,0.03-0.11,0.05-0.16,0.07 c-0.57,0.27-1.23,0.45-1.89,0.54c-0.04,0.01-0.07,0.01-0.11,0.02c-0.4,0.07-0.79,0.13-1.19,0.16c-0.18,0.02-0.37,0.03-0.55,0.03 l-0.71-0.04l-3.42-0.18c0-0.01-0.01,0-0.01,0l-1.72-0.09c-0.13,0-0.27,0-0.4-0.01c-0.54-0.02-1.06-0.08-1.58-0.19 c-0.01,0-0.01,0-0.01,0c-0.95-0.18-1.86-0.5-2.71-0.93c-0.47-0.24-0.93-0.51-1.36-0.82c-0.18-0.13-0.35-0.27-0.52-0.42 c-0.48-0.4-0.91-0.83-1.31-1.27c-0.06-0.06-0.11-0.12-0.16-0.18c-0.06-0.06-0.12-0.13-0.17-0.19c-0.38-0.48-0.7-0.97-0.96-1.49 c-0.24-0.46-0.43-0.95-0.58-1.49c-0.06-0.19-0.11-0.37-0.15-0.57c-0.01-0.01-0.02-0.03-0.02-0.05c-0.1-0.41-0.19-0.84-0.24-1.27 c-0.06-0.33-0.09-0.66-0.09-1c-0.02-0.13-0.02-0.27-0.02-0.4l1.91-2.95l1.87-2.88l0.85-1.31l0.77-1.18l0.26-0.41v-1.03 c0.02-0.23,0.03-0.47,0.02-0.69c-0.01-0.7-0.15-1.38-0.38-2.03c-0.22-0.69-0.53-1.34-0.85-1.94c-0.38-0.69-0.78-1.31-1.11-1.87 C14,7.4,13.66,6.73,13.75,6.26C14.47,6.09,15.23,6,16,6h16c4.18,0,7.78,2.6,9.27,6.26C41.43,12.65,41.57,13.06,41.67,13.48z">
@@ -73,7 +73,7 @@
     </svg>
 </a>
 <a href="{{ $linkedin }}" target="_blank" class="shadow-switch-1">
-    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48" viewBox="0 0 48 48"
+    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="35" height="35" viewBox="0 0 48 48"
         style=" fill:#000000;">
         <path fill="#0288D1"
             d="M42,37c0,2.762-2.238,5-5,5H11c-2.761,0-5-2.238-5-5V11c0-2.762,2.239-5,5-5h26c2.762,0,5,2.238,5,5V37z">
@@ -84,18 +84,15 @@
     </svg>
 </a>
 <a href="{{ $twitter }}" target="_blank" class="shadow-switch-1">
-    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="body_1" width="48"
-        height="48">
-
-        <g transform="matrix(1.3333334 0 0 1.3333334 0 0)">
-            <image x="0" y="0"
-                xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAA3FJREFUaIHtmE1MXFUYhp8z985fB0osCAR/ojZRQ9WFhZp2UajWGJMiaWI7umlcaLuuxrQJ6gqbLpQYF+qu6aYpalIThDQgxAVpU0oTMMQGUqMoEbCUQjNTmLlz57gAosCcuXPPMAOa+2y/8/O+3/nOPfcc8PDw8NhMhFMD42K8GSFPAnVApPCSAIgjuI4UbXY00pGtYVYDZnvsrIRTG6vNHQJ5JhUtbVHHFSxn/rvCyHKJFE32G5HvM4V8yk5LZbM1EPJdVUhtALG7EFo0qVMFshiQJYVQokmpKpDFwH8Dz8BmUxQDpoCTT/oZeTXMwusRJpu38c2+ILt3LE0fNuDIIyYf1vpdj60+B9pjUhVrqfVzecrmxmw6pwm+3hfk8MPmulgyDf23bfZWGPwSS3Pwx0VmEpmntaMlGbVqrcCxx0y69ofYVebc/a3HzYziAQI+eLHK4MqMzedjFm8+mrldNrQMVIYE5QFBT2OIhkoja9u3n3Aui5eqDD7YFeDSRMq1Fi0DI3NLpVMZFHQ3hDj1tF9Zi8/ksEppCQf6FphYUFatEi0DbWP/ZMoQ8PFzAXoPhHj+gfXDRXKoCgmM33cvHjQNXJpIcf631cu9/0GDgZfD9DaGOL7TpHa7LyfxAHeSeuIB3O8a4IfGEO2/p6gOCV6pXr0HGioNx32xlmmN0llBy4AEvqwLak+6luF558+xCq0SOv1TEls/aeu4PGlr99UycGM2TXO/+tBxw30buqeKbACgb9qmoW+RrjyyB/DVLYvZYm9igHN7gkQ1Ts5/c8+SfDpq5TWG9gqcGExy7tcU+RTR8cEk04v5laG2gVhK8s71BPU9C3wyajF0N82clbuYz8Ysvv3D/a/DWvL+nR66m+b0cJJj1xJcncntc9j6s8X7Q8l8pwY090DYgPKA4KntPup3+GiqMXmh3DkXtxOS94aSXBjPP/MruDawt8LHR7UBDlYbzs96y8RT8MUti7M3LeZdlFkuaF1oAGrCgtdqTPaU+3i2zMdD2wRlfoEA5i3JeFwyPJem7y+bzj9tYqn8hKsuNNoGis2G3si2Ev9nAyJWPBmO3FMFsj3uDhZEih5KLWoDUrQVRIoOQq1FacCORjoE8kxhFOWOQLbaRyOd6rgDxsX4oaX3eVFfvBdrEQM5gBBt2cR7eHh4bD5/A6gQDTxXDvDCAAAAAElFTkSuQmCC"
-                width="36" height="36" />
-        </g>
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px" y="0px" width="35px" height="36px" viewBox="0 0 35 36" enable-background="new 0 0 35 36"
+        xml:space="preserve">
+        <image id="image0" width="35" height="36" x="0" y="0"
+            href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAkCAMAAAA0AnPTAAABklBMVEUAAAAAqv8DqfMDqfQDqPQAgP8DqvQDqfUDqPUDqPMDqfQDqfQDqfQDqPQEqfQDqfQDqfQEqfUDqfQDqfQDqfQDqfQDqfQDqfQEqPQDqfQEqPUDqPYDqfQDqfQDqfQDp/YDqfQCqfQBqPQGqvQFqvQEqfQTr/Vtzfms4/up4vtpzPgbsfUptvZRxPcWr/UAqPRGwPdozPgMrPSW2/r9/v/////6/f/O7v3K7f1yz/kOrfR+0/ny+/5qzPhFwPfc8/6G1voQrfVrzPmE1fp20Pnc8/0yufYjtPXP7/38/v+86PxSxPgVr/WA1Pm96PwIq/QwufZ50fnm9/71/P/J7f2X2/vD6/yx5Pxiyfji9f7r+P6P2foCqPQcsvW/6fxZxvgst/aj4Pv2/P/T8P0esvVcx/jR7/37/v900Pkfs/WY3Pro9/615vwvuPZ60vnf9P7H7P0tt/ZMwvd80vnF6/z4/f/5/f+r4vsqtvYJq/RPw/eq4vvj9f665/xfyPgTrvU0uvZzz/l90/l30PldyPgPrfV2UAoLAAAAIHRSTlMAAAAAAAAAAAADN3GAAwRv6AQ/7IWbnIQEbgQDNnB/A+Aw2HsAAAFkSURBVDjLvdTXU8IwHAdwbYsgqCDLBUhScEscBBcOHCjuPXDgQHHvPXH93wKlwJnkjie+L3353CX9jeTl5Tb5HMfTIwiKpOG4QrWmiIxGXcwXJA1fotXZadFpS3nZ6A12egz6lDHaWTGmjIlpTCljZhozwwAoOmAsTtKIDiCRmtq6+obGpmYX+G9QS2sCgbZ2N8aejs6ubtL0eHtFGPv2eXE8/QM+0gxi75ALATScIHjED4n7wNExHBifmERTkpmeIf8LzM7NY7ywuLQsmRWKQatrQZyRdUp9Nja3MoknhCg1hNs7u2mzF4a0Ou8fRFLEfQhovQBHxycB2Zy6qAYi59n5hUQuryCtp2LYf31zexcX9w+PkNr3p+eX1/hRkeDbu08mxH0+oqHPr++f6C8CzPkBSEpaZJpsZpU982XZ7I6QNEI5awcrKmXD8VUWq41YZZvVUs3LZymUSsaboFLJb0Ku8gcHrHjSQN06QAAAAABJRU5ErkJggg==" />
     </svg>
 </a>
 <a href="{{ $youtube }}" target="_blank" class="shadow-switch-1">
-    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48" viewBox="0 0 48 48"
+    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="35" height="35" viewBox="0 0 48 48"
         style=" fill:#000000;">
         <path fill="#FF3D00"
             d="M43.2,33.9c-0.4,2.1-2.1,3.7-4.2,4c-3.3,0.5-8.8,1.1-15,1.1c-6.1,0-11.6-0.6-15-1.1c-2.1-0.3-3.8-1.9-4.2-4C4.4,31.6,4,28.2,4,24c0-4.2,0.4-7.6,0.8-9.9c0.4-2.1,2.1-3.7,4.2-4C12.3,9.6,17.8,9,24,9c6.2,0,11.6,0.6,15,1.1c2.1,0.3,3.8,1.9,4.2,4c0.4,2.3,0.9,5.7,0.9,9.9C44,28.2,43.6,31.6,43.2,33.9z">
@@ -104,7 +101,7 @@
     </svg>
 </a>
 <a href="{{ $google_business }}" target="_blank" class="shadow-switch-1">
-    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48" viewBox="0 0 48 48"
+    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="35" height="35" viewBox="0 0 48 48"
         style=" fill:#000000;">
         <path fill="#1c9957"
             d="M42,39V9c0-1.657-1.343-3-3-3H9C7.343,6,6,7.343,6,9v30c0,1.657,1.343,3,3,3h30C40.657,42,42,40.657,42,39z">

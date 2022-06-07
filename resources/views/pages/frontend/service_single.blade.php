@@ -75,7 +75,7 @@
                                 {{ $data->title }}
                             </h2>
 
-                            <p class="mb-8 text-base leading-relaxed  text-body-color wow fadeInUp"
+                            <p class="mb-8 text-base leading-relaxed text-body-color wow fadeInUp whitespace-pre-line"
                                 data-wow-delay=".1s">{{ $data->excerpt }}</p>
 
                             <div class="mb-8 ck-content">
@@ -105,6 +105,25 @@
                     </div>
                 @endforelse
             </div>
+        </div>
+
+        <div class="flex flex-wrap -mx-4">
+            <div class="w-full px-4 mt-14 wow fadeInUp" data-wow-delay=".2s">
+                <h2 class="font-semibold text-dark text-2xl sm:text-[28px] pb-5 relative">
+                    Related Doctors
+                </h2>
+                <span class="h-[2px] bg-primary w-20 mb-10 inline-block"></span>
+            </div>
+
+            <!-- First Repeater -->
+            @forelse ($teams as $item)
+                @include('components.frontend.team')
+            @empty
+                <div class="w-full px-4">
+                    <div class="text-center font-bold text-gray-800 text-lg">No Data Available</div>
+                </div>
+            @endforelse
+
         </div>
 
     </x-frontend.container>

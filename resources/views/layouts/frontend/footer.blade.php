@@ -19,13 +19,13 @@
                         <p class="text-base text-gray-100">{{ $email }}</p>
                     </a>
                 </div>
-                @foreach ($contact_no as $item)
-                    <div class="flex justify-center lg:justify-start lg:max-w-xs">
-                        <a href="tel:{{ $item }}">
+                <div class="flex justify-center lg:justify-start lg:max-w-xs">
+                    @foreach ($contact_no as $item)
+                        <a href="tel:{{ $item }}" class="mr-4">
                             <p class="text-base text-gray-100">{{ $item }}</p>
                         </a>
-                    </div>
-                @endforeach
+                    @endforeach
+                </div>
 
                 <div class="flex items-center justify-center lg:justify-start space-x-3">
                     @include('components.frontend.social-media-icons')

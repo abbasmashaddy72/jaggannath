@@ -27,7 +27,7 @@
 <div class="w-full px-2 md:px-4 flex flex-col text-center items-center">
     <div class="mb-4 group wow fadeInUp p-4" data-wow-delay=".1s">
         <a href="{{ route('service_single', ['id' => $item->id]) }}" class="block">
-            <img src="{{ asset('storage/' . $item->department->image) }}" alt="{{ $item->title }}"
+            <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->title }}"
                 class="w-40 h-40 object-cover border-gray-200 border-2 rounded-full shadow-testimonial mx-auto" />
         </a>
         <div class="mt-2">

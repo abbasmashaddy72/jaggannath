@@ -15,7 +15,7 @@ class FeedbackTable extends LivewireDatatable
 
     public function builder()
     {
-        return Feedback::query();
+        return Feedback::query()->latest();
     }
 
     public function columns()

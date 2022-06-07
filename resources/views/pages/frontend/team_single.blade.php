@@ -30,7 +30,7 @@
                                     class="font-bold text-xl sm:text-2xl 2xl:text-[30px] sm:leading-snug text-dark mb-3">
                                     Profile:
                                 </div>
-                                <p class="text-base text-body-color mb-3 leading-relaxed">
+                                <p class="text-base text-body-color mb-3 leading-relaxed whitespace-pre-line">
                                     {{ $data->profile }}
                                 </p>
                                 <div class="text-center mt-10">

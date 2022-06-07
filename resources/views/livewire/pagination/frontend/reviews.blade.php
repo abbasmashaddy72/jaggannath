@@ -1,4 +1,12 @@
 <div>
+    <div wire:loading>
+        <div class="w-full">
+            <div class="flex justify-center">
+                <x-frontend.loading />
+            </div>
+        </div>
+    </div>
+
     <div class="flex flex-wrap -mx-4">
         <!-- First Repeater -->
         @forelse ($data as $item)

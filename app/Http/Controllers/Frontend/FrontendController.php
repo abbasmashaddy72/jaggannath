@@ -10,10 +10,12 @@ use App\Models\Department;
 use App\Models\Feature;
 use App\Models\Insurance;
 use App\Models\Package;
+use App\Models\Review;
 use App\Models\Service;
 use App\Models\Slider;
 use App\Models\Team;
 use App\Services\Helper;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class FrontendController extends Controller
@@ -30,7 +32,7 @@ class FrontendController extends Controller
         view()->share('google_business', Helper::get_static_option('google_business'));
         view()->share('embed_map_link', Helper::get_static_option('embed_map_link'));
         view()->share('email', Helper::get_static_option('email'));
-        view()->share('contact_no', explode(')', Helper::get_static_option('contact_no')));
+        view()->share('contact_no', explode(';', Helper::get_static_option('contact_no')));
         view()->share('address', Helper::get_static_option('address'));
     }
 
@@ -64,6 +66,7 @@ class FrontendController extends Controller
         $welcome_message = Helper::get_static_option('welcome_message');
         $mission_message = Helper::get_static_option('mission_message');
         $vision_message = Helper::get_static_option('vision_message');
+        $departments = Department::get();
 
         return view('pages.frontend.home_page', compact([
             'slider_images',
@@ -84,7 +87,8 @@ class FrontendController extends Controller
             'features',
             'welcome_message',
             'mission_message',
-            'vision_message'
+            'vision_message',
+            'departments'
         ]));
     }
 
@@ -104,7 +108,7 @@ class FrontendController extends Controller
     {
         $data = Department::findOrFail($id);
         $services = Service::where('department_id', $id)->with('department')->get();
-        $teams = Team::where('department_id', $id)->with('services', 'department')->get();
+        $teams = Team::inRandomOrder()->where('department_id', $id)->with('services', 'department')->get();
 
         return view('pages.frontend.department_single', compact('data', 'services', 'teams'));
     }
@@ -126,9 +130,9 @@ class FrontendController extends Controller
          * @name('blog_single')
          * @middlewares('web')
          */
+        Blog::where('id', $id)->increment('clicks');
         $data = Blog::findOrFail($id);
         $related = Blog::where('department_id', $data->department_id)->with('department', 'team')->orderBy('clicks', 'DESC')->limit(3)->get();
-        Blog::where('id', $id)->increment('clicks');
 
         return view('pages.frontend.blog_single', compact('data', 'related'));
     }
@@ -150,11 +154,12 @@ class FrontendController extends Controller
          * @name('service_single')
          * @middlewares('web')
          */
+        Service::where('id', $id)->increment('clicks');
         $data = Service::with('department')->findOrFail($id);
         $related = Service::where('department_id', $data->department_id)->with('department')->orderBy('clicks', 'DESC')->limit(3)->get();
-        Service::where('id', $id)->increment('clicks');
+        $teams = Team::inRandomOrder()->where('department_id', $data->department_id)->with('services', 'department')->get();
 
-        return view('pages.frontend.service_single', compact('data', 'related'));
+        return view('pages.frontend.service_single', compact('data', 'related', 'teams'));
     }
 
     public function teams()
@@ -169,10 +174,10 @@ class FrontendController extends Controller
 
     public function team_single($id)
     {
-        $data = Team::with(['services' => function ($query) {
+        $data = Team::inRandomOrder()->with(['services' => function ($query) {
             $query->with('department');
         }])->findOrFail($id);
-        $related = Team::where('department_id', $data->department_id)->with('department')->whereNotIn('id', [$data->id])->limit(3)->get();
+        $related = Team::inRandomOrder()->where('department_id', $data->department_id)->with('department')->whereNotIn('id', [$data->id])->limit(3)->get();
 
         return view('pages.frontend.team_single', compact('data', 'related'));
     }
@@ -311,5 +316,28 @@ class FrontendController extends Controller
          * @middlewares('web')
          */
         return view('pages.frontend.feedback');
+    }
+
+    public function search(Request $request)
+    {
+        $search_text = $request->search;
+        $departments = Department::where('name', 'LIKE', '%' . $search_text . '%')->get();
+        $teams = Team::inRandomOrder()->where('name', 'LIKE', '%' . $search_text . '%')->with('services', 'department')->get();
+        $services = Service::where('title', 'LIKE', '%' . $search_text . '%')->with('department')->get();
+        $blogs = Blog::where('title', 'LIKE', '%' . $search_text . '%')->with('department', 'team')->orderBy('clicks', 'DESC')->get();
+        $packages = Package::where('name', 'LIKE', '%' . $search_text . '%')->get();
+        $reviews = Review::where('name', 'LIKE', '%' . $search_text . '%')->get();
+        $insurances = Insurance::where('name', 'LIKE', '%' . $search_text . '%')->get();
+
+        return view('pages.frontend.search', compact([
+            'search_text',
+            'departments',
+            'teams',
+            'services',
+            'blogs',
+            'packages',
+            'reviews',
+            'insurances'
+        ]));
     }
 }
