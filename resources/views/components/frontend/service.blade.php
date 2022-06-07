@@ -1,31 +1,5 @@
-{{-- <div class="w-full px-4 flex flex-col">
-    <div class="mb-10 group wow fadeInUp border-gray-200 border-2 p-4 rounded-lg shadow-testimonial flex-1"
-        data-wow-delay=".1s">
-        <div class="rounded overflow-hidden mb-8">
-            <a href="{{ route('service_single', ['id' => $item->id]) }}" class="block">
-                <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->title }}"
-                    class="w-full transition group-hover:scale-125 group-hover:rotate-6 h-40 md:h-56 object-cover" />
-            </a>
-        </div>
-        <div>
-            <div class="justify-end hidden md:flex">
-                <span
-                    class="bg-primary rounded inline-block text-center py-1 px-4 text-xs leading-loose font-semibold text-white mb-5">
-                    {{ $item->department->name }}
-                </span>
-            </div>
-            <h3>
-                <a href="{{ route('service_single', ['id' => $item->id]) }}"
-                    class="font-semibold teloginxt-xl sm:text-2xl md:text-lg lg:text-xl xl:text-2xl mb-4 inline-block text-dark hover:text-primary">
-                    {{ $item->title }}
-                </a>
-            </h3>
-        </div>
-    </div>
-</div> --}}
-
-<div class="w-full px-2 md:px-4 flex flex-col text-center items-center">
-    <div class="mb-4 group wow fadeInUp p-4" data-wow-delay=".1s">
+<div class="text-center">
+    <div class="group wow fadeInUp" data-wow-delay=".1s">
         <a href="{{ route('service_single', ['id' => $item->id]) }}" class="block">
             <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->title }}"
                 class="w-40 h-40 object-cover border-gray-200 border-2 rounded-full shadow-testimonial mx-auto" />
@@ -33,7 +7,7 @@
         <div class="mt-2">
             <h3>
                 <a href="{{ route('service_single', ['id' => $item->id]) }}"
-                    class="font-semibold teloginxt-xl text-lg md:mb-4 inline-block text-dark hover:text-primary">
+                    class="font-semibold teloginxt-xl text-lg inline-block text-dark hover:text-primary">
                     {{ $item->title }}
                 </a>
             </h3>

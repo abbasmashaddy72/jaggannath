@@ -7,7 +7,7 @@
     @endpush
 
     <!-- Sliders Section Start -->
-    <section class="bg-white pb-10 mt-52">
+    <section class="bg-white pb-10 mt-64 lg:mt-52">
 
         <div class="container max-w-screen-2xl mx-auto px-4">
             <div>

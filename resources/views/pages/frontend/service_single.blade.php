@@ -96,7 +96,7 @@
                 <span class="h-[2px] bg-primary w-20 mb-10 inline-block"></span>
             </div>
             <!-- First Repeater -->
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-1 md:gap-5 mx-auto">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-1 md:gap-4 mx-auto">
                 @forelse ($related as $item)
                     @include('components.frontend.service')
                 @empty

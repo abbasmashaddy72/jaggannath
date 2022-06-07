@@ -7,7 +7,7 @@
         <!-- Blog Grip -->
         <div class="flex flex-wrap -mx-4 mt-3">
             <!-- First Repeater -->
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-1 md:gap-5 lg:gap-10 mx-auto">
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-1 md:gap-4 mx-auto">
                 @forelse ($data->packages as $item)
                     <div class="w-full px-4 flex flex-col">
                         <div class="mb-10 group wow fadeInUp border-gray-200 border-2 p-4 rounded-lg shadow-testimonial flex-1"

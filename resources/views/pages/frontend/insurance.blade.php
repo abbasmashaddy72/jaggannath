@@ -6,9 +6,9 @@
 
         <div class="flex flex-wrap -mx-4">
             <!-- First Repeater -->
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-1 md:gap-5 mx-auto">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-1 md:gap-8 mx-auto">
                 @foreach ($data as $item)
-                    <div class="w-full px-4 flex flex-col">
+                    <div class="w-full flex flex-col">
                         <div class="mb-10 group wow fadeInUp border-gray-200 border-2 p-4 rounded-lg shadow-testimonial flex-1"
                             data-wow-delay=".1s">
                             @if (!\Jenssegers\Agent\Facades\Agent::isMobile())
