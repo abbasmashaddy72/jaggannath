@@ -44,13 +44,6 @@ class FrontendController extends Controller
          * @middlewares('web')
          */
         $slider_images = Slider::where('on', 'homepage')->get();
-        if (\Jenssegers\Agent\Facades\Agent::isMobile() && !\Jenssegers\Agent\Facades\Agent::isTablet()) {
-            $services = Service::with('department')->orderBy('clicks', 'DESC')->limit(2)->get();
-        } else {
-            $services = Service::with('department')->orderBy('clicks', 'DESC')->limit(3)->get();
-        }
-        $services_excerpt = Helper::get_static_option('services_excerpt');
-        $count_image = Helper::get_static_option('count_image');
         $count_excerpt = Helper::get_static_option('count_excerpt');
         $review_excerpt = Helper::get_static_option('review_excerpt');
         $team_excerpt = Helper::get_static_option('team_excerpt');
@@ -58,8 +51,6 @@ class FrontendController extends Controller
         $gr_api = Helper::get_static_option('gr_api');
         $gr_count_api = Helper::get_static_option('gr_count_api');
         $tag_line = Helper::get_static_option('tag_line');
-        $tag_action_button_link = Helper::get_static_option('tag_action_button_link');
-        $tag_action_button_text = Helper::get_static_option('tag_action_button_text');
         $hero_image = Helper::get_static_option('hero_image');
         $hero_video = Helper::get_static_option('hero_video');
         $features = Feature::get();
@@ -70,9 +61,6 @@ class FrontendController extends Controller
 
         return view('pages.frontend.home_page', compact([
             'slider_images',
-            'services',
-            'services_excerpt',
-            'count_image',
             'count_excerpt',
             'review_excerpt',
             'team_excerpt',
@@ -80,8 +68,6 @@ class FrontendController extends Controller
             'gr_api',
             'gr_count_api',
             'tag_line',
-            'tag_action_button_link',
-            'tag_action_button_text',
             'hero_image',
             'hero_video',
             'features',
@@ -107,8 +93,8 @@ class FrontendController extends Controller
     public function department_single($id)
     {
         $data = Department::findOrFail($id);
-        $services = Service::where('department_id', $id)->with('department')->get();
-        $teams = Team::inRandomOrder()->where('department_id', $id)->with('services', 'department')->get();
+        $services = Service::where('department_id', $id)->get();
+        $teams = Team::inRandomOrder()->where('department_id', $id)->with('department')->get();
 
         return view('pages.frontend.department_single', compact('data', 'services', 'teams'));
     }
@@ -132,7 +118,7 @@ class FrontendController extends Controller
          */
         Blog::where('id', $id)->increment('clicks');
         $data = Blog::findOrFail($id);
-        $related = Blog::where('department_id', $data->department_id)->with('department', 'team')->orderBy('clicks', 'DESC')->limit(3)->get();
+        $related = Blog::where('department_id', $data->department_id)->whereNotIn('id', [$data->id])->with('department', 'team')->orderBy('clicks', 'DESC')->limit(3)->get();
 
         return view('pages.frontend.blog_single', compact('data', 'related'));
     }
@@ -156,7 +142,7 @@ class FrontendController extends Controller
          */
         Service::where('id', $id)->increment('clicks');
         $data = Service::with('department')->findOrFail($id);
-        $related = Service::where('department_id', $data->department_id)->with('department')->orderBy('clicks', 'DESC')->limit(3)->get();
+        $related = Service::where('department_id', $data->department_id)->whereNotIn('id', [$data->id])->with('department')->orderBy('clicks', 'DESC')->get();
         $teams = Team::inRandomOrder()->where('department_id', $data->department_id)->with('services', 'department')->get();
 
         return view('pages.frontend.service_single', compact('data', 'related', 'teams'));
@@ -165,7 +151,7 @@ class FrontendController extends Controller
     public function teams()
     {
         /**
-         * @get('/teams')
+         * @get('/teams')->limit(3)
          * @name('teams')
          * @middlewares('web')
          */
@@ -174,10 +160,8 @@ class FrontendController extends Controller
 
     public function team_single($id)
     {
-        $data = Team::inRandomOrder()->with(['services' => function ($query) {
-            $query->with('department');
-        }])->findOrFail($id);
-        $related = Team::inRandomOrder()->where('department_id', $data->department_id)->with('department')->whereNotIn('id', [$data->id])->limit(3)->get();
+        $data = Team::inRandomOrder()->with('services')->findOrFail($id);
+        $related = Team::inRandomOrder()->where('department_id', $data->department_id)->with('department')->whereNotIn('id', [$data->id])->get();
 
         return view('pages.frontend.team_single', compact('data', 'related'));
     }

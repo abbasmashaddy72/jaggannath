@@ -7,17 +7,17 @@
         <!-- Blog Details -->
         <div class="flex flex-wrap justify-center -mx-4">
             <div class="w-full px-4">
-                <div class="grid grid-cols-3 justify-center items-center -mx-4">
-                    <div class="col-span-2">
-                        <p class="mb-8 text-base leading-relaxed text-body-color wow fadeInUp whitespace-pre-line"
-                            data-wow-delay=".1s">
-                            {{ $data->excerpt }}</p>
-                    </div>
+                <div class="grid grid-cols-1 lg:grid-cols-3 justify-center items-center -mx-4">
                     <div>
                         <div class="mb-4 group wow fadeInUp p-4" data-wow-delay=".1s">
                             <img src="{{ asset('storage/' . $data->image) }}" alt="{{ $data->name }}"
                                 class="w-40 h-40 object-cover border-gray-200 border-2 rounded-full shadow-testimonial mx-auto" />
                         </div>
+                    </div>
+                    <div class="col-span-2">
+                        <p class="mx-8 mb-8 text-base leading-relaxed text-body-color wow fadeInUp whitespace-pre-line text-justify"
+                            data-wow-delay=".1s">
+                            {{ $data->excerpt }}</p>
                     </div>
                 </div>
             </div>

@@ -7,9 +7,9 @@
         <!-- Blog Grip -->
         <div class="flex flex-wrap -mx-4">
             <!-- First Repeater -->
-            @foreach ($data as $item)
-                <div class="w-1/2 md:w-1/3 lg:w-1/6 px-2 md:px-4 flex flex-col text-center items-center">
-                    <div class="mb-4 group wow fadeInUp p-4" data-wow-delay=".1s">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-1 md:gap-4 mx-auto">
+                @foreach ($data as $item)
+                    <div class="mb-4 group wow fadeInUp p-4 text-center items-center" data-wow-delay=".1s">
                         <a href="{{ route('department_single', ['id' => $item->id]) }}" class="block">
                             <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->title }}"
                                 class="w-40 h-40 object-cover border-gray-200 border-2 rounded-full shadow-testimonial mx-auto" />
@@ -23,8 +23,8 @@
                             </h3>
                         </div>
                     </div>
-                </div>
-            @endforeach
+                @endforeach
+            </div>
 
         </div>
 
