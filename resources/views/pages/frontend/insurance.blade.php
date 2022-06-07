@@ -4,9 +4,9 @@
             {{ __('Insurance') }}
         </x-slot>
 
-        <div class="flex flex-wrap -mx-4">
+        <div class="flex flex-wrap -mx-4 px-4">
             <!-- First Repeater -->
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-1 md:gap-8 mx-auto">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-8 mx-auto">
                 @foreach ($data as $item)
                     <div class="w-full flex flex-col">
                         <div class="mb-10 group wow fadeInUp border-gray-200 border-2 p-4 rounded-lg shadow-testimonial flex-1"
@@ -21,7 +21,7 @@
                             @endif
                             <div>
                                 <h3>
-                                    <a href="{{ $item->link }}"
+                                    <a href="{{ $item->link }}" target="_blank"
                                         class="font-semibold teloginxt-xl sm:text-2xl lg:text-xl xl:text-2xl mb-2 inline-block text-dark hover:text-primary">
                                         {{ $item->name }}
                                     </a>
