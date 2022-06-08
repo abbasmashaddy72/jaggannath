@@ -30,6 +30,13 @@
         })
     </script>
 @endpush
+@push('meta')
+    @include('layouts.frontend.meta', [
+        'title' => 'Privacy',
+        'description' => 'Some Text for SEO',
+        'keywords' => 'Some Keywords for SEO',
+    ])
+@endpush
 <x-guest-layout>
     <x-frontend.container>
         <x-slot name='banner_name'>

@@ -1,3 +1,10 @@
+@push('meta')
+    @include('layouts.frontend.meta', [
+        'description' => $welcome_message,
+        'image' => '//images.weserv.nl/?url=' . asset('storage/' . $logo) . '&w=200&h=200',
+        'keywords' => 'Some Text for SEO',
+    ])
+@endpush
 <x-guest-layout>
     @push('styles')
         <link href="https://unpkg.com/swiper@6.8.4/swiper-bundle.min.css" rel="stylesheet">

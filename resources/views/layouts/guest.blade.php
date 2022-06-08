@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    @stack('meta')
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
@@ -14,7 +15,6 @@
         [x-cloak] {
             display: none !important;
         }
-
     </style>
     @stack('styles')
     @livewireStyles

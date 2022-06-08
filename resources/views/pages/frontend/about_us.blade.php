@@ -1,3 +1,11 @@
+@push('meta')
+    @include('layouts.frontend.meta', [
+        'title' => 'About Us',
+        'description' => $tag_line,
+        'image' => '//images.weserv.nl/?url=' . asset('storage/' . $hero_image) . '&w=200&h=200',
+        'keywords' => 'Some Keywords for SEO',
+    ])
+@endpush
 <x-guest-layout>
     <x-frontend.container>
         <x-slot name='banner_name'>

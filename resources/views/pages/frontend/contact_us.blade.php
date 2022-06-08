@@ -1,3 +1,11 @@
+@push('meta')
+    @include('layouts.frontend.meta', [
+        'title' => 'Contact Us',
+        'description' => 'Love to hear from you!',
+        'description' => 'Some Text for SEO',
+        'keywords' => 'Some Keywords for SEO',
+    ])
+@endpush
 <x-guest-layout>
     <x-frontend.container>
         <x-slot name='banner_name'>
@@ -9,7 +17,7 @@
                 <div class="ud-contact-content-wrapper">
                     <div class="ud-contact-title mb-12 lg:mb-[150px]">
                         <h2 class="text-[35px] font-semibold">
-                            Let's talk about <br />
+                            Let's talk about Ur issus!! <br />
                             Love to hear from you!
                         </h2>
                     </div>
