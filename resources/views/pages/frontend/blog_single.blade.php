@@ -49,15 +49,16 @@
             <div class="w-full px-4">
                 <div class="relative rounded overflow-hidden z-20 mb-[60px] h-[300px] md:h-[400px] lg:h-[500px] wow fadeInUp"
                     data-wow-delay=".1s">
-                    <img src="{{ asset('storage/' . $data->image) }}" alt="{{ $data->title }}"
-                        class="object-cover object-center w-full h-full" />
+                    <img loading="lazy" src="https://via.placeholder.com/310x224"
+                        data-src="{{ asset('storage/' . $data->image) }}" alt="{{ $data->title }}"
+                        class="object-cover object-center w-full h-full lazyload" />
                     <div
                         class="absolute top-0 left-0 z-10 flex items-end w-full h-full  bg-gradient-to-t from-dark-700 to-transparent">
                         <div class="flex flex-wrap items-center p-4 pb-4 sm:p-8">
                             <div class="flex items-center mb-4 mr-5 md:mr-10">
                                 <div class="w-10 h-10 mr-4 overflow-hidden rounded-full">
-                                    <img src="{{ asset('storage/' . $data->team->image) }}"
-                                        alt="{{ $data->team->name }}" class="w-full" />
+                                    <img loading="lazy" data-src="{{ asset('storage/' . $data->team->image) }}"
+                                        alt="{{ $data->team->name }}" class="w-full lazyload" />
                                 </div>
                                 <p class="text-base font-medium text-white">
                                     {{ $data->team->name }}
@@ -136,8 +137,9 @@
                         data-wow-delay=".1s">
                         <div class="rounded overflow-hidden mb-8">
                             <a href="{{ route('blog_single', ['id' => $item->id]) }}" class="block">
-                                <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->title }}"
-                                    class="w-full transition group-hover:scale-125 group-hover:rotate-6 h-56 object-cover" />
+                                <img loading="lazy" data-src="{{ asset('storage/' . $item->image) }}"
+                                    alt="{{ $item->title }}"
+                                    class="w-full transition group-hover:scale-125 group-hover:rotate-6 h-56 object-cover lazyload" />
                             </a>
                         </div>
                         <div>

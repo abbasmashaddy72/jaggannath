@@ -49,8 +49,9 @@
             <div class="w-full px-4">
                 <div class="relative rounded overflow-hidden z-20 mb-[60px] h-[300px] md:h-[400px] lg:h-[500px] wow fadeInUp"
                     data-wow-delay=".1s">
-                    <img src="{{ asset('storage/' . $data->image) }}" alt="{{ $data->title }}"
-                        class="object-cover object-center w-full h-full" />
+                    <img loading="lazy" src="https://via.placeholder.com/310x224"
+                        data-src="{{ asset('storage/' . $data->image) }}" alt="{{ $data->title }}"
+                        class="object-cover object-center w-full h-full lazyload" />
                     <div
                         class="absolute top-0 left-0 z-10 flex items-end w-full h-full  bg-gradient-to-t from-dark-700 to-transparent">
                         <div class="flex flex-wrap items-center p-4 pb-4 sm:p-8">

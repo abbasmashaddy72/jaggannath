@@ -18,8 +18,9 @@
                 @foreach ($data as $item)
                     <div class="mb-4 group wow fadeInUp p-4 text-center items-center" data-wow-delay=".1s">
                         <a href="{{ route('department_single', ['id' => $item->id]) }}" class="block">
-                            <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->title }}"
-                                class="w-40 h-40 object-cover border-gray-200 border-2 rounded-full shadow-testimonial mx-auto" />
+                            <img loading="lazy" src="https://via.placeholder.com/160"
+                                data-src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->title }}"
+                                class="w-40 h-40 object-cover border-gray-200 border-2 rounded-full shadow-testimonial mx-auto lazyload" />
                         </a>
                         <div class="mt-2">
                             <h3>

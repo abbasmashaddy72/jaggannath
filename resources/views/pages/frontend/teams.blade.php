@@ -1,6 +1,6 @@
 @push('meta')
     @include('layouts.frontend.meta', [
-        'title' => 'Doctors'
+        'title' => 'Doctors',
         'description' => 'Some Text for SEO',
         'keywords' => 'Some Keywords for SEO',
     ])

@@ -34,7 +34,7 @@
                             Profile:
                         </div>
                         <p class="text-base text-body-color mb-3 leading-relaxed whitespace-pre-line">
-                            {{ $data->profile }}
+                            {!! $data->profile !!}
                         </p>
                         <div class="text-center mt-10">
                             <a href="{{ route('book_appointment', ['team_id' => $data->id]) }}"
@@ -44,8 +44,9 @@
                     </div>
                     <div class="text-center">
                         <div class="relative inline-block z-10">
-                            <img src="{{ asset('storage/' . $data->image) }}" alt="{{ $data->name }}"
-                                class="mx-auto lg:ml-auto h-96 w-auto object-cover" />
+                            <img loading="lazy" src="https://via.placeholder.com/288x384"
+                                data-src="{{ asset('storage/' . $data->image) }}" alt="{{ $data->name }}"
+                                class="mx-auto lg:ml-auto h-96 w-auto object-cover lazyload" />
                         </div>
                     </div>
                 </div>

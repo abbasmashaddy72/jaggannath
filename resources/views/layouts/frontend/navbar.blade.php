@@ -1,5 +1,5 @@
 <!-- ====== Navbar Section Start -->
-<div class="fixed top-0 left-0 z-40 flex items-center w-full bg-gradient-to-r from-secondary to-primary">
+<div class="fixed top-0 left-0 z-40 flex items-center w-full bg-primary border-solid border-secondary border-b-[12px]">
     <div class="container max-w-screen-2xl mx-auto px-4 py-4">
 
         <nav class="flex-wrap lg:flex items-center justify-between" x-data="{ navbarOpen: false }">
@@ -19,11 +19,12 @@
             </ul>
         </nav>
 
-        <nav class="flex-wrap lg:flex items-center justify-between" x-data="{ navbarOpen: false }">
+        <nav class="flex-wrap lg:flex items-center justify-between lg:py-4" x-data="{ navbarOpen: false }">
 
             <div class="flex items-center">
                 <a href="{{ route('homepage') }}">
-                    <img src="{{ asset('storage/' . $logo) }}" class="w-52 h-auto lg:-mt-14" alt="Logo">
+                    <img loading="lazy" data-src="{{ asset('storage/' . $logo) }}"
+                        class="w-52 h-auto lg:-mt-14 lg:absolute lazyload" alt="Logo">
                 </a>
 
                 <button
@@ -68,10 +69,6 @@
                     <a href="{{ route('blogs') }}">Blogs</a>
                 </li>
                 <li
-                    class="font-semibold text-gray-50 transition ease-in-out duration-300 mb-5 lg:mb-0 lg:hover:scale-125 lg:hover:rotate-6 {{ Request::is('career*') ? 'underline underline-offset-2 decoration-gray-50 decoration-4' : '' }}">
-                    <a href="{{ route('career') }}">Career</a>
-                </li>
-                <li
                     class="font-semibold text-gray-50 transition ease-in-out duration-300 mb-5 lg:mb-0 lg:hover:scale-125 lg:hover:rotate-6 {{ Request::is('gallery*') ? 'underline underline-offset-2 decoration-gray-50 decoration-4' : '' }}">
                     <a href="{{ route('gallery') }}">Gallery</a>
                 </li>
@@ -82,6 +79,11 @@
                 <li
                     class="font-semibold text-gray-50 transition ease-in-out duration-300 mb-5 lg:mb-0 lg:hover:scale-125 lg:hover:rotate-6 {{ Request::is('contact_us*') ? 'underline underline-offset-2 decoration-gray-50 decoration-4' : '' }}">
                     <a href="{{ route('contact_us') }}">Contact Us</a>
+                </li>
+
+                <li
+                    class="font-semibold text-gray-50 transition ease-in-out duration-300 mb-5 lg:mb-0 lg:hover:scale-125 lg:hover:rotate-6 {{ Request::is('career*') ? 'underline underline-offset-2 decoration-gray-50 decoration-4' : '' }}">
+                    <a href="{{ route('career') }}">Career</a>
                 </li>
             </ul>
         </nav>

@@ -18,8 +18,9 @@
                 <div class="grid grid-cols-1 lg:grid-cols-3 justify-center items-center -mx-4">
                     <div>
                         <div class="mb-4 group wow fadeInUp p-4" data-wow-delay=".1s">
-                            <img src="{{ asset('storage/' . $data->image) }}" alt="{{ $data->name }}"
-                                class="w-40 h-40 object-cover border-gray-200 border-2 rounded-full shadow-testimonial mx-auto" />
+                            <img loading="lazy" src="https://via.placeholder.com/160"
+                                data-src="{{ asset('storage/' . $data->image) }}" alt="{{ $data->name }}"
+                                class="w-40 h-40 object-cover border-gray-200 border-2 rounded-full shadow-testimonial mx-auto lazyload" />
                         </div>
                     </div>
                     <div class="col-span-2">

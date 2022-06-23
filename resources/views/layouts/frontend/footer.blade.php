@@ -1,4 +1,4 @@
-<footer class="bg-gradient-to-r from-primary to-secondary py-16">
+<footer class="bg-primary py-16 border-solid border-secondary border-t-[12px]">
 
     <div class="container max-w-screen-2xl mx-auto px-4">
         <div class="flex flex-col lg:flex-row lg:justify-between">
@@ -6,7 +6,8 @@
             <div class="space-y-7 mb-10 lg:mb-0">
                 <div class="flex justify-center lg:justify-start">
                     <a href="{{ route('homepage') }}">
-                        <img src="{{ asset('storage/' . $logo) }}" class="w-52 h-auto" alt="Logo">
+                        <img loading="lazy" data-src="{{ asset('storage/' . $logo) }}" class="w-52 h-auto lazyload"
+                            alt="Logo">
                     </a>
                 </div>
 
@@ -60,20 +61,20 @@
 
             @if (!Jenssegers\Agent\Facades\Agent::isMobile())
                 <div class="flex justify-center">
-                    <iframe src="{{ $embed_map_link }}" width="600" height="360" style="border:0;" allowfullscreen=""
-                        loading="lazy">
+                    <iframe src="{{ $embed_map_link }}" width="600" height="360" style="border:0;"
+                        allowfullscreen="">
                     </iframe>
                 </div>
             @elseif (Jenssegers\Agent\Facades\Agent::isTablet())
                 <div class="flex justify-center">
-                    <iframe src="{{ $embed_map_link }}" width="700" height="360" style="border:0;" allowfullscreen=""
-                        loading="lazy">
+                    <iframe src="{{ $embed_map_link }}" width="700" height="360" style="border:0;"
+                        allowfullscreen="">
                     </iframe>
                 </div>
             @else
                 <div class="aspect-w-16 aspect-h-9">
-                    <iframe src="{{ $embed_map_link }}" width="600" height="200" style="border:0;" allowfullscreen=""
-                        loading="lazy">
+                    <iframe src="{{ $embed_map_link }}" width="600" height="200" style="border:0;"
+                        allowfullscreen="">
                     </iframe>
                 </div>
             @endif

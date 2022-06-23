@@ -47,8 +47,9 @@
                                 <div class="swiper-slide">
                                     <div class="flex flex-col overflow-hidden rounded shadow">
                                         <div class="flex-shrink-0">
-                                            <img class="object-cover w-screen max-h-44 md:max-h-[40rem] rounded-lg"
-                                                src="{{ url('storage/' . $item->image) }}" alt="">
+                                            <img loading="lazy" src="https://via.placeholder.com/1366x480"
+                                                data-src="{{ url('storage/' . $item->image) }}" alt=""
+                                                class="object-cover w-screen max-h-44 md:max-h-[40rem] rounded-lg lazyload">
                                         </div>
                                     </div>
                                 </div>
@@ -106,8 +107,9 @@
                     <div class="text-center">
                         <div class="flex justify-center mb-6">
                             <div class="w-52 py-4 flex justify-center">
-                                <img class="rounded-full object-cover shadow-testimonial"
-                                    src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->title }}" />
+                                <img loading="lazy" src="https://via.placeholder.com/128"
+                                    data-src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->title }}"
+                                    class="rounded-full object-cover shadow-testimonial lazyload" />
                             </div>
                         </div>
 
@@ -163,7 +165,7 @@
 
         <div class="container max-w-screen-2xl mx-auto px-4">
 
-            <p class="font-bold text-gray-900 text-xl md:text-2xl text-center uppercase mb-6">Our Department</p>
+            <p class="font-bold text-gray-900 text-xl md:text-2xl text-center uppercase mb-6">Our Departments</p>
 
             <section class="lg:px-8 py-8">
                 <!-- Blog Grip -->
@@ -174,8 +176,9 @@
                             <div class="mb-4 group wow fadeInUp p-4 text-center items-center" data-wow-delay=".1s">
                                 <a href="{{ route('department_single', ['id' => $item->id]) }}"
                                     class="block">
-                                    <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->title }}"
-                                        class="w-40 h-40 object-cover border-gray-200 border-2 rounded-full shadow-testimonial mx-auto" />
+                                    <img loading="lazy" src="https://via.placeholder.com/160x160"
+                                        data-src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->title }}"
+                                        class="w-40 h-40 object-cover border-gray-200 border-2 rounded-full shadow-testimonial mx-auto lazyload" />
                                 </a>
                                 <div class="mt-2">
                                     <h3>

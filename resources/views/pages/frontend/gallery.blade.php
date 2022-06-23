@@ -25,9 +25,10 @@
                                     <div class="rounded overflow-hidden mb-8">
                                         <a href="{{ asset(pathinfo($item)['dirname'] . '/' . pathinfo($item)['basename']) }}"
                                             target="_blank">
-                                            <img src="{{ asset(pathinfo($item)['dirname'] . '/' . pathinfo($item)['basename']) }}"
+                                            <img loading="lazy" src="https://via.placeholder.com/310x224"
+                                                data-src="{{ asset(pathinfo($item)['dirname'] . '/' . pathinfo($item)['basename']) }}"
                                                 alt="{{ preg_replace('/[^A-Za-z0-9\-]/', ' ', pathinfo($item)['filename']) }}"
-                                                class="w-full transition group-hover:scale-125 group-hover:rotate-6 h-56 object-cover" />
+                                                class="w-full transition group-hover:scale-125 group-hover:rotate-6 h-56 object-cover lazyload" />
                                         </a>
                                     </div>
                                     <div>

@@ -21,8 +21,10 @@
                             @if (!\Jenssegers\Agent\Facades\Agent::isMobile())
                                 <div class="rounded overflow-hidden mb-8">
                                     <a href="{{ $item->link }}" class="block" target="_blank">
-                                        <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->name }}"
-                                            class="w-full transition group-hover:scale-125 group-hover:rotate-6 h-40 md:h-56 object-cover" />
+                                        <img loading="lazy" src="https://via.placeholder.com/224"
+                                            data-src="{{ asset('storage/' . $item->image) }}"
+                                            alt="{{ $item->name }}"
+                                            class="w-full transition group-hover:scale-125 group-hover:rotate-6 h-40 md:h-56 object-cover lazyload" />
                                     </a>
                                 </div>
                             @endif
