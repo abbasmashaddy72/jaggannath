@@ -30,12 +30,18 @@
                                 {{ $data->department->name }}
                             </p>
                         </div>
-                        <div class="font-bold text-xl sm:text-2xl 2xl:text-[30px] sm:leading-snug text-dark mb-3">
+                        <div class="font-bold text-xl sm:text-2xl 2xl:text-[30px] sm:leading-snug text-dark mb-0">
                             Profile:
                         </div>
-                        <p class="text-base text-body-color mb-3 leading-relaxed whitespace-pre-line">
-                            {!! $data->profile !!}
-                        </p>
+                        <div class="text-base text-body-color mb-3 leading-relaxed whitespace-pre-line">
+                            {{ $data->profile }}
+                        </div>
+                        <div class="font-bold text-xl sm:text-2xl 2xl:text-[30px] sm:leading-snug text-dark mb-0">
+                            Areas of Expertise:
+                        </div>
+                        <div class="text-base text-body-color mb-3 leading-relaxed whitespace-pre-line">
+                            {{ $data->aof }}
+                        </div>
                         <div class="text-center mt-10">
                             <a href="{{ route('book_appointment', ['team_id' => $data->id]) }}"
                                 class="px-3 py-2 bg-gradient-to-r from-primary via-[#D4497A] to-primary font-semibold text-white text-lg rounded-xl hover:from-secondary hover:to-secondary transition ease-in-out duration-500">Book

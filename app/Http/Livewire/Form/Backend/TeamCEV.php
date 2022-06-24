@@ -15,7 +15,7 @@ class TeamCEV extends Component
     use WithFileUploads;
 
     // Model Values
-    public $department_id, $name, $image, $qualification, $profile, $experience;
+    public $department_id, $name, $image, $qualification, $profile, $aof, $experience;
     public $services = [];
 
     // Custom Values
@@ -27,6 +27,7 @@ class TeamCEV extends Component
         'qualification' => '',
         'department_id' => '',
         'profile' => '',
+        'aof' => '',
         'experience' => '',
         'services' => ''
     ];
@@ -98,6 +99,7 @@ class TeamCEV extends Component
             $this->qualification = $data->qualification;
             $this->department_id = $data->department_id;
             $this->profile = $data->profile;
+            $this->aof = $data->aof;
             $this->experience = $data->experience->format('Y-m-d');
         }
 

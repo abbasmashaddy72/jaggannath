@@ -16,6 +16,7 @@ class Team extends Model
         'image',
         'qualification',
         'profile',
+        'aof',
         'experience'
     ];
 
