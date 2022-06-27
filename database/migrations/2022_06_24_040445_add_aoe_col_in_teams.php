@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('teams', function (Blueprint $table) {
-            $table->string('aof')->after('profile')->nullable();
+            $table->longText('aof')->after('profile')->nullable();
         });
     }
 

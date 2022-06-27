@@ -16,58 +16,42 @@
     <!-- Sliders Section Start -->
     <section class="bg-white pb-10 mt-64 lg:mt-52">
 
-        <div class="container max-w-screen-2xl mx-auto px-4">
-            <div>
-                <div x-data="{ swiper: null }" x-init="swiper = new Swiper($refs.container, {
-                    loop: true,
-                    slidesPerView: 1,
-                    spaceBetween: 0,
-                    parallax: true,
-                    autoplay: {
-                        delay: 3500,
-                        disableOnInteraction: false,
-                    },
-                    speed: 800,
-                })" class="relative flex mx-auto flex-">
-                    <div class="absolute inset-y-0 left-0 z-10 flex items-center">
-                        <button @click="swiper.slidePrev()"
-                            class="flex items-center justify-center w-10 h-10 -ml-2 bg-white rounded-full shadow lg:-ml-4 focus:outline-none">
-                            <svg viewBox="0 0 20 20" fill="currentColor" class="w-6 h-6 chevron-left">
-                                <path fill-rule="evenodd"
-                                    d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-                                    clip-rule="evenodd"></path>
-                            </svg>
-                        </button>
-                    </div>
+        <div class="">
+            <div x-data="{ swiper: null }" x-init="swiper = new Swiper($refs.container, {
+                loop: true,
+                slidesPerView: 1,
+                spaceBetween: 0,
+                parallax: true,
+                autoplay: {
+                    delay: 3500,
+                    disableOnInteraction: false,
+                },
+                speed: 800,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+            })" class="relative flex mx-auto flex-">
 
-                    <div class="swiper-container" x-ref="container">
-                        <div class="swiper-wrapper">
-                            <!-- Slides -->
-                            @foreach ($slider_images as $item)
-                                <div class="swiper-slide">
-                                    <div class="flex flex-col overflow-hidden rounded shadow">
-                                        <div class="flex-shrink-0">
-                                            <img loading="lazy" src="https://via.placeholder.com/1366x480"
-                                                data-src="{{ url('storage/' . $item->image) }}" alt=""
-                                                class="object-cover w-screen max-h-44 md:max-h-[40rem] rounded-lg lazyload">
-                                        </div>
+                <div class="swiper-container" x-ref="container">
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        @foreach ($slider_images as $item)
+                            <div class="swiper-slide">
+                                <div class="flex flex-col overflow-hidden rounded shadow">
+                                    <div class="flex-shrink-0">
+                                        <img loading="lazy" src="https://via.placeholder.com/1573x640"
+                                            data-src="{{ url('storage/' . $item->image) }}" alt=""
+                                            class="object-cover w-screen max-h-44 md:max-h-[40rem] rounded-lg lazyload">
                                     </div>
                                 </div>
-                            @endforeach
-                        </div>
-                    </div>
-
-                    <div class="absolute inset-y-0 right-0 z-10 flex items-center">
-                        <button @click="swiper.slideNext()"
-                            class="flex items-center justify-center w-10 h-10 -mr-2 bg-white rounded-full shadow lg:-mr-4 focus:outline-none">
-                            <svg viewBox="0 0 20 20" fill="currentColor" class="w-6 h-6 chevron-right">
-                                <path fill-rule="evenodd"
-                                    d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                                    clip-rule="evenodd"></path>
-                            </svg>
-                        </button>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
+
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
             </div>
         </div>
     </section>
@@ -101,7 +85,7 @@
 
         <div class="container max-w-screen-xl mx-auto px-4">
 
-            <div class="grid grid-cols-3 gap-10 md:gap-20">
+            <div class="grid grid-cols-3 gap-2 md:gap-20">
                 <!-- first Repeater -->
                 @foreach ($features as $item)
                     <div class="text-center">
@@ -109,7 +93,7 @@
                             <div class="w-52 py-4 flex justify-center">
                                 <img loading="lazy" src="https://via.placeholder.com/128"
                                     data-src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->title }}"
-                                    class="rounded-full object-cover shadow-testimonial lazyload" />
+                                    class="rounded-full object-cover shadow-testimonial lazyload w-24 h-24 md:w-32 md:h-32" />
                             </div>
                         </div>
 
@@ -142,10 +126,11 @@
                                     <i data-feather="{{ $item->icon }}"></i>
                                 </div>
                             </div>
-
-                            <h3 class="font-semibold text-gray-900 text-xl md:text-3xl mb-4">{{ $item->value }}
-                            </h3>
-
+                            <div class="flex justify-center">
+                                <h3 class="font-semibold text-gray-900 text-xl md:text-3xl mb-4">
+                                    {{ $item->value }}
+                                </h3>
+                            </div>
                             <p class="font-light text-gray-800 text-md md:text-lg">{{ $item->title }}</p>
                         </div>
                     </div>
@@ -174,8 +159,7 @@
                     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-1 md:gap-4 mx-auto">
                         @foreach ($departments as $item)
                             <div class="mb-4 group wow fadeInUp p-4 text-center items-center" data-wow-delay=".1s">
-                                <a href="{{ route('department_single', ['id' => $item->id]) }}"
-                                    class="block">
+                                <a href="{{ route('department_single', ['id' => $item->id]) }}" class="block">
                                     <img loading="lazy" src="https://via.placeholder.com/160x160"
                                         data-src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->title }}"
                                         class="w-40 h-40 object-cover border-gray-200 border-2 rounded-full shadow-testimonial mx-auto lazyload" />

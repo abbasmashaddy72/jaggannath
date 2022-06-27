@@ -1,8 +1,8 @@
 <!-- ====== Navbar Section Start -->
 <div class="fixed top-0 left-0 z-40 flex items-center w-full bg-primary border-solid border-secondary border-b-[12px]">
-    <div class="container max-w-screen-2xl mx-auto px-4 py-4">
+    <div class="container max-w-screen-2xl mx-auto">
 
-        <nav class="flex-wrap lg:flex items-center justify-between" x-data="{ navbarOpen: false }">
+        <nav class="flex-wrap lg:flex items-center justify-between pt-4 px-4" x-data="{ navbarOpen: false }">
             <div class="hidden lg:block"></div>
             <div class="flex items-center justify-center lg:justify-start space-x-3">
                 @include('components.frontend.social-media-icons')
@@ -10,18 +10,18 @@
             <ul class="lg:flex flex-col lg:flex-row lg:items-center lg:space-x-4 xl:space-x-7"
                 :class="{ 'hidden': !navbarOpen, 'flex': navbarOpen }">
                 <a href="{{ route('book_appointment') }}"
-                    class="px-3 py-2 bg-white font-semibold text-md 2xl:text-lg rounded-xl hover:bg-secondary hover:text-gray-50 transition ease-in-out duration-500 {{ Request::is('book_appointment*') ? 'bg-secondary text-gray-50' : '' }}">{{ 'Book Appointment' }}</a>
+                    class="px-3 py-2 bg-white font-semibold text-sm 2xl:text-base rounded-xl hover:bg-secondary hover:text-gray-50 transition ease-in-out duration-500 {{ Request::is('book_appointment*') ? 'bg-secondary text-gray-50' : '' }}">{{ 'Book Appointment' }}</a>
                 <a href="{{ route('feedback') }}"
-                    class="px-3 py-2 bg-white font-semibold text-md 2xl:text-lg rounded-xl hover:bg-secondary hover:text-gray-50 transition ease-in-out duration-500 {{ Request::is('feedback*') ? 'bg-secondary text-gray-50' : '' }}">{{ 'Feedback' }}</a>
+                    class="px-3 py-2 bg-white font-semibold text-sm 2xl:text-base rounded-xl hover:bg-secondary hover:text-gray-50 transition ease-in-out duration-500 {{ Request::is('feedback*') ? 'bg-secondary text-gray-50' : '' }}">{{ 'Feedback' }}</a>
                 <a href="{{ 'http://124.123.32.48:9999/shivam/onlinereporting/index.jsp' }}" target="_blank"
-                    class="px-3 py-2 bg-white font-semibold text-md 2xl:text-lg rounded-xl hover:bg-secondary hover:text-gray-50 transition ease-in-out duration-500">{{ 'Online Reports' }}<i
+                    class="px-3 py-2 bg-white font-semibold text-sm 2xl:text-base rounded-xl hover:bg-secondary hover:text-gray-50 transition ease-in-out duration-500">{{ 'Online Reports' }}<i
                         data-feather="external-link" width='20' height='20' class="inline"></i></a>
             </ul>
         </nav>
 
         <nav class="flex-wrap lg:flex items-center justify-between lg:py-4" x-data="{ navbarOpen: false }">
 
-            <div class="flex items-center">
+            <div class="flex items-center px-4">
                 <a href="{{ route('homepage') }}">
                     <img loading="lazy" data-src="{{ asset('storage/' . $logo) }}"
                         class="w-52 h-auto lg:-mt-14 lg:absolute lazyload" alt="Logo">
@@ -34,10 +34,10 @@
                 </button>
             </div>
 
-            <ul class="lg:flex flex-col lg:flex-row lg:items-center lg:space-x-4 xl:space-x-7"
+            <ul class="lg:flex flex-col lg:flex-row lg:items-center lg:space-x-4 xl:space-x-7 bg-gradient-to-r from-secondary via-secondary to-white lg:from-primary lg:via-primary lg:to-primary px-4"
                 :class="{ 'hidden': !navbarOpen, 'flex': navbarOpen }">
                 <li
-                    class="font-semibold text-gray-50 transition ease-in-out duration-300 mb-5 lg:mb-0 lg:hover:scale-125 lg:hover:rotate-6 {{ Request::is('/*') ? 'underline underline-offset-2 decoration-gray-50 decoration-4' : '' }}">
+                    class="font-semibold text-gray-50 transition ease-in-out duration-300 mb-5 mt-5 lg:mt-0 lg:mb-0 lg:hover:scale-125 lg:hover:rotate-6 {{ Request::is('/*') ? 'underline underline-offset-2 decoration-gray-50 decoration-4' : '' }}">
                     <a href="{{ route('homepage') }}">Home</a>
                 </li>
                 <li
@@ -90,7 +90,7 @@
 
         <form action="{{ route('search') }}">
             @csrf
-            <div class="flex lg:justify-end">
+            <div class="flex lg:justify-end pt-4 pb-4 px-4 lg:pt-0">
                 <div class="relative w-full lg:w-1/4">
                     <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
                         <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor"
