@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
-use App\Models\About;
 use App\Models\Blog;
 use App\Models\Count;
 use App\Models\Department;
@@ -16,6 +15,7 @@ use App\Models\Slider;
 use App\Models\Team;
 use App\Services\Helper;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Storage;
 
 class FrontendController extends Controller
@@ -242,6 +242,8 @@ class FrontendController extends Controller
         }
 
         $directories = array_filter($directories);
+        $directories = Arr::flatten($directories);
+        sort($directories);
 
         return view('pages.frontend.gallery', compact('directories'));
     }
