@@ -21,8 +21,8 @@ Route::group(['namespace' => 'App\Http\Controllers\Frontend'], function () {
     Route::get('blog/{id}', 'FrontendController@blog_single')->name('blog_single');
     Route::get('services', 'FrontendController@services')->name('services');
     Route::get('service/{id}', 'FrontendController@service_single')->name('service_single');
-    Route::get('teams', 'FrontendController@teams')->name('teams');
-    Route::get('team/{id}', 'FrontendController@team_single')->name('team_single');
+    Route::get('doctors', 'FrontendController@teams')->name('teams');
+    Route::get('doctor/{id}', 'FrontendController@team_single')->name('team_single');
     Route::get('insurance', 'FrontendController@insurance')->name('insurance');
     Route::get('packages', 'FrontendController@packages')->name('packages');
     Route::get('package/{id}', 'FrontendController@package_single')->name('package_single');

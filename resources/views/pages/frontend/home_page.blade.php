@@ -49,9 +49,10 @@
                         @endforeach
                     </div>
                 </div>
-
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
+                @if (!\Jenssegers\Agent\Facades\Agent::isMobile())
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                @endif
             </div>
         </div>
     </section>
