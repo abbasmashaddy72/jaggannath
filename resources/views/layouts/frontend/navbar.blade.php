@@ -2,29 +2,31 @@
 <div class="fixed top-0 left-0 z-40 flex items-center w-full bg-primary border-solid border-secondary border-b-[12px]">
     <div class="container max-w-screen-2xl mx-auto">
 
-        <nav class="flex-wrap lg:flex items-center justify-between pt-4 px-4" x-data="{ navbarOpen: false }">
-            <div class="hidden lg:block"></div>
-            <div class="flex items-center justify-center lg:justify-start space-x-3">
-                @include('components.frontend.social-media-icons')
-            </div>
-            <ul class="lg:flex flex-col lg:flex-row lg:items-center lg:space-x-4 xl:space-x-7"
-                :class="{ 'hidden': !navbarOpen, 'flex': navbarOpen }">
-                <a href="{{ route('book_appointment') }}"
-                    class="px-3 py-2 bg-white font-semibold text-sm 2xl:text-base rounded-xl hover:bg-secondary hover:text-gray-50 transition ease-in-out duration-500 {{ Request::is('book_appointment*') ? 'bg-secondary text-gray-50' : '' }}">{{ 'Book Appointment' }}</a>
-                <a href="{{ route('feedback') }}"
-                    class="px-3 py-2 bg-white font-semibold text-sm 2xl:text-base rounded-xl hover:bg-secondary hover:text-gray-50 transition ease-in-out duration-500 {{ Request::is('feedback*') ? 'bg-secondary text-gray-50' : '' }}">{{ 'Feedback' }}</a>
-                <a href="{{ 'http://124.123.32.48:9999/shivam/onlinereporting/index.jsp' }}" target="_blank"
-                    class="px-3 py-2 bg-white font-semibold text-sm 2xl:text-base rounded-xl hover:bg-secondary hover:text-gray-50 transition ease-in-out duration-500">{{ 'Online Reports' }}<i
-                        data-feather="external-link" width='20' height='20' class="inline"></i></a>
-            </ul>
-        </nav>
+        @if (!\Jenssegers\Agent\Facades\Agent::isMobile())
+            <nav class="flex-wrap lg:flex items-center justify-between pt-4 px-4" x-data="{ navbarOpen: false }">
+                <div class="hidden lg:block"></div>
+                <div class="flex items-center justify-center lg:justify-start space-x-3">
+                    @include('components.frontend.social-media-icons')
+                </div>
+                <ul class="lg:flex flex-col lg:flex-row lg:items-center lg:space-x-4 xl:space-x-7"
+                    :class="{ 'hidden': !navbarOpen, 'flex': navbarOpen }">
+                    <a href="{{ route('book_appointment') }}"
+                        class="px-3 py-2 bg-white font-semibold text-sm 2xl:text-base rounded-xl hover:bg-secondary hover:text-gray-50 transition ease-in-out duration-500 {{ Request::is('book_appointment*') ? 'bg-secondary text-gray-50' : '' }}">{{ 'Book Appointment' }}</a>
+                    <a href="{{ route('feedback') }}"
+                        class="px-3 py-2 bg-white font-semibold text-sm 2xl:text-base rounded-xl hover:bg-secondary hover:text-gray-50 transition ease-in-out duration-500 {{ Request::is('feedback*') ? 'bg-secondary text-gray-50' : '' }}">{{ 'Feedback' }}</a>
+                    <a href="{{ 'http://124.123.32.48:9999/shivam/onlinereporting/index.jsp' }}" target="_blank"
+                        class="px-3 py-2 bg-white font-semibold text-sm 2xl:text-base rounded-xl hover:bg-secondary hover:text-gray-50 transition ease-in-out duration-500">{{ 'Online Reports' }}<i
+                            data-feather="external-link" width='20' height='20' class="inline"></i></a>
+                </ul>
+            </nav>
+        @endif
 
         <nav class="flex-wrap lg:flex items-center justify-between lg:py-4" x-data="{ navbarOpen: false }">
 
             <div class="flex items-center px-4">
                 <a href="{{ route('homepage') }}">
                     <img loading="lazy" data-src="{{ asset('storage/' . $logo) }}"
-                        class="w-52 h-auto lg:-mt-14 lg:absolute lazyload" alt="Logo">
+                        class="w-44 h-auto mt-4 lg:-mt-14 lg:absolute lazyload" alt="Logo">
                 </a>
 
                 <button

@@ -1,4 +1,4 @@
-<section {!! $attributes->merge(['class' => 'bg-white pb-10 mt-64 lg:mt-52']) !!}>
+<section {!! $attributes->merge(['class' => 'bg-white pb-10 mt-52']) !!}>
 
     <div class="container max-w-screen-2xl mx-auto px-4">
         @if (!empty($banner_name))
