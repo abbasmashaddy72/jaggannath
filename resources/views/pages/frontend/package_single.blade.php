@@ -20,9 +20,8 @@
                         <div class="mb-10 group wow fadeInUp border-gray-200 border-2 p-4 rounded-lg shadow-testimonial flex-1"
                             data-wow-delay=".1s">
                             <div class="rounded overflow-hidden mb-8">
-                                <img loading="lazy" src="https://via.placeholder.com/224"
-                                    data-src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->name }}"
-                                    class="w-full transition group-hover:scale-125 group-hover:rotate-6 h-40 md:h-56 object-cover lazyload" />
+                                <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->name }}"
+                                    class="w-full transition group-hover:scale-125 group-hover:rotate-6 h-40 md:h-56 object-cover" />
                             </div>
                             <div>
                                 <h3

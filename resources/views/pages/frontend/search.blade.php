@@ -24,9 +24,8 @@
                 <div class="w-1/2 md:w-1/3 lg:w-1/6 px-2 md:px-4 flex flex-col text-center items-center">
                     <div class="mb-4 group wow fadeInUp p-4" data-wow-delay=".1s">
                         <a href="{{ route('department_single', ['id' => $item->id]) }}" class="block">
-                            <img loading="lazy" src="https://via.placeholder.com/160"
-                                data-src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->title }}"
-                                class="w-40 h-40 object-cover border-gray-200 border-2 rounded-full shadow-testimonial mx-auto lazyload" />
+                            <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->title }}"
+                                class="w-40 h-40 object-cover border-gray-200 border-2 rounded-full shadow-testimonial mx-auto" />
                         </a>
                         <div class="mt-2">
                             <h3>
@@ -96,9 +95,8 @@
                         data-wow-delay=".1s">
                         <div class="rounded overflow-hidden mb-8">
                             <a href="{{ route('blog_single', ['id' => $item->id]) }}" class="block">
-                                <img loading="lazy" src="https://via.placeholder.com/224"
-                                    data-src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->title }}"
-                                    class="w-full transition group-hover:scale-125 group-hover:rotate-6 h-56 object-cover lazyload" />
+                                <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->title }}"
+                                    class="w-full transition group-hover:scale-125 group-hover:rotate-6 h-56 object-cover" />
                             </a>
                         </div>
                         <div>
@@ -147,16 +145,14 @@
                             data-wow-delay=".1s">
                             <div class="rounded overflow-hidden mb-8">
                                 <a href="{{ route('package_single', ['id' => $item->id]) }}" class="block">
-                                    <img loading="lazy" src="https://via.placeholder.com/224"
-                                        data-src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->name }}"
-                                        class="w-full transition group-hover:scale-125 group-hover:rotate-6 h-40 md:h-56 object-cover lazyload" />
+                                    <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->name }}"
+                                        class="w-full transition group-hover:scale-125 group-hover:rotate-6 h-40 md:h-56 object-cover" />
                                 </a>
                             </div>
                             <div>
                                 <h3
                                     class="font-semibold teloginxt-xl sm:text-2xl lg:text-xl xl:text-2xl mb-4 inline-block text-dark">
-                                    <a href="{{ route('package_single', ['id' => $item->id]) }}"
-                                        class="block">
+                                    <a href="{{ route('package_single', ['id' => $item->id]) }}" class="block">
                                         {{ $item->name }}
                                     </a>
                                 </h3>
@@ -246,10 +242,8 @@
                             @if (!\Jenssegers\Agent\Facades\Agent::isMobile())
                                 <div class="rounded overflow-hidden mb-8">
                                     <a href="{{ $item->link }}" class="block" target="_blank">
-                                        <img loading="lazy" src="https://via.placeholder.com/224"
-                                            data-src="{{ asset('storage/' . $item->image) }}"
-                                            alt="{{ $item->name }}"
-                                            class="w-full transition group-hover:scale-125 group-hover:rotate-6 h-40 md:h-56 object-cover lazyload" />
+                                        <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->name }}"
+                                            class="w-full transition group-hover:scale-125 group-hover:rotate-6 h-40 md:h-56 object-cover " />
                                     </a>
                                 </div>
                             @endif

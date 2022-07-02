@@ -74,9 +74,8 @@
                         data-wow-delay=".1s">
                         <div class="rounded overflow-hidden mb-8">
                             <a href="{{ route('blog_single', ['id' => $item->id]) }}" class="block">
-                                <img loading="lazy" data-src="{{ asset('storage/' . $item->image) }}"
-                                    alt="{{ $item->title }}"
-                                    class="w-full transition group-hover:scale-125 group-hover:rotate-6 h-56 object-cover lazyload" />
+                                <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->title }}"
+                                    class="w-full transition group-hover:scale-125 group-hover:rotate-6 h-56 object-cover" />
                             </a>
                         </div>
                         <div>

@@ -50,9 +50,8 @@
                     </div>
                     <div class="text-center">
                         <div class="relative inline-block z-10">
-                            <img loading="lazy" src="https://via.placeholder.com/288x384"
-                                data-src="{{ asset('storage/' . $data->image) }}" alt="{{ $data->name }}"
-                                class="mx-auto lg:ml-auto h-96 w-auto object-cover lazyload" />
+                            <img src="{{ asset('storage/' . $data->image) }}" alt="{{ $data->name }}"
+                                class="mx-auto lg:ml-auto h-96 w-auto object-cover" />
                         </div>
                     </div>
                 </div>

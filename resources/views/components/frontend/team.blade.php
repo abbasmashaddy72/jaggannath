@@ -2,9 +2,8 @@
     <div class="c-card block bg-white shadow-testimonial rounded-lg overflow-hidden flex-1">
         <a href="{{ route('team_single', ['id' => $item->id]) }}">
             <div class="relative pb-48 overflow-hidden h-96">
-                <img loading="lazy" src="https://via.placeholder.com/288x384"
-                    data-src="{{ asset('storage/' . $item->image) }}" alt="{{ ucwords(strtolower($item->name)) }}"
-                    class="justify-center absolute inset-0 h-96 w-72 object-cover hover:scale-125 m-auto mt-4 rounded-full shadow-switch-1 lazyload">
+                <img src="{{ asset('storage/' . $item->image) }}" alt="{{ ucwords(strtolower($item->name)) }}"
+                    class="justify-center absolute inset-0 h-96 w-72 object-cover hover:scale-125 m-auto mt-4 rounded-full shadow-switch-1">
             </div>
         </a>
         <div class="p-4">

@@ -6,8 +6,7 @@
             <div class="space-y-7 mb-10 lg:mb-0">
                 <div class="flex justify-center lg:justify-start">
                     <a href="{{ route('homepage') }}">
-                        <img loading="lazy" data-src="{{ asset('storage/' . $logo) }}" class="w-52 h-auto lazyload"
-                            alt="Logo">
+                        <img src="{{ asset('storage/' . $logo) }}" class="w-52 h-auto" alt="Logo">
                     </a>
                 </div>
 

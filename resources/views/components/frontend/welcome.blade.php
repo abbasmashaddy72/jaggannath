@@ -19,14 +19,14 @@
                     data-aos-delay="450">
                     <div class="relative inline-flex items-center justify-center">
                         <!-- Image inside mockup size: 290x624px (or 580x1248px for >Retina devices) -->
-                        <img loading="lazy" src="https://via.placeholder.com/208x117"
-                            data-src="{{ asset('storage/' . $hero_image) }}" width="650" alt="{{ $tag_line }}"
-                            class="relative h-auto max-w-full mx-auto pointer-events-none rounded-lg lazyload"
+                        <img src="{{ asset('storage/' . $hero_image) }}" width="650" alt="{{ $tag_line }}"
+                            class="relative h-auto max-w-full mx-auto pointer-events-none rounded-lg"
                             aria-hidden="true" />
                         <!-- Play button -->
                         <a class="absolute transition duration-150 ease-in-out cursor-pointer hover:opacity-75"
                             @click.prevent="modalExpanded = true" aria-controls="modal">
-                            <img src="{{ asset('svg/play-button.svg') }}" width="80" height="80" alt="Play" />
+                            <img src="{{ asset('svg/play-button.svg') }}" width="80" height="80"
+                                alt="Play" />
                         </a>
                     </div>
 
