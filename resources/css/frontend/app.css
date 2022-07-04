@@ -4,3 +4,4 @@
 @tailwind utilities;
 @tailwind variants;
 @import "./custom.css";
+@import "~tobii/dist/css/tobii.min.css";

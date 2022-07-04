@@ -46,7 +46,7 @@
                                         data-wow-delay=".1s">
                                         <div class="rounded overflow-hidden mb-8">
                                             <a href="{{ asset(pathinfo($item)['dirname'] . '/' . pathinfo($item)['basename']) }}"
-                                                target="_blank">
+                                                class="lightbox">
                                                 <img loading="lazy" src="https://via.placeholder.com/310x224"
                                                     data-src="{{ asset(pathinfo($item)['dirname'] . '/' . pathinfo($item)['basename']) }}"
                                                     alt="{{ preg_replace('/[^A-Za-z0-9\-]/', ' ', pathinfo($item)['filename']) }}"
