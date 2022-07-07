@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Blog;
+use App\Models\BookAppointment;
 use App\Models\ContactUs;
 use App\Models\Department;
-use App\Models\Faq;
 use App\Models\Feedback;
 use App\Models\Review;
 use App\Models\Package;
@@ -23,6 +23,8 @@ class DashboardController extends Controller
          * @name('admin.dashboard')
          * @middlewares('web', auth')
          */
+        $Booked = BookAppointment::count();
+        $BookedToday = BookAppointment::whereDate('created_at', Carbon::today())->count();
         $contactedUs = ContactUs::count();
         $contactedToday = ContactUs::whereDate('created_at', Carbon::today())->count();
         $blogsCount = Blog::count();
@@ -34,9 +36,10 @@ class DashboardController extends Controller
         $feedbacks = Feedback::count();
         $doctorsCount = Team::count();
         $packagesCount = Package::count();
-        $faqsCount = Faq::count();
 
         return view('pages.backend.dashboard', compact([
+            'Booked',
+            'BookedToday',
             'contactedUs',
             'contactedToday',
             'blogsCount',
@@ -47,8 +50,7 @@ class DashboardController extends Controller
             'feedbacksToday',
             'feedbacks',
             'doctorsCount',
-            'packagesCount',
-            'faqsCount'
+            'packagesCount'
         ]));
     }
 }

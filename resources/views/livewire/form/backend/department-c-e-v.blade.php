@@ -10,11 +10,11 @@
     @csrf
 
     @wire('debounce.200ms')
-    <x-form-input name="name" label="Title" type="text" />
+        <x-form-input name="name" label="Title" type="text" />
 
-    <x-form-textarea name="excerpt" label="Excerpt" required />
+        <x-form-textarea name="excerpt" label="Excerpt" required />
 
-    <x-backend.single-upload name="image" label="Image" />
+        <x-backend.single-upload name="image" label="Image (Size: 442 X 442 px)" />
     @endwire
 
     <div class="mt-3">

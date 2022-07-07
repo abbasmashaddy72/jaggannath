@@ -66,44 +66,11 @@
             </div>
             {{-- Hero Image end --}}
 
-            {{-- Hero Image Start --}}
-            @if ($this->count_image)
-                <div class="my-4">
-                    <div class="mb-2">
-                        <label class="block">
-                            <x-form-label label="Uploaded Count Image Preview" />
-                            <img src="{{ $this->CountImageIsUploaded ? $this->count_image->temporaryUrl() : url('storage/' . $this->count_image) }}"
-                                class="mt-2" width="250" height="300">
-                        </label>
-                    </div>
-                </div>
-            @endif
-
-            <div class="my-4">
-                <div class="mb-2">
-                    <label class="block">
-                        <x-form-label label="Count Image" />
-                        <input type="file" accept="image/*" wire:model="count_image"
-                            class="block w-full mt-2 text-xl font-normal text-gray-500 border rounded outline-none focus:border-blue-400 focus:shadow">
-                    </label>
-                </div>
-                <x-form-errors name="count_image" />
-            </div>
-            {{-- Count Image end --}}
-
             <h4 class="my-4 text-2xl font-medium card-title" wire:ignore>
                 {{ __('Video') }}
             </h4>
 
             <x-form-input name="hero_video" label="Hero Video" type="text" />
-
-            <h4 class="my-4 text-2xl font-medium card-title" wire:ignore>
-                {{ __('Buttons') }}
-            </h4>
-
-            <x-form-input name="tag_action_button_text" label="Tag Button Text" type="text" />
-
-            <x-form-input name="tag_action_button_link" label="Tag Button Link" type="text" />
 
             <h4 class="my-4 text-2xl font-medium card-title" wire:ignore>
                 {{ __('Descriptions') }}
@@ -116,8 +83,6 @@
             <x-form-textarea name="vision_message" label="Vision Message" />
 
             <x-form-textarea name="tag_line" label="Tag Line" />
-
-            <x-form-textarea name="services_excerpt" label="Services Excerpt" />
 
             <x-form-textarea name="count_excerpt" label="Count Excerpt" />
 
@@ -146,7 +111,8 @@
             </h4>
 
             <x-form-input name="embed_map_link"
-                label="Embed Map Link(Directly from Google Maps Search, Share, Embed copy src link & paste)" type="text" />
+                label="Embed Map Link(Directly from Google Maps Search, Share, Embed copy src link & paste)"
+                type="text" />
 
             <x-form-input name="gr_api"
                 label="Google Review API(Follow the Instructions from https://googlereviews.cws.net & paste the value of load_google_reviews from 2nd script)"

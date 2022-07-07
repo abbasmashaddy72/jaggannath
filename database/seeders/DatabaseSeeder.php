@@ -18,8 +18,6 @@ class DatabaseSeeder extends Seeder
         User::factory(1)->create();
         $this->call(ContactUsSeeder::class);
         $this->call(FeedbackSeeder::class);
-        $this->call(AboutSeeder::class);
-        $this->call(FaqSeeder::class);
         $this->call(FeatureSeeder::class);
         $this->call(InsuranceSeeder::class);
         $this->call(DepartmentSeeder::class);

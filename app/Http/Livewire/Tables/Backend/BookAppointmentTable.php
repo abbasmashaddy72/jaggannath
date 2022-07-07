@@ -68,7 +68,7 @@ class BookAppointmentTable extends LivewireDatatable
 
             Column::name('team.name')
                 ->filterable()
-                ->label('Team Name'),
+                ->label('Doctor Name'),
 
             BooleanColumn::name('previous_record')
                 ->filterable()

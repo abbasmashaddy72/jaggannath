@@ -22,7 +22,7 @@
 
         <x-form-input name="experience" label="Experience(Started At)" type="date" />
 
-        <x-backend.single-upload name="image" label="Image" />
+        <x-backend.single-upload name="image" label="Image (Size: Passport Size)" />
 
         @if (!is_null($department_id))
             <x-form-label>

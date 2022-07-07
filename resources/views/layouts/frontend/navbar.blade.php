@@ -30,7 +30,7 @@
                 </a>
 
                 <button
-                    class="lg:hidden w-10 h-10 ml-auto flex items-center justify-center border border-white text-white rounded-md"
+                    class="lg:hidden w-10 h-10 ml-auto flex items-center justify-center border border-white text-white rounded-md mt-4"
                     @click="navbarOpen = !navbarOpen">
                     <i data-feather="menu"></i>
                 </button>

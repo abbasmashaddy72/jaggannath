@@ -11,9 +11,6 @@ class HomePageCEV extends Component
     use WithFileUploads;
 
     public $logo;
-    public $count_image;
-    public $about;
-    public $services_excerpt;
     public $count_excerpt;
     public $review_excerpt;
     public $team_excerpt;
@@ -28,8 +25,6 @@ class HomePageCEV extends Component
     public $gr_api;
     public $gr_count_api;
     public $tag_line;
-    public $tag_action_button_link;
-    public $tag_action_button_text;
     public $hero_image;
     public $hero_video;
     public $address;
@@ -46,9 +41,6 @@ class HomePageCEV extends Component
     public function mount()
     {
         $this->logo = Helper::get_static_option('logo');
-        $this->count_image = Helper::get_static_option('count_image');
-        $this->about = Helper::get_static_option('about');
-        $this->services_excerpt = Helper::get_static_option('services_excerpt');
         $this->count_excerpt = Helper::get_static_option('count_excerpt');
         $this->review_excerpt = Helper::get_static_option('review_excerpt');
         $this->team_excerpt = Helper::get_static_option('team_excerpt');
@@ -62,8 +54,6 @@ class HomePageCEV extends Component
         $this->gr_api = Helper::get_static_option('gr_api');
         $this->gr_count_api = Helper::get_static_option('gr_count_api');
         $this->tag_line = Helper::get_static_option('tag_line');
-        $this->tag_action_button_link = Helper::get_static_option('tag_action_button_link');
-        $this->tag_action_button_text = Helper::get_static_option('tag_action_button_text');
         $this->hero_image = Helper::get_static_option('hero_image');
         $this->hero_video = Helper::get_static_option('hero_video');
         $this->address = Helper::get_static_option('address');
@@ -76,9 +66,6 @@ class HomePageCEV extends Component
 
     protected $rules = [
         'logo' => '',
-        'count_image' => '',
-        'about' => '',
-        'services_excerpt' => '',
         'count_excerpt' => '',
         'review_excerpt' => '',
         'team_excerpt' => '',
@@ -92,8 +79,6 @@ class HomePageCEV extends Component
         'gr_api' => '',
         'gr_count_api' => '',
         'tag_line' => '',
-        'tag_action_button_link' => '',
-        'tag_action_button_text' => '',
         'hero_image' => '',
         'hero_video' => '',
         'address' => '',
@@ -111,9 +96,6 @@ class HomePageCEV extends Component
         if (gettype($this->logo) != 'string') {
             $this->logoIsUploaded = true;
         }
-        if (gettype($this->count_image) != 'string') {
-            $this->CountImageIsUploaded = true;
-        }
         if (gettype($this->hero_image) != 'string') {
             $this->HeroImageIsUploaded = true;
         }
@@ -127,11 +109,6 @@ class HomePageCEV extends Component
             if ($this->logo == null) {
             } elseif (gettype($this->logo) != 'string') {
                 $image = $this->logo->store('homepage');
-                Helper::set_static_option($key, $image);
-            }
-            if ($this->count_image == null) {
-            } elseif (gettype($this->count_image) != 'string') {
-                $image = $this->count_image->store('homepage');
                 Helper::set_static_option($key, $image);
             }
             if ($this->hero_image == null) {

@@ -30,10 +30,10 @@ class Teams extends Component
             } elseif (\Jenssegers\Agent\Facades\Agent::isTablet()) {
                 $data = Team::inRandomOrder()->with('department')->paginate(2);
             } else {
-                $data = Team::inRandomOrder()->with('department')->paginate(4);
+                $data = Team::inRandomOrder()->with('department')->paginate(6);
             }
         } elseif ($this->department_id == null & $this->where == null) {
-            $data = Team::inRandomOrder()->with('department')->paginate(8);
+            $data = Team::inRandomOrder()->with('department')->paginate(12);
         } else {
             $data = Team::inRandomOrder()->with('department')->where('department_id', $this->department_id)->paginate(8);
         }

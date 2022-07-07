@@ -58,13 +58,6 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth', 'na
 
     Route::get('book-appointment', 'BookAppointmentController@index')->name('book.appointment');
 
-    Route::resource('about', 'AboutController')->only([
-        'index', 'create', 'store',  'edit', 'show'
-    ]);
-    Route::resource('faq', 'FaqController')->only([
-        'index', 'create', 'store',  'edit', 'show'
-    ]);
-
     Route::resource('department', 'DepartmentController')->only([
         'index', 'create', 'store',  'edit', 'show'
     ]);

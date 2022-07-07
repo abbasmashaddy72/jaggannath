@@ -10,7 +10,7 @@
     @csrf
 
     @wire('debounce.200ms')
-    <x-backend.single-upload name="image" label="Image" />
+        <x-backend.single-upload name="image" label="Image (Size: 1504 X 480 px)" />
     @endwire
 
     <div class="mt-3">

@@ -23,7 +23,6 @@ class FrontendController extends Controller
     public function __construct()
     {
         view()->share('logo', Helper::get_static_option('logo'));
-        view()->share('about', Helper::get_static_option('about'));
         view()->share('twitter', Helper::get_static_option('twitter'));
         view()->share('facebook', Helper::get_static_option('facebook'));
         view()->share('instagram', Helper::get_static_option('instagram'));
