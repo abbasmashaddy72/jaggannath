@@ -13,9 +13,9 @@
                     @endif
                     <div class="hidden ml-4 rtl:ml-0 rtl:mr-4 md:block">
                         <h6 class="mb-0 text-base font-medium dark:text-gray-600">
-                            {{ Auth::user()->name }}</h6>
+                            {{ ucwords(Auth::user()->name) }}</h6>
                         <p class="mb-0 text-lg text-gray-600 caption-sub-title dark:text-white">
-                            {{ Auth::user()->roles->pluck('name')[0] ?? 'No Role' }}
+                            {{ Auth::user()->role }}
                         </p>
                     </div>
                 </a>
@@ -26,14 +26,15 @@
                     x-transition:leave="transition ease-out duration-500"
                     x-transition:leave-start="opacity-100 transform translate-y-0"
                     x-transition:leave-end="opacity-0 transform translate-y-0">
-                    <x-dropdown-link :href="route('logout')" class="rounded-t">
+                    <x-dropdown-link :href="route('admin.user.edit', [Auth::user()->id])" class="rounded-t">
                         {{ __('Profile') }}
                     </x-dropdown-link>
                     <x-backend.hr-line />
                     <!-- Authentication -->
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
-                        <x-dropdown-link :href="route('logout')" class="rounded-b" onclick="event.preventDefault();
+                        <x-dropdown-link :href="route('logout')" class="rounded-b"
+                            onclick="event.preventDefault();
                                                 this.closest('form').submit();">
                             {{ __('Log Out') }}
                         </x-dropdown-link>
@@ -79,8 +80,8 @@
                         xmlns="http://www.w3.org/2000/svg">
                         <rect x="-0.757324" y="19.2427" width="28" height="4" rx="2"
                             transform="rotate(-45 -0.757324 19.2427)" fill="currentColor"></rect>
-                        <rect x="7.72803" y="27.728" width="28" height="4" rx="2" transform="rotate(-45 7.72803 27.728)"
-                            fill="currentColor"></rect>
+                        <rect x="7.72803" y="27.728" width="28" height="4" rx="2"
+                            transform="rotate(-45 7.72803 27.728)" fill="currentColor"></rect>
                         <rect x="10.5366" y="16.3945" width="16" height="4" rx="2"
                             transform="rotate(45 10.5366 16.3945)" fill="currentColor"></rect>
                         <rect x="10.5562" y="-0.556152" width="28" height="4" rx="2"
@@ -105,9 +106,9 @@
                                 @endif
                                 <div class="hidden ml-4 rtl:ml-0 rtl:mr-4 md:block">
                                     <h6 class="mb-0 text-base font-medium dark:text-gray-600">
-                                        {{ Auth::user()->name }}</h6>
+                                        {{ ucwords(Auth::user()->name) }}</h6>
                                     <p class="mb-0 text-lg text-gray-600 caption-sub-title dark:text-white">
-                                        {{ Auth::user()->roles->pluck('name')[0] ?? 'No Role' }}
+                                        {{ Auth::user()->role }}
                                     </p>
                                 </div>
                             </a>
@@ -119,14 +120,15 @@
                                 x-transition:leave="transition ease-out duration-500"
                                 x-transition:leave-start="opacity-100 transform translate-y-0"
                                 x-transition:leave-end="opacity-0 transform translate-y-0">
-                                <x-dropdown-link :href="route('logout')" class="rounded-t">
+                                <x-dropdown-link :href="route('admin.user.edit', [Auth::user()->id])" class="rounded-t">
                                     {{ __('Profile') }}
                                 </x-dropdown-link>
                                 <x-backend.hr-line />
                                 <!-- Authentication -->
                                 <form method="POST" action="{{ route('logout') }}">
                                     @csrf
-                                    <x-dropdown-link :href="route('logout')" class="rounded-b" onclick="event.preventDefault();
+                                    <x-dropdown-link :href="route('logout')" class="rounded-b"
+                                        onclick="event.preventDefault();
                                                 this.closest('form').submit();">
                                         {{ __('Log Out') }}
                                     </x-dropdown-link>

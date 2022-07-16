@@ -15,7 +15,7 @@ class ServiceTable extends LivewireDatatable
 
     public function builder()
     {
-        return Service::query()->with('department');
+        return Service::query()->join('departments', 'services.department_id', '=', 'departments.id');
     }
 
     public function columns()

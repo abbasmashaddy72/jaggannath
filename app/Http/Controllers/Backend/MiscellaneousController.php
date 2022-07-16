@@ -5,16 +5,17 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Models\Blog;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class MiscellaneousController extends Controller
 {
     public function image_upload(Request $request)
     {
-       /**
-        * @post('/admin/image_upload')
-        * @name('admin.ckeditor.upload')
-        * @middlewares('web', auth')
-        */
+        /**
+         * @post('/admin/image_upload')
+         * @name('admin.ckeditor.upload')
+         * @middlewares('web', auth')
+         */
         $blog = new Blog();
         $blog->id = 0;
         $blog->exists = true;
@@ -27,31 +28,37 @@ class MiscellaneousController extends Controller
 
     public function terms()
     {
-       /**
-        * @get('/admin/terms')
-        * @name('admin.terms')
-        * @middlewares('web', auth')
-        */
+        /**
+         * @get('/admin/terms')
+         * @name('admin.terms')
+         * @middlewares('web', auth')
+         */
+        abort_if(Gate::denies('terms'), 403);
+
         return view('pages.backend.terms');
     }
 
     public function privacy()
     {
-       /**
-        * @get('/admin/privacy')
-        * @name('admin.privacy')
-        * @middlewares('web', auth')
-        */
+        /**
+         * @get('/admin/privacy')
+         * @name('admin.privacy')
+         * @middlewares('web', auth')
+         */
+        abort_if(Gate::denies('privacy'), 403);
+
         return view('pages.backend.privacy');
     }
 
     public function career()
     {
-       /**
-        * @get('/admin/career')
-        * @name('admin.career')
-        * @middlewares('web', auth')
-        */
+        /**
+         * @get('/admin/career')
+         * @name('admin.career')
+         * @middlewares('web', auth')
+         */
+        abort_if(Gate::denies('career'), 403);
+
         return view('pages.backend.career');
     }
 
@@ -62,6 +69,8 @@ class MiscellaneousController extends Controller
          * @name('admin.feedback')
          * @middlewares('web', auth')
          */
+        abort_if(Gate::denies('feedback'), 403);
+
         return view('pages.backend.feedback');
     }
 }

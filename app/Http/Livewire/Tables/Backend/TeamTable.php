@@ -15,7 +15,7 @@ class TeamTable extends LivewireDatatable
 
     public function builder()
     {
-        return Team::query()->with('department');
+        return Team::query()->join('departments', 'teams.department_id', '=', 'departments.id');
     }
 
     public function columns()

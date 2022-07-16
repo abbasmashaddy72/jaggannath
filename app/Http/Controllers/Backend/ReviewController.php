@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreReviewRequest;
 use App\Http\Requests\UpdateReviewRequest;
 use App\Models\Review;
+use Illuminate\Support\Facades\Gate;
 
 class ReviewController extends Controller
 {
@@ -16,11 +17,13 @@ class ReviewController extends Controller
      */
     public function index()
     {
-       /**
-        * @get('/admin/review')
-        * @name('admin.review.index')
-        * @middlewares('web', auth')
-        */
+        /**
+         * @get('/admin/review')
+         * @name('admin.review.index')
+         * @middlewares('web', auth')
+         */
+        abort_if(Gate::denies('review_list'), 403);
+
         return view('pages.backend.reviews.index');
     }
 
@@ -31,11 +34,13 @@ class ReviewController extends Controller
      */
     public function create()
     {
-       /**
-        * @get('/admin/review/create')
-        * @name('admin.review.create')
-        * @middlewares('web', auth')
-        */
+        /**
+         * @get('/admin/review/create')
+         * @name('admin.review.create')
+         * @middlewares('web', auth')
+         */
+        abort_if(Gate::denies('review_add'), 403);
+
         $review = null;
 
         return view('pages.backend.reviews.cev', compact('review'));
@@ -49,11 +54,11 @@ class ReviewController extends Controller
      */
     public function store(StoreReviewRequest $request)
     {
-       /**
-        * @post('/admin/review')
-        * @name('admin.review.store')
-        * @middlewares('web', auth')
-        */
+        /**
+         * @post('/admin/review')
+         * @name('admin.review.store')
+         * @middlewares('web', auth')
+         */
         //
     }
 
@@ -65,11 +70,13 @@ class ReviewController extends Controller
      */
     public function show(Review $review)
     {
-       /**
-        * @get('/admin/review/{review}')
-        * @name('admin.review.show')
-        * @middlewares('web', auth')
-        */
+        /**
+         * @get('/admin/review/{review}')
+         * @name('admin.review.show')
+         * @middlewares('web', auth')
+         */
+        abort_if(Gate::denies('review_add'), 403);
+
         $review = $review->id;
 
         return view('pages.backend.reviews.cev', compact('review'));
@@ -83,11 +90,13 @@ class ReviewController extends Controller
      */
     public function edit(Review $review)
     {
-       /**
-        * @get('/admin/review/{review}/edit')
-        * @name('admin.review.edit')
-        * @middlewares('web', auth')
-        */
+        /**
+         * @get('/admin/review/{review}/edit')
+         * @name('admin.review.edit')
+         * @middlewares('web', auth')
+         */
+        abort_if(Gate::denies('review_edit'), 403);
+
         $review = $review->id;
 
         return view('pages.backend.reviews.cev', compact('review'));

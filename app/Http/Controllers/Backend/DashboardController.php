@@ -12,7 +12,9 @@ use App\Models\Review;
 use App\Models\Package;
 use App\Models\Service;
 use App\Models\Team;
+use App\Models\User;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Gate;
 
 class DashboardController extends Controller
 {
@@ -23,6 +25,8 @@ class DashboardController extends Controller
          * @name('admin.dashboard')
          * @middlewares('web', auth')
          */
+        abort_if(Gate::denies('dashboard'), 403);
+
         $Booked = BookAppointment::count();
         $BookedToday = BookAppointment::whereDate('created_at', Carbon::today())->count();
         $contactedUs = ContactUs::count();
@@ -36,6 +40,7 @@ class DashboardController extends Controller
         $feedbacks = Feedback::count();
         $doctorsCount = Team::count();
         $packagesCount = Package::count();
+        $usersCount = User::count();
 
         return view('pages.backend.dashboard', compact([
             'Booked',
@@ -50,7 +55,8 @@ class DashboardController extends Controller
             'feedbacksToday',
             'feedbacks',
             'doctorsCount',
-            'packagesCount'
+            'packagesCount',
+            'usersCount'
         ]));
     }
 }

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreContactUsRequest;
 use App\Http\Requests\UpdateContactUsRequest;
 use App\Models\ContactUs;
+use Illuminate\Support\Facades\Gate;
 
 class ContactUsController extends Controller
 {
@@ -16,11 +17,13 @@ class ContactUsController extends Controller
      */
     public function index()
     {
-       /**
-        * @get('/admin/contact-us')
-        * @name('admin.contact-us.index')
-        * @middlewares('web', auth')
-        */
+        /**
+         * @get('/admin/contact-us')
+         * @name('admin.contact-us.index')
+         * @middlewares('web', auth')
+         */
+        abort_if(Gate::denies('contact_us'), 403);
+
         return view('pages.backend.contactUs.index');
     }
 
@@ -53,11 +56,11 @@ class ContactUsController extends Controller
      */
     public function show(ContactUs $contactUs)
     {
-       /**
-        * @get('/admin/contact-us/{contact_u}')
-        * @name('admin.contact-us.show')
-        * @middlewares('web', auth')
-        */
+        /**
+         * @get('/admin/contact-us/{contact_u}')
+         * @name('admin.contact-us.show')
+         * @middlewares('web', auth')
+         */
         //
     }
 

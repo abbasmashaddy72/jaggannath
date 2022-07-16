@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreBlogRequest;
 use App\Http\Requests\UpdateBlogRequest;
 use App\Models\Blog;
+use Illuminate\Support\Facades\Gate;
 
 class BlogController extends Controller
 {
@@ -16,11 +17,13 @@ class BlogController extends Controller
      */
     public function index()
     {
-       /**
-        * @get('/admin/blog')
-        * @name('admin.blog.index')
-        * @middlewares('web', auth')
-        */
+        /**
+         * @get('/admin/blog')
+         * @name('admin.blog.index')
+         * @middlewares('web', auth')
+         */
+        abort_if(Gate::denies('blog_list'), 403);
+
         return view('pages.backend.blogs.index');
     }
 
@@ -31,11 +34,13 @@ class BlogController extends Controller
      */
     public function create()
     {
-       /**
-        * @get('/admin/blog/create')
-        * @name('admin.blog.create')
-        * @middlewares('web', auth')
-        */
+        /**
+         * @get('/admin/blog/create')
+         * @name('admin.blog.create')
+         * @middlewares('web', auth')
+         */
+        abort_if(Gate::denies('blog_add'), 403);
+
         $blog = null;
 
         return view('pages.backend.blogs.cev', compact('blog'));
@@ -49,11 +54,11 @@ class BlogController extends Controller
      */
     public function store(StoreBlogRequest $request)
     {
-       /**
-        * @post('/admin/blog')
-        * @name('admin.blog.store')
-        * @middlewares('web', auth')
-        */
+        /**
+         * @post('/admin/blog')
+         * @name('admin.blog.store')
+         * @middlewares('web', auth')
+         */
         //
     }
 
@@ -65,11 +70,13 @@ class BlogController extends Controller
      */
     public function show(Blog $blog)
     {
-       /**
-        * @get('/admin/blog/{blog}')
-        * @name('admin.blog.show')
-        * @middlewares('web', auth')
-        */
+        /**
+         * @get('/admin/blog/{blog}')
+         * @name('admin.blog.show')
+         * @middlewares('web', auth')
+         */
+        abort_if(Gate::denies('blog_view'), 403);
+
         $blog = $blog->id;
 
         return view('pages.backend.blogs.cev', compact('blog'));
@@ -83,11 +90,13 @@ class BlogController extends Controller
      */
     public function edit(Blog $blog)
     {
-       /**
-        * @get('/admin/blog/{blog}/edit')
-        * @name('admin.blog.edit')
-        * @middlewares('web', auth')
-        */
+        /**
+         * @get('/admin/blog/{blog}/edit')
+         * @name('admin.blog.edit')
+         * @middlewares('web', auth')
+         */
+        abort_if(Gate::denies('blog_edit'), 403);
+
         $blog = $blog->id;
 
         return view('pages.backend.blogs.cev', compact('blog'));

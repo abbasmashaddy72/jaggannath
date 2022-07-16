@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StorePackageListRequest;
 use App\Http\Requests\UpdatePackageListRequest;
 use App\Models\PackageList;
+use Illuminate\Support\Facades\Gate;
 
 class PackageListController extends Controller
 {
@@ -21,6 +22,8 @@ class PackageListController extends Controller
          * @name('admin.package-list.index')
          * @middlewares('web', auth')
          */
+        abort_if(Gate::denies('package_list_list'), 403);
+
         return view('pages.backend.packageLists.index');
     }
 
@@ -36,6 +39,8 @@ class PackageListController extends Controller
          * @name('admin.package-list.create')
          * @middlewares('web', auth')
          */
+        abort_if(Gate::denies('package_list_add'), 403);
+
         $packageList = null;
 
         return view('pages.backend.packageLists.cev', compact('packageList'));
@@ -70,6 +75,8 @@ class PackageListController extends Controller
          * @name('admin.package-list.show')
          * @middlewares('web', auth')
          */
+        abort_if(Gate::denies('package_list_view'), 403);
+
         $packageList = $packageList->id;
 
         return view('pages.backend.packageLists.cev', compact('packageList'));
@@ -88,6 +95,8 @@ class PackageListController extends Controller
          * @name('admin.package-list.edit')
          * @middlewares('web', auth')
          */
+        abort_if(Gate::denies('package_list_edit'), 403);
+
         $packageList = $packageList->id;
 
         return view('pages.backend.packageLists.cev', compact('packageList'));

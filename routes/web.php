@@ -42,6 +42,13 @@ Route::group(['namespace' => 'App\Http\Controllers\Frontend'], function () {
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth', 'namespace' => 'App\Http\Controllers\Backend'], function () {
     Route::get('dashboard', 'DashboardController@index')->name('dashboard');
 
+    Route::get('user/permissions/{id}', 'UserController@permission_edit')->name('user.permissions.edit');
+    Route::post('user/permissions/{id}', 'UserController@permission_save')->name('user.permissions.save');
+
+    Route::resource('user', 'UserController')->only([
+        'index', 'create', 'store',  'edit', 'show'
+    ]);
+
     Route::get('homepage', 'HomePageController@index')->name('homepage');
 
     Route::get('terms', 'MiscellaneousController@terms')->name('terms');
@@ -105,7 +112,9 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth', 'na
     ]);
 
     Route::group(['prefix' => 'laravel-filemanager', 'middleware' => 'auth'], function () {
-        \UniSharp\LaravelFilemanager\Lfm::routes();
+        Route::middleware('can:gallery')->group(function () {
+            \UniSharp\LaravelFilemanager\Lfm::routes();
+        });
     });
 });
 

@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Form\Backend;
 
 use App\Models\Department;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Route;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -34,6 +35,8 @@ class DepartmentCEV extends Component
 
     public function store()
     {
+        abort_if(Gate::denies('department_add'), 403);
+
         $validatedData = $this->validate();
 
         if (gettype($this->image) != 'string') {
@@ -49,6 +52,8 @@ class DepartmentCEV extends Component
 
     public function update()
     {
+        abort_if(Gate::denies('department_edit'), 403);
+
         $validatedData = $this->validate();
 
         if (gettype($this->image) != 'string') {

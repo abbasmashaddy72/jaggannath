@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreInsuranceRequest;
 use App\Http\Requests\UpdateInsuranceRequest;
 use App\Models\Insurance;
+use Illuminate\Support\Facades\Gate;
 
 class InsuranceController extends Controller
 {
@@ -16,6 +17,8 @@ class InsuranceController extends Controller
      */
     public function index()
     {
+        abort_if(Gate::denies('insurance_list'), 403);
+
         return view('pages.backend.insurances.index');
     }
 
@@ -26,6 +29,8 @@ class InsuranceController extends Controller
      */
     public function create()
     {
+        abort_if(Gate::denies('insurance_add'), 403);
+
         $insurance = null;
 
         return view('pages.backend.insurances.cev', compact('insurance'));
@@ -50,6 +55,8 @@ class InsuranceController extends Controller
      */
     public function show(Insurance $insurance)
     {
+        abort_if(Gate::denies('insurance_view'), 403);
+
         $insurance = $insurance->id;
 
         return view('pages.backend.insurances.cev', compact('insurance'));
@@ -63,6 +70,8 @@ class InsuranceController extends Controller
      */
     public function edit(Insurance $insurance)
     {
+        abort_if(Gate::denies('insurance_edit'), 403);
+
         $insurance = $insurance->id;
 
         return view('pages.backend.insurances.cev', compact('insurance'));

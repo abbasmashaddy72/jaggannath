@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Form\Backend;
 
 use App\Models\Review;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Route;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -29,6 +30,8 @@ class ReviewCEV extends Component
 
     public function store()
     {
+        abort_if(Gate::denies('review_add'), 403);
+
         $validatedData = $this->validate();
 
         Review::create($validatedData);
@@ -40,6 +43,8 @@ class ReviewCEV extends Component
 
     public function update()
     {
+        abort_if(Gate::denies('review_edit'), 403);
+
         $validatedData = $this->validate();
 
         Review::where('id', $this->review)->update($validatedData);

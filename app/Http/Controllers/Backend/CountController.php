@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreCountRequest;
 use App\Http\Requests\UpdateCountRequest;
 use App\Models\Count;
+use Illuminate\Support\Facades\Gate;
 
 class CountController extends Controller
 {
@@ -16,6 +17,8 @@ class CountController extends Controller
      */
     public function index()
     {
+        abort_if(Gate::denies('homepage'), 403);
+
         return view('pages.backend.counts.index');
     }
 
@@ -26,6 +29,8 @@ class CountController extends Controller
      */
     public function create()
     {
+        abort_if(Gate::denies('homepage'), 403);
+
         $count = null;
 
         return view('pages.backend.counts.cev', compact('count'));
@@ -50,6 +55,8 @@ class CountController extends Controller
      */
     public function show(Count $count)
     {
+        abort_if(Gate::denies('homepage'), 403);
+
         $count = $count->id;
 
         return view('pages.backend.counts.cev', compact('count'));
@@ -63,6 +70,8 @@ class CountController extends Controller
      */
     public function edit(Count $count)
     {
+        abort_if(Gate::denies('homepage'), 403);
+
         $count = $count->id;
 
         return view('pages.backend.counts.cev', compact('count'));

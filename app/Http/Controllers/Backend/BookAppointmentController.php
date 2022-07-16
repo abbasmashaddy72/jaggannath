@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\BookAppointment;
+use Illuminate\Support\Facades\Gate;
 
 class BookAppointmentController extends Controller
 {
@@ -14,11 +15,13 @@ class BookAppointmentController extends Controller
      */
     public function index()
     {
-       /**
-        * @get('/admin/book-appointment')
-        * @name('admin.book.appointment')
-        * @middlewares('web', auth')
-        */
+        /**
+         * @get('/admin/book-appointment')
+         * @name('admin.book.appointment')
+         * @middlewares('web', auth')
+         */
+        abort_if(Gate::denies('book_appointment'), 403);
+
         return view('pages.backend.book_appointment');
     }
 }

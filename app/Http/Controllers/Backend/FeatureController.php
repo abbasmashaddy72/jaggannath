@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreFeatureRequest;
 use App\Http\Requests\UpdateFeatureRequest;
 use App\Models\Feature;
+use Illuminate\Support\Facades\Gate;
 
 class FeatureController extends Controller
 {
@@ -16,11 +17,13 @@ class FeatureController extends Controller
      */
     public function index()
     {
-       /**
-        * @get('/admin/feature')
-        * @name('admin.feature.index')
-        * @middlewares('web', auth')
-        */
+        /**
+         * @get('/admin/feature')
+         * @name('admin.feature.index')
+         * @middlewares('web', auth')
+         */
+        abort_if(Gate::denies('homepage'), 403);
+
         return view('pages.backend.features.index');
     }
 
@@ -31,11 +34,13 @@ class FeatureController extends Controller
      */
     public function create()
     {
-       /**
-        * @get('/admin/feature/create')
-        * @name('admin.feature.create')
-        * @middlewares('web', auth')
-        */
+        /**
+         * @get('/admin/feature/create')
+         * @name('admin.feature.create')
+         * @middlewares('web', auth')
+         */
+        abort_if(Gate::denies('homepage'), 403);
+
         $feature = null;
 
         return view('pages.backend.features.cev', compact('feature'));
@@ -49,11 +54,11 @@ class FeatureController extends Controller
      */
     public function store(StoreFeatureRequest $request)
     {
-       /**
-        * @post('/admin/feature')
-        * @name('admin.feature.store')
-        * @middlewares('web', auth')
-        */
+        /**
+         * @post('/admin/feature')
+         * @name('admin.feature.store')
+         * @middlewares('web', auth')
+         */
         //
     }
 
@@ -65,11 +70,13 @@ class FeatureController extends Controller
      */
     public function show(Feature $feature)
     {
-       /**
-        * @get('/admin/feature/{feature}')
-        * @name('admin.feature.show')
-        * @middlewares('web', auth')
-        */
+        /**
+         * @get('/admin/feature/{feature}')
+         * @name('admin.feature.show')
+         * @middlewares('web', auth')
+         */
+        abort_if(Gate::denies('homepage'), 403);
+
         $feature = $feature->id;
 
         return view('pages.backend.features.cev', compact('feature'));
@@ -83,11 +90,13 @@ class FeatureController extends Controller
      */
     public function edit(Feature $feature)
     {
-       /**
-        * @get('/admin/feature/{feature}/edit')
-        * @name('admin.feature.edit')
-        * @middlewares('web', auth')
-        */
+        /**
+         * @get('/admin/feature/{feature}/edit')
+         * @name('admin.feature.edit')
+         * @middlewares('web', auth')
+         */
+        abort_if(Gate::denies('homepage'), 403);
+
         $feature = $feature->id;
 
         return view('pages.backend.features.cev', compact('feature'));

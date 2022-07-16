@@ -2,20 +2,20 @@
 
 namespace App\Http\Livewire\Tables\Backend;
 
-use App\Models\PackageList;
+use App\Models\User;
 use Mediconesystems\LivewireDatatables\Column;
 use Mediconesystems\LivewireDatatables\DateColumn;
 use Mediconesystems\LivewireDatatables\Http\Livewire\LivewireDatatable;
 use Mediconesystems\LivewireDatatables\NumberColumn;
 
-class PackageListTable extends LivewireDatatable
+class UserTable extends LivewireDatatable
 {
-    public $model = PackageList::class;
+    public $model = User::class;
     public $exportable = true;
 
     public function builder()
     {
-        return PackageList::query()->join('packages', 'package_lists.package_id', '=', 'packages.id');
+        return User::query();
     }
 
     public function columns()
@@ -34,15 +34,19 @@ class PackageListTable extends LivewireDatatable
                 ->filterable()
                 ->label('Name'),
 
-            Column::name('package.name')
-                ->filterable()
-                ->label('Package Name'),
+            Column::name('email')
+                ->searchable()
+                ->filterable(),
+
+            Column::name('role')
+                ->searchable()
+                ->filterable(),
 
             DateColumn::name('created_at')
                 ->filterable(),
 
             Column::callback(['id'], function ($id) {
-                return view('pages.backend.packageLists.actions', ['id' => $id]);
+                return view('pages.backend.users.actions', ['id' => $id]);
             })->excludeFromExport()->unsortable()->label('Action'),
         ];
     }

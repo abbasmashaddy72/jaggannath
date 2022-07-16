@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StorePackageRequest;
 use App\Http\Requests\UpdatePackageRequest;
 use App\Models\Package;
+use Illuminate\Support\Facades\Gate;
 
 class PackageController extends Controller
 {
@@ -16,11 +17,13 @@ class PackageController extends Controller
      */
     public function index()
     {
-       /**
-        * @get('/admin/package')
-        * @name('admin.package.index')
-        * @middlewares('web', auth')
-        */
+        /**
+         * @get('/admin/package')
+         * @name('admin.package.index')
+         * @middlewares('web', auth')
+         */
+        abort_if(Gate::denies('package_list'), 403);
+
         return view('pages.backend.packages.index');
     }
 
@@ -31,11 +34,13 @@ class PackageController extends Controller
      */
     public function create()
     {
-       /**
-        * @get('/admin/package/create')
-        * @name('admin.package.create')
-        * @middlewares('web', auth')
-        */
+        /**
+         * @get('/admin/package/create')
+         * @name('admin.package.create')
+         * @middlewares('web', auth')
+         */
+        abort_if(Gate::denies('package_add'), 403);
+
         $package = null;
 
         return view('pages.backend.packages.cev', compact('package'));
@@ -49,11 +54,11 @@ class PackageController extends Controller
      */
     public function store(StorePackageRequest $request)
     {
-       /**
-        * @post('/admin/package')
-        * @name('admin.package.store')
-        * @middlewares('web', auth')
-        */
+        /**
+         * @post('/admin/package')
+         * @name('admin.package.store')
+         * @middlewares('web', auth')
+         */
         //
     }
 
@@ -65,11 +70,13 @@ class PackageController extends Controller
      */
     public function show(Package $package)
     {
-       /**
-        * @get('/admin/package/{package}')
-        * @name('admin.package.show')
-        * @middlewares('web', auth')
-        */
+        /**
+         * @get('/admin/package/{package}')
+         * @name('admin.package.show')
+         * @middlewares('web', auth')
+         */
+        abort_if(Gate::denies('package_view'), 403);
+
         $package = $package->id;
 
         return view('pages.backend.packages.cev', compact('package'));
@@ -83,11 +90,13 @@ class PackageController extends Controller
      */
     public function edit(Package $package)
     {
-       /**
-        * @get('/admin/package/{package}/edit')
-        * @name('admin.package.edit')
-        * @middlewares('web', auth')
-        */
+        /**
+         * @get('/admin/package/{package}/edit')
+         * @name('admin.package.edit')
+         * @middlewares('web', auth')
+         */
+        abort_if(Gate::denies('package_edit'), 403);
+
         $package = $package->id;
 
         return view('pages.backend.packages.cev', compact('package'));

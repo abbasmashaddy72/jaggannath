@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7eef85a4d739e0d6ea28184c3b5bee4a",
+    "content-hash": "8bd6da462d5dfbce693a2863eef028fd",
     "packages": [
         {
             "name": "arcanedev/log-viewer",
@@ -6289,88 +6289,6 @@
             "time": "2022-06-28T14:29:26+00:00"
         },
         {
-            "name": "spatie/laravel-permission",
-            "version": "5.5.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/spatie/laravel-permission.git",
-                "reference": "f2303a70be60919811ca8afc313e8244fda00974"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-permission/zipball/f2303a70be60919811ca8afc313e8244fda00974",
-                "reference": "f2303a70be60919811ca8afc313e8244fda00974",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/auth": "^7.0|^8.0|^9.0",
-                "illuminate/container": "^7.0|^8.0|^9.0",
-                "illuminate/contracts": "^7.0|^8.0|^9.0",
-                "illuminate/database": "^7.0|^8.0|^9.0",
-                "php": "^7.3|^8.0|^8.1"
-            },
-            "require-dev": {
-                "orchestra/testbench": "^5.0|^6.0|^7.0",
-                "phpunit/phpunit": "^9.4",
-                "predis/predis": "^1.1"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Spatie\\Permission\\PermissionServiceProvider"
-                    ]
-                },
-                "branch-alias": {
-                    "dev-main": "5.x-dev",
-                    "dev-master": "5.x-dev"
-                }
-            },
-            "autoload": {
-                "files": [
-                    "src/helpers.php"
-                ],
-                "psr-4": {
-                    "Spatie\\Permission\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Freek Van der Herten",
-                    "email": "freek@spatie.be",
-                    "homepage": "https://spatie.be",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Permission handling for Laravel 6.0 and up",
-            "homepage": "https://github.com/spatie/laravel-permission",
-            "keywords": [
-                "acl",
-                "laravel",
-                "permission",
-                "permissions",
-                "rbac",
-                "roles",
-                "security",
-                "spatie"
-            ],
-            "support": {
-                "issues": "https://github.com/spatie/laravel-permission/issues",
-                "source": "https://github.com/spatie/laravel-permission/tree/5.5.5"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/spatie",
-                    "type": "github"
-                }
-            ],
-            "time": "2022-06-29T23:11:42+00:00"
-        },
-        {
             "name": "spatie/laravel-route-discovery",
             "version": "1.0.1",
             "source": {
@@ -9002,6 +8920,70 @@
                 }
             ],
             "time": "2022-05-21T13:34:40+00:00"
+        },
+        {
+            "name": "thepublicgood/deadbolt",
+            "version": "v2.2.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tpg/deadbolt.git",
+                "reference": "0328766d54202c0090ec61821473a82ce0596358"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tpg/deadbolt/zipball/0328766d54202c0090ec61821473a82ce0596358",
+                "reference": "0328766d54202c0090ec61821473a82ce0596358",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "laravel/framework": ">=7.24",
+                "php": "^7.3|^8.0"
+            },
+            "require-dev": {
+                "laravel/legacy-factories": "^1.1",
+                "orchestra/testbench": ">=5.0",
+                "phpunit/phpunit": "^8.5|^9.3",
+                "roave/security-advisories": "dev-master"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "TPG\\Deadbolt\\DeadboltServiceProvider"
+                    ],
+                    "aliases": {
+                        "Deadbolt": "TPG\\Deadbolt\\Facades\\Deadbolt"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "TPG\\Deadbolt\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "THEPUBLICGOOD",
+                    "email": "makers@thepublicgood.co.za"
+                }
+            ],
+            "description": "Dead simple permissions for Laravel",
+            "keywords": [
+                "authorization",
+                "deadbolt",
+                "laravel",
+                "permissions"
+            ],
+            "support": {
+                "issues": "https://github.com/tpg/deadbolt/issues",
+                "source": "https://github.com/tpg/deadbolt"
+            },
+            "time": "2022-06-07T09:09:07+00:00"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",

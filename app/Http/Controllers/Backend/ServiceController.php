@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreServiceRequest;
 use App\Http\Requests\UpdateServiceRequest;
 use App\Models\Service;
+use Illuminate\Support\Facades\Gate;
 
 class ServiceController extends Controller
 {
@@ -16,6 +17,8 @@ class ServiceController extends Controller
      */
     public function index()
     {
+        abort_if(Gate::denies('service_list'), 403);
+
         return view('pages.backend.services.index');
     }
 
@@ -26,6 +29,8 @@ class ServiceController extends Controller
      */
     public function create()
     {
+        abort_if(Gate::denies('service_add'), 403);
+
         $service = null;
 
         return view('pages.backend.services.cev', compact('service'));
@@ -50,6 +55,8 @@ class ServiceController extends Controller
      */
     public function show(Service $service)
     {
+        abort_if(Gate::denies('service_view'), 403);
+
         $service = $service->id;
 
         return view('pages.backend.services.cev', compact('service'));
@@ -63,6 +70,8 @@ class ServiceController extends Controller
      */
     public function edit(Service $service)
     {
+        abort_if(Gate::denies('service_edit'), 403);
+
         $service = $service->id;
 
         return view('pages.backend.services.cev', compact('service'));

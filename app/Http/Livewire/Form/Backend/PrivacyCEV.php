@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Form\Backend;
 
 use App\Services\Helper;
+use Illuminate\Support\Facades\Gate;
 use Livewire\Component;
 
 class PrivacyCEV extends Component
@@ -25,6 +26,8 @@ class PrivacyCEV extends Component
 
     public function submit()
     {
+        abort_if(Gate::denies('privacy'), 403);
+
         $validatedData = $this->validate();
 
         foreach ($validatedData as $key => $value) {

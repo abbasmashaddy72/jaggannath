@@ -15,7 +15,7 @@ class BlogTable extends LivewireDatatable
 
     public function builder()
     {
-        return Blog::query()->with('department', 'team');
+        return Blog::query()->join('teams', 'blogs.team_id', '=', 'teams.id')->join('departments', 'blogs.department_id', '=', 'departments.id');
     }
 
     public function columns()

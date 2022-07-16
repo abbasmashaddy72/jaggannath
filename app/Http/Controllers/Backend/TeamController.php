@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreTeamRequest;
 use App\Http\Requests\UpdateTeamRequest;
 use App\Models\Team;
+use Illuminate\Support\Facades\Gate;
 
 class TeamController extends Controller
 {
@@ -16,11 +17,13 @@ class TeamController extends Controller
      */
     public function index()
     {
-       /**
-        * @get('/admin/team')
-        * @name('admin.team.index')
-        * @middlewares('web', auth')
-        */
+        /**
+         * @get('/admin/team')
+         * @name('admin.team.index')
+         * @middlewares('web', auth')
+         */
+        abort_if(Gate::denies('doctor_list'), 403);
+
         return view('pages.backend.teams.index');
     }
 
@@ -31,11 +34,13 @@ class TeamController extends Controller
      */
     public function create()
     {
-       /**
-        * @get('/admin/team/create')
-        * @name('admin.team.create')
-        * @middlewares('web', auth')
-        */
+        /**
+         * @get('/admin/team/create')
+         * @name('admin.team.create')
+         * @middlewares('web', auth')
+         */
+        abort_if(Gate::denies('doctor_add'), 403);
+
         $team = null;
 
         return view('pages.backend.teams.cev', compact('team'));
@@ -49,11 +54,11 @@ class TeamController extends Controller
      */
     public function store(StoreTeamRequest $request)
     {
-       /**
-        * @post('/admin/team')
-        * @name('admin.team.store')
-        * @middlewares('web', auth')
-        */
+        /**
+         * @post('/admin/team')
+         * @name('admin.team.store')
+         * @middlewares('web', auth')
+         */
         //
     }
 
@@ -65,11 +70,13 @@ class TeamController extends Controller
      */
     public function show(Team $team)
     {
-       /**
-        * @get('/admin/team/{team}')
-        * @name('admin.team.show')
-        * @middlewares('web', auth')
-        */
+        /**
+         * @get('/admin/team/{team}')
+         * @name('admin.team.show')
+         * @middlewares('web', auth')
+         */
+        abort_if(Gate::denies('doctor_view'), 403);
+
         $team = $team->id;
 
         return view('pages.backend.teams.cev', compact('team'));
@@ -83,11 +90,13 @@ class TeamController extends Controller
      */
     public function edit(Team $team)
     {
-       /**
-        * @get('/admin/team/{team}/edit')
-        * @name('admin.team.edit')
-        * @middlewares('web', auth')
-        */
+        /**
+         * @get('/admin/team/{team}/edit')
+         * @name('admin.team.edit')
+         * @middlewares('web', auth')
+         */
+        abort_if(Gate::denies('doctor_edit'), 403);
+
         $team = $team->id;
 
         return view('pages.backend.teams.cev', compact('team'));

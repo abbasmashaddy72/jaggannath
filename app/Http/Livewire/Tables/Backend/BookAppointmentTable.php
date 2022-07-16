@@ -17,7 +17,7 @@ class BookAppointmentTable extends LivewireDatatable
 
     public function builder()
     {
-        return BookAppointment::query()->with('team');
+        return BookAppointment::query()->join('teams', 'book_appointments.team_id', '=', 'teams.id');
     }
 
     public function columns()

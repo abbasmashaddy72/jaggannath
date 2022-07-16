@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Form\Backend;
 
 use App\Models\Slider;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Route;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -34,6 +35,8 @@ class SliderCEV extends Component
 
     public function store()
     {
+        abort_if(Gate::denies('homepage'), 403);
+
         $validatedData = $this->validate();
 
         if (gettype($this->image) != 'string') {
@@ -50,6 +53,8 @@ class SliderCEV extends Component
 
     public function update()
     {
+        abort_if(Gate::denies('homepage'), 403);
+
         $validatedData = $this->validate();
 
         if (gettype($this->image) != 'string') {

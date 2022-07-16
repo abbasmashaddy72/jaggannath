@@ -6,6 +6,7 @@ use App\Models\Service;
 use App\Models\Team;
 use App\Models\TeamService;
 use App\Services\Helper;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Route;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -50,6 +51,8 @@ class TeamCEV extends Component
 
     public function store()
     {
+        abort_if(Gate::denies('doctor_add'), 403);
+
         $validatedData = $this->validate();
 
         if (gettype($this->image) != 'string') {
@@ -69,6 +72,8 @@ class TeamCEV extends Component
 
     public function update()
     {
+        abort_if(Gate::denies('doctor_edit'), 403);
+
         $validatedData = $this->validate();
 
         if (gettype($this->image) != 'string') {

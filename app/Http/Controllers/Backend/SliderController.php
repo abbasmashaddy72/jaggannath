@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreSliderRequest;
 use App\Http\Requests\UpdateSliderRequest;
 use App\Models\Slider;
+use Illuminate\Support\Facades\Gate;
 
 class SliderController extends Controller
 {
@@ -16,6 +17,8 @@ class SliderController extends Controller
      */
     public function index()
     {
+        abort_if(Gate::denies('homepage'), 403);
+
         return view('pages.backend.sliders.index');
     }
 
@@ -26,6 +29,8 @@ class SliderController extends Controller
      */
     public function create()
     {
+        abort_if(Gate::denies('homepage'), 403);
+
         $slider = null;
 
         return view('pages.backend.sliders.cev', compact('slider'));
@@ -50,6 +55,8 @@ class SliderController extends Controller
      */
     public function show(Slider $slider)
     {
+        abort_if(Gate::denies('homepage'), 403);
+
         $slider = $slider->id;
 
         return view('pages.backend.sliders.cev', compact('slider'));
@@ -63,6 +70,8 @@ class SliderController extends Controller
      */
     public function edit(Slider $slider)
     {
+        abort_if(Gate::denies('homepage'), 403);
+
         $slider = $slider->id;
 
         return view('pages.backend.sliders.cev', compact('slider'));

@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Form\Backend;
 
 use App\Services\Helper;
+use Illuminate\Support\Facades\Gate;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -103,6 +104,8 @@ class HomePageCEV extends Component
 
     public function submit()
     {
+        abort_if(Gate::denies('homepage'), 403);
+
         $validatedData = $this->validate();
 
         foreach ($validatedData as $key => $value) {
