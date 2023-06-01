@@ -39,7 +39,7 @@ class PackageCEV extends Component
         $validatedData = $this->validate();
 
         if (gettype($this->image) != 'string') {
-            $validatedData['image'] = $this->image->store('package_images');
+            $validatedData['image'] = $this->image->store('package_images','public');
         }
 
         Package::create($validatedData);
@@ -56,7 +56,7 @@ class PackageCEV extends Component
         $validatedData = $this->validate();
 
         if (gettype($this->image) != 'string') {
-            $validatedData['image'] = $this->image->store('package_images');
+            $validatedData['image'] = $this->image->store('package_images','public');
         }
 
         Package::where('id', $this->package)->update($validatedData);

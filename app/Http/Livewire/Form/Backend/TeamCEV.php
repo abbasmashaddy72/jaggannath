@@ -56,7 +56,7 @@ class TeamCEV extends Component
         $validatedData = $this->validate();
 
         if (gettype($this->image) != 'string') {
-            $validatedData['image'] = $this->image->store('team_images');
+            $validatedData['image'] = $this->image->store('team_images', 'public');
         }
 
         $new_team  = Team::create($validatedData);
@@ -77,7 +77,7 @@ class TeamCEV extends Component
         $validatedData = $this->validate();
 
         if (gettype($this->image) != 'string') {
-            $validatedData['image'] = $this->image->store('team_images');
+            $validatedData['image'] = $this->image->store('team_images', 'public');
         }
 
         TeamService::where('team_id', '=', $this->team)->delete();

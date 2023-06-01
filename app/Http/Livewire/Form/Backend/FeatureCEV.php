@@ -40,7 +40,7 @@ class FeatureCEV extends Component
         $validatedData = $this->validate();
 
         if (gettype($this->image) != 'string') {
-            $validatedData['image'] = $this->image->store('feature_images');
+            $validatedData['image'] = $this->image->store('feature_images','public');
         }
 
         Feature::create($validatedData);
@@ -57,7 +57,7 @@ class FeatureCEV extends Component
         $validatedData = $this->validate();
 
         if (gettype($this->image) != 'string') {
-            $validatedData['image'] = $this->image->store('feature_images');
+            $validatedData['image'] = $this->image->store('feature_images','public');
         }
 
         Feature::where('id', $this->feature)->update($validatedData);

@@ -40,7 +40,7 @@
                             <div class="swiper-slide">
                                 <div class="flex flex-col overflow-hidden rounded shadow">
                                     <div class="flex-shrink-0">
-                                        <img src="{{ url('storage/' . $item->image) }}" alt=""
+                                        <img src="{{ asset('storage/' . $item->image) }}" alt=""
                                             class="object-cover w-screen max-h-44 md:max-h-[40rem] rounded-lg">
                                     </div>
                                 </div>

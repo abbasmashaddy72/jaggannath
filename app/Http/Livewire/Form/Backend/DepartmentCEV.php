@@ -40,7 +40,7 @@ class DepartmentCEV extends Component
         $validatedData = $this->validate();
 
         if (gettype($this->image) != 'string') {
-            $validatedData['image'] = $this->image->store('department_images');
+            $validatedData['image'] = $this->image->store('department_images','public');
         }
 
         Department::create($validatedData);
@@ -57,7 +57,7 @@ class DepartmentCEV extends Component
         $validatedData = $this->validate();
 
         if (gettype($this->image) != 'string') {
-            $validatedData['image'] = $this->image->store('department_images');
+            $validatedData['image'] = $this->image->store('department_images','public');
         }
 
         Department::where('id', $this->department)->update($validatedData);

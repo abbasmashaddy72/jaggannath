@@ -45,7 +45,7 @@ class BlogCEV extends Component
         $validatedData = $this->validate();
 
         if (gettype($this->image) != 'string') {
-            $validatedData['image'] = $this->image->store('blog_images');
+            $validatedData['image'] = $this->image->store('blog_images','public');
         }
         $team = Team::findOrFail($this->team_id);
         $validatedData['department_id'] = $team->department_id;
@@ -64,7 +64,7 @@ class BlogCEV extends Component
         $validatedData = $this->validate();
 
         if (gettype($this->image) != 'string') {
-            $validatedData['image'] = $this->image->store('blog_images');
+            $validatedData['image'] = $this->image->store('blog_images','public');
         }
         $team = Team::findOrFail($this->team_id);
         $validatedData['department_id'] = $team->department_id;

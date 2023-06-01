@@ -40,14 +40,14 @@ class InsuranceCEV extends Component
         $validatedData = $this->validate();
 
         if (gettype($this->image) != 'string') {
-            $validatedData['image'] = $this->image->store('insurance_images');
+            $validatedData['image'] = $this->image->store('insurance_images','public');
         }
 
         Insurance::create($validatedData);
 
         notify()->success('Insurance Saved Successfully!');
 
-        return $this->redirectRoute('admin.insurance.index');
+        return $this->redirectRoute('admin.insurance.index','public');
     }
 
     public function update()

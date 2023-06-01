@@ -41,7 +41,7 @@ class PackageListCEV extends Component
         $validatedData = $this->validate();
 
         if (gettype($this->image) != 'string') {
-            $validatedData['image'] = $this->image->store('packageList_images');
+            $validatedData['image'] = $this->image->store('packageList_images','public');
         }
 
         PackageList::create($validatedData);
@@ -58,7 +58,7 @@ class PackageListCEV extends Component
         $validatedData = $this->validate();
 
         if (gettype($this->image) != 'string') {
-            $validatedData['image'] = $this->image->store('packageList_images');
+            $validatedData['image'] = $this->image->store('packageList_images','public');
         }
 
         PackageList::where('id', $this->packageList)->update($validatedData);

@@ -39,8 +39,8 @@ class SliderCEV extends Component
 
         $validatedData = $this->validate();
 
-        if (gettype($this->image) != 'string') {
-            $validatedData['image'] = $this->image->store('slider_images');
+        if (!empty($this->image) && gettype($this->image) != 'string') {
+            $validatedData['image'] = $this->image->store('sliders', 'public');
         }
         $validatedData['on'] = 'homepage';
 
@@ -57,8 +57,8 @@ class SliderCEV extends Component
 
         $validatedData = $this->validate();
 
-        if (gettype($this->image) != 'string') {
-            $validatedData['image'] = $this->image->store('slider_images');
+        if (!empty($this->image) && gettype($this->image) != 'string') {
+            $validatedData['image'] = $this->image->store('sliders', 'public');
         }
         $validatedData['on'] = 'homepage';
 

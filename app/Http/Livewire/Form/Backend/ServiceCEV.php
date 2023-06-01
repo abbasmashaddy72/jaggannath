@@ -44,7 +44,7 @@ class ServiceCEV extends Component
         $validatedData = $this->validate();
 
         if (gettype($this->image) != 'string') {
-            $validatedData['image'] = $this->image->store('service_images');
+            $validatedData['image'] = $this->image->store('service_images','public');
         }
 
         Service::create($validatedData);
@@ -61,7 +61,7 @@ class ServiceCEV extends Component
         $validatedData = $this->validate();
 
         if (gettype($this->image) != 'string') {
-            $validatedData['image'] = $this->image->store('service_images');
+            $validatedData['image'] = $this->image->store('service_images','public');
         }
 
         Service::where('id', $this->service)->update($validatedData);

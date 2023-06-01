@@ -108,19 +108,38 @@ class HomePageCEV extends Component
 
         $validatedData = $this->validate();
 
+        // foreach ($validatedData as $key => $value) {
+        //     if ($this->logo == null) {
+        //     } elseif (gettype($this->logo) != 'string') {
+        //         $image = $this->logo->store('homepage', 'public');
+        //         Helper::set_static_option($key, $image);
+        //         unset($validatedData['logo']);
+        //     }
+        //     if ($this->hero_image == null) {
+        //     } elseif (gettype($this->hero_image) != 'string') {
+        //         $image = $this->hero_image->store('homepage', 'public');
+        //         Helper::set_static_option($key, $image);
+        //         unset($validatedData['hero_image']);
+        //     }
+        //     Helper::set_static_option($key, $value);
+        // }
+
         foreach ($validatedData as $key => $value) {
-            if ($this->logo == null) {
-            } elseif (gettype($this->logo) != 'string') {
-                $image = $this->logo->store('homepage');
-                Helper::set_static_option($key, $image);
+            if ($key == 'hero_image' && !empty($validatedData['hero_image']) && gettype($validatedData['hero_image']) != 'string') {
+                $hero_image = $validatedData['hero_image']->store('homepage', 'public');
+                Helper::set_static_option($key, $hero_image);
+                unset($validatedData['hero_image']);
+            } elseif ($key == 'logo' && !empty($validatedData['logo']) && gettype($validatedData['logo']) != 'string') {
+                $logo = $validatedData['logo']->store('homepage', 'public');
+                Helper::set_static_option($key, $logo);
+                unset($validatedData['logo']);
+            } else {
+                Helper::set_static_option($key, $value);
             }
-            if ($this->hero_image == null) {
-            } elseif (gettype($this->hero_image) != 'string') {
-                $image = $this->hero_image->store('homepage');
-                Helper::set_static_option($key, $image);
-            }
-            Helper::set_static_option($key, $value);
         }
+
+
+
 
         return $this->redirectRoute('admin.homepage');
     }

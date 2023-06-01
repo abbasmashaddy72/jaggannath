@@ -20,7 +20,7 @@
 </head>
 
 <body class="overflow-x-hidden bg-body dark:bg-dark-bg">
-    <x:notify-messages />
+    @include('notify::components.notify')
 
     @include('layouts.backend.loader')
 
