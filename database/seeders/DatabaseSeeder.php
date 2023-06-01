@@ -30,5 +30,6 @@ class DatabaseSeeder extends Seeder
         $this->call(TeamServiceSeeder::class);
         $this->call(PackageSeeder::class);
         $this->call(PackageListSeeder::class);
+        $this->call(FaqSeeder::class);
     }
 }

@@ -99,11 +99,13 @@
             </div>
             <div class="flex">
                 <label class="flex items-center mb-2 mr-4">
-                    <input type="radio" class="form-radio" name="yes" value="1" wire:model='previous_record' />
+                    <input type="radio" class="form-radio" name="yes" value="1"
+                        wire:model='previous_record' />
                     <span class="font-normal ml-3 text-gray-600 dark:text-gray-400">Yes</span>
                 </label>
                 <label class="flex items-center mb-2">
-                    <input type="radio" class="form-radio" name="no" value="0" wire:model='previous_record' />
+                    <input type="radio" class="form-radio" name="no" value="0"
+                        wire:model='previous_record' />
                     <span class="font-normal ml-3 text-gray-600 dark:text-gray-400">No</span>
                 </label>
             </div>
@@ -117,8 +119,7 @@
                     <label class="font-normal block text-dark">If Yes, state on which condition and when?<span
                             class="text-red-600 ml-2">*</span>
                         <textarea type="text" class="w-full border-0 border-b border-secondary focus:border-primary focus:outline-none py-4"
-                            placeholder="Enter your Address" required
-                            wire:model="previous_record_description"></textarea>
+                            placeholder="Enter your Address" required wire:model="previous_record_description"></textarea>
                     </label>
                     @error('previous_record_description')
                         <span class="text-danger">{{ $message }}</span>
@@ -167,7 +168,7 @@
         @endif
         <div class="mb-0 mt-4 text-center">
             <button type="submit"
-                class="bg-gradient-to-r from-primary via-[#D4497A] to-primary hover:from-secondary hover:to-secondary inline-flex items-center justify-center py-4 px-6 rounded text-white text-base font-medium transition duration-300 ease-in-out">
+                class="bg-primary hover:bg-secondary inline-flex items-center justify-center py-4 px-6 rounded text-white text-base font-medium transition duration-300 ease-in-out">
                 Submit
             </button>
         </div>

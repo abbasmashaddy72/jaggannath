@@ -55,7 +55,7 @@
                         </div>
                     </div>
                     <div class="col-span-2">
-                        <p class="mx-8 mb-8 text-base leading-relaxed text-body-color wow fadeInUp whitespace-pre-line text-justify"
+                        <p class="mx-8 mb-8 text-lg font-semibold leading-relaxed text-gray-800 wow fadeInUp whitespace-pre-line text-justify"
                             data-wow-delay=".1s">
                             {{ $data->excerpt }}</p>
                     </div>

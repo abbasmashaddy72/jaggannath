@@ -19,7 +19,7 @@
         </div>
         <div class="flex justify-center mt-auto mb-4">
             <a href="{{ route('book_appointment', ['team_id' => $item->id]) }}"
-                class="bg-gradient-to-r from-primary via-[#D4497A] to-primary hover:from-secondary hover:to-secondary px-3 py-2 font-semibold text-white text-sm rounded-xl transition ease-in-out duration-500">Book
+                class="bg-primary hover:bg-secondary px-3 py-2 font-semibold text-white text-sm rounded-xl transition ease-in-out duration-500">Book
                 Appointment</a>
         </div>
     </div>

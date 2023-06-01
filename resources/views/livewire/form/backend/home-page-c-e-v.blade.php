@@ -22,7 +22,7 @@
                     <div class="mb-2">
                         <label class="block">
                             <x-form-label label="Uploaded Logo Preview" />
-                            <img src="{{ $this->logoIsUploaded ? $this->logo->temporaryUrl() : url('storage/' . $this->logo) }}"
+                            <img src="{{ $this->logoIsUploaded ? $this->logo->temporaryUrl() : asset('storage/' . $this->logo) }}"
                                 class="mt-2" width="250" height="300">
                         </label>
                     </div>
@@ -47,7 +47,7 @@
                     <div class="mb-2">
                         <label class="block">
                             <x-form-label label="Uploaded Hero Image Preview" />
-                            <img src="{{ $this->HeroImageIsUploaded ? $this->hero_image->temporaryUrl() : url('storage/' . $this->hero_image) }}"
+                            <img src="{{ $this->HeroImageIsUploaded ? $this->hero_image->temporaryUrl() : asset('storage/' . $this->hero_image) }}"
                                 class="mt-2" width="250" height="300">
                         </label>
                     </div>

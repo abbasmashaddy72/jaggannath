@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Blog;
 use App\Models\Count;
 use App\Models\Department;
+use App\Models\Faq;
 use App\Models\Feature;
 use App\Models\Insurance;
 use App\Models\Package;
@@ -96,6 +97,18 @@ class FrontendController extends Controller
         $teams = Team::inRandomOrder()->where('department_id', $id)->with('department')->get();
 
         return view('pages.frontend.department_single', compact('data', 'services', 'teams'));
+    }
+
+    public function faqs()
+    {
+        /**
+         * @get('/faqs')
+         * @name('faqs')
+         * @middlewares('web')
+         */
+        $data = Faq::all();
+
+        return view('pages.frontend.faqs', compact('data'));
     }
 
     public function blogs()
@@ -201,11 +214,11 @@ class FrontendController extends Controller
         return view('pages.frontend.reviews');
     }
 
-    public function career()
+    public function practice_places()
     {
         /**
-         * @get('/career')
-         * @name('career')
+         * @get('/practice_place')
+         * @name('practice_place')
          * @middlewares('web')
          */
         $data = Helper::get_static_option('career_description');

@@ -19,7 +19,8 @@
             @enderror
         </div>
         <div class="mb-6">
-            <label for="name" class="font-normal block text-dark">Name<span class="text-red-600 ml-2">*</span></label>
+            <label for="name" class="font-normal block text-dark">Name<span
+                    class="text-red-600 ml-2">*</span></label>
             <input type="text" id="name" placeholder="Adam Gelius" wire:model="name"
                 class="w-full border-0 border-b border-secondary focus:border-primary focus:outline-none py-4" />
             @error('name')
@@ -36,7 +37,8 @@
             @enderror
         </div>
         <div class="mb-6">
-            <label for="phone" class="font-normal block text-dark">Phone<span class="text-red-600 ml-2">*</span></label>
+            <label for="phone" class="font-normal block text-dark">Phone<span
+                    class="text-red-600 ml-2">*</span></label>
             <input type="text" id="phone" placeholder="+885 1254 5211 552" wire:model="phone"
                 class="w-full border-0 border-b border-secondary focus:border-primary focus:outline-none py-4" />
             @error('phone')
@@ -117,7 +119,8 @@
                 <span class="text-red-600">{{ $message }}</span>
             @enderror
 
-            <textarea id="initial_response_text" rows="1" placeholder="type your review here" wire:model="initial_response_text"
+            <textarea id="initial_response_text" rows="1" placeholder="type your review here"
+                wire:model="initial_response_text"
                 class="w-full border-0 border-b border-secondary focus:border-primary focus:outline-none py-4  resize-none"></textarea>
             @error('initial_response_text')
                 <span class="text-red-600">{{ $message }}</span>
@@ -132,7 +135,8 @@
             <div class="flex space-x-1">
                 <label for="explanation_of_treatment_rating1">
                     <input hidden wire:model="explanation_of_treatment_rating" type="radio"
-                        id="explanation_of_treatment_rating1" name="explanation_of_treatment_rating" value="1" />
+                        id="explanation_of_treatment_rating1" name="explanation_of_treatment_rating"
+                        value="1" />
                     <svg class="cursor-pointer block w-8 h-8 @if ($explanation_of_treatment_rating >= 1) text-primary @else text-gray-500 @endif"
                         fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                         <path
@@ -141,7 +145,8 @@
                 </label>
                 <label for="explanation_of_treatment_rating2">
                     <input hidden wire:model="explanation_of_treatment_rating" type="radio"
-                        id="explanation_of_treatment_rating2" name="explanation_of_treatment_rating" value="2" />
+                        id="explanation_of_treatment_rating2" name="explanation_of_treatment_rating"
+                        value="2" />
                     <svg class="cursor-pointer block w-8 h-8 @if ($explanation_of_treatment_rating >= 2) text-primary @else text-gray-500 @endif"
                         fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                         <path
@@ -150,7 +155,8 @@
                 </label>
                 <label for="explanation_of_treatment_rating3">
                     <input hidden wire:model="explanation_of_treatment_rating" type="radio"
-                        id="explanation_of_treatment_rating3" name="explanation_of_treatment_rating" value="3" />
+                        id="explanation_of_treatment_rating3" name="explanation_of_treatment_rating"
+                        value="3" />
                     <svg class="cursor-pointer block w-8 h-8 @if ($explanation_of_treatment_rating >= 3) text-primary @else text-gray-500 @endif"
                         fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                         <path
@@ -159,7 +165,8 @@
                 </label>
                 <label for="explanation_of_treatment_rating4">
                     <input hidden wire:model="explanation_of_treatment_rating" type="radio"
-                        id="explanation_of_treatment_rating4" name="explanation_of_treatment_rating" value="4" />
+                        id="explanation_of_treatment_rating4" name="explanation_of_treatment_rating"
+                        value="4" />
                     <svg class="cursor-pointer block w-8 h-8 @if ($explanation_of_treatment_rating >= 4) text-primary @else text-gray-500 @endif"
                         fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                         <path
@@ -168,7 +175,8 @@
                 </label>
                 <label for="explanation_of_treatment_rating5">
                     <input hidden wire:model="explanation_of_treatment_rating" type="radio"
-                        id="explanation_of_treatment_rating5" name="explanation_of_treatment_rating" value="5" />
+                        id="explanation_of_treatment_rating5" name="explanation_of_treatment_rating"
+                        value="5" />
                     <svg class="cursor-pointer block w-8 h-8 @if ($explanation_of_treatment_rating >= 5) text-primary @else text-gray-500 @endif"
                         fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                         <path
@@ -188,7 +196,8 @@
             @enderror
         </div>
         <div class="mb-6">
-            <label for="cost_of_treatment_text" class="font-normal block text-dark">How well are you explained about the
+            <label for="cost_of_treatment_text" class="font-normal block text-dark">How well are you explained about
+                the
                 cost involved in your treatment?<span class="text-red-600 ml-2">*</span></label>
 
             <!-- Rating -->
@@ -243,7 +252,8 @@
                 <span class="text-red-600">{{ $message }}</span>
             @enderror
 
-            <textarea id="cost_of_treatment_text" rows="1" placeholder="type your review here" wire:model="cost_of_treatment_text"
+            <textarea id="cost_of_treatment_text" rows="1" placeholder="type your review here"
+                wire:model="cost_of_treatment_text"
                 class="w-full border-0 border-b border-secondary focus:border-primary focus:outline-none py-4  resize-none"></textarea>
             @error('cost_of_treatment_text')
                 <span class="text-red-600">{{ $message }}</span>
@@ -319,7 +329,8 @@
             <!-- Rating -->
             <div class="flex space-x-1">
                 <label for="dmo_rating1">
-                    <input hidden wire:model="dmo_rating" type="radio" id="dmo_rating1" name="dmo_rating" value="1" />
+                    <input hidden wire:model="dmo_rating" type="radio" id="dmo_rating1" name="dmo_rating"
+                        value="1" />
                     <svg class="cursor-pointer block w-8 h-8 @if ($dmo_rating >= 1) text-primary @else text-gray-500 @endif"
                         fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                         <path
@@ -327,7 +338,8 @@
                     </svg>
                 </label>
                 <label for="dmo_rating2">
-                    <input hidden wire:model="dmo_rating" type="radio" id="dmo_rating2" name="dmo_rating" value="2" />
+                    <input hidden wire:model="dmo_rating" type="radio" id="dmo_rating2" name="dmo_rating"
+                        value="2" />
                     <svg class="cursor-pointer block w-8 h-8 @if ($dmo_rating >= 2) text-primary @else text-gray-500 @endif"
                         fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                         <path
@@ -335,7 +347,8 @@
                     </svg>
                 </label>
                 <label for="dmo_rating3">
-                    <input hidden wire:model="dmo_rating" type="radio" id="dmo_rating3" name="dmo_rating" value="3" />
+                    <input hidden wire:model="dmo_rating" type="radio" id="dmo_rating3" name="dmo_rating"
+                        value="3" />
                     <svg class="cursor-pointer block w-8 h-8 @if ($dmo_rating >= 3) text-primary @else text-gray-500 @endif"
                         fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                         <path
@@ -343,7 +356,8 @@
                     </svg>
                 </label>
                 <label for="dmo_rating4">
-                    <input hidden wire:model="dmo_rating" type="radio" id="dmo_rating4" name="dmo_rating" value="4" />
+                    <input hidden wire:model="dmo_rating" type="radio" id="dmo_rating4" name="dmo_rating"
+                        value="4" />
                     <svg class="cursor-pointer block w-8 h-8 @if ($dmo_rating >= 4) text-primary @else text-gray-500 @endif"
                         fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                         <path
@@ -351,7 +365,8 @@
                     </svg>
                 </label>
                 <label for="dmo_rating5">
-                    <input hidden wire:model="dmo_rating" type="radio" id="dmo_rating5" name="dmo_rating" value="5" />
+                    <input hidden wire:model="dmo_rating" type="radio" id="dmo_rating5" name="dmo_rating"
+                        value="5" />
                     <svg class="cursor-pointer block w-8 h-8 @if ($dmo_rating >= 5) text-primary @else text-gray-500 @endif"
                         fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                         <path
@@ -501,7 +516,8 @@
             <div class="flex space-x-1">
                 <label for="satisfaction_of_treatment_rating1">
                     <input hidden wire:model="satisfaction_of_treatment_rating" type="radio"
-                        id="satisfaction_of_treatment_rating1" name="satisfaction_of_treatment_rating" value="1" />
+                        id="satisfaction_of_treatment_rating1" name="satisfaction_of_treatment_rating"
+                        value="1" />
                     <svg class="cursor-pointer block w-8 h-8 @if ($satisfaction_of_treatment_rating >= 1) text-primary @else text-gray-500 @endif"
                         fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                         <path
@@ -510,7 +526,8 @@
                 </label>
                 <label for="satisfaction_of_treatment_rating2">
                     <input hidden wire:model="satisfaction_of_treatment_rating" type="radio"
-                        id="satisfaction_of_treatment_rating2" name="satisfaction_of_treatment_rating" value="2" />
+                        id="satisfaction_of_treatment_rating2" name="satisfaction_of_treatment_rating"
+                        value="2" />
                     <svg class="cursor-pointer block w-8 h-8 @if ($satisfaction_of_treatment_rating >= 2) text-primary @else text-gray-500 @endif"
                         fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                         <path
@@ -519,7 +536,8 @@
                 </label>
                 <label for="satisfaction_of_treatment_rating3">
                     <input hidden wire:model="satisfaction_of_treatment_rating" type="radio"
-                        id="satisfaction_of_treatment_rating3" name="satisfaction_of_treatment_rating" value="3" />
+                        id="satisfaction_of_treatment_rating3" name="satisfaction_of_treatment_rating"
+                        value="3" />
                     <svg class="cursor-pointer block w-8 h-8 @if ($satisfaction_of_treatment_rating >= 3) text-primary @else text-gray-500 @endif"
                         fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                         <path
@@ -528,7 +546,8 @@
                 </label>
                 <label for="satisfaction_of_treatment_rating4">
                     <input hidden wire:model="satisfaction_of_treatment_rating" type="radio"
-                        id="satisfaction_of_treatment_rating4" name="satisfaction_of_treatment_rating" value="4" />
+                        id="satisfaction_of_treatment_rating4" name="satisfaction_of_treatment_rating"
+                        value="4" />
                     <svg class="cursor-pointer block w-8 h-8 @if ($satisfaction_of_treatment_rating >= 4) text-primary @else text-gray-500 @endif"
                         fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                         <path
@@ -537,7 +556,8 @@
                 </label>
                 <label for="satisfaction_of_treatment_rating5">
                     <input hidden wire:model="satisfaction_of_treatment_rating" type="radio"
-                        id="satisfaction_of_treatment_rating5" name="satisfaction_of_treatment_rating" value="5" />
+                        id="satisfaction_of_treatment_rating5" name="satisfaction_of_treatment_rating"
+                        value="5" />
                     <svg class="cursor-pointer block w-8 h-8 @if ($satisfaction_of_treatment_rating >= 5) text-primary @else text-gray-500 @endif"
                         fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                         <path
@@ -581,7 +601,7 @@
         @endif
         <div class="mb-0 mt-4 text-center">
             <button type="submit"
-                class="bg-gradient-to-r from-primary via-[#D4497A] to-primary hover:from-secondary hover:to-secondary inline-flex items-center justify-center py-4 px-6 rounded text-white text-base font-medium transition duration-300 ease-in-out">
+                class="bg-primary hover:bg-secondary inline-flex items-center justify-center py-4 px-6 rounded text-white text-base font-medium transition duration-300 ease-in-out">
                 Submit
             </button>
         </div>

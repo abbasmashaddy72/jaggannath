@@ -56,6 +56,11 @@ return [
         'blog_edit', // Added Controller, Form, Action
         'blog_view', // Added Controller, Action
         'blog_delete', // Added Action
+        'faq_list', // Added Controller, SideMenu
+        'faq_add', // Added Controller, Form
+        'faq_edit', // Added Controller, Form, Action
+        'faq_view', // Added Controller, Action
+        'faq_delete', // Added Action
         'package_list', // Added Controller, SideMenu
         'package_add', // Added Controller, Form
         'package_edit', // Added Controller, Form, Action
@@ -73,7 +78,7 @@ return [
         'insurance_delete', //Added Action
         'terms', // Added Controller, Form, SideMenu
         'privacy', // Added Controller, Form, SideMenu
-        'career', // Added Controller, Form, SideMenu
+        'practice_places', // Added Controller, Form, SideMenu
         'user_list', // Added Controller, SideMenu
         'user_add', // Added Controller, Form
         'user_edit', // Added Controller, Form, Action

@@ -50,14 +50,14 @@ class MiscellaneousController extends Controller
         return view('pages.backend.privacy');
     }
 
-    public function career()
+    public function practice_places()
     {
         /**
-         * @get('/admin/career')
-         * @name('admin.career')
+         * @get('/admin/practice_place')
+         * @name('admin.practice_place')
          * @middlewares('web', auth')
          */
-        abort_if(Gate::denies('career'), 403);
+        abort_if(Gate::denies('practice_places'), 403);
 
         return view('pages.backend.career');
     }

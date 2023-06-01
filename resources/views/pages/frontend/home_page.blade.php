@@ -66,11 +66,11 @@
         <div class="flex justify-center">
             <div class="mb-8 text-center space-x-2 space-y-2">
                 <a href="{{ route('book_appointment') }}"
-                    class="inline-block px-3 py-2 bg-gradient-to-r from-primary via-[#D4497A] to-primary font-semibold text-lg rounded-xl hover:from-secondary hover:to-secondary text-gray-50 transition ease-in-out duration-500">{{ 'Book Appointment' }}</a>
+                    class="inline-block px-3 py-2 bg-primary font-semibold text-lg rounded-xl hover:bg-secondary text-gray-50 transition ease-in-out duration-500">{{ 'Book Appointment' }}</a>
                 <a href="{{ route('feedback') }}"
-                    class="inline-block px-3 py-2 bg-gradient-to-r from-primary via-[#D4497A] to-primary font-semibold text-lg rounded-xl hover:from-secondary hover:to-secondary text-gray-50 transition ease-in-out duration-500">{{ 'Feedback' }}</a>
+                    class="inline-block px-3 py-2 bg-primary font-semibold text-lg rounded-xl hover:bg-secondary text-gray-50 transition ease-in-out duration-500">{{ 'Feedback' }}</a>
                 <a href="{{ 'http://124.123.32.48:9999/shivam/onlinereporting/index.jsp' }}"
-                    class="inline-block px-3 py-2 bg-gradient-to-r from-primary via-[#D4497A] to-primary font-semibold text-lg rounded-xl hover:from-secondary hover:to-secondary text-gray-50 transition ease-in-out duration-500">{{ 'Online Reports' }}<i
+                    class="inline-block px-3 py-2 bg-primary font-semibold text-lg rounded-xl hover:bg-secondary text-gray-50 transition ease-in-out duration-500">{{ 'Online Reports' }}<i
                         data-feather="external-link" width='20' height='20' class="inline"></i></a>
             </div>
         </div>
@@ -204,7 +204,7 @@
 
         <div class="flex items-center justify-center">
             <a href="{{ route('reviews') }}"
-                class="bg-gradient-to-r from-primary via-[#D4497A] to-primary hover:from-secondary hover:to-secondary px-7 py-5 font-semibold text-white text-lg rounded-xl transition ease-in-out duration-500">More
+                class="bg-primary hover:bg-secondary px-7 py-5 font-semibold text-white text-lg rounded-xl transition ease-in-out duration-500">More
                 Reviews</a>
         </div>
 

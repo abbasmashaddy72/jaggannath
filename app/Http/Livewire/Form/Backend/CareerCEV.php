@@ -26,7 +26,7 @@ class CareerCEV extends Component
 
     public function submit()
     {
-        abort_if(Gate::denies('career'), 403);
+        abort_if(Gate::denies('practice_places'), 403);
 
         $validatedData = $this->validate();
 
@@ -34,7 +34,7 @@ class CareerCEV extends Component
             Helper::set_static_option($key, $value);
         }
 
-        return $this->redirectRoute('admin.career');
+        return $this->redirectRoute('admin.practice_places');
     }
 
     public function render()

@@ -1,4 +1,4 @@
-<footer class="bg-primary py-16 border-solid border-secondary border-t-[12px]">
+<footer class="bg-primary py-16">
 
     <div class="container max-w-screen-2xl mx-auto px-4">
         <div class="flex flex-col lg:flex-row lg:justify-between">
@@ -41,8 +41,9 @@
                 <a href="{{ route('privacy') }}"
                     class="block font-light text-gray-50 text-sm md:text-lg hover:text-gray-50 transition ease-in-out duration-300">Privacy</a>
 
-                <a href="{{ route('career') }}"
-                    class="block font-light text-gray-50 text-sm md:text-lg hover:text-gray-50 transition ease-in-out duration-300">Career</a>
+                <a href="{{ route('practice_places') }}"
+                    class="block font-light text-gray-50 text-sm md:text-lg hover:text-gray-50 transition ease-in-out duration-300">Practice
+                    Places</a>
 
                 <a href="{{ route('about_us') }}"
                     class="block font-light text-gray-50 text-sm md:text-lg hover:text-gray-50 transition ease-in-out duration-300">About

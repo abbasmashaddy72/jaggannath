@@ -32,7 +32,7 @@
 @endpush
 @push('meta')
     @include('layouts.frontend.meta', [
-        'title' => 'Career',
+        'title' => 'Practice Places',
         'description' => 'Some Text for SEO',
         'keywords' => 'Some Keywords for SEO',
     ])
@@ -40,7 +40,7 @@
 <x-guest-layout>
     <x-frontend.container>
         <x-slot name='banner_name'>
-            {{ __('Career') }}
+            {{ __('Practice Places') }}
         </x-slot>
 
         <div class="mb-8 ck-content">

@@ -44,7 +44,7 @@
                         </div>
                         <div class="text-center mt-10">
                             <a href="{{ route('book_appointment', ['team_id' => $data->id]) }}"
-                                class="px-3 py-2 bg-gradient-to-r from-primary via-[#D4497A] to-primary font-semibold text-white text-lg rounded-xl hover:from-secondary hover:to-secondary transition ease-in-out duration-500">Book
+                                class="px-3 py-2 bg-primary font-semibold text-white text-lg rounded-xl hover:bg-secondary transition ease-in-out duration-500">Book
                                 Appointment</a>
                         </div>
                     </div>
@@ -57,7 +57,6 @@
                 </div>
             </div>
         </div>
-
 
         <!-- Blog Grip -->
         <div class="flex flex-wrap -mx-4 mt-6">

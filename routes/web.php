@@ -18,6 +18,7 @@ Route::group(['namespace' => 'App\Http\Controllers\Frontend'], function () {
     Route::get('departments', 'FrontendController@departments')->name('departments');
     Route::get('department/{id}', 'FrontendController@department_single')->name('department_single');
     Route::get('blogs', 'FrontendController@blogs')->name('blogs');
+    Route::get('faqs', 'FrontendController@faqs')->name('faqs');
     Route::get('blog/{id}', 'FrontendController@blog_single')->name('blog_single');
     Route::get('services', 'FrontendController@services')->name('services');
     Route::get('service/{id}', 'FrontendController@service_single')->name('service_single');
@@ -27,7 +28,7 @@ Route::group(['namespace' => 'App\Http\Controllers\Frontend'], function () {
     Route::get('packages', 'FrontendController@packages')->name('packages');
     Route::get('package/{id}', 'FrontendController@package_single')->name('package_single');
     Route::get('reviews', 'FrontendController@reviews')->name('reviews');
-    Route::get('career', 'FrontendController@career')->name('career');
+    Route::get('practice_places', 'FrontendController@practice_places')->name('practice_places');
     Route::get('gallery', 'FrontendController@gallery')->name('gallery');
     Route::get('about_us', 'FrontendController@about_us')->name('about_us');
     Route::get('contact_us', 'FrontendController@contact_us')->name('contact_us');
@@ -55,7 +56,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth', 'na
 
     Route::get('privacy', 'MiscellaneousController@privacy')->name('privacy');
 
-    Route::get('career', 'MiscellaneousController@career')->name('career');
+    Route::get('practice_places', 'MiscellaneousController@practice_places')->name('practice_places');
 
     Route::get('feedback', 'MiscellaneousController@feedback')->name('feedback');
 
@@ -96,6 +97,10 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth', 'na
     Route::post('image_upload', 'MiscellaneousController@image_upload')->name('ckeditor.upload');
 
     Route::resource('blog', 'BlogController')->only([
+        'index', 'create', 'store',  'edit', 'show'
+    ]);
+
+    Route::resource('faq', 'FaqController')->only([
         'index', 'create', 'store',  'edit', 'show'
     ]);
 

@@ -3,7 +3,7 @@
         <div class="mb-2">
             <label class="block">
                 <x-form-label label="Uploaded Image Preview" />
-                <img src="{{ $this->isUploaded ? $this->image->temporaryUrl() : url('storage/' . $this->image) }}"
+                <img src="{{ $this->isUploaded ? $this->image->temporaryUrl() : asset('storage/' . $this->image) }}"
                     class="mt-2" width="250" height="300">
             </label>
         </div>
