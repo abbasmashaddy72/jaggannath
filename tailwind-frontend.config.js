@@ -16,7 +16,7 @@ module.exports = {
                 input: "0px 7px 20px rgba(0, 0, 0, 0.03)",
                 pricing: "0px 39px 23px -27px rgba(0, 0, 0, 0.04)",
                 "switch-1": "0px 0px 5px rgba(0, 0, 0, 0.15)",
-                testimonial: "0px 0px 10px 5px rgba(30, 64, 175,0.5)",
+                testimonial: "0px 0px 10px 5px rgba(22, 163, 74,0.5)",
             },
             zIndex: {
                 "-10": "-10",
@@ -30,8 +30,8 @@ module.exports = {
             colors: {
                 dark: "#090E34",
                 "dark-700": "#090e34b3",
-                primary: "#1E40AF",
-                secondary: "#3fc4ff",
+                primary: "#166534",
+                secondary: "#065F46",
                 "body-color": "#637381",
                 warning: "#FBBF24",
                 gray: {

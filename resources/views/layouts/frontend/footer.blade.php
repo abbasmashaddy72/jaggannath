@@ -44,19 +44,15 @@
                 <a href="{{ route('practice_places') }}"
                     class="block font-light text-gray-50 text-sm md:text-lg hover:text-gray-50 transition ease-in-out duration-300">Practice
                     Places</a>
+                <a href="{{ route('blogs') }}"
+                    class="block font-light text-gray-50 text-sm md:text-lg hover:text-gray-50 transition ease-in-out duration-300">Blogs</a>
 
                 <a href="{{ route('about_us') }}"
                     class="block font-light text-gray-50 text-sm md:text-lg hover:text-gray-50 transition ease-in-out duration-300">About
                     Us</a>
 
-                <a href="{{ route('blogs') }}"
-                    class="block font-light text-gray-50 text-sm md:text-lg hover:text-gray-50 transition ease-in-out duration-300">Blogs</a>
-
-                <a href="{{ route('packages') }}"
-                    class="block font-light text-gray-50 text-sm md:text-lg hover:text-gray-50 transition ease-in-out duration-300">Packages</a>
-
-                <a href="{{ route('feedback') }}"
-                    class="block font-light text-gray-50 text-sm md:text-lg hover:text-gray-50 transition ease-in-out duration-300">Feedback</a>
+                <a href="{{ route('reviews') }}"
+                    class="block font-light text-gray-50 text-sm md:text-lg hover:text-gray-50 transition ease-in-out duration-300">Reviews</a>
             </div>
 
             @if (!Jenssegers\Agent\Facades\Agent::isMobile())

@@ -14,7 +14,7 @@
     @endpush
 
     <!-- Sliders Section Start -->
-    <section class="bg-white pb-10 mt-52">
+    <section class="bg-white pb-10 mt-28">
 
         <div class="">
             <div x-data="{ swiper: null }" x-init="swiper = new Swiper($refs.container, {

@@ -35,24 +35,16 @@
                     <a href="{{ route('services') }}">Services</a>
                 </li>
                 <li
-                    class="font-semibold text-primary lg:text-gray-50 transition ease-in-out duration-300 mb-5 lg:mb-0 lg:hover:scale-125 lg:hover:rotate-6 {{ Request::is('review*') ? 'underline underline-offset-2 decoration-primary lg:decoration-gray-50 decoration-4' : '' }}">
-                    <a href="{{ route('reviews') }}">Reviews</a>
-                </li>
-                <li
                     class="font-semibold text-primary lg:text-gray-50 transition ease-in-out duration-300 mb-5 lg:mb-0 lg:hover:scale-125 lg:hover:rotate-6 {{ Request::is('blog*') ? 'underline underline-offset-2 decoration-primary lg:decoration-gray-50 decoration-4' : '' }}">
                     <a href="{{ route('blogs') }}">Blogs</a>
                 </li>
                 <li
-                    class="font-semibold text-primary lg:text-gray-50 transition ease-in-out duration-300 mb-5 lg:mb-0 lg:hover:scale-125 lg:hover:rotate-6 {{ Request::is('blog*') ? 'underline underline-offset-2 decoration-primary lg:decoration-gray-50 decoration-4' : '' }}">
+                    class="font-semibold text-primary lg:text-gray-50 transition ease-in-out duration-300 mb-5 lg:mb-0 lg:hover:scale-125 lg:hover:rotate-6 {{ Request::is('faq*') ? 'underline underline-offset-2 decoration-primary lg:decoration-gray-50 decoration-4' : '' }}">
                     <a href="{{ route('faqs') }}">Faqs</a>
                 </li>
                 <li
                     class="font-semibold text-primary lg:text-gray-50 transition ease-in-out duration-300 mb-5 lg:mb-0 lg:hover:scale-125 lg:hover:rotate-6 {{ Request::is('gallery*') ? 'underline underline-offset-2 decoration-primary lg:decoration-gray-50 decoration-4' : '' }}">
                     <a href="{{ route('gallery') }}">Gallery</a>
-                </li>
-                <li
-                    class="font-semibold text-primary lg:text-gray-50 transition ease-in-out duration-300 mb-5 lg:mb-0 lg:hover:scale-125 lg:hover:rotate-6 {{ Request::is('about_us*') ? 'underline underline-offset-2 decoration-primary lg:decoration-gray-50 decoration-4' : '' }}">
-                    <a href="{{ route('about_us') }}">About Us</a>
                 </li>
                 <li
                     class="font-semibold text-primary lg:text-gray-50 transition ease-in-out duration-300 mb-5 lg:mb-0 lg:hover:scale-125 lg:hover:rotate-6 {{ Request::is('contact_us*') ? 'underline underline-offset-2 decoration-primary lg:decoration-gray-50 decoration-4' : '' }}">
