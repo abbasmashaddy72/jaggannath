@@ -1,8 +1,8 @@
-# Jagganath Project Installation Guide
+# Jaggannath Project Installation Guide
 
 ## Overview
 
-Jagganath is a project built with Laravel and Vite, utilizing two separate Tailwind configurations for the backend and frontend. This guide provides instructions for installing and running the project.
+Jaggannath is a project built with Laravel and Vite, utilizing two separate Tailwind configurations for the backend and frontend. This guide provides instructions for installing and running the project.
 
 ## Stack
 
@@ -32,8 +32,8 @@ The project structure is similar to a typical Laravel application.
 1. **Clone the repository:**
 
     ```
-    git clone https://github.com/your-username/jagganath.git
-    cd jagganath
+    git clone https://github.com/abbasmashaddy72/jaggannath.git
+    cd jaggannath
     ```
 
 2. **Install Composer dependencies:**
